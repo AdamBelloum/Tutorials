@@ -154,7 +154,7 @@ def delete_url(id):
 if __name__ == '__main__':
     app.run(port=5000)
 ```
-## Facilitator’s Toolkit: Cheat Sheet
+## Facilitators Toolkit: Cheat Sheet
 
 | Component | Recommendation |
 | :--- | :--- |
