@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Check if the argument is "clean"
+if [[ "$1" == "clean" ]]; then
+    echo "Cleaning up executable files..."
+    rm -f omp_bug1 omp_bug2 omp_bug3 omp_bug4 omp_bug5 omp_bug6 omp_bug7
+    echo "Executable files removed."
+    exit 0  # Exit after cleanup if only cleanup is requested
+fi
+
+# Defines the application to execute (path to the executable)
+APP=$1
+
+# Check if the application argument is provided
+if [ -z "$1" ]; then
+  echo "Error: No application provided. Usage: $0 <application_path>"
+  exit 1
+fi
+
+# Compile using gcc
+# =================
+gcc -fopenmp $APP.c -o $APP
+
+if [ $? -ne 0 ]; then
+    echo "Compilation failed. Exiting..."
+    exit 1  # Exit the script with a non-zero status to indicate failure
+fi
+
+# run the application
+# ==================
+./$APP

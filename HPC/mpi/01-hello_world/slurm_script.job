@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=mpi_bug
+#SBATCH --output=mpi_bug_%j.out
+#SBATCH --error=mpi_bug_%j.err
+#SBATCH --nodes=2
+#SBATCH --ntasks=4
+
+# 1. Load the necessary modules
+module load openmpi   # Or whichever MPI version your cluster uses
+
+# 2. Run the PRE-COMPILED executable (do NOT use mpicc here)
+mpirun ./$APP

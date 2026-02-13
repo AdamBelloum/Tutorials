@@ -1,0 +1,23 @@
+# --- Compiled Binaries (HPC) ---
+*.o
+*.out
+app_exec
+hello_world
+pi_calculation
+
+# --- Python Junk (Cloud/REST) ---
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# --- Large Files & Archives ---
+*.zip
+*.tar.gz
+*.mp4
+*.pptx
+*.docx
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
