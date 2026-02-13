@@ -8,11 +8,9 @@ Welcome to the central repository for tutorials on High-Performance Computing (H
 ### 1. High-Performance Computing (HPC)
 Focuses on maximizing performance on local nodes and distributed clusters.
 
-OpenMP Basics: Introduction to shared-memory parallelism and the Fork-Join model.
-
-OpenMP Advanced: Advanced data sharing, tasking, and performance optimization.
-
-MPI (Message Passing Interface): Distributed-memory programming for cluster environments and supercomputers.
+- OpenMP Basics: Introduction to shared-memory parallelism and the Fork-Join model.
+- OpenMP Advanced: Advanced data sharing, tasking, and performance optimization.
+- MPI (Message Passing Interface): Distributed-memory programming for cluster environments and supercomputers.
 
 ### 2. Distributed Systems & Cloud
 Focuses on scalable architectures, service-oriented design, and privacy-preserving AI.
@@ -41,11 +39,9 @@ Environment Setup
 If you are working on a cluster using a workload manager, sample Slurm scripts (.job or .sh) are included in the exercise folders.
 
 #### License & Usage
-This content is developed for educational purposes.
-
-Code: Licensed under the MIT License.
-
-Documentation: Licensed under CC BY 4.0.
+- This content is developed for educational purposes.
+- Code: Licensed under the MIT License.
+- Documentation: Licensed under CC BY 4.0.
 
 #### Acknowledgments
 These tutorials were originally developed and refined through various international workshops and educational projects in the fields of Cloud Computing and HPC.
