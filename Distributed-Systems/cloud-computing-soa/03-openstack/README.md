@@ -47,13 +47,13 @@ The main focus of this assignment is to teach you how to use the **OpenStack Web
 
 You will see only one project named `groupXX` already created for you.
 
-!\[image representing the project UI of OpenStack\](images/projects-OpenStack.png)
+![image representing the project UI of OpenStack](images/projects-OpenStack.png)
 
 ### 3. Create a User (Not covered)
 
 Administrative users can create users via **Identity > Users**.
 
-!\[image representing the Users management UI of OpenStack\](images/users-OpenStack.png)
+![image representing the Users management UI of OpenStack](images/users-OpenStack.png)
 
 * *Resource:* [Video: Create OpenStack User (15:42)](https://www.freecodecamp.org/)
 
@@ -67,7 +67,7 @@ Administrative users can create networks via **Identity > Networks**.
 
 View existing images via **Project > Compute > Images**. You can use existing images or upload a virtual image file using the "Create Image" menu.
 
-!\[image representing the VM management UI of OpenStack\](images/images-OpenStack.png)
+![image representing the VM management UI of OpenStack](images/images-OpenStack.png)
 
 * *Resource:* [Video: Manage and Creating Images (17:56)](https://www.freecodecamp.org/)
 
