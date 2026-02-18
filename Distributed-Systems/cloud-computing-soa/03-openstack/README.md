@@ -37,11 +37,11 @@ The main focus of this assignment is to teach you how to use the **OpenStack Web
 * **URL:** <https://xd1.lab.uvalight.net/horizon/>
 * Login with your provided credentials.
 
-!\[Alt text\](images/login-OpenStack.png)
+![Alt text](images/login-OpenStack.png)
 
 * Upon logging in, you will see a summary page. The menu on the left will adjust based on your account roles.
 
-!\[image representing the overview/ dashboard UI of the Users resource in OpenStak \](images/overview-OpenStack.png)
+![image representing the overview/ dashboard UI of the Users resource in OpenStak ](images/overview-OpenStack.png)
 
 ### 2. Create a Project (Not covered)
 
