@@ -1,14 +1,3 @@
-https://gitlab.inria.fr/digitafrica/blueprints/services/edge-ai-blueprint 
-
-https://gitlab.inria.fr/digitafrica/blueprints/services/edge-ai-blueprint
- 
-https://repo.nitlab.uth.gr/ece441/ece-441-labs
-
-
-Joint program UvA/VUA				Web service and cloud systems  
-MSc computer science program			     						
-Tutorial: Serverless/Function as a Service 
-
 # Tabke of Content
 [Objectives of this assignment](#objectives-of-this-assignment)
 
