@@ -437,12 +437,12 @@ The function you created, deployed, and then invoked in the previous sections is
 
 ###  1.	Create an OpenWeatherMap account by following the instructions from the Sign Up page:
 
-![Alternative text](/images/Picture1.png)
+![Alternative text](./images/Picture1.png)
 
 ###  2.	log in to OpenWeatherMap and then select API KEYS:
 
 
-![Alternative text](/images/Picture2.png)
+![Alternative text](./images/Picture2.png)
 
 
 ###  3.	from here, you can either copy the value of the default key or create a new API key, and then copy its value:
@@ -552,18 +552,18 @@ Removing old function.
 1.	Open a browser and visit http://localhost:8080 . To log in, use the admin username and the password you retrieved in the previous ## Step. You will be redirected to the OpenFaaS home page. Select the DEPLOY NEW FUNCTION button:
 
 
- ![Alternative text](/images/Picture3.png)
+ ![Alternative text](./images/Picture3.png)
 
 
 2.	A new window will be displayed. Select the Custom tab, and then type:
 
 
  
-![Alternative text](/images/Picture4.png) 
+![Alternative text](./images/Picture4.png) 
 
 3.	Once you’ve filled in the Docker image and Function name input boxes, select the DEPLOY button:
 
-![Alternative text](/images/Picture5.png)
+![Alternative text](./images/Picture5.png)
  
 
 
@@ -571,29 +571,29 @@ Removing old function.
 
 
  
-![Alternative text](/images/Picture6.png) 
+![Alternative text](./images/Picture6.png) 
 
 5.	You’ll be redirected to the invoke function page:
 
 
-![Alternative text](/images/Picture7.png)
+![Alternative text](./images/Picture7.png)
 
 
 6.	In the Request body input box, type in the name of the city you want to retrieve the weather forecast for, and then select the INVOKE button:
 
 
-![Alternative text](/images/Picture8.png) 
+![Alternative text](./images/Picture8.png) 
 
 
 - Expected outcome ()
 
-![Alternative text](/images/Picture9.png) 
+![Alternative text](./images/Picture9.png) 
  
 # Monitor the serverless with Prometheus and Grafana
 
 The OpenFaaS gateway exposes the following metrics:
  
-![Alternative text](/images/Picture10.png)
+![Alternative text](./images/Picture10.png)
 
 Retrieved from https://docs.openfaas.com/architecture/metrics/
 
@@ -641,7 +641,7 @@ $ kubectl port-forward -n openfaas svc/prometheus-ui 9090:9090 &
 
 - Expected outcome ()
  
-![Alternative text](/images/Picture11.png)
+![Alternative text](./images/Picture11.png)
 
 ###  6.	To deploy Grafana, you’ll the stefanprodan/faas-grafana:4.6.3 image. Run the following command:
 
@@ -693,13 +693,13 @@ kubectl port-forward -n openfaas svc/grafana 3000:3000 &
 
 ###  11.	Now that you set up the port forwarding, you can access Grafana by pointing your browser to http://localhost:3000:
 
-![Alternative text](/images/Picture12.png)
+![Alternative text](./images/Picture12.png)
  
 
 
 ###  12.	Log into Grafana using the username admin and password admin. The Home Dashboard page will be displayed:
 
-![Alternative text](/images/Picture13.png)
+![Alternative text](./images/Picture13.png)
  
 
 
@@ -707,25 +707,25 @@ kubectl port-forward -n openfaas svc/grafana 3000:3000 &
 
 
  
-![Alternative text](/images/Picture14.png)
+![Alternative text](./images/Picture14.png)
 
 ###  14.	Type https://grafana.com/grafana/dashboards/3434  in the Grafana.com Dashboard input box. Then, select the Load button:
 
 
  
-![Alternative text](/images/Picture15.png)
+![Alternative text](./images/Picture15.png)
 
 
 ###  15.	In the Import Dashboard dialog box, set the Prometheus data source to faas, and then select Import:
 
 
-![Alternative text](/images/Picture16.png)
+![Alternative text](./images/Picture16.png)
 
 
 ###  16.	An empty dashboard will be displayed:
 - Expected output.
 
-![Alternative text](/images/Picture17.png)
+![Alternative text](./images/Picture17.png)
 
 ###  17.	Now, you can invoke your function a couple of times using the faas-cli invoke command as follows:
 
@@ -737,5 +737,5 @@ $ faas-cli invoke -f appfleet-hello-world.yml appfleet-hello-world
 
 
 
-![Alternative text](/images/Picture18.png)
+![Alternative text](./images/Picture18.png)
 
