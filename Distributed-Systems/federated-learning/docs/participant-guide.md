@@ -1,0 +1,511 @@
+
+# Federated Learning Workshop
+## Collaborative Intelligence Without Sharing Data
+- Level: Beginner
+- Format: Group-Based, Hands-On
+- Duration: Full Day
+ 
+## 1. Welcome & Orientation
+### Workshop Goal
+By the end of this workshop, you will:
+- Understand the core concepts of Federated Learning (FL)
+- Train a local AI model on private data
+- Participate in federated rounds
+- Observe how a global model improves without sharing raw data
+- Reflect on privacy, fairness, and collaborative intelligence
+ 
+## 2. Pre-Workshop Checklist
+Before we begin, ensure:
+-  Hardware
+   - Laptop
+   - Stable Wi-Fi
+   - Chrome or Firefox
+- Skills
+   - Basic Python (loops, functions, running scripts)
+   -Basic ML understanding (training vs testing)
+- Access
+   - JupyterHub login credentials
+   - Assigned Group ID
+ 
+## 3. Morning Session - The "Why" and the "What"
+ 
+### Session 1: Understanding the Problem (09:30-10:30)
+#### Goal
+Understand why Federated Learning exists.
+Key Concepts
+- Concept	Meaning
+- Data Silo	Data locked in one institution
+- Centralized AI	All data sent to one server
+- Federated Learning	Model moves, data stays
+- Aggregation	Combining model updates
+- Model Weights	Mathematical parameters
+The Cookbook Analogy
+- 	Traditional AI --> Send recipes to one chef
+- 	Federated Learning --> Chef sends blank book, you send back notes
+#### Reflection (Write 3-5 sentences)
+- 	Why is centralized AI risky?
+- 	What problem does FL solve?
+- 	Where could FL be useful in your field?
+ 
+### Session 2: Technical Environment Check (10:30-11:00)
+### Goal
+Ensure all participants can connect and run code.
+#### Step 1: Log Into JupyterHub
+Open the provided URL and log in.
+#### Step 2: Run the Test Cell
+print("Hello Federated Learning!")
+If successful --> environment works.
+#### Step 3: Library Check
+```python
+import flwr
+import sklearn
+import numpy
+```
+No errors? - Ready.
+If You See Errors:
+- 	Check internet
+- 	Refresh browser
+- 	Ask technical mentor
+#### Reflection
+- 	What component is acting as your "Node"?
+- 	What will act as the "Hub"?
+ 
+#### 4. Module 1 - Your Local AI (11:00-12:30)
+**Scenario**: You Are an Isolated Farm
+Each group receives a private dataset slice.
+Example:
+- 	Group A --> Mostly Healthy leaves
+- 	Group B --> Brown Streak Disease
+- 	Group C --> Mosaic Disease
+No group sees the full dataset.
+ 
+#### Goal
+- 	Train a model using only your local data
+- 	Observe limitations of isolated AI
+ 
+#### Step 1: Explore Your Data
+Open your dataset folder.
+Questions:
+- 	Which disease is dominant?
+- 	What is missing?
+ 
+#### Step 2: Complete Local Training
+Fill in the missing line in the skeleton:
+model.fit(X_train, y_train)
+Run the script.
+ 
+#### Step 3: Evaluate Your Model
+Check accuracy:
+model.score(X_train, y_train)
+You will notice:
+- 	High performance on your local disease
+- 	Very poor generalization
+ 
+#### Expected Limitation
+Your model is blind to diseases it has never seen.
+This is called:
+Non-IID Data (Non-Identically Distributed Data)
+ 
+#### Reflection
+Discuss in your group:
+- 	Why does your model fail on unseen diseases?
+- 	Is your data biased?
+- 	What risks exist in deploying this model nationally?
+ 
+#### 5. Afternoon Session - The "How"
+ 
+Module 2 - Joining the Federation (13:30-15:00)
+Now we collaborate.
+ 
+#### Goal
+- 	Connect to the Hub
+- 	Participate in federated rounds
+- 	Share weights, not data
+ 
+####  Step 1: Enter Server Address
+Replace:
+SERVER_IP = "0.0.0.0:8080"
+With instructor-provided IP.
+ 
+#### Step 2: Start the Client
+Run:
+```python
+fl.client.start_numpy_client(...)
+```
+You should see:
+```bash 
+Round 1 starting...
+```
+What Is Happening Behind the Scenes?
+1.	Hub sends Global Model
+2.	You train locally
+3.	You send updated weights back
+4.	Hub averages all weights (FedAvg)
+5.	Repeat for several rounds
+ 
+Important Concept
+You are transmitting:
+- [ ] Model weights
+- [X] NOT raw images
+- [X] NOT private data
+ 
+ Reflection
+- 	What information is being shared?
+- 	Why is this privacy-preserving?
+- 	Could model weights leak information?
+ 
+Module 3 - The Aha! Moment (15:00-15:45)
+ 
+#### Goal
+Observe performance improvement after collaboration.
+ 
+#### Step 1: Download Final Global Model
+After final round completes, evaluate:
+evaluate_global_model()
+ 
+#### Step 2: Compare Results
+- Model Type	Accuracy
+- Local Model	?
+- Global Model	?
+You should see significant improvement.
+ 
+Why?
+You gained:
+Collective intelligence without data sharing
+ 
+Group Exercise
+Test:
+- 	Group A model on Group C data (fails initially)
+- 	Global model on Group C data (succeeds)
+ 
+#### Reflection
+Discuss:
+- Why did accuracy improve?
+- Did your data ever leave your node?
+- What are trade-offs of FL?
+- When might centralized training still be better?
+ 
+6. Key Technical Takeaways
+You experienced:
+- Data remains local
+- Model travels
+- FedAvg aggregation
+- Non-IID challenges
+- Communication efficiency
+- Collaborative fairness
+ 
+7. Architecture Overview
+Tier 1 - Edge Nodes (You)
+- Local training
+- Private datasets
+- Lightweight models
+Tier 2 - Hub
+- Aggregation server
+- Coordinates rounds
+- Produces global model
+ 
+8. Troubleshooting Guide
+Connection Timeout
+- 	Check Wi-Fi
+- 	Confirm server IP
+- 	Ask instructor if server busy
+Accuracy is 0
+- 	Check dataset path
+- 	Confirm labels loaded correctly
+Import Error
+- 	Restart kernel
+- 	Re-run setup cell
+ 
+9. Final Reflection Exercise (15 minutes)
+Individually answer:
+1.	What problem does Federated Learning solve?
+2.	What are its limitations?
+3.	Where could you apply this?
+4.	What ethical issues remain?
+5.	What surprised you most today?
+ 
+10. Beyond Today
+If you want to go further:
+- Try PyTorch instead of Scikit-learn
+- Compare FedAvg vs FedProx
+- Experiment with imbalanced datasets
+- Add differential privacy
+- Simulate 50+ clients
+ 
+#### Final Message
+Today you built:
+ - A distributed AI system
+ - A privacy-preserving training workflow
+ - A collaborative intelligence network
+Without sharing a single raw image.
+That is Federated Learning.
+ 
+Dataset Setup Instructions
+We will use a lightweight Cassava Leaf subset prepared for this workshop.
+Option A (Recommended for Workshop)
+Instructor provides:
+cassava_fl_workshop.zip
+Inside:
+```bash
+cassava_fl_workshop/
+│
+├── group_a/
+│   ├── train.csv
+│   ├── images/
+│
+├── group_b/
+│   ├── train.csv
+│   ├── images/
+│
+├── group_c/
+│   ├── train.csv
+│   ├── images/
+│
+└── global_test/
+    ├── test.csv
+    ├── images/
+```
+Each group downloads ONLY their folder.
+ 
+### Option B (Public Dataset - Kaggle)
+Cassava Leaf Disease Dataset:
+
+[Cassava Leaf Disease Dataset](https://www.kaggle.com/competitions/cassava-leaf-disease-classification/data)
+
+If using Kaggle:
+
+```bash 
+pip install kaggle
+kaggle competitions download -c cassava-leaf-disease-classification
+unzip cassava-leaf-disease-classification.zip
+```
+**NOTE:** For beginners, instructor should pre-partition the dataset into silos.
+ 
+#### Required Folder Structure (Participants)
+After download, your workspace must look like:
+```bash
+workspace/
+│
+├── data/
+│   ├── train.csv
+│   ├── images/
+│
+├── client.py
+└── utils.py
+```
+#### Beginner AI Pipeline Skeleton (Fully Runnable)
+This pipeline assumes participants have never built an AI model before.
+We use:
+- Pandas
+- Scikit-learn
+- Simple features (no deep learning)
+- Logistic Regression
+ 
+Step 1 - Install Requirements
+
+```bash
+pip install numpy pandas scikit-learn flwr pillow
+```
+
+Step 2 - Basic AI Pipeline (Local Training)
+Create file: local_training.py
+
+```python
+import os
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+
+# ---------------------------------------
+# STEP 1: Load CSV Metadata
+# ---------------------------------------
+
+DATA_PATH = "data/train.csv"
+
+df = pd.read_csv(DATA_PATH)
+
+print("Dataset loaded.")
+print(df.head())
+
+# ---------------------------------------
+# STEP 2: Prepare Features and Labels
+# ---------------------------------------
+
+# For simplicity we simulate features
+# (In real image case, use CNN or embeddings)
+
+X = np.random.normal(size=(len(df), 10))
+y = df["label"].values
+
+# ---------------------------------------
+# STEP 3: Train/Test Split
+# ---------------------------------------
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# ---------------------------------------
+# STEP 4: Initialize Model
+# ---------------------------------------
+
+model = LogisticRegression(max_iter=200)
+
+# ---------------------------------------
+# STEP 5: Train
+# ---------------------------------------
+
+model.fit(X_train, y_train)
+
+# ---------------------------------------
+# STEP 6: Evaluate
+# ---------------------------------------
+
+predictions = model.predict(X_test)
+accuracy = accuracy_score(y_test, predictions)
+```
+
+
+- This ensures everyone understands:
+- 	Load data
+- 	Prepare data
+- 	Train
+- 	Evaluate
+ 
+#### Federated Version - Complete Beginner Client Skeleton
+Create file: client.py
+This version works even if participants never implemented FL before.
+
+```python 
+import flwr as fl
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import log_loss, accuracy_score
+
+# ---------------------------------------
+# STEP 1: Identify Your Group
+# ---------------------------------------
+
+GROUP_ID = "Group_A"
+
+# ---------------------------------------
+# STEP 2: Load Local Dataset
+# ---------------------------------------
+
+df = pd.read_csv("data/train.csv")
+
+X = np.random.normal(size=(len(df), 10))
+y = df["label"].values
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# ---------------------------------------
+# STEP 3: Initialize Model
+# ---------------------------------------
+
+model = LogisticRegression(max_iter=200)
+
+model.classes_ = np.unique(y)
+model.coef_ = np.zeros((len(model.classes_), 10))
+model.intercept_ = np.zeros(len(model.classes_))
+
+# ---------------------------------------
+# STEP 4: Define Flower Client
+# ---------------------------------------
+
+class FLClient(fl.client.NumPyClient):
+
+    def get_parameters(self, config):
+        return [model.coef_, model.intercept_]
+
+    def set_parameters(self, parameters):
+        model.coef_ = parameters[0]
+        model.intercept_ = parameters[1]
+
+    def fit(self, parameters, config):
+        self.set_parameters(parameters)
+
+        model.fit(X_train, y_train)
+
+        print(f"{GROUP_ID} finished training.")
+
+        return self.get_parameters(config={}), len(X_train), {}
+
+    def evaluate(self, parameters, config):
+        self.set_parameters(parameters)
+
+        predictions = model.predict_proba(X_test)
+        loss = log_loss(y_test, predictions)
+        accuracy = accuracy_score(y_test, model.predict(X_test))
+
+        return loss, len(X_test), {"accuracy": accuracy}
+
+# ---------------------------------------
+# STEP 5: Connect to Server
+# ---------------------------------------
+
+SERVER_ADDRESS = "IP_PROVIDED_BY_INSTRUCTOR:8080"
+
+fl.client.start_numpy_client(
+    server_address=SERVER_ADDRESS,
+    client=FLClient()
+)
+ 
+🖥 Instructor Server Skeleton (Complete)
+Create file: server.py
+import flwr as fl
+
+strategy = fl.server.strategy.FedAvg(
+    min_fit_clients=2,
+    min_available_clients=2,
+)
+
+print("Server starting...")
+
+fl.server.start_server(
+    server_address="0.0.0.0:8080",
+    config=fl.server.ServerConfig(num_rounds=5),
+    strategy=strategy,
+)
+print("Local Model Accuracy:", accuracy)
+```
+Run server first:
+```bash
+python server.py
+```
+Then participants run:
+```bash 
+python client.py
+``` 
+What Participants Should Observe
+During rounds:
+```bash
+Round 1
+Round 2
+Round 3
+```
+Accuracy should increase across rounds.
+ 
+#### What Was Missing Before (Now Fixed)
+We added:
+- [ ] Explicit dataset source
+- [ ] Download instructions
+- [ ] Folder structure
+- [ ] Installation instructions
+- [ ] A full AI pipeline example
+- [ ] A complete FL client skeleton
+- [ ] A complete server skeleton
+- [ ] No prior AI experience required
+ 
+#### Final Reflection Questions (Technical Level)
+1.	What changed between local and global training?
+2.	What exactly was transmitted?
+3.	Could gradients leak private information?
+4.	How would you secure this system further?
+
