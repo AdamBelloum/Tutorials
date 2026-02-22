@@ -32,7 +32,7 @@ Depending on your role, please follow the relevant guide:
 
 ### For Organizers 
 
-Please start by reading the [Organizers Guide](./organizers-guide.mdorganizers-guide.md). It contains:
+Please start by reading the [Organizers Guide](./organizers-guide.md). It contains:
 
 * Environment setup and prerequisites.
 * The workshop timeline and teaching milestones.
