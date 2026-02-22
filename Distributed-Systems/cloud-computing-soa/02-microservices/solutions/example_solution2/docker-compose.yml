@@ -1,0 +1,82 @@
+services:
+  gateway:
+    build:
+      context: gateway
+      dockerfile: Dockerfile
+    image: gateway_image:latest
+    ports:
+      - "10000:10000"
+    depends_on:
+      - url_shortener_service
+      - auth_service
+    volumes:
+      - ./gateway:/app/gateway
+      - ./common_utils:/app/common_utils
+    networks:
+      - shared_network
+
+  url_shortener_service:
+    build:
+      context: url_shortener_service
+      dockerfile: Dockerfile
+    image: url_shortener_service_image:latest
+    volumes:
+      - ./url_shortener_service:/app/url_shortener_service
+      - ./common_utils:/app/common_utils
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    networks:
+      - shared_network
+
+  auth_service:
+    build:
+      context: auth_service
+      dockerfile: Dockerfile
+    image: auth_service_image:latest
+    volumes:
+      - ./auth_service:/app/auth_service
+      - ./common_utils:/app/common_utils
+      - ./data:/app/data
+    ports:
+      - "8001:8001"
+    depends_on:
+      - redis
+    networks:
+      - shared_network
+    
+  redis:
+    image: "redis:7.2"
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - shared_network
+    volumes:
+      - redis_data:/data
+
+  # redis_auth:
+  #   image: "redis:7.2"
+  #   restart: always
+  #   ports:
+  #     - "6380:6379"
+  #   networks:
+  #     - shared_network
+  #   volumes:
+  #     - redis_data:/data
+
+# for Docker
+networks:
+  shared_network:
+    name: shared_network
+    driver: bridge
+
+# for Docker Swarm
+# networks:
+#   shared_network:
+#     driver: overlay
+
+volumes:
+  redis_data:
