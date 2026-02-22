@@ -1,84 +1,82 @@
 # Workshop: Architecting a RESTful URL Shortener
 
-Welcome! Today, you are moving beyond theoretical Web Services to build a functional **URL Shortener API**. By the end of this session, you will have a service that accepts long URLs, generates unique short IDs, and handles redirects.
+It sounds like you¿re putting together a solid workshop! A great `README.md` acts as the "front door" of your project¿it needs to be welcoming but also very clear about where people should go so they don't accidentally spoil the challenge for themselves.
+
+Here is a draft for your main **README.md** that organizes the repo and sets those important ground rules.
 
 ---
 
-##  Extra Material
-* **Unit Testing Guide:** A guide on how to use unit tests.
-* **Data Source:** A `.csv` file where the tests will fetch data.
-* **Unit Tests:** The actual test scripts.
-* **Instructional PDF:** Read this carefully; it explains how unit tests work, what you can modify, and what is off-limits.
+# ¿ Simple REST API Workshop
+
+Welcome! This repository contains all the materials needed to design and implement a simple REST API from scratch. Whether you are here to learn or to lead, this guide will get you started.
+
+## ¿ Objective
+
+The goal of this tutorial is to provide hands-on experience in:
+
+* Understanding RESTful principles.
+* Designing API endpoints.
+* Implementing a functional backend service.
+* Testing your implementation against provided requirements.
 
 ---
 
-## 1. Prerequisites & Setup
+## ¿ Repository Structure
 
-Before we start, ensure your environment is ready.
-* **Language:** Python 3.8+
-* **Framework:** Flask (Micro-framework for Python)
-* **Testing Tool:** Postman or `curl`
-* **Starter Files:** Create a folder named `url_shortener` and a file named `app.py`.
-
-### Background Reading
-If you are new to these concepts, skim these quickly:
-* **REST Principles:** What is REST?
-* **HTTP Methods:** Understanding `GET`, `POST`, `PUT`, `DELETE`.
-* **Status Codes:** Know your `201` (Created), `301` (Redirect), and `400`/`404` (Errors).
+* **`participants-guide.md`**: The main manual for learners.
+* **`organizers-guide.md`**: Instructions for mentors/hosts on how to run the session.
+* **`docs/`**: Supplemental documentation and design diagrams.
+* **`solution/`**: The reference implementation (¿¿ **See Spoiler Policy below**).
+* **`tests/`**: Automated tests to verify your API.
 
 ---
 
-## 2. The Specification
+## ¿¿ Getting Started
 
-Your API must implement the following endpoints. Use an **in-memory Python dictionary** (e.g., `url_db = {}`) to store your mappings during this workshop.
+Depending on your role, please follow the relevant guide:
 
-| Path | Method | Purpose | Return Code |
-| :--- | :--- | :--- | :--- |
-| `/` | `GET` | List all shortened IDs | 200 OK |
-| `/` | `POST` | Create a new short ID for a URL | 201 Created |
-| `/:id` | `GET` | Redirect to the original URL | 301 Moved Permanently |
-| `/:id` | `PUT` | Update the URL for an existing ID | 200 OK |
-| `/:id` | `DELETE` | Remove a mapping | 204 No Content |
+### For Organizers ¿
 
----
+Please start by reading the [Organizers Guide](https://www.google.com/search?q=organizers-guide.md). It contains:
 
-## 3. Hands-on Challenges
+* Environment setup and prerequisites.
+* The workshop timeline and teaching milestones.
+* Tips for troubleshooting common student errors.
 
-### Step 1: The Skeleton (15 mins)
-Create a basic Flask app that responds to `GET /`.
-* **Goal:** Verify your environment works.
-* **Reference:** Flask - Routing.
+### For Participants ¿
 
-### Step 2: The "Shortener" Algorithm (30 mins)
-When a user `POST`s a URL to `/`, you need to give them a short ID (e.g., `/aB3`).
-* **The Problem:** How do you make IDs short but unique?
-* **Constraint:** Do not use random numbers (they collide) or simple 1, 2, 3 (they are predictable).
-* **Tip:** Research **Base62 Encoding** or use a portion of an **MD5/SHA hash**.
+Your journey begins in the [Participants Guide](https://www.google.com/search?q=participants-guide.md).
 
-### Step 3: Validation & Security (20 mins)
-Don't trust the user! Before saving a URL, you must ensure it is valid.
-* **Task:** Use a **Regex (Regular Expression)** to check if the input is a valid `http://` or `https://` link.
-* **Reference:** Python `re` Module.
-* **Fail Case:** If the URL is invalid, return `400 Bad Request`.
-
-### Step 4: The Redirect (20 mins)
-When someone visits `/:id`, they shouldn't see text; their browser should "jump" to the destination.
-* **Task:** Use FlaskÕs `redirect()` function and ensure you set the status code to `301`.
+* Follow the steps sequentially.
+* Use the files in the root directory to build your project.
+* Run the scripts in `/tests` to check your progress.
 
 ---
 
-## 4. Testing Your Service
-Once your code is running, open **Postman** and try to "break" your service:
-1.  **Create:** Send a `POST` to `/` with JSON: `{"url": "https://www.google.com"}`.
-2.  **Verify:** Get the ID and try `GET /<your_id>` in your browser.
-3.  **Error Check:** Try to `DELETE` an ID that doesn't exist. Do you get a `404`?
-4.  **Update:** Use `PUT` to change where an existing ID points.
+## ¿ Spoiler Policy (The "Solution" Folder)
+
+To get the most out of this tutorial, we have a strict policy regarding the `/solution` directory:
+
+1. **Don't Peek Early:** Learning happens in the "struggle." Avoid looking at the solution code until the organizer explicitly instructs you to do so.
+2. **Self-Paced Learners:** If you are working through this at home, only open the solution if:
+* You have completed the entire tutorial and want to compare approaches.
+* You have been stuck on a specific bug for a significant amount of time and have exhausted all other debugging options.
+
+
 
 ---
 
-## 5. Peer Review & Discussion
-Once finished, discuss with your neighbor:
-* **Scaling:** What happens to your dictionary if 1 million users create URLs?
-* **Persistence:** How would you change this code to use a Database (like PostgreSQL) instead of a Python dictionary?
+## ¿ Prerequisites
 
+Before starting, ensure you have the following installed:
+
+* [Insert Language/Runtime, e.g., Node.js or Python]
+* A code editor (VS Code recommended)
+* An API client (Postman or Insomnia)
+
+---
+
+> **Note to Participants:** The best way to learn is to break things. Don't be afraid to experiment before checking the guides!
+
+Would you like me to help you draft the specific content for the **`participants-guide.md`** or the **`organizers-guide.md`** next?
 ---
