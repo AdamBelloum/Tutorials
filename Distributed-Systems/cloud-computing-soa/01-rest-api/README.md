@@ -1,16 +1,11 @@
 # Workshop: Architecting a RESTful URL Shortener
-
-It sounds like you¿re putting together a solid workshop! A great `README.md` acts as the "front door" of your project¿it needs to be welcoming but also very clear about where people should go so they don't accidentally spoil the challenge for themselves.
-
-Here is a draft for your main **README.md** that organizes the repo and sets those important ground rules.
-
 ---
 
-# ¿ Simple REST API Workshop
+# Simple REST API Workshop
 
 Welcome! This repository contains all the materials needed to design and implement a simple REST API from scratch. Whether you are here to learn or to lead, this guide will get you started.
 
-## ¿ Objective
+## Objective
 
 The goal of this tutorial is to provide hands-on experience in:
 
@@ -21,31 +16,31 @@ The goal of this tutorial is to provide hands-on experience in:
 
 ---
 
-## ¿ Repository Structure
-
-* **`participants-guide.md`**: The main manual for learners.
-* **`organizers-guide.md`**: Instructions for mentors/hosts on how to run the session.
-* **`docs/`**: Supplemental documentation and design diagrams.
-* **`solution/`**: The reference implementation (¿¿ **See Spoiler Policy below**).
-* **`tests/`**: Automated tests to verify your API.
-
+## Repository Structure
+```text
+|- organizers-guide.md: Instructions for mentors on how to run the session.
+|- participants-guide.md: The manual for learners.
+|- docs/: Supplemental documentation and design diagrams.
+|- solution/: The reference implementation (See Spoiler Policy below).
+|- tests: Automated tests to verify your API.
+```
 ---
 
-## ¿¿ Getting Started
+## Getting Started
 
 Depending on your role, please follow the relevant guide:
 
-### For Organizers ¿
+### For Organizers 
 
-Please start by reading the [Organizers Guide](https://www.google.com/search?q=organizers-guide.md). It contains:
+Please start by reading the [Organizers Guide](./organizers-guide.mdorganizers-guide.md). It contains:
 
 * Environment setup and prerequisites.
 * The workshop timeline and teaching milestones.
 * Tips for troubleshooting common student errors.
 
-### For Participants ¿
+### For Participants
 
-Your journey begins in the [Participants Guide](https://www.google.com/search?q=participants-guide.md).
+Your journey begins in the [Participants Guide](./participants-guide.md).
 
 * Follow the steps sequentially.
 * Use the files in the root directory to build your project.
@@ -53,7 +48,7 @@ Your journey begins in the [Participants Guide](https://www.google.com/search?q=
 
 ---
 
-## ¿ Spoiler Policy (The "Solution" Folder)
+### Spoiler Policy (The "Solution" Folder)
 
 To get the most out of this tutorial, we have a strict policy regarding the `/solution` directory:
 
@@ -62,11 +57,9 @@ To get the most out of this tutorial, we have a strict policy regarding the `/so
 * You have completed the entire tutorial and want to compare approaches.
 * You have been stuck on a specific bug for a significant amount of time and have exhausted all other debugging options.
 
-
-
 ---
 
-## ¿ Prerequisites
+## Prerequisites
 
 Before starting, ensure you have the following installed:
 
@@ -78,5 +71,4 @@ Before starting, ensure you have the following installed:
 
 > **Note to Participants:** The best way to learn is to break things. Don't be afraid to experiment before checking the guides!
 
-Would you like me to help you draft the specific content for the **`participants-guide.md`** or the **`organizers-guide.md`** next?
 ---
