@@ -1,0 +1,13 @@
+fastapi[standard]
+requests
+pydantic
+sqlalchemy
+greenlet
+passlib
+pydantic-settings
+bcrypt
+redis
+fastapi-limiter
+asyncpg
+
+

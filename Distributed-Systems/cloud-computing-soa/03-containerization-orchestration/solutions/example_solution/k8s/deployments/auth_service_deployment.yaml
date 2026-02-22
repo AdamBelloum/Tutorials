@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: auth-service
+  template:
+    metadata:
+      labels:
+        app: auth-service
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: auth-service
+        image: 145.100.130.24:443/example-solution-auth-service:v1
+        envFrom:
+        - configMapRef:
+            name: auth-service-config
+        ports:
+        - containerPort: 8001

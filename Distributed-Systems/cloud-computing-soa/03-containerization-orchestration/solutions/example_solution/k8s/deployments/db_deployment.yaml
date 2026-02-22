@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+        - name: db
+          image: 145.100.130.24:443/example-solution-db:v1
+          envFrom:
+          - configMapRef:
+              name: db-config
+          volumeMounts:
+          - mountPath: /var/lib/postgresql/data
+            name: db-data
+      volumes:
+        - name: db-data
+          persistentVolumeClaim:
+            claimName: db-pv-claim

@@ -1,0 +1,10 @@
+fastapi[standard]
+requests
+pydantic
+sqlalchemy
+redis
+fastapi-limiter
+greenlet
+pydantic_settings
+asyncpg
+
