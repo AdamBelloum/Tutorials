@@ -76,8 +76,8 @@ fl.client.start_numpy_client(
     client=FLClient()
 )
  
-🖥 Instructor Server Skeleton (Complete)
-Create file: server.py
+# 🖥 Instructor Server Skeleton (Complete)
+# Create file: server.py
 import flwr as fl
 
 strategy = fl.server.strategy.FedAvg(

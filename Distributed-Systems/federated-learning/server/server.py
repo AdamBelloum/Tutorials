@@ -12,4 +12,3 @@ fl.server.start_server(
     config=fl.server.ServerConfig(num_rounds=5),
     strategy=strategy,
 )
-```

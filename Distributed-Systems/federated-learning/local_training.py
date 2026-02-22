@@ -51,6 +51,6 @@ model.fit(X_train, y_train)
 # ---------------------------------------
 
 predictions = model.predict(X_test)
-accuracy = accuracy_score(y_test, predictions)i
+accuracy = accuracy_score(y_test, predictions)
 
 print("Local Model Accuracy:", accuracy)
