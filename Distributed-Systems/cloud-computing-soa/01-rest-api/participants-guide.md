@@ -63,7 +63,7 @@ Don't trust the user! Before saving a URL, you must ensure it is valid.
 
 ### Step 4: The Redirect (20 mins)
 When someone visits `/:id`, they shouldn't see text; their browser should "jump" to the destination.
-* **Task:** Use FlaskÕs `redirect()` function and ensure you set the status code to `301`.
+* **Task:** Use Flaskï¿½s `redirect()` function and ensure you set the status code to `301`.
 
 ---
 

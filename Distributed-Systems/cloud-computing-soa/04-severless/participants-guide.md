@@ -1,5 +1,5 @@
-# Tabke of Content
-[Objectives of this assignment](#objectives-of-this-assignment)
+# Table of Content
+[Objectives of this session](#objectives-of-this-session)
 
 [Learning outcomes](#learning-outcomes)	
 
@@ -35,10 +35,10 @@
 
 [Step-10: Monitor the serverless with Prometheus and Grafana](#step-10-monitor-the-serverless-with-prometheus-and-grafana)
 
-This tutorial serves as a gentle introduction to the Serverless computing and Function as service, covered in the lecture. The primary goal is to learn to use an Opensource Serverless Platform (OpenFaaS). The main focus of this assignment is to teach you how to deploy a OpenFaaS cluster using K8s. It is important to note that during the assignment you will distinguish the Steps that are performed by the provider of the Function as a service platform (Step1-3) and the Steps that are performed by the users of the platform (Step4-10). 
+This tutorial serves as a gentle introduction to the Serverless computing and Function as service, covered in the lecture. The primary goal is to learn to use an Opensource Serverless Platform (OpenFaaS). The main focus of this session is to teach you how to deploy a OpenFaaS cluster using K8s. It is important to note that during the session you will distinguish the Steps that are performed by the provider of the Function as a service platform (Step1-3) and the Steps that are performed by the users of the platform (Step4-10). 
 The tutorial is following the Steps provided in Tutorial Create Serverless Functions with OpenFaaS Published April 7, 2023, in Tutorials, Docker, Managed Kubernetes .  
 
-# Objectives of this assignment
+# Objectives of this session
 -	Get some introductory hands-on on Open-source Function as a Service platform (OpenFaaS)
 
 Learning outcomes
