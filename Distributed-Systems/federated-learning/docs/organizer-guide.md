@@ -61,6 +61,12 @@ pip install flwr numpy scikit-learn pandas
 #### Step 3 — Configure Firewall
 Allow Flower port (default 8080):
 ```bash
+sudo apt update && sudo apt install ufw
+
+sudo ufw allow 8080
+sudo ufw enable
+
+# if cancelled, run:
 sudo ufw allow 8080
 sudo ufw enable
 ```

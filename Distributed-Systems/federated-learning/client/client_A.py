@@ -1,6 +1,7 @@
 import flwr as fl
 import numpy as np
 import pandas as pd
+import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import log_loss, accuracy_score
@@ -15,7 +16,7 @@ GROUP_ID = "Group_A"
 # STEP 2: Load Local Dataset
 # ---------------------------------------
 
-df = pd.read_csv("data/train.csv")
+df = pd.read_csv(f"data/{GROUP_ID}/train.csv")
 
 X = np.random.normal(size=(len(df), 10))
 y = df["label"].values
@@ -69,7 +70,7 @@ class FLClient(fl.client.NumPyClient):
 # STEP 5: Connect to Server
 # ---------------------------------------
 
-SERVER_ADDRESS = "IP_PROVIDED_BY_INSTRUCTOR:8080"
+SERVER_ADDRESS = os.environ.get("FLOWER_SERVER_ADDRESS", "localhost:8080")
 
 fl.client.start_numpy_client(
     server_address=SERVER_ADDRESS,
