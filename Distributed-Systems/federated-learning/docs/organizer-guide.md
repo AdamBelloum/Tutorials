@@ -108,10 +108,18 @@ Starting Flower server...
 ```
 NOTE: Leave this terminal running during workshop.
 ### 4.  Dataset Preparation (Before Workshop)
-#### Step 1 — Download Dataset
-Example (Cassava from Kaggle):
-Download on organizer machine.
-Partition into silos:
+#### Step 1 — Download Dataset (Organizer)
+
+We recommend the Kaggle Cassava Leaf Disease dataset as the source for this workshop. Organizer should download once, partition into per-group slices, and distribute only each group's subset to participants.
+
+- Kaggle link: https://www.kaggle.com/competitions/cassava-leaf-disease-classification/data
+
+Required on the organizer machine:
+
+1. Python 3.9+ and `pip` available.
+
+Download and unzip example (organizer machine):
+
 ```bash
 group_a/
 group_b/
@@ -120,17 +128,10 @@ group_c/
 Each group must have:
 ```bash
 train.csv
-images/
 ```
-Step 2 — Create Group Zip Files
-```bash
-zip -r group_a.zip group_a/
-zip -r group_b.zip group_b/
-zip -r group_c.zip group_c/
-```
-Upload to: Google Drive / LMS / USB sticks
-Internal server
-Participants download only their group data.
+Step 2 — Create Group Files
+Use the provided full dataset to create 3 non-IID partitions (one per group). 
+
 
 ###  Client-Side Setup Options
 You have 3 deployment models.
@@ -146,15 +147,15 @@ Participants run:
 ```bash
 pip install flwr numpy pandas scikit-learn
 ```
-They place:
+Then place:
 ```bash
 client.py
 data/
 ```
 In same folder.
-Then run:
+Then update and run:
 ```bash
-python client.py
+python client/client_{X}.py
 ```
 #### OPTION B: JupyterHub (Centralized Browser Environment)
 Best when:

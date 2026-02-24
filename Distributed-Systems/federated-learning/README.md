@@ -21,9 +21,7 @@ This repository contains a complete framework for running a federated learning s
 │   └── server.py              # Central aggregation hub
 ├── client/
 │   ├── client.py              # Federated Flower client
-│   └── local_training.py      # Baseline non-federated script
 ├── data/
-│   └── train.csv              # Placeholder for local metadata
 └── requirements.txt           # Python dependencies
 ```
 
