@@ -29,7 +29,7 @@ Before we begin, ensure:
  
 ## 3. Morning Session - The "Why" and the "What"
  
-### Session 1: Understanding the Problem (09:30-10:30)
+### Session 1: Understanding the Problem
 #### Goal
 Understand why Federated Learning exists.
 Key Concepts
@@ -47,7 +47,7 @@ The Cookbook Analogy
 - 	What problem does FL solve?
 - 	Where could FL be useful in your field?
  
-### Session 2: Technical Environment Check (10:30-11:00)
+### Session 2: Technical Environment Check
 ### Goal
 Ensure all participants can connect and run code.
 #### Step 1: Log Into JupyterHub
@@ -244,42 +244,65 @@ Dataset Setup Instructions
 We will use a lightweight Cassava Leaf subset prepared for this workshop.
 Option A (Recommended for Workshop)
 Instructor provides:
-cassava_fl_workshop.zip
+data.zip
 Inside:
 ```bash
-cassava_fl_workshop/
+data/
 │
 ├── group_a/
 │   ├── train.csv
-│   ├── images/
 │
 ├── group_b/
 │   ├── train.csv
-│   ├── images/
 │
 ├── group_c/
 │   ├── train.csv
-│   ├── images/
 │
-└── global_test/
-    ├── test.csv
-    ├── images/
+└── train.csv
 ```
 Each group downloads ONLY their folder.
- 
+
+### Option A (Recommended for Workshop — instructor-provided)
+
+The organizer will distribute a per-group archive (e.g. `group_a.zip`). Participants should only download their assigned archive and extract it into the working folder.
+
+Example (participant machine):
+
+```bash
+# assuming you received group_a.zip
+unzip group_a.zip -d workspace
+cd workspace/group_a
+ls
+# should show train.csv and images/
+```
+
+Required structure for participant run (in your working folder):
+
+```bash
+workspace/
+├── data/
+│   ├── train.csv        # metadata: image_id,label (or similar)
+│   └── images/          # optional for this tutorial; required for real-image runs
+├── client.py
+└── local_training.py
+```
+
 ### Option B (Public Dataset - Kaggle)
-Cassava Leaf Disease Dataset:
+
+If you prefer to download the full dataset yourself (not recommended for workshop attendees because of size and partitioning work), use the Kaggle competition page:
 
 [Cassava Leaf Disease Dataset](https://www.kaggle.com/competitions/cassava-leaf-disease-classification/data)
 
-If using Kaggle:
+Download example (participant machine):
 
-```bash 
+```bash
 pip install kaggle
-kaggle competitions download -c cassava-leaf-disease-classification
-unzip cassava-leaf-disease-classification.zip
+# Make sure ~/.kaggle/kaggle.json has your API key
+kaggle competitions download -c cassava-leaf-disease-classification -p .
+unzip cassava-leaf-disease-classification.zip -d cassava_full
 ```
-**NOTE:** For beginners, instructor should pre-partition the dataset into silos.
+
+**NOTE:** If you download the full dataset yourself you must either ask the instructor for the group partition mapping or partition the data locally (see organizer instructions). For beginners, use the organizer-provided group archive.
  
 #### Required Folder Structure (Participants)
 After download, your workspace must look like:
@@ -289,10 +312,44 @@ workspace/
 ├── data/
 │   ├── train.csv
 │   ├── images/
-│
+
 ├── client.py
 └── utils.py
 ```
+
+### Quick start (participant)
+
+1. Create a virtual environment and install dependencies:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install flwr numpy pandas scikit-learn pillow
+```
+
+2. Verify `data/train.csv` contains at least a `label` column (the provided `client.py` uses `df['label']`).
+
+3. Set your `GROUP_ID` and server address in `client.py` if needed (top of the file):
+
+```python
+# in client.py
+GROUP_ID = "Group_A"  # change to Group_B or Group_C as assigned
+SERVER_ADDRESS = "IP_PROVIDED_BY_INSTRUCTOR:8080"
+```
+
+4. Run the client to join the federation (instructed server must be running):
+
+```bash
+python client.py
+```
+
+If the instructor gave you a `group_x.zip`, extract it so `client.py` sees `data/train.csv` in the working folder.
+
+### Notes on reproducibility and evaluation
+
+- The workshop `client.py` and `local_training.py` simulate features with random vectors (so `train.csv` only needs labels). This is intentional for teaching the FL flow with minimal setup. If you want real image training, ensure `data/images/` is present and modify the client to extract image features or train a lightweight CNN.
+- If you see shape or aggregation errors during federated rounds, ask the organizer: likely a label-class coverage mismatch between groups. Organizers should ensure each group contains at least one sample for every label (see organizer guide).
 #### Beginner AI Pipeline Skeleton (Fully Runnable)
 This pipeline assumes participants have never built an AI model before.
 We use:
@@ -477,11 +534,11 @@ print("Local Model Accuracy:", accuracy)
 ```
 Run server first:
 ```bash
-python server.py
+python server/server.py
 ```
 Then participants run:
 ```bash 
-python client.py
+python client/client_{X}.py
 ``` 
 What Participants Should Observe
 During rounds:
