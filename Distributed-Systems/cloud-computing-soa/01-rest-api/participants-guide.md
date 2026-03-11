@@ -85,3 +85,12 @@ Once finished, discuss with your neighbor:
 * **Persistence:** How would you change this code to use a Database (like PostgreSQL) instead of a Python dictionary?
 
 ---
+
+## 6. References
+1. [Flask quickstart](https://flask.palletsprojects.com/en/stable/quickstart/)
+2. [Flask Cheat Sheet](https://realpython.com/flask-blueprint/)
+3. [Regular expresssion 101](https://regex101.com/)
+4. [Learn RegEx](https://github.com/ziishaned/learn-regex/blob/master/README.md)
+5. [iHateRegEx](https://ihateregex.io/expr/url/)
+6. [HTTP status code](https://www.restapitutorial.com/httpstatuscodes)
+7. [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)

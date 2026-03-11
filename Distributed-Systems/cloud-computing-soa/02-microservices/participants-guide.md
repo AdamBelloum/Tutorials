@@ -234,7 +234,6 @@ These are design questions aligned with the workshop goals around organizing and
 
 ---
 ### 9. References
-References:
 
 1. [What are microservices?:](https://microservices.io/)
 2. [Json Web Tokens (JWT):](https://jwt.io/introduction/)
