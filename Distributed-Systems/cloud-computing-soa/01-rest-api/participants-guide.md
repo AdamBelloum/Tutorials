@@ -49,11 +49,14 @@ Create a basic Flask app that responds to `GET /`.
 * **Goal:** Verify your environment works.
 * **Reference:** Flask - Routing.
 
+`[!NOTE]` if for some reason you cannot perform this step move on the next step and use the provided scheleton
+[skeleton-STILL MISSING](./01-rest-api-skeleton.py)
 ### Step 2: The "Shortener" Algorithm (30 mins)
 When a user `POST`s a URL to `/`, you need to give them a short ID (e.g., `/aB3`).
 * **The Problem:** How do you make IDs short but unique?
 * **Constraint:** Do not use random numbers (they collide) or simple 1, 2, 3 (they are predictable).
 * **Tip:** Research **Base62 Encoding** or use a portion of an **MD5/SHA hash**.
+
 
 ### Step 3: Validation & Security (20 mins)
 Don't trust the user! Before saving a URL, you must ensure it is valid.
@@ -63,7 +66,7 @@ Don't trust the user! Before saving a URL, you must ensure it is valid.
 
 ### Step 4: The Redirect (20 mins)
 When someone visits `/:id`, they shouldn't see text; their browser should "jump" to the destination.
-* **Task:** Use Flask�s `redirect()` function and ensure you set the status code to `301`.
+* **Task:** Use Flask's `redirect()` function and ensure you set the status code to `301`.
 
 ---
 

@@ -30,21 +30,24 @@ The goal of this tutorial is to provide hands-on experience in:
 
 Depending on your role, please follow the relevant guide:
 
-### For Organizers 
-
-Please start by reading the [Organizers Guide](./solutions/organizers-guide.md). It contains:
-
-* Environment setup and prerequisites.
-* The workshop timeline and teaching milestones.
-* Tips for troubleshooting common student errors.
-
 ### For Participants
 
-Your journey begins in the [Participants Guide](./participants-guide.md).
+Your journey begins in the 
+ - [Participants Guide - Advanced users](./participants-guide.md).  
+ - s[Participants Guide - Biginners](./docs/01-rest-api-solution.md)
 
 * Follow the steps sequentially.
 * Use the files in the root directory to build your project.
 * Run the scripts in `/tests` to check your progress.
+
+
+### For Organizers
+
+ Please start by reading the [Organizers Guide](./solutions/organizers-guide.md). It contains:
+
+* Environment setup and prerequisites.
+* The workshop timeline and teaching milestones.
+* Tips for troubleshooting common student errors.
 
 ---
 
