@@ -18,11 +18,11 @@ The goal of this tutorial is to provide hands-on experience in:
 
 ## Repository Structure
 ```text
-|- organizers-guide.md: Instructions for mentors on how to run the session.
 |- participants-guide.md: The manual for learners.
 |- docs/: Supplemental documentation and design diagrams.
 |- solution/: The reference implementation (See Spoiler Policy below).
-|- tests: Automated tests to verify your API.
+|- skeleton/: The skeleton of basic solution for solving the tutorial
+|- unittest_app: Automated tests to verify your API.
 ```
 ---
 
@@ -33,21 +33,14 @@ Depending on your role, please follow the relevant guide:
 ### For Participants
 
 Your journey begins in the 
- - [Participants Guide - Advanced users](./participants-guide.md).  
- - [Participants Guide - Beginners](./solutions/01-rest-api-solution.md)
+ - [Participants Guide - Beginners](./participants-guide.md).  
+ - [Participants Guide - Advanced users](./solutions/01-rest-api-solution.md)
 
 * Follow the steps sequentially.
 * Use the files in the root directory to build your project.
-* Run the scripts in `/tests` to check your progress.
+* Run the scripts in `/unittest_app` to check your progress.
 
 
-### For Organizers
-
- Please start by reading the [Organizers Guide](./solutions/organizers-guide.md). It contains:
-
-* Environment setup and prerequisites.
-* The workshop timeline and teaching milestones.
-* Tips for troubleshooting common student errors.
 
 ---
 

@@ -1,155 +1,92 @@
-# This guide provides a complete walkthrough and solution for the RESTful URL Shortener workshop.
+# Workshop: Architecting a RESTful URL Shortener
 
-# 1. Understanding the Problem & Architecture
-## The Problem
-A long URL (like a 200-character Amazon link) is difficult to share. URL Shortening solves this by mapping a `Short ID` to a `Long URL` in a database. When someone visits the short ID, we redirect them to the long one.
+Welcome! Today, you are moving beyond theoretical Web Services to build a functional **URL Shortener API**. By the end of this session, you will have a service that accepts long URLs, generates unique short IDs, and handles redirects.
 
-## The API Interface (Endpoints)
-We use different HTTP Methods to tell the server exactly what we want to do:
+---
 
-| HTTP method | Description |
-| ----------- | ----------  |
-| `POST` / (Create): | Used to send new data. Since we are creating a new mapping, POST is the standard.| 
-|  `GET` / (List): | Used to retrieve data without changing it. It returns all current mappings.| 
-| `GET` /:id (Redirect): | Used to "fetch" the long URL. We use a 301 Redirect so the browser automatically jumps to the destination.| 
-| `PUT` /:id (Update): | Used when you want to change where an existing ID points.| 
-| `DELETE` /:id (Remove): | Used to destroy a mapping.| 
+##  Extra Material
+* **Unit Testing Guide:** A guide on how to use unit tests.
+* **Data Source:** A `.csv` file where the tests will fetch data.
+* **Unit Tests:** The actual test scripts.
+* **Instructional PDF:** Read this carefully; it explains how unit tests work, what you can modify, and what is off-limits.
 
-## Error Handling
-We use Status Codes to tell the client if they messed up:
+---
 
-| Error code | Description |
-| ---------- | ----------  |
-| `400` Bad Request: | Used if the user sends a "fake" URL or missing |data.
-| `404` Not Found: | Used if the user tries to access/delete an ID that doesn't exist. |
+## 1. Prerequisites & Setup
 
-# 2. Flask 101: Setup & First Code
-## What is Flask?
-Flask is a "micro-framework" for Python. It handles the networking (listening for requests) so you can focus on the logic.
+Before we start, ensure your environment is ready.
+* **Language:** Python 3.8+
+* **Framework:** Flask (Micro-framework for Python)
+* **Testing Tool:** Postman or `curl`
+* **Starter Files:** Create a folder named `url_shortener` and a file named `app.py`.
 
-- Check Installation: Open your terminal and type:
+### Background Reading
+If you are new to these concepts, skim these quickly:
+* **REST Principles:** What is REST?
+* **HTTP Methods:** Understanding `GET`, `POST`, `PUT`, `DELETE`.
+* **Status Codes:** Know your `201` (Created), `301` (Redirect), and `400`/`404` (Errors).
 
-```bash
-python3 -m flask --version
-```
-If it says "command not found," run: pip install flask
+---
 
-The First Code (The Skeleton)
-Create app.py:
+## 2. The Specification
 
-Python
-```python
-from flask import Flask
-app = Flask(__name__)
+Your API must implement the following endpoints. Use an **in-memory Python dictionary** (e.g., `url_db = {}`) to store your mappings during this workshop.
 
-@app.route('/')
-def home():
-    return "Server is running!"
+| Path | Method | Purpose | Return Code |
+| :--- | :--- | :--- | :--- |
+| `/` | `GET` | List all shortened IDs | 200 OK |
+| `/` | `POST` | Create a new short ID for a URL | 201 Created |
+| `/:id` | `GET` | Redirect to the original URL | 301 Moved Permanently |
+| `/:id` | `PUT` | Update the URL for an existing ID | 200 OK |
+| `/:id` | `DELETE` | Remove a mapping | 204 No Content |
 
-if __name__ == '__main__':
-    app.run(debug=True)
+---
 
-```
-- Test: Run python3 app.py and visit `http://127.0.0.1:5000`. You should see
+## 3. Hands-on Challenges
 
-```text
- "Server is running!"
-```
+### Step 1: The Skeleton (15 mins)
+Create a basic Flask app that responds to `GET /`.
+* **Goal:** Verify your environment works.
+* **Reference:** Flask - Routing.
 
-# 3. Step-by-Step Implementation
-## Step 1: Data Storage & Hashing
-We need a place to store data and a way to make IDs.
-Code:
-```bash
-import hashlib
-from flask import Flask, request, jsonify, redirect
+`[!NOTE]` if for some reason you cannot perform this step move on the next step and use the provided scheleton
+[skeleton-STILL MISSING](./01-rest-api-skeleton.py)
+### Step 2: The "Shortener" Algorithm (30 mins)
+When a user `POST`s a URL to `/`, you need to give them a short ID (e.g., `/aB3`).
+* **The Problem:** How do you make IDs short but unique?
+* **Constraint:** Do not use random numbers (they collide) or simple 1, 2, 3 (they are predictable).
+* **Tip:** Research **Base62 Encoding** or use a portion of an **MD5/SHA hash**.
 
-app = Flask(__name__)
-url_db = {} # Our temporary database
 
-def generate_short_id(url):
-    # Create a unique 6-character hash of the URL
-    return hashlib.md5(url.encode()).hexdigest()[:6]
-```
-## Step 2: The POST & GET Endpoints
+### Step 3: Validation & Security (20 mins)
+Don't trust the user! Before saving a URL, you must ensure it is valid.
+* **Task:** Use a **Regex (Regular Expression)** to check if the input is a valid `http://` or `https://` link.
+* **Reference:** Python `re` Module.
+* **Fail Case:** If the URL is invalid, return `400 Bad Request`.
 
-Explanation: POST accepts a JSON URL, validates it, hashes it, and saves it. GET shows the list.
-Code:
-```python
-import re
+### Step 4: The Redirect (20 mins)
+When someone visits `/:id`, they shouldn't see text; their browser should "jump" to the destination.
+* **Task:** Use Flask's `redirect()` function and ensure you set the status code to `301`.
 
-def is_valid_url(url):
-    # Regex to check if it starts with http/https
-    return re.match(r'^https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', url)
+---
 
-@app.route('/', methods=['POST'])
-def create_short_url():
-    data = request.get_json()
-    long_url = data.get('url')
-    
-    if not long_url or not is_valid_url(long_url):
-        return jsonify({"error": "Invalid URL"}), 400
-        
-    short_id = generate_short_id(long_url)
-    url_db[short_id] = long_url
-    return jsonify({"short_id": short_id}), 201
+## 4. Testing Your Service
+Once your code is running, open **Postman** and try to "break" your service:
+1.  **Create:** Send a `POST` to `/` with JSON: `{"url": "https://www.google.com"}`.
+2.  **Verify:** Get the ID and try `GET /<your_id>` in your browser.
+3.  **Error Check:** Try to `DELETE` an ID that doesn't exist. Do you get a `404`?
+4.  **Update:** Use `PUT` to change where an existing ID points.
 
-@app.route('/', methods=['GET'])
-def list_urls():
-    return jsonify(url_db), 200
-```
+---
 
-- How to Test:
+## 5. Peer Review & Discussion
+Once finished, discuss with your neighbor:
+* **Scaling:** What happens to your dictionary if 1 million users create URLs?
+* **Persistence:** How would you change this code to use a Database (like PostgreSQL) instead of a Python dictionary?
 
-```bash
-curl -X POST http://127.0.0.1:5000/ -H "Content-Type: application/json" -d '{"url":"https://google.com"}'
-```
-## Step 3: The Redirect (GET /:id)
-Explanation: When someone visits the ID, look it up. If found, use 301 to send them away.
-Code:
-```python
-@app.route('/<short_id>', methods=['GET'])
-def do_redirect(short_id):
-    long_url = url_db.get(short_id)
-    if long_url:
-        return redirect(long_url, code=301)
-    return jsonify({"error": "Not Found"}), 404
-```
+---
 
-- How to Test: Paste `http://127.0.0.1:5000/YOUR_ID` into your browser.
-
-## Step 4: Update & Delete (PUT/DELETE)
-Explanation: PUT overwrites the destination. DELETE removes the entry entirely.
-
-Code:
-```python
-@app.route('/<short_id>', methods=['PUT'])
-def update_url(short_id):
-    if short_id not in url_db:
-        return jsonify({"error": "Not Found"}), 404
-    
-    new_url = request.get_json().get('url')
-    if not is_valid_url(new_url):
-        return jsonify({"error": "Invalid URL"}), 400
-        
-    url_db[short_id] = new_url
-    return jsonify({"message": "Updated"}), 200
-
-@app.route('/<short_id>', methods=['DELETE'])
-def delete_url(short_id):
-    if short_id in url_db:
-        del url_db[short_id]
-        return '', 204
-    return jsonify({"error": "Not Found"}), 404
-```
-- How to Test (Delete):
-
-```bash
-curl -X DELETE http://127.0.0.1:5000/YOUR_ID
-```
-
-# References
-
+## 6. References
 1. [Flask quickstart](https://flask.palletsprojects.com/en/stable/quickstart/)
 2. [Flask Cheat Sheet](https://realpython.com/flask-blueprint/)
 3. [Regular expresssion 101](https://regex101.com/)
