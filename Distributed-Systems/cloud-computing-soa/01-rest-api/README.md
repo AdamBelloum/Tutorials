@@ -34,7 +34,7 @@ Depending on your role, please follow the relevant guide:
 
 Your journey begins in the 
  - [Participants Guide - Advanced users](./participants-guide.md).  
- - s[Participants Guide - Biginners](./docs/01-rest-api-solution.md)
+ - [Participants Guide - Beginners](./solutions/01-rest-api-solution.md)
 
 * Follow the steps sequentially.
 * Use the files in the root directory to build your project.
