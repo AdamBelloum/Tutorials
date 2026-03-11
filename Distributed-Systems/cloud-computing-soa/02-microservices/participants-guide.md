@@ -233,4 +233,11 @@ These are design questions aligned with the workshop goals around organizing and
 | Avoid “JWT done-for-you” libraries | You must construct the token yourself via JSON → Base64 → signing |
 
 ---
-You now have a complete workshop plan aligned with the previous session specification: two microservices, JWT-based authentication, and user-owned URL mappings.
+### 9. References
+References:
+
+1. [What are microservices?:](https://microservices.io/)
+2. [Json Web Tokens (JWT):](https://jwt.io/introduction/)
+3. [A Practical Guide for JWT Authentication using Nodejs and Express](https://medium.com/swlh/a-practical-guide-for-jwt-authentication-using-nodejs-and-express-    d48369e7e6d4)
+4. [Introduction to microservices:](https://www.nginx.com/blog/introduction-to-microservices/)
+5. [An introduction to OAuth 2:](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
