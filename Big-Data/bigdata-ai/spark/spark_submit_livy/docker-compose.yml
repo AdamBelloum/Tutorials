@@ -1,0 +1,41 @@
+services:
+  spark-master:
+    image: apache/spark:3.5.8
+    # Add this line to start the Master process
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    networks:
+      - spark
+
+  spark-worker:
+    image: apache/spark:3.5.8
+    # Add this line to start the Worker process
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    networks:
+      - spark
+
+  spark-livy:
+    build: .
+    environment:
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - LIVY_SERVER_SESSION_FACTORY=process
+    ports:
+      - "8998:8998"
+    depends_on:
+      - spark-master
+      - spark-worker
+    networks:
+      - spark
+
+networks:
+  spark:
+    driver: bridge
