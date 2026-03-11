@@ -17,7 +17,7 @@ env/
 *.mp4
 *.pptx
 *.docx
-
+*.NO-COMMIT
 # --- OS Specific ---
 .DS_Store
 Thumbs.db
