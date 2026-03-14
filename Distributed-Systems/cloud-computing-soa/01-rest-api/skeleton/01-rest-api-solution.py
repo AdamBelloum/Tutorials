@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request, make_response
+import re
+import hashlib
 
 app = Flask(__name__)
 
@@ -10,6 +12,9 @@ def is_it_an_url(string):
         string.startswith("http://") or string.startswith("https://")
     )
 
+def generate_short_id(url):
+    # Create a unique 6-character hash of the URL
+    return hashlib.md5(url.encode()).hexdigest()[:6]
 
 @app.route("/", methods=["GET"])
 def read_root():
@@ -55,10 +60,9 @@ def create_root():
         return jsonify({"detail": "Content of body was empty"}), 400
 
     # Add the value from the request body to the shared dictionary with a numeric key
-    key = len(shared_dict) + 1
-    new_id = str(key) + "a"
-    shared_dict[new_id] = data.get("value")
-    return jsonify({"id": new_id}), 201
+    short_id = generate_short_id(data.get("value"))
+    shared_dict[short_id] = data.get("value")
+    return jsonify({"id": short_id}), 201
 
 
 @app.route("/<id>", methods=["PUT"])

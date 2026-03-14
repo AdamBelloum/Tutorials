@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import re
+import hashlib
 
 app = Flask(__name__)
 
@@ -25,6 +26,13 @@ def is_it_an_url(string):
     You may keep the validation simple for the tutorial,
     or make it stricter with regex.
     We suggest you start with regex solutions.
+    """
+    pass
+
+def generate_short_id(url):
+    """
+    TODO:
+    Generate a unique 6-character hash of the URL.
     """
     pass
 
@@ -168,7 +176,7 @@ def create_root():
     1. Read JSON body from the request
     2. Validate that the body is not empty
     3. Validate that the expected field exists
-    4. Optionally validate whether the URL is well formed
+    4. Validate whether the URL is well formed
     5. Generate a new short id
     6. Store the mapping in shared_dict
     7. Return the new id with status code 201
@@ -186,7 +194,7 @@ def create_root():
     Hints:
     - request.get_json(...) is useful here
     - a simple id strategy for this tutorial:
-        str(len(shared_dict) + 1) + "a"
+        using hashlib
 
     TODO:
     - Parse JSON request body
