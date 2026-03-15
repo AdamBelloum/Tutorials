@@ -14,7 +14,7 @@ By the end, you will have:
 ### Microservices vs. Monolith
 A microservice architecture splits backend functionality into **multiple simple services**, each with a defined role, instead of one monolithic service containing everything.
 
-### What a JWT Is (In This Workshop)
+### What a JWT Is
 A JWT is **information + a signature**:
 - The signature is created using a **private/secret key** known only to a particular entity (here: the authentication service).
 - When the token is presented later, that same entity can verify the signature and confirm it has approved the information before.
@@ -140,7 +140,7 @@ Modify the URL shortener so that:
 - Mappings are associated with specific users.
 - Only the owner can manage their mappings.
 
-#### Ownership and Authorization Rules (Workshop Interpretation)
+#### Ownership and Authorization Rules 
 | Action | Must Be Enforced |
 | --- | --- |
 | Create mapping (`POST /`) | The created mapping is owned by the authenticated user |
@@ -224,7 +224,7 @@ These are design questions aligned with the workshop goals around organizing and
 
 ---
 
-## 8. Integrity and Attribution (Workshop Reminder)
+## 8. Integrity and Attribution
 
 | Rule | What It Means |
 | --- | --- |
