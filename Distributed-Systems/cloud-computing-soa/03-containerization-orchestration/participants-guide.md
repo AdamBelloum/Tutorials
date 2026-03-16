@@ -162,12 +162,3 @@ Common errors relate to using the wrong network plugin or forgetting to apply it
 
 ---
 
-## Report requirements for Part 3.2
-Add to the same report document:
-- Experience report (max 1/2 page):
-  - describe your experience working with Kubernetes
-  - major challenges encountered
-- Answer (max 1/2 page):
-  - Based on observations only, deduce Kubernetes’ load balancing algorithm for your replicated service
-  - Provide examples that support your deductions
-- Bonus description (succinct)
