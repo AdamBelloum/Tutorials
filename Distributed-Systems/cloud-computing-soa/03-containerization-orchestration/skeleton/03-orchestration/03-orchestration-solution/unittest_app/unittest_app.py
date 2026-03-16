@@ -8,8 +8,8 @@ from urllib.parse import unquote
 
 class TestApi(unittest.TestCase):
     # modify these to your local server settings if needed
-    base_url = "http://127.0.0.1:5000"
-    auth_url = "http://127.0.0.1:5001"
+    base_url = "http://145.100.130.127:30080"
+    auth_url = "http://145.100.130.127:30081"
 
     @classmethod
     def populate_variables_from_csv_static(cls):

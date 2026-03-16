@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Note: VM names like student127/student128/student129 are examples for this workshop.
+# Replace hostnames/IPs as needed for your own environment.
+
 # Run on VM: student128 (145.100.130.128)
 sudo hostnamectl set-hostname student128
 cat <<'HOSTS' | sudo tee /etc/hosts >/dev/null

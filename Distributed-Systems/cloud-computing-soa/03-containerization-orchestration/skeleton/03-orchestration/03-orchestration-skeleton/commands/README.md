@@ -1,5 +1,7 @@
 # Assignment 3.2 Minimal Runbook
 
+Note: VM names such as `student127`, `student128`, and `student129` are examples used in this runbook. Replace them with your own VM names/IPs.
+
 ## 1) k8s YAML status
 
 Needed files:

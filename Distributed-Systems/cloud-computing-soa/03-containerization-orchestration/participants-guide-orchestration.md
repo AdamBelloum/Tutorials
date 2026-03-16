@@ -1,5 +1,7 @@
 # Workshop Tutorial 3.2: Orchestrating the Authentication Service and URL Shortener on Kubernetes
 
+Note: The VM names (`student127`, `student128`, `student129`) are examples used in this guide. Replace them with your own VM names/IPs in your environment.
+
 Welcome! In this workshop, you will adapt your Assignment 3.1 system to **Assignment 3.2** by deploying it to a 3-node Kubernetes cluster.
 
 By the end, you will have:
@@ -72,6 +74,141 @@ The API behavior remains largely the same; most complexity is in cluster setup, 
     ├── unittest_app.py
     └── read_from.csv
 ~~~
+
+---
+
+## 2.1 Step-by-Step Skeleton Implementation
+
+The `03-orchestration-skeleton` now uses intentional TODO gaps.  
+Use this checklist to fill files in a controlled order.
+
+### A. Service code and container files
+
+Start in:
+
+~~~text
+skeleton/03-orchestration/03-orchestration-skeleton/
+~~~
+
+Implement these files first:
+
+1. `auth_service/auth.py`
+- add absolute paths (`BASE_DIR`, `PRIVATE_KEY_FILE`, `PUBLIC_KEY_FILE`, `DATA_FILE`)
+- implement persistence helpers:
+  - `ensure_parent_dir(path)`
+  - `load_users()`
+  - `save_users()`
+- ensure write endpoints persist data (`POST /users`, `PUT /users`)
+- startup block should run:
+  - `load_users()`
+  - `ensure_keys_exist()`
+  - `app.run(host="0.0.0.0", port=5001, debug=False)`
+
+2. `shortener_service/shortener.py`
+- add absolute paths (`BASE_DIR`, `PUBLIC_KEY_FILE`, `DATA_FILE`)
+- implement persistence helpers:
+  - `ensure_parent_dir(path)`
+  - `load_urls()`
+  - `save_urls()`
+- call `load_urls()` before route logic that reads/writes shared state
+- call `save_urls()` after mutating operations:
+  - `POST /`
+  - `PUT /<id>`
+  - `DELETE /<id>`
+  - `DELETE /`
+- startup block should run:
+  - `load_urls()`
+  - `app.run(host="0.0.0.0", port=5000, debug=False)`
+
+3. `auth_service/requirements.txt` and `shortener_service/requirements.txt`
+- include:
+  - `flask`
+  - `cryptography`
+
+4. `auth_service/Dockerfile` and `shortener_service/Dockerfile`
+- base image: `python:3.11-slim`
+- `WORKDIR /app`
+- install dependencies from `requirements.txt`
+- copy app file + `keys/` + `data/`
+- expose ports (`5001` for auth, `5000` for shortener)
+- run correct entrypoints (`python auth.py`, `python shortener.py`)
+
+5. `docker-compose.yml` (local parity check before k8s)
+- define `auth` and `shortener` services
+- map ports:
+  - `5001:5001`
+  - `5000:5000`
+- keep persistent data volumes mounted to `/app/data`
+- mount keys to `/app/keys`
+
+### B. Kubernetes manifest files (`k8s/`)
+
+Fill these YAML files in this order:
+
+1. `namespace.yaml`
+- create namespace `websvc`
+
+2. `shared-pv.yaml`
+- PV name: `websvc-shared-pv`
+- RWX + 1Gi + `Retain`
+- NFS:
+  - server `145.100.130.127`
+  - path `/srv/nfs/websvc`
+
+3. `shared-pvc.yaml`
+- PVC name: `websvc-shared-pvc`
+- namespace `websvc`
+- bind to `websvc-shared-pv`
+- request `1Gi`, access mode `ReadWriteMany`
+
+4. `auth-secret.yaml`
+- either:
+  - generate secret from key files using `kubectl create secret ... --from-file ...`
+  - or fill base64 fields manually
+- expected secret name: `auth-keys`
+
+5. `shortener-configmap.yaml`
+- create ConfigMap `shortener-public-key`
+- data key must be `public_key.pem`
+- content must match auth service public key
+
+6. `auth-deployment.yaml`
+- deployment `auth`, namespace `websvc`, replicas `1`
+- image: `YOUR_DOCKERHUB_USERNAME/auth-service:3.2`
+- mount:
+  - PVC to `/app/data`
+  - secret `auth-keys` to `/app/keys` (readOnly)
+- container port `5001`
+
+7. `auth-service.yaml`
+- NodePort service `auth`
+- selector `app: auth`
+- service port/targetPort `5001`
+- nodePort `30081`
+
+8. `shortener-deployment.yaml`
+- deployment `shortener`, namespace `websvc`, replicas `3`
+- image: `YOUR_DOCKERHUB_USERNAME/shortener-service:3.2`
+- mount:
+  - same PVC to `/app/data`
+  - ConfigMap `shortener-public-key` to `/app/keys` (readOnly)
+- container port `5000`
+
+9. `shortener-service.yaml`
+- NodePort service `shortener`
+- selector `app: shortener`
+- service port/targetPort `5000`
+- nodePort `30080`
+
+### C. Suggested fill-and-verify workflow
+
+Use this quick loop:
+
+1. fill one file
+2. run syntax/format check (Python/YAML)
+3. move to next file
+4. after all files are done, deploy in Section 9 order
+5. run smoke + unittest checks in Sections 12 and 13
 
 ---
 
