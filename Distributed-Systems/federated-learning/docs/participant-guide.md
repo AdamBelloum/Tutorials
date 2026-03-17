@@ -124,7 +124,7 @@ Now we collaborate.
  
 ####  Step 1: Enter Server Address
 Replace:
-SERVER_IP = "0.0.0.0:8080"
+SERVER_ADDRESS = "<INSTRUCTOR_SERVER_IP>:8080"
 With instructor-provided IP.
  
 #### Step 2: Start the Client
@@ -328,23 +328,23 @@ pip install --upgrade pip
 pip install flwr numpy pandas scikit-learn pillow
 ```
 
-2. Verify `data/train.csv` contains at least a `label` column (the provided `client.py` uses `df['label']`).
+2. Verify your local CSV contains at least a `label` column.
 
-3. Set your `GROUP_ID` and server address in `client.py` if needed (top of the file):
-
-```python
-# in client.py
-GROUP_ID = "Group_A"  # change to Group_B or Group_C as assigned
-SERVER_ADDRESS = "IP_PROVIDED_BY_INSTRUCTOR:8080"
-```
-
-4. Run the client to join the federation (instructed server must be running):
+3. Set runtime variables (recommended, no file edit needed):
 
 ```bash
-python client.py
+export FLOWER_SERVER_ADDRESS=<INSTRUCTOR_SERVER_IP>:8080
+export GROUP_ID=Group_A   # change to Group_B or Group_C as assigned
+export DATA_PATH=data/Group_A/train.csv
 ```
 
-If the instructor gave you a `group_x.zip`, extract it so `client.py` sees `data/train.csv` in the working folder.
+4. Run the client to join the federation (server must already be running):
+
+```bash
+python client/client.py
+```
+
+If the instructor gave you a `group_x.zip`, extract it and point `DATA_PATH` to that CSV.
 
 ### Notes on reproducibility and evaluation
 
@@ -507,7 +507,7 @@ class FLClient(fl.client.NumPyClient):
 # STEP 5: Connect to Server
 # ---------------------------------------
 
-SERVER_ADDRESS = "IP_PROVIDED_BY_INSTRUCTOR:8080"
+SERVER_ADDRESS = "<INSTRUCTOR_SERVER_IP>:8080"
 
 fl.client.start_numpy_client(
     server_address=SERVER_ADDRESS,
@@ -538,7 +538,7 @@ python server/server.py
 ```
 Then participants run:
 ```bash 
-python client/client_{X}.py
+python client/client.py # set GROUP_ID and FLOWER_SERVER_ADDRESS first
 ``` 
 What Participants Should Observe
 During rounds:
@@ -566,3 +566,98 @@ We added:
 3.	Could gradients leak private information?
 4.	How would you secure this system further?
 
+
+## 11. Three-VM Deployment Playbook (1 Server + 2 Clients)
+
+This section explains exactly how to run the tutorial on **3 VMs**.
+
+### 11.1 VM Role Assignment (Example)
+Use this mapping:
+
+| VM User | IP | Password | Role |
+| --- | --- | --- | --- |
+| student123 | 145.100.130.123 | ieth3eiLoop6ceew | Flower Server |
+| student124 | 145.100.130.124 | aixeiGhieke1safu | Client A |
+| student125 | 145.100.130.125 | waicaiGhee6Vaiqu | Client B |
+
+### 11.2 SSH Login
+From your local machine, open three terminals:
+
+```bash
+ssh student123@145.100.130.123
+ssh student124@145.100.130.124
+ssh student125@145.100.130.125
+```
+
+### 11.3 Prepare Code on All Three VMs
+On each VM:
+
+```bash
+cd ~/Tutorials/Distributed-Systems/federated-learning
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 11.4 Start Server on `student123`
+On VM `145.100.130.123`:
+
+```bash
+cd ~/Tutorials/Distributed-Systems/federated-learning
+source .venv/bin/activate
+export FLOWER_SERVER_HOST=0.0.0.0
+export FLOWER_SERVER_PORT=8080
+export MIN_FIT_CLIENTS=2
+export MIN_AVAILABLE_CLIENTS=2
+export MIN_EVALUATE_CLIENTS=2
+export NUM_ROUNDS=5
+python server/server.py
+```
+
+### 11.5 Start Client A on `student124`
+On VM `145.100.130.124`:
+
+```bash
+cd ~/Tutorials/Distributed-Systems/federated-learning
+source .venv/bin/activate
+export FLOWER_SERVER_ADDRESS=145.100.130.123:8080
+export GROUP_ID=Group_A
+export DATA_PATH=data/Group_A/train.csv
+python client/client.py
+```
+
+### 11.6 Start Client B on `student125`
+On VM `145.100.130.125`:
+
+```bash
+cd ~/Tutorials/Distributed-Systems/federated-learning
+source .venv/bin/activate
+export FLOWER_SERVER_ADDRESS=145.100.130.123:8080
+export GROUP_ID=Group_B
+export DATA_PATH=data/Group_B/train.csv
+python client/client.py
+```
+
+### 11.7 Expected Logs
+- Server terminal shows clients connected and rounds progressing.
+- Each client terminal prints training completion for its group.
+
+### 11.8 Minimum Network Checks
+On server VM:
+
+```bash
+sudo ufw allow 8080/tcp
+sudo ufw status
+ss -ltnp | grep 8080
+```
+
+On each client VM:
+
+```bash
+nc -vz 145.100.130.123 8080
+```
+
+### 11.9 Notes
+- With this setup, `Group_C` is optional and can be used later as a third client.
+- In this FL workflow, raw data stays on each client VM; only model parameters are exchanged.
+- Do not keep plaintext passwords in shared/public repositories after the workshop.
