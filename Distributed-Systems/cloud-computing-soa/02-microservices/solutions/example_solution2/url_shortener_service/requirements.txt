@@ -1,9 +1,0 @@
-fastapi[standard]
-requests
-pydantic
-sqlalchemy
-redis
-fastapi-limiter
-aiosqlite
-greenlet
-requests
