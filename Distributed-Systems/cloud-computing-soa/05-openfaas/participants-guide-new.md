@@ -26,8 +26,13 @@ curl -sLS https://get.arkade.dev | sudo sh
 
 # Install OpenFaaS CLI and the Gateway
 arkade get faas-cli
-arkade install openfaas --operator
+arkade install openfaas-ce
 ```
+[!NOTE] Add $HOME/.arkade/bin/ to your PATH or move fass-cli to /usr/local/bin/ 
+```bash
+sudo cp $HOME/.arkade/bin/faas-cli /usr/local/bin/
+```
+
 ## 3. Access the Gateway
 OpenFaaS is secure by default. You need to retrieve the admin password and "port-forward" the service to access it on your local machine.
 
@@ -49,9 +54,18 @@ OpenFaaS uses templates to wrap your code. We will use the modern Node20 HTTP te
 
 ```Bash
 # Download the modern Node.js template
-faas-cli template store pull node20-http
+faas-cli template store pull node20
 # Create a new function named 'hello-student'
-faas-cli new hello-student --lang node20-http --prefix <YOUR_DOCKER_HUB_USER>
+faas-cli new hello-student --lang node20 --prefix <YOUR_DOCKER_HUB_USER>
+```
+[!NOTE] 
+```text
+|-build/
+|-hello-student/
+|--- handler.js    
+|--- package.json
+|-stack.yaml
+|-template/
 ```
 5. Write the Logic
 Open the generated hello-student/handler.js. Notice the event object, which contains the HTTP request data.
@@ -75,9 +89,17 @@ module.exports = async (event, context) => {
 ## 6. Build, Push, and Deploy
 This command automates three steps: building the Docker image, pushing it to Docker Hub, and telling the Kubernetes cluster to run it.
 
+[!NOTE] Crucial: Because you are using OpenFaaS Community Edition, you must push images to a public registry. Local-only images will trigger a 400 error.
 ```Bash
 # Ensure you are logged into Docker (docker login)
-faas-cli up -f hello-student.yml
+# 1. Login to Docker Hub
+docker login
+
+# 2. Build and Push (Ensures image is public and loaded for the Gateway)
+docker buildx build --push -t <USER>/hello-student:latest -f ./build/hello-student/Dockerfile ./build/hello-student
+
+# 3. Deploy
+faas-cli deploy -f stack.yaml
 ```
 # Phase 3: Testing and Monitoring
 7. Invoke the Function
@@ -100,34 +122,34 @@ Open your browser and navigate to http://localhost:8080. Log in with the usernam
 In this section, you learn how to make their functions "talk" to the outside world.
 
 ## 1. Function Setup
-We will create a function that fetches weather data. We'll use the node20-http template because it includes the modern fetch API natively.
+We will create a function that fetches weather data. We'll use the node20 template because it includes the modern fetch API natively.
 
 ```Bash
-faas-cli new weather-worker --lang node20-http --prefix <YOUR_DOCKER_USER>
+faas-cli new weather-worker --lang node20 --prefix <YOUR_DOCKER_USER>
 ```
 2. Adding External Logic
 Open weather-worker/handler.js. We will update it to call an external API.
 
-Teacher Note: Students will need a free API key from OpenWeatherMap.
+[!NOTE]: you will need a free API key from OpenWeatherMap.
 
 ```JavaScript
 "use strict"
 
 module.exports = async (event, context) => {
-    const city = event.query.city || "London";
-    const apiKey = "YOUR_API_KEY_HERE"; 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const city = event.query.city || "Amsterdam";
+    const url = `https://wttr.in/${city}?format=j1`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
+        const current = data.current_condition[0];
 
         return context.status(200).succeed({
-            message: `The weather in ${city} is ${data.main.temp}°C`,
-            details: data.weather[0].description
+            message: `Weather in ${city}: ${current.temp_C}°C`,
+            condition: current.weatherDesc[0].value
         });
     } catch (err) {
-        return context.status(500).succeed({ error: "Failed to fetch weather" });
+        return context.status(500).fail({ error: err.message });
     }
 }
 ```
@@ -138,7 +160,9 @@ module.exports = async (event, context) => {
 faas-cli up -f weather-worker.yml
 ```
 # Test it via browser or curl
+```bash
 curl "http://127.0.0.1:8080/function/weather-worker?city=Paris"
+```
 
 # Phase 5: Detailed Monitoring (Prometheus & Grafana)
 OpenFaaS tracks every execution. We will now deploy a professional monitoring stack to visualize this data.
@@ -178,13 +202,13 @@ while true; do curl -s http://127.0.0.1:8080/function/weather-worker?city=Berlin
 ```
   
 # Key Takeaways
-- Serverless != No Servers: OpenFaaS abstracts the server management (Kubernetes) away so you can focus strictly on the handler.js logic.
-- The Watchdog: Every function runs with a "Watchdog" inside the container. It acts as a tiny sidecar that turns HTTP requests into standard input/output for your code.
-- Operator Pattern: By using the --operator flag, your functions are managed as Custom Resources in Kubernetes, making them more stable and scalable.
-- Event-Driven Ready: OpenFaaS isn't just for HTTP; it uses NATS JetStream under the hood to handle asynchronous requests and queues.
-- Asynchronous External Calls: Modern Node.js templates allow async/await, making it easy to call external APIs without blocking the function.
-- Observability: OpenFaaS doesn't just run code; it provides Gold Standard metrics (Invocations, Errors, Duration) out of the box via Prometheus.
-- Infrastructure as Code: Notice that we deployed a full monitoring suite with just a few commands—this is the power of the Kubernetes ecosystem.#
+- **Serverless** != No Servers: OpenFaaS abstracts the server management (Kubernetes) away so you can focus strictly on the handler.js logic.
+- **The Watchdog**: Every function runs with a "Watchdog" inside the container. It acts as a tiny sidecar that turns HTTP requests into standard input/output for your code.
+- **Operator Pattern**: By using the --operator flag, your functions are managed as Custom Resources in Kubernetes, making them more stable and scalable.
+- **Event-Driven Ready**: OpenFaaS isn't just for HTTP; it uses NATS JetStream under the hood to handle asynchronous requests and queues.
+- **Asynchronous External** Calls: Modern Node.js templates allow async/await, making it easy to call external APIs without blocking the function.
+- **Observability**: OpenFaaS doesn't just run code; it provides Gold Standard metrics (Invocations, Errors, Duration) out of the box via Prometheus.
+- **Infrastructure as Code**: Notice that we deployed a full monitoring suite with just a few commands—this is the power of the Kubernetes ecosystem.#
 
 # installing pre-requisites
 
