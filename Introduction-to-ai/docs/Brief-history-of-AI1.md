@@ -74,12 +74,6 @@ Foundational ideas:
 
 ---
 
-- AI from (40s–00s)
-
-![bg 100%](./images/Picture28.png)
-
----
-
 # Mapping the AI Landscape
 
 Nested vocabulary (conceptual diagram):
@@ -93,39 +87,93 @@ Nested vocabulary (conceptual diagram):
       - ⮡ **Generative AI**
         - GANs, Transformers, Large Language Models (LLMs)
 
-Not all AI is ML; not all ML is deep learning; not all deep learning is generative.
+> Not all AI is ML; not all ML is deep learning; not all deep learning is generative.
+
+---
+# Nested vocabulary (conceptual diagram)
+
+![w:1100 center](./images/Picture33.png)
 
 ---
 
-# Inside the Black Box: Deep Learning
+# General Purpose Solver (GPS)
 
-Deep learning models:
+- GPS by Herbert Simon, J.C. Shaw, and Allen Newell (1957)
+  - a computer program created intended to work as a universal problem solver machine
+  - employs heuristic search to explore possible solutions
 
-- Stack many **hidden layers** to learn complex features from raw data.
+> ability to reason and make decisions based on logical inference and problem-solving strategies
 
-Two passes:
 
-- **Forward pass**
-  - Data flows through layers to produce an output
-  - Compute loss (e.g. MSE, cross‑entropy) vs. ground truth
-- **Backward pass (backpropagation)**
-  - Use the **chain rule** to compute gradients layer by layer
-  - Update weights to reduce loss
+---
+
+# Expert Systems: Eliza - short video
+
+- <iframe width="990" height="557" src="https://www.youtube.com/embed/8jGpkdPO-1Y" title="The First Ever AI Chatbot: ELIZA (1966)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+- <iframe width="870" height="580" src="https://www.youtube.com/embed/8zrwN8XTllw" title="ELIZA | Artificial Intelligence The Old-School Way | HowTo Install" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+# Expert Systems: SHRDLU - short video
+
+<iframe width="773" height="580" src="https://www.youtube.com/embed/bo4RvYJYOzI" title="SHRDLU in Action" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+#  The Perceptron (controversy) - Minsky and Papert (1969)
+
+
+- A single perceptron is unable to compute the XOR function, as it’s not linearly separable
+
+> Minsky and Papert.  “Perceptron: An Introduction to Computational Geometry”, book 1969
+ 
+![bg right:40% 70%](./images/Picture34.png)
 
 ---
 
 # Expert Systems: Symbolic AI at Scale
 
-- **Dendral (1960s)**  
-  - Helped chemists identify molecules from mass spectra.
-- **MYCIN (1970s)**  
-  - Diagnosed bacterial infections, recommended antibiotics.
-- **XCON (late 1970s–1980s)**  
-  - Configured VAX computers at DEC; saved tens of millions of dollars.
-- **Deep Blue (1990s)**  
-  - Defeated world chess champion Garry Kasparov using search + rule‑based evaluation.
+- **Dendral (1960s)**  : Helped chemists identify molecules from mass spectra.
+- **MYCIN (1970s)**  : Diagnosed bacterial infections, recommended antibiotics.
+- **XCON (late 1970s–1980s)**  : Configured VAX computers at DEC; saved tens of millions of dollars.
+- **Deep Blue (1990s)**  : Defeated world chess champion Garry Kasparov using search + rule‑based evaluation.
 
 > These systems showed symbolic AI **can work very well** in **narrow, structured domains**.
+
+---
+# The Multi-layer Perceptron
+
+Training before MLP was challenging and less systematic
+- Perceptron Learning Rule
+- Heuristic Methods
+- Optimization Techniques
+- Evolutionary Algorithms
+
+Paul Werbos in 1974 laid the foundation
+>for training neural networks with **multiple layers of neurons**, which became known as  the backpropagation algorithm
+
+---
+
+# Birth of  Deep Learning
+
+Deep learning models:
+
+- Stack many **hidden layers** to learn complex features from raw data.
+
+- **Forward pass**
+  - Data flows through layers to produce an output
+  - Compute loss vs. ground truth
+- **Backward pass (backpropagation)**
+  - **chain rule** to compute gradients layer by layer
+  - Update weights to reduce loss
+
+![bg right:30% 70%](./images/Picture35.png)
+
+---
+# Evolution of Deep learning
+
+![w:1100 center](./images/Picture28.png)
 
 ---
 
@@ -144,12 +192,17 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 ---
 
-# LeNet‑5 and MNIST (1998)
+# Recurrent Neural Network (1997)
 
-**MNIST dataset**
+- A recurrent neural network used in speech recognition and NLP. 
+-  RNNs recognize data's sequential characteristics and use patterns to predict the next likely scenario
 
-- Handwritten digits 0–9
-- Became a standard benchmark for image recognition
+> Solves the problem - vanishing and exploding gradients
+![bg right:30% 70%](./images/Picture36.png)
+
+---
+
+# Convolution Neural Network (1998)
 
 **LeNet‑5 (Yann LeCun)**
 
@@ -158,7 +211,18 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
   - Shared weights (convolutions)
   - Subsampling / pooling
 - Achieved ≈ **99% accuracy** on digit recognition
-<!-- Proof‑of‑concept that deep CNNs can learn visual hierarchies.  -->
+
+
+![bg right:40% 90%](./images/Picture13.png)
+
+---
+
+# CMNIST dataset (1998)
+
+- Handwritten digits 0–9
+- Became a standard benchmark for image recognition
+
+![bg right:60% 100%](./images/Picture37.png)
 
 ---
 
@@ -174,6 +238,8 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 > These datasets tested whether models could **generalize** to realistic, high‑variation images.
 
+![bg right:40% 60%](./images/Picture12.png)
+
 ---
 
 # ImageNet: The Deep Learning Breakthrough
@@ -187,8 +253,9 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 - **AlexNet** (Krizhevsky, Sutskever, Hinton):
   - Deep CNN, trained on GPUs
-  - Beat traditional methods by a **huge margin**
 - Sparked the modern **deep learning boom** in vision and beyond.
+
+![bg right:40% 80%](./images/Picture38.png)
 
 ---
 
@@ -197,15 +264,12 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 **Deep Q‑Networks (DQN) – 2013**
 
 - Mnih et al. (DeepMind)
-- Combined:
-  - Deep neural nets + Q‑learning
-- Learned Atari games directly from **pixels** via trial and error.
+- Combined: Deep neural nets + Q‑learning Learned Atari games directly from **pixels** via trial and error.
 
 **AlphaGo – 2016**
 
 - DeepMind’s system defeated **Lee Sedol**, Go world champion.
-- Combined:
-  - Deep learning, Monte‑Carlo tree search, reinforcement learning
+- Combined: Deep learning, Monte‑Carlo tree search, reinforcement learning
 - Showed deep RL can master extremely complex strategy spaces.
 
 ---

@@ -38,6 +38,10 @@ make
 Environment Setup
 If you are working on a cluster using a workload manager, sample Slurm scripts (.job or .sh) are included in the exercise folders.
 
+### 4. Introduction to AI
+- trace the evolution of AI: from the early logic-based paradigms of the 1950s to modern data-driven learning engines
+- This repository contains the lecture slides, thematic breakdowns, and hands-on programming materials
+
 #### License & Usage
 - This content is developed for educational purposes.
 - Code: Licensed under the MIT License.
