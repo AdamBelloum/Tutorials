@@ -92,13 +92,42 @@ Nested vocabulary (conceptual diagram):
 ---
 # Nested vocabulary (conceptual diagram)
 
-![w:1100 center](./images/Picture33.png)
+<!-- ![w:1100 center](./images/Picture33.png) -->
+
+![h:450 center](./images/Picture33.png)
+
 
 ---
 
-# General Purpose Solver (GPS)
+# The McCulloch-Pitts Neuron (1943)
 
-- GPS by Herbert Simon, J.C. Shaw, and Allen Newell (1957)
+- Inspired by neuroscience: 
+The brain is composed of neurons interacting via synapses, transmitting either excitatory or inhibitory signals
+-  The neuron can be thought of as a binary classifier 
+using binary input
+- A neuron 
+   - fires if: sum of inputs reaches threshold 
+   - unless inhibited by other inputs
+
+![bg right:40% 70%](./images/Picture39.png)
+---
+
+---
+
+# The Perceptron (1957)
+
+- Frank Rosenblatt's original work on the perceptron in the late 1950s laid the groundwork for subsequent research in neural network theory and applications. 
+ 
+ > The perceptron model demonstrated the potential of neural networks for pattern recognition tasks
+
+
+![bg right:40% 70%](./images/Picture40.png)
+
+---
+
+# General Purpose Solver (GPS) (1957)
+
+- GPS by Herbert Simon, J.C. Shaw, and Allen Newell 
   - a computer program created intended to work as a universal problem solver machine
   - employs heuristic search to explore possible solutions
 
@@ -107,18 +136,26 @@ Nested vocabulary (conceptual diagram):
 
 ---
 
-# Expert Systems: Eliza - short video
-
-- <iframe width="990" height="557" src="https://www.youtube.com/embed/8jGpkdPO-1Y" title="The First Ever AI Chatbot: ELIZA (1966)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+# Expert Systems: Eliza (1966)  - short video
 
 
-- <iframe width="870" height="580" src="https://www.youtube.com/embed/8zrwN8XTllw" title="ELIZA | Artificial Intelligence The Old-School Way | HowTo Install" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![The First Ever AI Chatbot: ELIZA -1966]()](https://www.youtube.com/embed/8jGpkdPO-1Y)
+
+[![ELIZA | Artificial Intelligence The Old-School Way | HowTo Install]()](https://www.youtube.com/embed/8zrwN8XTllw)
+
+---
+# Expert Systems: Eliza (1966)  - short video
+
+
+<video controls src="[https://www.youtube.com/embed/8jGpkdPO-1Y]" width="800" height="450"></video>
 
 ---
 
-# Expert Systems: SHRDLU - short video
+# Expert Systems: SHRDLU (1968) - short video
 
-<iframe width="773" height="580" src="https://www.youtube.com/embed/bo4RvYJYOzI" title="SHRDLU in Action" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<video controls src="[https://www.youtube.com/embed/bo4RvYJYOzI]" width="800" height="450"></video>
+
 
 ---
 #  The Perceptron (controversy) - Minsky and Papert (1969)
@@ -173,7 +210,10 @@ Deep learning models:
 ---
 # Evolution of Deep learning
 
-![w:1100 center](./images/Picture28.png)
+
+<!--- ![bg fit](./images/Picture28.png) -->
+
+![h:450 center](./images/Picture28.png)
 
 ---
 
@@ -214,6 +254,12 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 
 ![bg right:40% 90%](./images/Picture13.png)
+
+---
+# CNN, RNN, LSTM
+<!--- ![w:1100 center](./images/Picture41.png) -->
+
+![h:450 center](./images/Picture41.png)
 
 ---
 
@@ -274,6 +320,15 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 ---
 
+- MLPs or CNNs used for classification—the architecture was a direct, continuous mapping from input to output.
+   - The Structure: Input $\rightarrow$ Hidden Layer 1 $\rightarrow$ Hidden Layer 2 $\rightarrow$ Output.
+
+The Goal: 
+> Every layer's job was simply to distort, rotate, and scale the data space to make the final classes linearly separable.
+
+limits:
+> good classification but not for sequence-to-sequence tasks (like translating) or unsupervised representation learning
+---
 # Encoder–Decoder Architectures
 
 Why encoder–decoder?
@@ -285,10 +340,14 @@ Why encoder–decoder?
   - Expands that representation into a new output format:
     - Pixel‑wise segmentation map / Translated sentence / Synthesized audio
 
+---
+
 Example:
 
 - **U‑Net** (2015): Encoder–decoder CNN for medical image segmentation  
   - Produces **pixel‑level** output from image inputs.
+
+![bg right:40% 80%](./images/Picture42.png)
 
 ---
 
@@ -339,20 +398,21 @@ Modern generative models can produce:
 
 Two‑network competitive setup:
 
-- **Generator**
-  - Tries to create fake samples that look real.
-- **Discriminator**
-  - Tries to distinguish **real** vs **fake** samples.
+- **Generator**: Tries to create fake samples that look real.
+- **Discriminator**:  Tries to distinguish **real** vs **fake** samples.
 
+![bg right:40% 80%](./images/Picture43.png)
+
+---
+
+# Generative Adversarial Networks (GANs)
 Training loop:
 
 1. Generator produces synthetic data.
 2. Discriminator scores it.
 3. Both networks update based on each other’s performance.
 
-<!-- Result:
-- Increasingly **realistic** outputs (faces, artworks, etc.).
--->
+![bg right:40% 80%](./images/Picture43.png)
 
 ---
 
@@ -363,6 +423,11 @@ Training loop:
 - Neural networks trained on large text corpora.
 - Goal: model the **probability** of word sequences.
 
+
+![bg right:50% 100%](./images/Picture21.png)
+
+---
+
 **Embeddings**
 
 - Map words/tokens → dense numeric vectors.
@@ -371,6 +436,8 @@ Training loop:
   - “Infant” near “baby”, “child”
 
 > Embeddings turn discrete language into **continuous geometry**.
+
+![bg right:50% 100%](./images/Picture22.png)
 
 ---
 
@@ -387,6 +454,7 @@ Early embeddings gave **one fixed vector per word**:
 Limitation:
 
 > Model loses **context‑specific meaning** → confusion and errors.
+![bg right:50% 100%](./images/Picture15.png)
 
 ---
 
@@ -399,10 +467,12 @@ Limitation:
   - **Self‑attention**: each token can look at **all other tokens**.
   - Learn which parts of the input are most relevant for each position.
 
-Benefits:
+<!-- Benefits:
 
 > Handles long‑range dependencies.
 > Captures context so “mean” next to “absolute error” is clearly mathematical.
+-->
+![bg right:40% 100%](./images/Picture16.png)
 
 ---
 
@@ -423,6 +493,7 @@ Example B (river):
 - Attention links “bank” to “river” → geographic feature.
 
 The same word gets **different internal representations** depending on context.
+
 
 ---
 
