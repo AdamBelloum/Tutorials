@@ -1,11 +1,12 @@
 ---
 marp: true
 theme: default
-style: |
+<!-- style: |
   section {
     background-color: #202020;
     color: #f4f7f4;
   }
+-->
 markdown.marp.enableHtml": true
 paginate: true
 header: "Module: Brief History of AI"
@@ -147,15 +148,14 @@ using binary input
 # Expert Systems: Eliza (1966)  - short video
 
 
-<video controls src="[https://www.youtube.com/embed/8jGpkdPO-1Y]" width="800" height="450"></video>
+
+[![Eliza Video Preview  width:800px height:450px](https://img.youtube.com/vi/8jGpkdPO-1Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=8jGpkdPO-1Y)
 
 ---
 
 # Expert Systems: SHRDLU (1968) - short video
 
-
-<video controls src="[https://www.youtube.com/embed/bo4RvYJYOzI]" width="800" height="450"></video>
-
+[![SHRDLU Video Preview width:800px height:450px](https://img.youtube.com/vi/bo4RvYJYOzI/hqdefault.jpg)](https://www.youtube.com/watch?v=bo4RvYJYOzI)
 
 ---
 #  The Perceptron (controversy) - Minsky and Papert (1969)
@@ -167,7 +167,9 @@ using binary input
  
 ![bg right:40% 70%](./images/Picture34.png)
 
+
 ---
+
 
 # Expert Systems: Symbolic AI at Scale
 
@@ -189,6 +191,15 @@ Training before MLP was challenging and less systematic
 
 Paul Werbos in 1974 laid the foundation
 >for training neural networks with **multiple layers of neurons**, which became known as  the backpropagation algorithm
+
+---
+# NetTalk by Sejnowski and Rosenberg 1986
+
+The NetTalk system consisted of
+ 
+- a three-layer neural network 
+- trained on a dataset of English words and their - corresponding phonetic representations
+- NetTalk learned to map input letters to output phonemes
 
 ---
 
@@ -217,6 +228,12 @@ Deep learning models:
 
 ---
 
+# The History of Artificial Intelligence [Documentary]
+
+[![Video Preview width:800px height:450px](https://img.youtube.com/vi/R3YFxF0n8n8/hqdefault.jpg)](https://www.youtube.com/watch?v=R3YFxF0n8n8)
+
+---
+
 # From Hand‑Crafted to Learned Features
 
 Evolution in **computer vision**:
@@ -232,16 +249,6 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 ---
 
-# Recurrent Neural Network (1997)
-
-- A recurrent neural network used in speech recognition and NLP. 
--  RNNs recognize data's sequential characteristics and use patterns to predict the next likely scenario
-
-> Solves the problem - vanishing and exploding gradients
-![bg right:30% 70%](./images/Picture36.png)
-
----
-
 # Convolution Neural Network (1998)
 
 **LeNet‑5 (Yann LeCun)**
@@ -254,6 +261,21 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 
 ![bg right:40% 90%](./images/Picture13.png)
+
+---
+# Convolution Neural Network (1998)
+
+[![Video Preview width:800px height:450px](https://img.youtube.com/vi/FwFduRA_L6Q/hqdefault.jpg)](https://www.youtube.com/watch?v=FwFduRA_L6Q)
+
+---
+
+# Recurrent Neural Network (1997)
+
+- A recurrent neural network used in speech recognition and NLP. 
+-  RNNs recognize data's sequential characteristics and use patterns to predict the next likely scenario
+
+> Solves the problem - vanishing and exploding gradients
+![bg right:45% 90%](./images/Picture36.png)
 
 ---
 # CNN, RNN, LSTM
@@ -284,7 +306,7 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 > These datasets tested whether models could **generalize** to realistic, high‑variation images.
 
-![bg right:40% 60%](./images/Picture12.png)
+![bg right:40% 80%](./images/Picture12.png)
 
 ---
 
@@ -305,6 +327,18 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 ---
 
+
+# Reinforcement Learning 
+
+In reinforcement learning problem are broken down into a continuous loop involving five main components:
+- Agent: The AI player or decision-maker (e.g., a self-driving car software, or a chess bot).
+- Environment: The world the agent interacts with (e.g., the city streets, or the chessboard).
+- State ($S$): The current situation or configuration of the environment.
+- Action ($A$): The moves or choices available to the agent.
+- Reward ($R$): The feedback from the environment telling the agent how well it did (can be positive or negative).
+
+---
+
 # Deep Reinforcement Learning Milestones
 
 **Deep Q‑Networks (DQN) – 2013**
@@ -320,14 +354,29 @@ CNNs shifted vision from **feature engineering** to **feature learning**.
 
 ---
 
+# Deep Reinforcement Learning - short video
+
+[![Video Preview width:800px height:450px](https://img.youtube.com/vi/XjsY8-P4WHM/hqdefault.jpg)](https://www.youtube.com/watch?v=XjsY8-P4WHM)
+
+---
+
+# Google DeepMind's Deep Q-learning playing Atari Breakout!
+
+
+[![Video Preview width:800px height:450px](https://img.youtube.com/vi/V1eYniJ0Rnk/hqdefault.jpg)](https://www.youtube.com/watch?v=V1eYniJ0Rnk)
+
+
+---
+# Beyond  classification
 - MLPs or CNNs used for classification—the architecture was a direct, continuous mapping from input to output.
    - The Structure: Input $\rightarrow$ Hidden Layer 1 $\rightarrow$ Hidden Layer 2 $\rightarrow$ Output.
 
-The Goal: 
-> Every layer's job was simply to distort, rotate, and scale the data space to make the final classes linearly separable.
+<!--- The Goal: 
+> Every layer's job was simply to distort, rotate, and scale the data space to make the final classes linearly separable.  -->
 
 limits:
-> good classification but not for sequence-to-sequence tasks (like translating) or unsupervised representation learning
+> good for classification but not for sequence-to-sequence tasks (like translating) or unsupervised representation learning
+
 ---
 # Encoder–Decoder Architectures
 
@@ -427,7 +476,7 @@ Training loop:
 ![bg right:50% 100%](./images/Picture21.png)
 
 ---
-
+# Language Models & Embeddings
 **Embeddings**
 
 - Map words/tokens → dense numeric vectors.
@@ -437,7 +486,7 @@ Training loop:
 
 > Embeddings turn discrete language into **continuous geometry**.
 
-![bg right:50% 100%](./images/Picture22.png)
+![bg right:50% 100% color:black](./images/Picture22.png)
 
 ---
 
@@ -549,6 +598,11 @@ Training phases:
 > This turns a raw LLM into a **useful assistant**.
 
 ---
+# From Base Model to Assistant
+
+![bg right:40% 100%](./images/Picture56.png)
+
+---
 
 # Timeline of LLM Capabilities
 
@@ -579,6 +633,8 @@ Example:
 > “A cinematic night‑time Tokyo street scene, neon lights, rainy reflections”  
 > → model generates multiple matching images.
 
+![bg right:40% 100%](./images/Picture48.png)
+
 ---
 
 # Generative Video Capabilities
@@ -595,6 +651,8 @@ Recent video models can:
   - Basic interactions
 
 > Potential uses: pre‑visualization, VFX, education, rapid prototyping.
+
+![bg right:40% 100%](./images/Picture55.png)
 
 ---
 
@@ -705,6 +763,8 @@ Benefit:
 
 > - Answers are **grounded** in actual documents, reducing hallucinations and updating knowledge without retraining.
 
+![bg right:40% 100%](./images/Picture45.png)
+
 ---
 
 # Adversarial Security Exploits (Intro)
@@ -736,10 +796,14 @@ As LLMs are wired into tools and workflows, new security risks appear:
 
 > Defensive design is as important as model accuracy.
 
+![bg right:40% 100%](./images/Picture49.png)
+
 ---
 
 # SECTION IV  
 ## Privacy, Trust & Governance
+
+
 
 ---
 
@@ -898,10 +962,8 @@ Common patterns:
 
 # Conclusion & Core Takeaways
 
-- **Paradigm shift**
-  - From hand‑coded rules → data‑driven optimization and learning.
-- **Infrastructure realities**
-  - AI is bounded by data volume, network bandwidth, and compute hardware.
+- **Paradigm shift**:  From hand‑coded rules → data‑driven optimization and learning.
+- **Infrastructure realities**: AI is bounded by data volume, network bandwidth, and compute hardware.
 - **Safety & governance**
   - Hallucinations, privacy leaks, and prompt injections require  
     careful system design and monitoring.

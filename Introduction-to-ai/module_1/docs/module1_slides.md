@@ -215,20 +215,16 @@ The field needed **new engines** for intelligence.
 
 **Symbolic AI (Top‑Down)**
 
-- Humans **write the rules**.
-- The system applies them to data.
+- Humans **write the rules**. --> The system applies them to data.
 
 **Machine Learning (Bottom‑Up)**
 
-- Humans provide **data + labels**.
-- The system **learns the rules** automatically via optimization.
+- Humans provide **data + labels**. -->  The system **learns the rules** automatically via optimization.
 
 Example: recognizing a **cat** in images.
 
-- Symbolic AI:
-  - Define rules: “pointy ears”, “whiskers”, “four legs”, …
-- Machine Learning:
-  - Show thousands of **cat / not‑cat** images.  
+- Symbolic AI: Define rules: “pointy ears”, “whiskers”, “four legs”, …
+- Machine Learning: Show thousands of **cat / not‑cat** images.  
   - The model **discovers its own representation** of “cat‑ness”.
 
 ---
@@ -250,7 +246,7 @@ At the same time:
 - **Compute** improved (GPUs, clusters).
 - **Statistics & optimization** matured.
 
-→ It became more effective to **learn from data** than to write rules by hand.
+>  It became more effective to **learn from data** than to write rules by hand.
 
 ---
 
@@ -261,11 +257,11 @@ Modern ML replaces “logic engines” with **learning engines** built on:
 - **Matrix transformations**
 - **Loss functions**
 - **Gradients**
-- **Iterative updates**[0]
+- **Iterative updates**
 
 We stop trying to define “cat” explicitly and instead:
 
-> Let the matrix transformation **discover a useful internal notion** of “cat‑ness” through optimization on data.[0]
+> Let the matrix transformation **discover a useful internal notion** of “cat‑ness” through optimization on data.
 
 ---
 
@@ -311,18 +307,16 @@ These components make learning **bottom‑up** and data‑driven.
 **Regression (house prices)**
 
 - Error = Predicted Price – Actual Price
-- **Mean Squared Error**:
-  - Squares the error
+- **Mean Squared Error**: (Squares the error)
   - Penalizes large mistakes more
   - Avoids positive/negative errors cancelling out
 
 **Classification (spam detection)**
 
 - Model predicts probability of spam (e.g. 0.9).
-- **Cross‑Entropy Loss**:
-  - Measures the distance between predicted probability and true label (0 or 1).
+- **Cross‑Entropy Loss**: Measures the distance between predicted probability and true label (0 or 1).
 
-Loss gives a **single number** to minimize.
+> Loss gives a **single number** to minimize.
 
 ---
 
@@ -341,7 +335,7 @@ Concepts:
   - Too big → overshoot the valley.
   - Too small → take forever, might get stuck in a small dip.
 
-This is how models **improve themselves** step by step.
+<!--This is how models **improve themselves** step by step.-->
 
 ---
 
@@ -393,7 +387,7 @@ These issues simply **do not show up in the same way** in small, rule‑based sy
 - Strong in **narrow, clean, rule‑bound domains**
 - Limited by **brittleness**, **knowledge acquisition**, and **maintenance**
 
-**Machine Learning / Learning Engines**
+**Machine Learning**
 
 - Intelligence as **learned transformations** from data
 - Less transparent, but far more **scalable and adaptable**
