@@ -275,7 +275,7 @@ Submit:
 
 1. Completed tables
 2. Parallel code
-3. Short conclusion (3–5 sentences) covering:
+3. Short conclusion (3√ê5 sentences) covering:
 
    * Speedup
    * Bottlenecks
