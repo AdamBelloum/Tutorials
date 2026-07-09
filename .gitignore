@@ -7,6 +7,7 @@ pi_calculation
 
 # --- tmp directories
 tmp/
+site/
 
 # --- Python Junk (Cloud/REST) ---
 __pycache__/
