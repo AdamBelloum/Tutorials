@@ -1,4 +1,9 @@
 site_name: Advanced Computing & AI Tutorials
+
+# --- HOOK IS ADDED HERE AT THE ROOT LEVEL ---
+hooks:
+  - hooks.py
+
 theme:
   name: material
   palette:
