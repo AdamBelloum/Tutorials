@@ -1,19 +1,39 @@
-name: ci 
+name: publish-docs
 on:
   push:
     branches:
       - main
-      - master
-permissions:
-  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Configure Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+          python-size: 3.x
+
+      - name: Install MkDocs Material
+        run: |
+          pip install mkdocs-material
+
+      # --- THIS IS THE MAGIC STEP ---
+      - name: Prepare Docs Folder
+        run: |
+          mkdir -p docs
+          # Copy your main README as the home page
+          cp README.md docs/index.md
+          
+          # Create folders inside docs to keep it organized
+          mkdir -p docs/big-data docs/distributed-systems docs/hpc
+          
+          # Copy your specific participant/student guides
+          cp Big-Data/bigdata-ai/spark/spark_cluster/participants-instructions.md docs/big-data/
+          cp Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide.md docs/distributed-systems/01-rest-api.md
+          cp HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions.md docs/hpc/openmp-instructions.md
+
+      - name: Build and Deploy Docs
+        run: |
+          mkdocs gh-deploy --force
