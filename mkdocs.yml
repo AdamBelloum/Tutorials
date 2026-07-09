@@ -1,0 +1,82 @@
+site_name: Advanced Computing & AI Tutorials
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+
+# Tells MkDocs to read markdown files from the entire repo instead of just a 'docs' folder
+docs_dir: .
+
+nav:
+  - Introduction to AI:
+    - Overview: Introduction-to-ai/module_1/README.md
+    - Module 1 - Symbolic AI: Introduction-to-ai/module_1/docs/module1_slides.md
+    - Module 2 - Machine Learning:
+      - Overview: Introduction-to-ai/module_2/README.md
+      - Slides: Introduction-to-ai/module_2/docs/module2_slides.md
+      - Guide: Introduction-to-ai/module_2/hands-on/Hands-on-v1.0.md
+      - Answers: Introduction-to-ai/module_2/docs/Answer-model-v1.0.md
+    - Module 3 - Modern AI:
+      - Overview: Introduction-to-ai/module_3/README.md
+      - Slides: Introduction-to-ai/module_3/docs/Slides3.md
+      - Guide: Introduction-to-ai/module_3/hands-on/Hands-on.md
+      - Answers: Introduction-to-ai/module_3/docs/Answer-model.md
+    - History: Introduction-to-ai/docs/Brief-history-of-AI1.md
+
+  - Distributed Systems:
+    - Cloud Computing & SOA:
+      - REST API:
+        - Overview: Distributed-Systems/cloud-computing-soa/01-rest-api/README.md
+        - Participant Guide: Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide.md
+        - Advanced Guide: Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide-advanced.md
+      - Microservices:
+        - Overview: Distributed-Systems/cloud-computing-soa/02-microservices/README.md
+        - Participant Guide: Distributed-Systems/cloud-computing-soa/02-microservices/participants-guide.md
+        - Advanced Guide: Distributed-Systems/cloud-computing-soa/02-microservices/participants-guid-advanced.md
+      - Containers & K8s:
+        - Overview: Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/README.md
+        - Containerization: Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-containerization.md
+        - Containerization Advanced: Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-containerization-advanced.md
+        - Orchestration: Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-orchestration.md
+        - Orchestration Advanced: Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-orchestration-advanced.md
+      - OpenStack:
+        - Overview: Distributed-Systems/cloud-computing-soa/04-openstack/README.md
+        - Participant Guide: Distributed-Systems/cloud-computing-soa/04-openstack/participants-guide.md
+      - OpenFaaS:
+        - Overview: Distributed-Systems/cloud-computing-soa/05-openfaas/README.md
+        - Participant Guide: Distributed-Systems/cloud-computing-soa/05-openfaas/participants-guide-new.md
+    - Federated Learning:
+      - Overview: Distributed-Systems/federated-learning/README.md
+      - Participant Guide: Distributed-Systems/federated-learning/docs/participant-guide.md
+      - Organizer Guide: Distributed-Systems/federated-learning/docs/organizer-guide.md
+      - Blueprint Blueprint: Distributed-Systems/federated-learning/docs/instruction-to-use-blueprint.md
+
+  - High Performance Computing (HPC):
+    - OpenMP Basics:
+      - Overview: HPC/openmp-01-basics/README.md
+    - OpenMP Advanced:
+      - Overview: HPC/openmp-02-advanced/README.md
+      - Hands-on Instructions: HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions.md
+      - Debugging Guide: HPC/openmp-02-advanced/02-debugging/hands_on_instruction.md
+    - MPI:
+      - Overview: HPC/mpi/README.md
+      - Hello World: HPC/mpi/01-hello_world/README.md
+      - Debugging: HPC/mpi/02-debugging/README.md
