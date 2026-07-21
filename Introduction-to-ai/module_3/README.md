@@ -17,7 +17,7 @@ This module introduces **Deep Learning**, examining multi-layered connectionist 
   * *Transformers:* Resolving multi-distance global dependencies concurrently using **Self-Attention Mechanics**.
 
 ##  Assets & Resources
-* **Lecture Material:** [Module 3 Slides](./Slides3.md)
+* **Lecture Material:** [Module 3 Slides](./module3_slides.html)
 * **Reflection & Review:** Engage with the structural complexity benchmarks and ethical auditing questions highlighted inside the deck.
 
 ---

@@ -15,7 +15,7 @@ This module investigates **Symbolic AI** (or Good Old-Fashioned AI), a paradigm 
 * **Systemic Failure Loops:** Cascading rule contradictions, exponential maintenance costs, and the subsequent systemic funding collapses known as "AI Winters."
 
 ## Assets & Resources
-* **Lecture Material:** [Module 1 Slides](./doc/module1_slides.md)
+* **Lecture Material:** [Module 1 Slides](./doc/module1_slides.html)
 * **Discussion Prompts:** Review the transition from logical rules to loss optimization at the end of the deck.
 
 ---

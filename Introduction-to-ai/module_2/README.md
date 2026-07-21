@@ -16,7 +16,7 @@ When logic rules fail to scale, we must build systems that extract architecture 
 * **Societal Amplification:** Identifying how objective mathematical transforms freeze and amplify historical data biases.
 
 ##  Assets & Resources
-* **Lecture Material:** [Module 2 Slides](./doc/module2_slides.md)
+* **Lecture Material:** [Module 2 Slides](./doc/module2_slides.html)
 * **Hands-on Lab:** [Interactive Decision Boundary Notebook](./hands-on/Hands-on-v1.0.md)
   * *Prerequisites:* `numpy`, `matplotlib`, `scikit-learn`
   * *Objective:* Programmatically build linear models, decision trees, and neighborhood estimators to observe their shifting decision boundaries under different hyperparameter constraints.
