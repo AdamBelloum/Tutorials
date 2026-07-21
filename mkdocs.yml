@@ -37,12 +37,12 @@ nav:
     - Module 1 - Symbolic AI: Introduction-to-ai/module_1/docs/module1_slides.html
     - Module 2 - Machine Learning:
       - Overview: Introduction-to-ai/module_2/README.md
-      - Slides: Introduction-to-ai/module_2/docs/module2_slides.tml
+      - Slides: Introduction-to-ai/module_2/docs/module2_slides.html
       - Guide: Introduction-to-ai/module_2/hands-on/Hands-on-v1.0.md
       - Answers: Introduction-to-ai/module_2/docs/Answer-model-v1.0.md
     - Module 3 - Modern AI:
       - Overview: Introduction-to-ai/module_3/README.md
-      - Slides: Introduction-to-ai/module_3/docs/Slides3.html
+      - Slides: Introduction-to-ai/module_3/docs/module3_slides.html
       - Guide: Introduction-to-ai/module_3/hands-on/Hands-on.md
       - Answers: Introduction-to-ai/module_3/docs/Answer-model.md
     - History: Introduction-to-ai/docs/Brief-history-of-AI1.md
