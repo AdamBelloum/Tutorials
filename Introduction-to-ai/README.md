@@ -18,17 +18,17 @@ This series bridges the conceptual gap between classical mathematics, statistica
 ### [Module 1: The Old Way – Symbolic AI](./module_1/README.md)
 * **Focus:** Logic engines, Good Old-Fashioned AI (GOFAI), structural bottlenecks, and the philosophical turn toward learning from data.
 * **Core Concepts:** Physical Symbol System Hypothesis, expert systems, brittle failure modes, and the emergence of the AI Winter.
-* **Assets:** [Slide Deck](./module_1/docs/module1_slides.md)
+* **Assets:** [Slide Deck](./module_1/docs/module1_slides.html)
 
 ###  [Module 2: Foundations of Machine Learning](./module_2/README.md)
 * **Focus:** Data-driven mapping, classical parametric and non-parametric estimators, space transformations, and geometric optimization.
 * **Core Concepts:** Generalization boundaries, loss functions (MSE, Cross-Entropy), gradient descent kinetics, and performance validation.
-* **Assets:** [Slide Deck](./module_2/docs/module2_slides.md)
+* **Assets:** [Slide Deck](./module_2/docs/module2_slides.html)
 
 ###  [Module 3: Introduction to Deep Learning](./module_3/README.md)
 * **Focus:** Multi-layered artificial neural networks (ANNs), hierarchical feature learning, representation tracking, and advanced sequence topologies.
 * **Core Concepts:** Backpropagation mechanics, gradient dissipation/explosion anomalies, activation non-linearities, CNNs, RNNs, and Self-Attention Transformers.
-* **Assets:** [Slide Deck](./module_3/docs/module3_slides.mdA
+* **Assets:** [Slide Deck](./module_3/docs/module3_slides.html)
 
 ###  [Moduel_4: federated learning](../Distributed-Systems/federated-learning/README.md)
 * **Assets:** [participant instructions](../Distributed-Systems/federated-learning/docs/participant-guide.md)
