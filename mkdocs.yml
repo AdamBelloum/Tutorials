@@ -35,7 +35,7 @@ nav:
   - Introduction to AI:
     - Overview: Introduction-to-ai/module_1/README.md
     - Brief overview of the evolution of AI: 
-      - Slides: docs/module0_slides.html
+      - Slides: Introduction-to-ai/docs/module0_slides.html
     - Module 1 - Symbolic AI: 
       - Overview: Introduction-to-ai/module_1/README.md
       - Slides: Introduction-to-ai/module_2/docs/module1_slides.html
