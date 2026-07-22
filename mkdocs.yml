@@ -34,11 +34,11 @@ site_dir: 'site'
 nav:
   - Introduction to AI:
     - Overview: Introduction-to-ai/module_1/README.md
-    - Brief overview of the evolution of AI: 
+    - Overview of the evolution of AI: 
       - Slides: Introduction-to-ai/docs/module0_slides.html
     - Module 1 - Symbolic AI: 
       - Overview: Introduction-to-ai/module_1/README.md
-      - Slides: Introduction-to-ai/module_2/docs/module1_slides.html
+      - Slides: Introduction-to-ai/module_1/docs/module1_slides.html
     - Module 2 - Machine Learning:
       - Overview: Introduction-to-ai/module_2/README.md
       - Slides: Introduction-to-ai/module_2/docs/module2_slides.html
@@ -49,7 +49,6 @@ nav:
       - Slides: Introduction-to-ai/module_3/docs/module3_slides.html
       - Guide: Introduction-to-ai/module_3/hands-on/Hands-on.md
       - Answers: Introduction-to-ai/module_3/docs/Answer-model.md
-    - History: Introduction-to-ai/docs/Brief-history-of-AI1.md
 
   - Distributed Systems:
     - Cloud Computing & SOA:
