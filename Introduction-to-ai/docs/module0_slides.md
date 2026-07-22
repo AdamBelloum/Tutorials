@@ -1,13 +1,6 @@
 ---
 marp: true
 theme: default
-<!-- style: |
-  section {
-    background-color: #202020;
-    color: #f4f7f4;
-  }
--->
-markdown.marp.enableHtml": true
 paginate: true
 header: "Module: Brief History of AI"
 footer: "From Rules to Learning"
