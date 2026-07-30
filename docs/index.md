@@ -40,6 +40,7 @@ If you are working on a cluster using a workload manager, sample Slurm scripts (
 
 ### 4. Introduction to AI
 - trace the evolution of AI: from the early logic-based paradigms of the 1950s to modern data-driven learning engines
+- High eduction in the Age of GenAI
 - This repository contains the lecture slides, thematic breakdowns, and hands-on programming materials
 
 #### License & Usage
