@@ -34,9 +34,8 @@ site_dir: 'site'
 nav:
   - Introduction to AI:
     - Overview: Introduction-to-ai/module_1/README.md
-    - Overview of the evolution of AI / AI impact on education: 
-      - Slides: Introduction-to-ai/docs/module0_slides.html
-      - Slides: Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html
+      - AI evolution: Introduction-to-ai/docs/module0_slides.html
+      - AI impact on education: Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html
     - Module 1 - Symbolic AI: 
       - Overview: Introduction-to-ai/module_1/README.md
       - Slides: Introduction-to-ai/module_1/docs/module1_slides.html
