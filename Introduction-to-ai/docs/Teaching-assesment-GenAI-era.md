@@ -5,31 +5,47 @@ paginate: true
 header: Navigating GenAI in Higher Education
 footer: The UvA Experience (2023–2026 and Beyond)
 ---
-
 # Navigating GenAI in Higher Education  
 ## The UvA Experience (2023–2026 and Beyond)
 
 **From Policy to Practice**  
 How the University of Amsterdam integrates GenAI into teaching and assessment
 
+- Why GenAI matters for teaching and assessment
 - UvA‑wide regulations on GenAI in education
-- Department‑level initiatives and pilots
-- Focus on teaching content, assessment integrity, and exam committees
+- Department‑ and programme‑level concerns and pilots
+- TLC initiatives and personal experiences
 
 ---
+
 # Outline
+
+**Part 1 – Generic concerns**
 
 1. Why GenAI forces us to rethink education & assessment  
 2. What’s at stake: content, skills, and assessment integrity  
-3. UvA’s policy evolution (2022–2026)  
-4. UvA’s central stance on GenAI in education  
-5. Assessment in the AI era: students vs their tools  
-6. Top‑down meets bottom‑up: governance & local initiatives  
-7. Rethinking learning objectives: minor vs radical change  
-8. Short‑term vs long‑term agenda at UvA  
-9. Lessons and open questions
+3. Constructive alignment under GenAI  
+
+**Part 2 – UvA top‑down policy & governance**
+
+4. UvA’s policy evolution (2022–2026)  
+5. UvA’s central stance on GenAI & assessment  
+6. Top‑down governance: management & examination committees  
+
+**Part 3 – UvA bottom‑up: faculties, programmes, courses**
+
+7. Faculty‑level responses (FNWI, exam committees)  
+8. Programme‑level concerns and directions (SE/SNE, BAINF, Mathematics/SFM)  
+9. Course‑level assessment examples and thesis discussions  
+
+**Part 4 – TLC initiatives & personal projects**
+
+10. TLC Science – Teaching & GenAI & FNWI pilots  
+11. Personal supervision projects (Thomas Zijl, Ye Yunming)  
+12. Lessons and open questions
 
 ---
+
 # 1. Why GenAI forces us to rethink education & assessment
 
 - GenAI tools can:
@@ -42,6 +58,7 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
   - Do we need **small adjustments** or **radical redesign** of learning objectives?
 
 ---
+
 # GenAI as a systemic challenge
 
 - **Content & curriculum**  
@@ -49,10 +66,11 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
   - New competencies: AI literacy, critical evaluation of AI output, ethical and legal awareness.
 
 - **Assessment & integrity**  
-  - homework, and essays: now solvable or heavily supported by GenAI.
+  - Homework, and essays: now solvable or heavily supported by GenAI.
   - Risk: certifying students whose learning outcomes we cannot confidently verify.
 
 ---
+
 # GenAI as a systemic challenge (continue)
 
 - **Governance & workload**  
@@ -60,6 +78,7 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
   - Workload and juridification of assessment decisions are increasing.
 
 ---
+
 # 2. What’s at stake?
 
 ## Are we teaching the right content?
@@ -67,12 +86,9 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
 - GenAI changes:
   - What we consider **baseline skills** (e.g. routine writing vs critical review of AI‑generated text).
   - How disciplines like Software Engineering, Security & Network Engineering (SNE), Mathematics, and data‑intensive fields operate.
-<!--- UvA responses:
-  - Integrating **AI literacy** into existing learning lines (e.g. academic skills in FNWI programmes).
-  - Piloting **AI‑first courses** in Software Engineering and related programmes.
-  - Exploring “AI‑resilient” curricula that remain meaningful in an AI‑rich world.
--->
+
 ---
+
 ## Are we assessing the right thing?
 
 - Question: when we grade a thesis or project, are we grading:
@@ -84,6 +100,7 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
 - Assessment must be redesigned so that **key competences are verifiably demonstrated by the student**.
 
 ---
+
 # Constructive alignment under GenAI
 
 **Constructive alignment**  
@@ -96,7 +113,9 @@ Under GenAI, programmes should:
   - Where GenAI **must not** be used in demonstrating competence.
 
 ---
-# Constructive alignment under GenAI  (continue)
+
+# Constructive alignment under GenAI (continue)
+
 **Constructive alignment**  
 Exit qualifications → learning objectives → learning activities → assessment formats
 
@@ -107,6 +126,7 @@ Under GenAI, programmes should:
 - Ensure that assessment and AI rules are part of **programme‑level design**, not just course‑level “fine print”.
 
 ---
+
 # 3. UvA’s policy evolution (2022–2026)
 
 ## Baseline: Assessment Policy Framework (2022)
@@ -119,6 +139,7 @@ Under GenAI, programmes should:
   - GenAI raises new issues around independent work, fraud, and evidence of learning.
 
 ---
+
 ## Early response: AI in Education memo (2023)
 
 - First UvA‑wide memo on AI in education (June 2023).
@@ -126,6 +147,7 @@ Under GenAI, programmes should:
 - Acts as a **starting point** but is later revised as GenAI tools (and risks) evolve.
 
 ---
+
 ## Consolidation: “Navigating the Ocean of AI” project (2025)
 
 - UvA launches a central project on AI and GenAI in 2025:
@@ -137,6 +159,7 @@ Under GenAI, programmes should:
 ---
 
 # Central framework: GenAI in education (2025)
+
 - Policy framework and guidelines on **GenAI in education** define:
   - UvA’s overall stance on opportunities and risks of GenAI.
   - General guidelines for responsible use in teaching and assessment.
@@ -149,6 +172,7 @@ Under GenAI, programmes should:
 ---
 
 ## Assessment addendum: GenAI in assessment (2025)
+
 - Assessment Policy Addendum focuses specifically on **GenAI in assessment**:
   - Transitional document bridging existing assessment policy and future educational vision.
   - Encourages programmes to:
@@ -159,120 +183,7 @@ Under GenAI, programmes should:
     - Importance of **format redesign** and **oral validation** when fraud is suspected.
 
 ---
-## Are we teaching the right content?
 
-- **Software Engineering (SE) & Security and Network Engineering (SNE)**  
-  - Staff and exam‑committee discussions highlight questions such as:  
-    - How should an SE/SNE curriculum look in an **“AI‑first” industry**?  
-    - Which skills should students practise *with* GenAI support, and which must they still master *without* it?
-
----
-## Are we teaching the right content?
-
-- **BSc Artificial Intelligence (BAINF)**  
-  - There is concern that students may rely heavily on GenAI tools.  
-  - A key question is how to keep emphasis on:  
-    - Conceptual foundations and mathematical insight  
-    - Critical evaluation of AI systems  
-    - Responsible and ethical AI use
-
----
-## Are we teaching the right content?
-- **Mathematics & Stochastics and Financial Mathematics (SFM)**  
-  - Lecturers and exam committees worry that GenAI can solve many homework problems.  
-  - This raises the issue:  
-    - How do we preserve **deep engagement with problem solving**?  
-    - How much of the grade can still be based on unsupervised work?
-
-- Across programmes, these are **active concerns and discussion points**, not finished answers.
-
----
-## Faculty‑level implementation: FNWI (2026)
-
-- FNWI exam committees hold thematic meetings on “GenAI and assessment”:
-  - Distinguish **defensive** (fraud prevention) and **offensive** (curriculum innovation) uses of GenAI.
-  - Identify high‑risk formats (theses, written assignments, take‑home exams).
-  - Discuss measures:
-    - Oral presentations and short oral exams
-    - Access to edit histories (e.g. git, Overleaf)
-    - Spot checks to discuss ongoing work.
-  - Work with TLC FNWI to share examples and good practices across programmes.
-
----
-## Programme‑level implementation: Mathematics & SFM
-
-- “Testing and AI” proposals for Mathematics and SFM programmes:
-  - Introduce **verifiably vs non‑verifiably individual components**.
-  - Require a **minimum grade** on verifiable components to pass a course.
-  - Cap non‑verifiable components (homework, reports, take‑home exams) at a small fraction of the total grade.
-  - Add **oral defenses** to thesis courses to verify ownership and understanding.
-- Homework shifts from being mainly a **grading tool** to being primarily a **learning tool**.
-
----
-## Mathematics & SFM: concerns and potential avenues
-
-- **Core concern**  
-  - Generative AI can provide solutions for many standard exercises.  
-  - Homework risks becoming a weak indicator of **individual mastery**, while remaining essential for learning.
-
-- **Questions under discussion**  
-  - How much of the final grade should rely on **verifiably individual** components (exams, in‑class tests, presentations)?  
-  - Should unsupervised components (homework, take‑home exams, reports) have only a **limited impact** on grades?  
-  - How can we safeguard the thesis as evidence of the student’s own work?
-
----
-## Mathematics & SFM: concerns and potential avenues
-
-- **Potential avenues being explored**  
-  - Shifting homework more towards a **learning tool** (practice, feedback) rather than a major grading tool.  
-  - Strengthening oral elements (e.g. presentations, short defenses) to verify understanding.  
-  - Making the **project process** more visible (interim feedback moments, documentation of progress).
-
-- These directions are being **discussed and piloted**, and may evolve in coming years.
-
----
-## BSc AI (BAINF): concerns and potential approaches
-
-- **Context**  
-  - AI students are early adopters of GenAI; many already use such tools informally.  
-  - This raises questions about how to ensure **deep conceptual learning**.
-
-- **Concerns discussed**  
-  - To what extent can we trust unsupervised code or text submitted by AI students?  
-  - How do we make sure they understand algorithms and models beyond what AI tools generate?
-
----
-## BSc AI (BAINF): concerns and potential approaches
-- **Possible directions**  
-  - Increase the role of **supervised components** (e.g. live demos, oral explanations of code, whiteboard derivations).  
-  - Combine written or coded work with **short oral checks** to confirm understanding.  
-  - Encourage thesis and project topics that critically analyse AI in education and GenAI tools themselves.
-
-- The aim is to keep BAINF a place where students **both develop and critically examine AI**, including GenAI.
-
----
-## SE & SNE: concerns and potential directions
-
-- **Observed challenge**  
-  - SE and SNE operate in an environment where AI tools are rapidly becoming part of standard workflows.  
-  - Staff are asking how to keep education relevant and robust in an **AI‑intensive** context.
-
-- **Concerns raised in meetings**  
-  - Some existing assignments and exams can now be partially or largely solved using GenAI.  
-  - There is a risk that assessments measure **tool use** rather than **student understanding**.
-
----
-## SE & SNE: concerns and potential directions
-- **Directions being considered**  
-  - Reviewing key SE/SNE courses to see:  
-    - Where more **in‑class, supervised work** is needed.  
-    - Where unsupervised assignments need redesign or different weighting.  
-  - Exploring the idea of an experimental **“AI‑first” course** where:  
-    - Students explicitly use AI tools in SE workflows.  
-    - Assessment focuses on how they work with AI and how well they understand the results.
-
-- These are **active discussions**, intended to guide future course and assessment design.
----
 # 4. UvA’s central stance on GenAI in education
 
 ## GenAI: embraced but bounded
@@ -284,6 +195,7 @@ Under GenAI, programmes should:
   - Educational goals and didactics must lead; GenAI is an instrument, not the driver.
 
 ---
+
 ## Core principles
 
 1. **Human in the lead**  
@@ -295,12 +207,12 @@ Under GenAI, programmes should:
    - Lecturers must clearly define allowed uses and how to document them.
 
 ---
+
 ## Core principles (continued)
 
 3. **Critical stance towards AI output**  
    - GenAI is not a reliable scientific source: hallucinations, fabricated references, biased output.  
    - AI literacy includes recognising limitations and checking AI‑generated material.
-
 
 4. **Licensed, non‑compulsory use**  
    - Only UvA‑approved tools may be used in teaching and assessment.  
@@ -308,6 +220,7 @@ Under GenAI, programmes should:
    - UvA AI Chat is developed as a managed, education‑oriented GenAI environment.
 
 ---
+
 ## Core principles (continued)
 
 5. **Privacy and data protection**  
@@ -319,6 +232,7 @@ Under GenAI, programmes should:
    - Regular revisions are expected, not exceptional.
 
 ---
+
 # 5. Assessment in the AI era
 
 ## Are we assessing students or their tools?
@@ -332,9 +246,8 @@ Under GenAI, programmes should:
   - Detection tools are unreliable and may be unfair.
 
 ---
-# 5. Assessment in the AI era
 
-## Are we assessing students or their tools?
+## Are we assessing students or their tools? (UvA’s direction)
 
 - UvA’s direction:
   - Shift focus from detection to **design**:
@@ -342,6 +255,7 @@ Under GenAI, programmes should:
     - Combine written work with oral or in‑person elements.
 
 ---
+
 ## The assessment cycle under GenAI
 
 - **Design**  
@@ -353,6 +267,7 @@ Under GenAI, programmes should:
   - Ensure alignment with intended learning objectives and level.
 
 ---
+
 ## The assessment cycle under GenAI (continue)
 
 - **Marking**  
@@ -363,24 +278,8 @@ Under GenAI, programmes should:
   - Exams can be invalidated if students cannot demonstrate the required competence.
 
 ---
-## Example: Mathematics & SFM grading rules
 
-- Distinguish:
-  - **Verifiably individual** components: exams, in‑class tests, presentations, supervised group work.  
-  - **Non‑verifiably individual** components: homework, take‑home exams, reports at home, online exams.
-- Rules (illustrative):
-  - Students must pass the course on verifiable components alone (e.g. minimum grade threshold).  
-  - Non‑verifiable components may only contribute a relatively small fraction of the final grade.
-
----
-## Example: Mathematics & SFM grading rules
-
-- Thesis courses:
-  - Introduce a **mandatory defense** (oral exam) focused on ownership and understanding.  
-  - Increase weight of verifiable components (attitude/execution, presentation, defense) compared to the written report.
-
----
-# 6. Top‑down meets bottom‑up
+# 6. Top‑down governance: management & ECs
 
 ## Top‑down: central governance
 
@@ -395,9 +294,8 @@ Under GenAI, programmes should:
   - Coordinate faculty‑level policy and communication.
 
 ---
-# 6. Top‑down meets bottom‑up  (continue)
 
-## Top‑down: central governance
+## Top‑down: central governance (continue)
 
 - **Examination committees**  
   - Safeguard assessment quality and integrity.  
@@ -405,14 +303,30 @@ Under GenAI, programmes should:
   - Cooperate with programme directors on assessment policies.
 
 ---
-## Bottom‑up: local initiatives
+
+# 7. Faculty‑level responses (FNWI)
+
+## Faculty‑level implementation: FNWI (2026)
+
+- FNWI exam committees hold thematic meetings on “GenAI and assessment”:
+  - Distinguish **defensive** (fraud prevention) and **offensive** (curriculum innovation) uses of GenAI.
+  - Identify high‑risk formats (theses, written assignments, take‑home exams).
+  - Discuss measures:
+    - Oral presentations and short oral exams
+    - Access to edit histories (e.g. git, Overleaf)
+    - Spot checks to discuss ongoing work.
+  - Work with TLC FNWI to share examples and good practices across programmes.
+
+---
+
+## Bottom‑up: local initiatives (overview)
 
 - **Faculty of Science (FNWI)**  
   - Thematic meetings on “GenAI and assessment” with exam committees and programme directors.  
   - Shared examples from programmes (e.g. Mathematics & SFM, SE/SNE) on GenAI‑resilient assessment.
 
 - **Programmes and departments**  
-  - Software Engineering & SNE: task forces on “AI‑first” workflows and AI‑resilient assessment.  
+  - Software Engineering & SNE: discussions on “AI‑first” workflows and AI‑resilient assessment.  
   - Mathematics & SFM: verifiable/non‑verifiable grading rules and thesis defense redesign.
 
 - **Teaching & Learning Centres (TLCs)**  
@@ -421,36 +335,146 @@ Under GenAI, programmes should:
   - Support for pilots and an assessment network where staff share experiences.
 
 ---
-# 7. Rethinking learning objectives
 
-## Small adjustment or radical change?
+# 8. Programme‑level concerns and directions
 
-- Programmes are encouraged to:
-  - Review **exit qualifications** with the professional field:
-    - Where is GenAI a standard tool in practice?
-    - Where is human performance without AI still essential?
-  - Introduce GenAI‑related learning objectives where appropriate:
-    - Understanding GenAI’s impact in the discipline.  
-    - Responsible, critical use of GenAI tools.
-- For each learning objective:
-  - Decide whether GenAI can be used in achieving that objective.
+## Are we teaching the right content? – SE & SNE
+
+- **Software Engineering (SE) & Security and Network Engineering (SNE)**  
+  - Staff and exam‑committee discussions highlight questions such as:  
+    - How should an SE/SNE curriculum look in an **“AI‑first” industry**?  
+    - Which skills should students practise *with* GenAI support, and which must they still master *without* it?
 
 ---
-## Examples of change
 
-- **Incremental changes**  
-  - Adjust grading weights (more weight on supervised work).  
-  - Add oral components to thesis and project courses.  
-  - Require students to document their use of GenAI (prompts, outputs, justification).
+## SE & SNE: concerns and potential directions
 
----
-## Examples of change (continue)
-- **More radical changes**  
-  - Create “AI‑first” courses where GenAI is central to workflows (e.g. in Software Engineering).  
-  - Redesign whole assessment lines in disciplines heavily impacted by GenAI (e.g. Mathematics, data science).  
-  - Shift emphasis from product‑based assessment to **process‑based** and **reflection‑based** assessment.
+- **Observed challenge**  
+  - SE and SNE operate in an environment where AI tools are rapidly becoming part of standard workflows.  
+  - Staff are asking how to keep education relevant and robust in an **AI‑intensive** context.
+
+- **Concerns raised in meetings**  
+  - Some existing assignments and exams can now be partially or largely solved using GenAI.  
+  - There is a risk that assessments measure **tool use** rather than **student understanding**.
 
 ---
+
+## SE & SNE: concerns and potential directions (continue)
+
+- **Directions being considered**  
+  - Reviewing key SE/SNE courses to see:  
+    - Where more **in‑class, supervised work** is needed.  
+    - Where unsupervised assignments need redesign or different weighting.  
+  - Exploring the idea of an experimental **“AI‑first” course** where:  
+    - Students explicitly use AI tools in SE workflows.  
+    - Assessment focuses on how they work with AI and how well they understand the results.
+
+- These are **active discussions**, intended to guide future course and assessment design.
+
+---
+
+## Are we teaching the right content? – BSc AI
+
+- **BSc Artificial Intelligence (BAINF)**  
+  - There is concern that students may rely heavily on GenAI tools.  
+  - A key question is how to keep emphasis on:  
+    - Conceptual foundations and mathematical insight  
+    - Critical evaluation of AI systems  
+    - Responsible and ethical AI use
+
+---
+
+## BSc AI (BAINF): concerns and potential approaches
+
+- **Context**  
+  - AI students are early adopters of GenAI; many already use such tools informally.  
+  - This raises questions about how to ensure **deep conceptual learning**.
+
+- **Concerns discussed**  
+  - To what extent can we trust unsupervised code or text submitted by AI students?  
+  - How do we make sure they understand algorithms and models beyond what AI tools generate?
+
+---
+
+## BSc AI (BAINF): concerns and potential approaches (continue)
+
+- **Possible directions**  
+  - Increase the role of **supervised components** (e.g. live demos, oral explanations of code, whiteboard derivations).  
+  - Combine written or coded work with **short oral checks** to confirm understanding.  
+  - Encourage thesis and project topics that critically analyse AI in education and GenAI tools themselves.
+
+- The aim is to keep BAINF a place where students **both develop and critically examine AI**, including GenAI.
+
+---
+
+## Are we teaching the right content? – Mathematics & SFM
+
+- **Mathematics & Stochastics and Financial Mathematics (SFM)**  
+  - Lecturers and exam committees worry that GenAI can solve many homework problems.  
+  - This raises the issue:  
+    - How do we preserve **deep engagement with problem solving**?  
+    - How much of the grade can still be based on unsupervised work?
+
+- Across programmes, these are **active concerns and discussion points**, not finished answers.
+
+---
+
+## Programme‑level implementation: Mathematics & SFM
+
+- “Testing and AI” proposals for Mathematics and SFM programmes:
+  - Introduce **verifiably vs non‑verifiably individual components**.
+  - Require a **minimum grade** on verifiable components to pass a course.
+  - Cap non‑verifiable components (homework, reports, take‑home exams) at a small fraction of the total grade.
+  - Add **oral defenses** to thesis courses to verify ownership and understanding.
+- Homework shifts from being mainly a **grading tool** to being primarily a **learning tool**.
+
+---
+
+## Mathematics & SFM: concerns and potential avenues
+
+- **Core concern**  
+  - Generative AI can provide solutions for many standard exercises.  
+  - Homework risks becoming a weak indicator of **individual mastery**, while remaining essential for learning.
+
+- **Questions under discussion**  
+  - How much of the final grade should rely on **verifiably individual** components (exams, in‑class tests, presentations)?  
+  - Should unsupervised components (homework, take‑home exams, reports) have only a **limited impact** on grades?  
+  - How can we safeguard the thesis as evidence of the student’s own work?
+
+---
+
+## Mathematics & SFM: concerns and potential avenues (continue)
+
+- **Potential avenues being explored**  
+  - Shifting homework more towards a **learning tool** (practice, feedback) rather than a major grading tool.  
+  - Strengthening oral elements (e.g. presentations, short defenses) to verify understanding.  
+  - Making the **project process** more visible (interim feedback moments, documentation of progress).
+
+- These directions are being **discussed and piloted**, and may evolve in coming years.
+
+---
+
+# 9. Course‑level assessment examples and thesis discussions
+
+## Example: Mathematics & SFM grading rules
+
+- Distinguish:
+  - **Verifiably individual** components: exams, in‑class tests, presentations, supervised group work.  
+  - **Non‑verifiably individual** components: homework, take‑home exams, reports at home, online exams.
+- Rules (illustrative):
+  - Students must pass the course on verifiable components alone (e.g. minimum grade threshold).  
+  - Non‑verifiable components may only contribute a relatively small fraction of the final grade.
+
+---
+
+## Example: Mathematics & SFM grading rules (thesis)
+
+- Thesis courses:
+  - Introduce a **mandatory defense** (oral exam) focused on ownership and understanding.  
+  - Increase weight of verifiable components (attitude/execution, presentation, defense) compared to the written report.
+
+---
+
 ## Examples in discussion: SE, SNE, BAINF & theses
 
 - **Thesis assessment concerns**  
@@ -458,7 +482,8 @@ Under GenAI, programmes should:
   - This makes it harder to see how much of the final thesis is the **student’s own work**.
 
 ---
-## Examples in discussion: SE, SNE, BAINF & theses
+
+## Examples in discussion: SE, SNE, BAINF & theses (continue)
 
 - **Ideas being explored**  
   - Adjusting thesis **grading rubrics** to put more weight on:  
@@ -468,7 +493,8 @@ Under GenAI, programmes should:
   - Adding **mid‑term evaluation points** (formative, no grade impact) to check progress and methods.
 
 ---
-## Examples in discussion: SE, SNE, BAINF & theses
+
+## Examples in discussion: SE, SNE, BAINF & theses (continue)
 
 - **Monitoring suggestions**  
   - Investigating whether a **dashboard** (e.g. from git or Overleaf history) could help supervisors see:  
@@ -478,7 +504,8 @@ Under GenAI, programmes should:
 - These ideas are part of an ongoing conversation about **making thesis processes more transparent and AI‑resilient**.
 
 ---
-## Examples in discussion: Mathematics & SFM
+
+## Examples in discussion: Mathematics & SFM (before/after GenAI)
 
 - **Before GenAI**  
   - Homework and take‑home exercises played a major role in both learning and grading.  
@@ -489,7 +516,8 @@ Under GenAI, programmes should:
   - A thesis report could, in principle, be substantially AI‑assisted without clear visibility.
 
 ---
-## Examples in discussion: Mathematics & SFM
+
+## Examples in discussion: Mathematics & SFM (responses)
 
 - **Ideas on the table**  
   - Make **supervised exams and in‑class assessments** more central in grading.  
@@ -501,7 +529,8 @@ Under GenAI, programmes should:
 - These are meant as **possible responses**, being discussed with lecturers and exam committees.
 
 ---
-# 8. Short‑term vs long‑term agenda at UvA
+
+# 10. Short‑term vs long‑term agenda at UvA
 
 ## Short‑term (2023–2026)
 
@@ -512,9 +541,8 @@ Under GenAI, programmes should:
   - Pilot and scale **UvA AI Chat** for education.
 
 ---
-# 8. Short‑term vs long‑term agenda at UvA (continue)
 
-## Short‑term (2023–2026)
+## Short‑term (2023–2026) (continue)
 
 - Strengthen AI literacy:
   - Modules, workshops, and support via TLCs.
@@ -523,6 +551,7 @@ Under GenAI, programmes should:
   - Curriculum reviews for GenAI integration.
 
 ---
+
 ## Long‑term (beyond 2026)
 
 - Integrate GenAI structurally into:
@@ -535,109 +564,9 @@ Under GenAI, programmes should:
   - Demonstrate that assessment integrity and learning outcomes are safeguarded in a GenAI‑rich world.
 
 ---
-## Personal perspective: AI in Education (Thomas Zijl)
 
-![bg right:40% 100%](./images/Thomas-zijl.png)
-- MSc thesis (Computer Science, UvA, 2025):  
-  **“Artificial Intelligence in Education: Adapting traditional practices for effective student learning”**  
-  - https://aied.basenthomas.com/
+# 11. TLC Science – Teaching & GenAI & FNWI pilots
 
----
-## Personal perspective: AI in Education (Thomas Zijl)
-
-![bg right:40% 100%](./images/Thomas-zijl.png)
-- Core idea  
-  - We cannot simply “add AI” on top of existing teaching practices.  
-  - We need to **adapt traditional practices** (lectures, exercises, feedback, assessment) to an AI‑rich reality.
-
----
-## Personal perspective: AI in Education (Thomas Zijl)
-
-![bg right:40% 100%](./images/Thomas-zijl.png)
-- Themes explored  
-  - How students actually use GenAI in their learning.  
-  - Which teaching approaches become less effective when AI is readily available.  
-  - How we can redesign teaching so that AI supports, rather than replaces, student thinking.
-
-- My takeaway as supervisor  
-  - Real student practices with AI often differ from our assumptions.  
-  - Understanding those practices is essential if we want AI‑resilient and AI‑enabled education.
-
----
-# 9. Lessons & open questions
-
-## What seems to work at UvA
-
-- Clear **central principles** with room for local experimentation.  
-- Focus on **constructive alignment** and programme‑level assessment design, not only on AI detection.  
-- Combination of:
-  - **Defensive** measures (fraud prevention, oral checks, format redesign).  
-  - **Offensive** measures (AI literacy, “AI‑first” courses, pilots with UvA AI Chat).
-
----
-## Data storytelling with small language models (Ye Yunming)
-
-- MSc thesis (Computer Science, UvA, 2025):  
-  **“Investigating the Application of Small Language Models for Educational Data Storytelling”**
-
-- Motivation  
-  - Data storytelling can make student feedback and educational dashboards **more engaging and understandable**.  
-  - Large language models are powerful but often **too expensive** for regular, large‑scale educational use.
-
----
-## Data storytelling with small language models (Ye Yunming)
-
-- Key idea  
-  - Use **small language models (SLMs)** and split the task into stages:  
-    1. Knowledge extraction from educational data  
-    2. Story generation (narratives for teachers/students)
-
-- Insight  
-  - Different models are good at different parts of the task.  
-  - Carefully designed **multi‑model pipelines** can be both effective and affordable for education.
-
----
-## Data storytelling with small language models (Ye Yunming)
-- Educational impact  
-  - This kind of data storytelling can help especially **young teachers**:  
-    - Quickly understand class performance patterns  
-    - Turn data into stories that connect better with students.
-
----
-## What these projects taught me (personal lessons)
-
-- **AI in education is not abstract**  
-  - Supervising Thomas’s thesis showed how **real students and teachers** interact with AI tools.  
-  - Policy must be grounded in these day‑to‑day practices, not only high‑level principles.
-
-- **Cost and practicality matter**  
-  - Ye’s work on small language models highlighted that **affordable AI** is crucial for sustainable educational use.  
-  - Multi‑model, staged approaches can make AI‑supported feedback and storytelling realistic for universities.
-
----
-## What these projects taught me (personal lessons)
-- **Design over technology**  
-  - The technology is powerful, but the **design of workflows and assessments** determines whether AI helps or harms learning.  
-  - Good AI‑in‑education systems:  
-    - Make teachers’ work easier, not heavier  
-    - Support student understanding, not shortcut it
-
-- These experiences reinforce the central message of this talk:  
-  - We must rethink teaching and assessment **with AI in mind**, and do so in close dialogue with concrete practice.
-
----
-## Open questions for all institutions
-
-- How far should we go in **redesigning curricula and assessment** for GenAI?
-- What proportion of assessment must be:
-  - **Individually verifiable** and supervised?
-  - Allowed to use GenAI as a legitimate tool?
-- How do we manage:
-  - Workload and juridification in exam committees?  
-  - Fairness and transparency for students?
-- How can institutions **learn from each other’s practices** rather than reinventing everything alone?
-
----
 # Key UvA documents & resources
 
 For verification and further reading:
@@ -652,27 +581,30 @@ For verification and further reading:
   Assessment Policy Framework + GenAI addendum (internal; via faculties/exam committees)
 
 ---
+
 # Key UvA Teaching & Learning Centre – Faculty of Science (FNWI)
+
 ![bg right:40% 100%](./images/TLC-GenAI-resource.png)  
 - [Teaching & GenAI theme:](https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53)
 
 ---
+
 ## FNWI GenAI pilots (TLC Science)
 
 ![bg right:35% 100%](./images/TLC-GenAI-pilot.png)
 
-- **Project: GenAI pilots TLC Science**   
+- **Project: GenAI pilots TLC Science**  
   - Coordinated by TLC Science (FNWI)  
   - Phase 1: February 2024 – August 2025; since September 2025 ongoing
 
 - **Aim of the project**  
   - Integrate GenAI (specifically **UvA AI Chat**) into teaching in a **responsible** way.  
   - Explore applications of GenAI in higher education.  
-  - Evaluate  added value for student and teaching practice.
-
+  - Evaluate added value for student and teaching practice.
 
 ---
-## FNWI GenAI pilots (TLC Science)
+
+## FNWI GenAI pilots (TLC Science) – examples I
 
 - **Examples shown in TLC videos**  
   - **MSc Forensic Science**: personas to support students in Moot Court practice.  
@@ -680,7 +612,8 @@ For verification and further reading:
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2026/06/Thumb-Video11-Maarten-Blom-scaled.jpg)
 
 ---
-## FNWI GenAI pilots (TLC Science)
+
+## FNWI GenAI pilots (TLC Science) – examples II
 
 - **Examples**  
   - **BSc Science, Technology & Innovation**: “Makerspace bot” for project and lab support.  
@@ -688,17 +621,18 @@ For verification and further reading:
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2025/02/Thumb-Video8-scaled.jpg)
 
 ---
-## FNWI GenAI pilots (TLC Science)
+
+## FNWI GenAI pilots (TLC Science) – examples III
 
 - **Examples**  
-
   - **BSc Informatics**: comparing multiple LLMs for programming and writing tasks.  
-  - **BSc Biomedische Wetenschappen**, **Psychobiologie**, **Physics & Astronomy**, **Future Planet Studies**, **AUC*, **Chemistry**, **Beta‑Gamma**, etc.
+  - **BSc Biomedische Wetenschappen**, **Psychobiologie**, **Physics & Astronomy**, **Future Planet Studies**, **AUC**, **Chemistry**, **Beta‑Gamma**, etc.
 
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2024/10/Thumbnail-Informatica-scaled.jpg)
 
 ---
-## FNWI GenAI pilots (TLC Science)
+
+## FNWI GenAI pilots (TLC Science) – key message
 
 - **Key message for the talk**  
   - GenAI at UvA is **not only policy**: there is a structured faculty‑level pilot programme, with  
@@ -708,11 +642,10 @@ For verification and further reading:
 
 ---
 
-[**Teaching & GenAI (Faculty of Science, TLC)**](
-https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53)
-
+[**Teaching & GenAI (Faculty of Science, TLC)**](https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53)
 
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2025/06/AI-onderwijs-e1751352529945.jpg)
+
 - A **central hub** for GenAI in education at FNWI:
 - Explains **what GenAI is** and why it matters in teaching.
 - Provides **GenAI resources** and examples for lecturers.
@@ -721,7 +654,8 @@ https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53)
 - Announces **AI workshops, events, and hackathons**.
 
 ---
-## Teaching & GenAI: assessment & support
+
+## Teaching & GenAI: assessment & support (lanes)
 
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2021/09/assessment.jpg)
 
@@ -735,7 +669,9 @@ From the Teaching & GenAI pages:
   - Tasks redesigned so students can use AI, but still have to evidence the intended learning outcomes.
 
 ---
-## Teaching & GenAI: assessment & support
+
+## Teaching & GenAI: assessment & support (literacy & consultancy)
+
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2026/06/Banner-AI-literacy-2-scaled.png)
 
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2025/11/Hackathonreeks-genAI-in-het-onderwijs.jpeg)
@@ -750,6 +686,121 @@ More:
 https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53
 
 ---
+
+# 12. Personal supervision projects
+
+## Personal perspective: AI in Education (Thomas Zijl)
+
+![bg right:40% 100%](./images/Thomas-zijl.png)
+
+- MSc thesis (Computer Science, UvA, 2025):  
+  **“Artificial Intelligence in Education: Adapting traditional practices for effective student learning”**  
+  - https://aied.basenthomas.com/
+
+---
+
+## Personal perspective: AI in Education (Thomas Zijl) – themes
+
+![bg right:40% 100%](./images/Thomas-zijl.png)
+
+- Core idea  
+  - We cannot simply “add AI” on top of existing teaching practices.  
+  - We need to **adapt traditional practices** (lectures, exercises, feedback, assessment) to an AI‑rich reality.
+
+- Themes explored  
+  - How students actually use GenAI in their learning.  
+  - Which teaching approaches become less effective when AI is readily available.  
+  - How we can redesign teaching so that AI supports, rather than replaces, student thinking.
+
+- My takeaway as supervisor  
+  - Real student practices with AI often differ from our assumptions.  
+  - Understanding those practices is essential if we want AI‑resilient and AI‑enabled education.
+
+---
+
+## Data storytelling with small language models (Ye Yunming)
+
+- MSc thesis (Computer Science, UvA, 2025):  
+  **“Investigating the Application of Small Language Models for Educational Data Storytelling”**
+
+- Motivation  
+  - Data storytelling can make student feedback and educational dashboards **more engaging and understandable**.  
+  - Large language models are powerful but often **too expensive** for regular, large‑scale educational use.
+
+---
+
+## Data storytelling with small language models (Ye Yunming) – approach
+
+- Key idea  
+  - Use **small language models (SLMs)** and split the task into stages:  
+    1. Knowledge extraction from educational data  
+    2. Story generation (narratives for teachers/students)
+
+- Insight  
+  - Different models are good at different parts of the task.  
+  - Carefully designed **multi‑model pipelines** can be both effective and affordable for education.
+
+---
+
+## Data storytelling with small language models (Ye Yunming) – impact
+
+- Educational impact  
+  - This kind of data storytelling can help especially **young teachers**:  
+    - Quickly understand class performance patterns  
+    - Turn data into stories that connect better with students.
+
+---
+
+## What these projects taught me (personal lessons)
+
+- **AI in education is not abstract**  
+  - Supervising Thomas’s thesis showed how **real students and teachers** interact with AI tools.  
+  - Policy must be grounded in these day‑to‑day practices, not only high‑level principles.
+
+- **Cost and practicality matter**  
+  - Ye’s work on small language models highlighted that **affordable AI** is crucial for sustainable educational use.  
+  - Multi‑model, staged approaches can make AI‑supported feedback and storytelling realistic for universities.
+
+---
+
+## What these projects taught me (personal lessons) – design
+
+- **Design over technology**  
+  - The technology is powerful, but the **design of workflows and assessments** determines whether AI helps or harms learning.  
+  - Good AI‑in‑education systems:  
+    - Make teachers’ work easier, not heavier  
+    - Support student understanding, not shortcut it
+
+- These experiences reinforce the central message of this talk:  
+  - We must rethink teaching and assessment **with AI in mind**, and do so in close dialogue with concrete practice.
+
+---
+
+# 13. Lessons & open questions
+
+## What seems to work at UvA
+
+- Clear **central principles** with room for local experimentation.  
+- Focus on **constructive alignment** and programme‑level assessment design, not only on AI detection.  
+- Combination of:
+  - **Defensive** measures (fraud prevention, oral checks, format redesign).  
+  - **Offensive** measures (AI literacy, “AI‑first” courses, pilots with UvA AI Chat).
+
+---
+
+## Open questions for all institutions
+
+- How far should we go in **redesigning curricula and assessment** for GenAI?
+- What proportion of assessment must be:
+  - **Individually verifiable** and supervised?
+  - Allowed to use GenAI as a legitimate tool?
+- How do we manage:
+  - Workload and juridification in exam committees?  
+  - Fairness and transparency for students?
+- How can institutions **learn from each other’s practices** rather than reinventing everything alone?
+
+---
+
 # Closing
 
 **Navigating GenAI in Higher Education: The UvA Experience**
@@ -762,13 +813,19 @@ https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53
   - GenAI is a powerful tool, but academic integrity, clarity of goals, and good governance remain central.
 
 ---
+
 # My assistant
 
 ![bg right:65% 100%](./images/uva-chat-1.png)
+
 - UvA AI Chat  
 - https://aichat.uva.nl/
+
 ---
+
 # My assistant
 
 ![bg right:65% 100%](./images/uva-chat-2.png)
+
 *Thank you – I look forward to your questions and your own experiences.*
+```
