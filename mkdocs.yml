@@ -33,7 +33,7 @@ site_dir: 'site'
 
 nav:
   - Introduction to AI:
-    - Overview: Introduction-to-ai/module_1/README.md
+      - Overview: Introduction-to-ai/module_1/README.md
       - AI evolution: Introduction-to-ai/docs/module0_slides.html
       - AI impact on education: Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html
     - Module 1 - Symbolic AI: 
