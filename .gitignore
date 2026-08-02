@@ -1,6 +1,7 @@
 # --- Compiled Binaries (HPC) ---
 *.o
 *.out
+*.bak
 app_exec
 hello_world
 pi_calculation
