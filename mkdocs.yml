@@ -1,6 +1,5 @@
 site_name: "Advanced Computing & AI Tutorials"
 
-# --- HOOK IS ADDED HERE AT THE ROOT LEVEL ---
 hooks:
   - hooks.py
 
@@ -27,16 +26,15 @@ theme:
     - search.suggest
     - search.highlight
 
-# Tells MkDocs to read markdown files from the entire repo instead of just a 'docs' folder
 docs_dir: "docs"
-site_dir: 'site'
+site_dir: "site"
 
 nav:
   - Introduction to AI:
     - Overview: Introduction-to-ai/module_1/README.md
-      - AI evolution: Introduction-to-ai/docs/module0_slides.html
-      - AI impact on education: Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html
-    - Module 1 - Symbolic AI: 
+    - AI evolution: Introduction-to-ai/docs/module0_slides.html
+    - AI impact on education: Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html
+    - Module 1 - Symbolic AI:
       - Overview: Introduction-to-ai/module_1/README.md
       - Slides: Introduction-to-ai/module_1/docs/module1_slides.html
     - Module 2 - Machine Learning:
@@ -76,7 +74,7 @@ nav:
       - Overview: Distributed-Systems/federated-learning/README.md
       - Participant Guide: Distributed-Systems/federated-learning/docs/participant-guide.md
       - Organizer Guide: Distributed-Systems/federated-learning/docs/organizer-guide.md
-      - Blueprint Blueprint: Distributed-Systems/federated-learning/docs/instruction-to-use-blueprint.md
+      - Blueprint: Distributed-Systems/federated-learning/docs/instruction-to-use-blueprint.md
 
   - High Performance Computing (HPC):
     - OpenMP Basics:
