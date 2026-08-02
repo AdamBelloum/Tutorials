@@ -74,11 +74,11 @@ Nested vocabulary (conceptual diagram):
 
 - **Artificial Intelligence**
   - Rule‑based systems, search, logic
-  - ⮡ **Machine Learning**
+  -  **Machine Learning**
     - Linear/logistic regression, random forests, SVMs
-    - ⮡ **Deep Learning**
+    -  **Deep Learning**
       - MLPs, CNNs, RNNs, LSTMs, autoencoders
-      - ⮡ **Generative AI**
+      -  **Generative AI**
         - GANs, Transformers, Large Language Models (LLMs)
 
 > Not all AI is ML; not all ML is deep learning; not all deep learning is generative.
@@ -514,6 +514,7 @@ Limitation:
 > Handles long‑range dependencies.
 > Captures context so “mean” next to “absolute error” is clearly mathematical.
 -->
+
 ![bg right:40% 100%](./images/Picture16.png)
 
 ---
