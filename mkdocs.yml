@@ -1,6 +1,5 @@
 site_name: "Advanced Computing & AI Tutorials"
 
-
 # --- HOOK IS ADDED HERE AT THE ROOT LEVEL ---
 hooks:
   - hooks.py
@@ -33,8 +32,8 @@ docs_dir: "docs"
 site_dir: 'site'
 
 nav:
-    - Introduction to AI:
-      - Overview: Introduction-to-ai/module_1/README.md
+  - Introduction to AI:
+    - Overview: Introduction-to-ai/module_1/README.md
       - AI evolution: Introduction-to-ai/docs/module0_slides.html
       - AI impact on education: Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html
     - Module 1 - Symbolic AI: 
