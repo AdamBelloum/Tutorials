@@ -59,7 +59,7 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
   - `Summarise` readings and generate (sometimes fabricated) references
 
 - **Assessment & integrity**  
-  - Homework and essays: now solvable or heavily supported by GenAI.
+  - `Homework` and `essays`: now solvable or heavily supported by GenAI.
   - **Risk**: certifying students whose learning outcomes we cannot confidently verify.
 
 ---
@@ -81,12 +81,12 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
 # GenAI as a systemic challenge
 
 - GenAI challenges core **assumptions**:
-  - Are we still teaching the **right content and skills**?
-  - Are we assessing **students or their AI tools**?
-  - Do we need **small adjustments** or **radical redesign** of learning objectives?
+  - Are we still `teaching` the **right content and skills**?
+  - Are we `assessing` **students or their AI tools**?
+  - Do we need **small adjustments** or **radical redesign** of `learning objectives`?
 
 - **Governance & workload**  
-  - Exam committees face a growing “grey area” around AI‑related fraud.
+  - Exam committees face a growing `grey area` around AI‑related fraud.
   - Workload and juridification of assessment decisions are increasing.
 
 ---
@@ -110,12 +110,12 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
 # Are we assessing the right skills? (continue)
 
 - When we grade a thesis or project, are we grading:
-  - The student’s knowledge and skills, or
-  - The output of AI tools used behind the scenes?
+  - The `student’s` knowledge and skills, or
+  - The `output of AI tools` used behind the scenes?
 
 - Decisions needed at programme and exam‑committee level:
-  - **Which** learning objectives must be achieved **without GenAI** (core foundations).
-  - **Where** GenAI use is **allowed**, and how it should be documented and assessed.
+  - **Which** `learning objectives` must be achieved **without GenAI** (core foundations).
+  - **Where** `GenAI use` is **allowed**, and how it should be documented and assessed.
 
 - Assessment must be redesigned so that **key competences are verifiably demonstrated by the student**.
 
@@ -139,15 +139,15 @@ Under GenAI, programmes should:
 
 ## Constructive alignment under GenAI (continue)
 
-Exit qualifications → learning objectives → learning activities → assessment formats
+> Exit qualifications → learning objectives → learning activities → assessment formats
 
-Under GenAI, programmes should:
+Under `GenAI`, programmes should:
 
-- Adapt:
-  - Learning activities (e.g. more in‑class practice vs unsupervised homework).
-  - Assessment formats (e.g. oral exams, supervised tasks, process‑oriented assignments).
+- `Adapt`:
+  - `Learning activities` (e.g. more in‑class practice vs unsupervised homework).
+  - `Assessment formats` (e.g. oral exams, supervised tasks, process‑oriented assignments).
 
-- Ensure that assessment and AI rules are part of **programme‑level design**, not just course‑level “fine print”.
+- Ensure that `assessment` and `AI rules` are part of **programme‑level design**, not just course‑level “fine print”.
 
 ---
 
@@ -177,28 +177,28 @@ Under GenAI, programmes should:
 
 # Consolidation: “Navigating the Ocean of AI” project (2025)
 
-- UvA launches a central project on AI and GenAI in 2025:
+UvA launches a central project on AI and GenAI in 2025:
   - Revises the 2023 memo into a **GenAI education policy framework**.
   - Develops a **secure institutional GenAI tool (UvA AI Chat)**.
   - Designs **AI literacy programmes** for students and staff.
   - Initiates **pilots** across faculties on AI‑supported teaching and assessment.
-
+![bg right:30% 100%](./images/UVA-GenAI-policy.png)
 ---
 
 # Central framework: GenAI in education
 
 - UvA’s overall view on opportunities and risks of GenAI.
-- General guidelines for responsible use in teaching and assessment.
+- Guidelines for responsible use in teaching/assessment.
 - Specific guidance on:
   - AI literacy
   - Assessment formats
-  - Curriculum design (GenAI as exit qualification / subject / didactic tool)
+  - Curriculum design (GenAI as exit qualification)
 - Roles and responsibilities:
   - Executive Board, deans, programme directors, exam committees, lecturers, students.
 
 - [GenAI policy framework (central)](https://www.uva.nl/over-de-uva/beleid-en-regelingen/onderwijs/beleidskader-en-richtlijnen-genai-in-het-onderwijs.html)
 
-![bg right:30% 100%](./images/UVA-GenAI-policy.png)
+![bg right:30% 100%](./images/guidelines-for-responsible.png)
 
 ---
 
@@ -207,13 +207,13 @@ Under GenAI, programmes should:
 - Focuses specifically on **GenAI in assessment**.
 - Transitional document bridging existing assessment policy and future educational vision.
 - Encourages programmes to:
-  - Decide which learning outcomes can involve GenAI and which cannot.
-  - Review whole assessment programmes for GenAI‑related risks.
+  - Decide which learning outcomes can involve GenAI.
+  - Review whole assessment programmes for GenAI risks.
 - Highlights:
   - Limitations of AI detection tools.
-  - Importance of **format redesign** and **oral validation** when fraud is suspected.
+  - Importance of  **oral validation** when fraud is suspected.
 
-![bg right:30% 100%](./images/UVA-GenAI-policy.png)
+![bg right:20% 100%](./images/Assessment-Policy-Addendum.png)
 
 ---
 
