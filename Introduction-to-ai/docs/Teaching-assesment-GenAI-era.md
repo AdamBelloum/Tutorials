@@ -68,13 +68,13 @@ How the University of Amsterdam integrates GenAI into teaching and assessment
 ## Are we assessing students or their tools?
 
 - High‑risk assessment formats:
-  - Essays and take‑home assignments
-  - Unsupervised homework
-  - Online exams
+  - `Essays` and `take‑home` assignments
+  - `Unsupervised` homework
+  - `Online` exams
 
 - Challenges:
-  - Proving GenAI‑assisted fraud is difficult.
-  - Detection tools are unreliable and may be unfair.
+  - `Proving` GenAI‑assisted fraud is difficult.
+  - Detection tools are `unreliable` and may be unfair.
 
 ---
 
@@ -188,16 +188,13 @@ UvA launches a central project on AI and GenAI in 2025:
 # Central framework: GenAI in education
 
 - UvA’s overall view on opportunities and risks of GenAI.
-- Guidelines for responsible use in teaching/assessment.
-- Specific guidance on:
-  - AI literacy
-  - Assessment formats
-  - Curriculum design (GenAI as exit qualification)
+- Guidelines for `responsible` use in teaching/assessment.
+- Guidance on: AI literacy, Assessment formats, and Curriculum design (GenAI as exit qualification)
 - Roles and responsibilities:
   - Executive Board, deans, programme directors, exam committees, lecturers, students.
-
+<!--
 - [GenAI policy framework (central)](https://www.uva.nl/over-de-uva/beleid-en-regelingen/onderwijs/beleidskader-en-richtlijnen-genai-in-het-onderwijs.html)
-
+-->
 ![bg right:30% 100%](./images/guidelines-for-responsible.png)
 
 ---
@@ -205,13 +202,13 @@ UvA launches a central project on AI and GenAI in 2025:
 # Assessment addendum: GenAI in assessment
 
 - Focuses specifically on **GenAI in assessment**.
-- Transitional document bridging existing assessment policy and future educational vision.
-- Encourages programmes to:
+- `Transitional` document bridging existing assessment policy and future educational vision.
+- `Encourages` programmes to:
   - Decide which learning outcomes can involve GenAI.
   - Review whole assessment programmes for GenAI risks.
 - Highlights:
-  - Limitations of AI detection tools.
-  - Importance of  **oral validation** when fraud is suspected.
+  - `Limitations` of AI detection tools.
+  - `Importance` of  **oral validation** when fraud is suspected.
 
 ![bg right:20% 100%](./images/Assessment-Policy-Addendum.png)
 
@@ -224,23 +221,23 @@ UvA launches a central project on AI and GenAI in 2025:
 # GenAI: embraced but bounded
 
 - GenAI is seen as:
-  - A powerful tool to **support learning and teaching** (practice questions, feedback, content generation).
+  - A `powerful tool` to **support learning and teaching** (practice questions, feedback, content generation).
   - A source of new possibilities (personalised learning, simulations).
 
 - But not as a new educational “principle”:
-  - Educational goals and didactics must lead; GenAI is an instrument, not the driver.
+  - Educational goals and didactics must lead; `GenAI is an instrument, not the driver`.
 
 ---
 
 # Core principles (1)
 
 - **Human in the lead**  
-   - Students and staff remain fully responsible for work they submit.  
-   - Assessment must be performed by appointed examiners; grading cannot be outsourced to GenAI.
+   - Students and staff remain `fully responsible` for work they submit.  
+   - Assessment must be performed by `appointed examiners`; grading cannot be outsourced to GenAI.
 
 - **Transparency**  
-   - Students must be explicit about if and how they used GenAI.  
-   - Lecturers must clearly define allowed uses and how to document them.
+   - `Students` must be `explicit` about if and how they used GenAI.  
+   - `Lecturers` must `clearly` define `allowed uses` and `how to document them`.
 
 ---
 
@@ -351,15 +348,19 @@ UvA launches a central project on AI and GenAI in 2025:
 
 # Bottom‑up: local initiatives (overview)
 
-- **Faculty of Science (FNWI)**  
-  - Thematic meetings on “GenAI and assessment” with exam committees and programme directors.  
-  - Shared examples from programmes (e.g. Mathematics & SFM, SE/SNE) on GenAI‑resilient assessment.
+**Faculty of Science (FNWI)**  
+  - Themaics meetings on “GenAI and assessment” with exam committees and programme directors.  
+  - Shared examples from programmes on GenAI‑resilient assessment.
 
-- **Programmes and departments**  
-  - Software Engineering & SNE: discussions on “AI‑first” workflows and AI‑resilient assessment.  
-  - Mathematics & SFM: verifiable/non‑verifiable grading rules and thesis defense redesign.
+**Programmes and departments**  
+  - SE & SNE: discussions on “AI‑first” workflows and AI‑resilient assessment.  
+  - Math & SFM: verifiable/non‑verifiable grading rules and thesis defense redesign.
 
-- **Teaching & Learning Centres (TLCs)**  
+---
+
+# Bottom‑up: local initiatives (overview)
+
+**Teaching & Learning Centres (TLCs)**  
   - AI literacy e‑learning and workshops (“AI & Assessment”).  
   - Advice on course‑ and programme‑level changes.  
   - Support for pilots and an assessment network where staff share experiences.
@@ -393,15 +394,15 @@ UvA launches a central project on AI and GenAI in 2025:
 
 # SE & SNE: concerns and potential directions (continue)
 
-- **Directions being considered**  
+**Directions being considered**  
   - Reviewing key SE/SNE courses to see:  
     - Where more **in‑class, supervised work** is needed.  
     - Where unsupervised assignments need redesign or different weighting.  
   - Exploring the idea of an experimental **“AI‑first” course** where:  
     - Students explicitly use AI tools in SE workflows.  
-    - Assessment focuses on how they work with AI and how well they understand the results.
+    - Assessment focuses on how they use AI and they understand the results.
 
-- These are **active discussions**, intended to guide future course and assessment design.
+These are ** discussions**, intended to guide future course and assessment design.
 
 ---
 
@@ -418,13 +419,13 @@ UvA launches a central project on AI and GenAI in 2025:
 
 # BSc Informatics / AI: concerns and potential approaches
 
-- **Context**  
+**Context**  
   - Informatics and AI students are early adopters of GenAI; many already use such tools informally.  
   - This raises questions about how to ensure **deep conceptual learning**.
 
-- **Concerns discussed**  
+**Concerns discussed**  
   - To what extent can we trust unsupervised code or text submitted by these students?  
-  - How do we make sure they understand algorithms and models beyond what AI tools generate?
+  - How do we make sure they understand algorithms beyond what AI tools generate?
 
 ---
 
@@ -686,7 +687,7 @@ For verification and further reading:
 
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2025/06/AI-onderwijs-e1751352529945.jpg)
 
-- A **central hub** for GenAI in education at FNWI:
+A **central hub** for GenAI in education at FNWI:
   - Explains **what GenAI is** and why it matters in teaching.
   - Provides **GenAI resources** and examples for lecturers.
   - Offers guidance on **GenAI & assessment**, including supervised vs unsupervised formats.
@@ -725,9 +726,9 @@ From the Teaching & GenAI pages:
 
 ![bg right:30% 100%](https://tlc.uva.nl/wp-content/uploads/2025/11/Hackathonreeks-genAI-in-het-onderwijs.jpeg)
 
-More:  
+<!-- More:  
 https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53
-
+-->
 ---
 
 # 12. Personal supervision projects
@@ -876,3 +877,5 @@ https://tlc.uva.nl/en/article-category/teaching-and-ai/?faculty=53
 ![bg right:65% 100%](./images/uva-chat-2.png)
 
 *Thank you – I look forward to your questions and your own experiences.*
+
+---
