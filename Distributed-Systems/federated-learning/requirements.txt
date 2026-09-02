@@ -1,0 +1,13 @@
+# Federated Learning Framework
+flwr>=1.0.0
+
+# Data Manipulation & Analysis
+pandas
+numpy
+
+# Machine Learning & Metrics
+scikit-learn
+
+# Image Processing (Required for Cassava Image handling)
+Pillow
+

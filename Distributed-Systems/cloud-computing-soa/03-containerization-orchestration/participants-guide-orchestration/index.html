@@ -1,0 +1,4294 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../participants-guide-containerization-advanced/">
+      
+      
+        <link rel="next" href="../participants-guide-orchestration-advanced/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Orchestration - Advanced Computing & AI Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workshop-tutorial-32-orchestrating-the-authentication-service-and-url-shortener-on-kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-header__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advanced Computing & AI Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Orchestration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Introduction-to-ai/" class="md-tabs__link">
+          
+  
+  
+  Introduction to AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../01-rest-api/" class="md-tabs__link">
+          
+  
+  
+  Distributed Systems
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../HPC/openmp-01-basics/" class="md-tabs__link">
+          
+  
+  
+  High Performance Computing (HPC)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-nav__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Advanced Computing & AI Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/docs/module0_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI impact on education
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Symbolic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 - Symbolic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_1/docs/module1_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 - Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/docs/module2_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/hands-on/Hands-on-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/docs/Answer-model-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Modern AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 - Modern AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/docs/module3_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/hands-on/Hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/docs/Answer-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing & SOA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing & SOA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-rest-api/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-rest-api/participants-guide-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microservices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-microservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-microservices/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-microservices/participants-guid-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers & K8s
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Containers & K8s
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participants-guide-containerization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participants-guide-containerization-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-what-changes-compared-to-assignment-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. What Changes Compared to Assignment 3.1?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-assignment-32-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assignment 3.2 Goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Assignment 3.2 Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-core-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Core Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-project-structure-for-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Project Structure for 3.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-step-by-step-skeleton-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Step-by-Step Skeleton Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Step-by-Step Skeleton Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-service-code-and-container-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Service code and container files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-kubernetes-manifest-files-k8s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Kubernetes manifest files (k8s/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-suggested-fill-and-verify-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Suggested fill-and-verify workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preflight-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Preflight Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-build-and-push-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Build and Push Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Build and Push Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-use-provided-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Use provided script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-important-platform-warning-very-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Important platform warning (very common)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bring-up-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bring Up the Cluster
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bring Up the Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-control-plane-student127" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Control-plane (student127)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-worker-setup-student128-student129" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Worker setup (student128, student129)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-known-script-pitfall-you-must-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Known Script Pitfall You Must Fix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cni-and-containerd-configuration-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. CNI and containerd Configuration (Critical)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-nfs-shared-storage-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. NFS Shared Storage Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. NFS Shared Storage Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-on-student127-nfs-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 On student127 (NFS server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-on-all-nodes-including-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 On all nodes (including workers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-deploy-kubernetes-resources-in-correct-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Deploy Kubernetes Resources in Correct Order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-two-high-risk-configuration-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Two High-Risk Configuration Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Two High-Risk Configuration Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-auth-secretyaml-can-fail-with-illegal-base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 auth-secret.yaml can fail with illegal base64
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-public-key-mismatch-causes-all-protected-calls-to-return-403" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Public key mismatch causes all protected calls to return 403
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-health-verification-commands-must-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Health Verification Commands (Must Run)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Health Verification Commands (Must Run)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-cluster-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Cluster-level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-application-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Application-level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-rollout-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Rollout status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-api-smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. API Smoke Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-unittest-strategy-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Unittest Strategy (Recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Unittest Strategy (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-keep-test-urls-as-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Keep test URLs as localhost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-start-two-forwards-two-terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Start two forwards (two terminals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-run-tests-third-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Run tests (third terminal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-troubleshooting-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Troubleshooting Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Troubleshooting Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-kubectl-tries-localhost8080-and-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 1: kubectl tries localhost:8080 and fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-kubeadm-init-preflight-errors-ports-in-use-manifests-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 2: kubeadm init preflight errors (ports in use, manifests exist)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-pods-stuck-containercreating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 3: Pods stuck ContainerCreating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-4-errimagepull-with-no-match-for-platform-in-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 4: ErrImagePull with no match for platform in manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-5-all-unittest-cases-fail-with-403-201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 5: All unittest cases fail with 403 != 201
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-6-no-resources-found-in-websvc-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 6: No resources found in websvc namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-commands-recap-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Commands Recap (End-to-End)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Commands Recap (End-to-End)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-buildpush-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Build/push images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-initialize-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Initialize nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-apply-manifests-safely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 Apply manifests safely
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 Verify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#155-run-unittest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 Run unittest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-final-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Final Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participants-guide-orchestration-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenStack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenStack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-openstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-openstack/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFaaS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenFaaS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-openfaas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-openfaas/participants-guide-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federated Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Federated Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/docs/participant-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/docs/organizer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/docs/instruction-to-use-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Performance Computing (HPC)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High Performance Computing (HPC)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-01-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/02-debugging/hands_on_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/01-hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/02-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-what-changes-compared-to-assignment-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. What Changes Compared to Assignment 3.1?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-assignment-32-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assignment 3.2 Goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Assignment 3.2 Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-core-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Core Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-project-structure-for-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Project Structure for 3.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-step-by-step-skeleton-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Step-by-Step Skeleton Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Step-by-Step Skeleton Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-service-code-and-container-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Service code and container files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-kubernetes-manifest-files-k8s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Kubernetes manifest files (k8s/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-suggested-fill-and-verify-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Suggested fill-and-verify workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preflight-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Preflight Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-build-and-push-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Build and Push Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Build and Push Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-use-provided-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Use provided script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-important-platform-warning-very-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Important platform warning (very common)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bring-up-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bring Up the Cluster
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bring Up the Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-control-plane-student127" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Control-plane (student127)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-worker-setup-student128-student129" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Worker setup (student128, student129)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-known-script-pitfall-you-must-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Known Script Pitfall You Must Fix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cni-and-containerd-configuration-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. CNI and containerd Configuration (Critical)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-nfs-shared-storage-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. NFS Shared Storage Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. NFS Shared Storage Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-on-student127-nfs-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 On student127 (NFS server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-on-all-nodes-including-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 On all nodes (including workers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-deploy-kubernetes-resources-in-correct-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Deploy Kubernetes Resources in Correct Order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-two-high-risk-configuration-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Two High-Risk Configuration Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Two High-Risk Configuration Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-auth-secretyaml-can-fail-with-illegal-base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 auth-secret.yaml can fail with illegal base64
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-public-key-mismatch-causes-all-protected-calls-to-return-403" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Public key mismatch causes all protected calls to return 403
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-health-verification-commands-must-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Health Verification Commands (Must Run)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Health Verification Commands (Must Run)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-cluster-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Cluster-level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-application-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Application-level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-rollout-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Rollout status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-api-smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. API Smoke Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-unittest-strategy-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Unittest Strategy (Recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Unittest Strategy (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-keep-test-urls-as-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Keep test URLs as localhost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-start-two-forwards-two-terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Start two forwards (two terminals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-run-tests-third-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Run tests (third terminal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-troubleshooting-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Troubleshooting Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Troubleshooting Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-kubectl-tries-localhost8080-and-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 1: kubectl tries localhost:8080 and fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-kubeadm-init-preflight-errors-ports-in-use-manifests-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 2: kubeadm init preflight errors (ports in use, manifests exist)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-pods-stuck-containercreating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 3: Pods stuck ContainerCreating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-4-errimagepull-with-no-match-for-platform-in-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 4: ErrImagePull with no match for platform in manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-5-all-unittest-cases-fail-with-403-201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 5: All unittest cases fail with 403 != 201
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-6-no-resources-found-in-websvc-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 6: No resources found in websvc namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-commands-recap-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Commands Recap (End-to-End)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Commands Recap (End-to-End)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-buildpush-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Build/push images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-initialize-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Initialize nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-apply-manifests-safely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 Apply manifests safely
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 Verify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#155-run-unittest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 Run unittest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-final-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Final Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="workshop-tutorial-32-orchestrating-the-authentication-service-and-url-shortener-on-kubernetes">Workshop Tutorial 3.2: Orchestrating the Authentication Service and URL Shortener on Kubernetes</h1>
+<p>Note: The VM names (<code>student127</code>, <code>student128</code>, <code>student129</code>) are examples used in this guide. Replace them with your own VM names/IPs in your environment.</p>
+<p>Welcome! In this workshop, you will adapt your Assignment 3.1 system to <strong>Assignment 3.2</strong> by deploying it to a 3-node Kubernetes cluster.</p>
+<p>By the end, you will have:</p>
+<ul>
+<li>A <strong>Kubernetes control plane</strong> on <code>student127</code></li>
+<li>Two <strong>worker nodes</strong> (<code>student128</code>, <code>student129</code>) joined to the cluster</li>
+<li><strong>Authentication Service</strong> and <strong>URL Shortener Service</strong> deployed in namespace <code>websvc</code></li>
+<li><strong>Persistent shared storage</strong> using NFS + PV/PVC (<code>ReadWriteMany</code>)</li>
+<li>Services exposed through <strong>NodePort</strong> (<code>30081</code> and <code>30080</code>)</li>
+<li>A reliable <strong>verification and unittest workflow</strong></li>
+</ul>
+<p>This guide is based on the exact project layout and scripts in this repository and includes practical fixes for the issues that are most likely to appear during setup.</p>
+<hr />
+<h2 id="0-what-changes-compared-to-assignment-31">0. What Changes Compared to Assignment 3.1?</h2>
+<p>In Assignment 3.1, both services run with Docker Compose on a single machine.</p>
+<p>In Assignment 3.2, you must:</p>
+<ol>
+<li>deploy the services to Kubernetes</li>
+<li>run on multiple nodes (control-plane + workers)</li>
+<li>use Kubernetes resources (Namespace, Deployment, Service, ConfigMap, Secret, PV, PVC)</li>
+<li>make persistent storage available across Pods</li>
+<li>demonstrate the system still works end-to-end</li>
+</ol>
+<p>The API behavior remains largely the same; most complexity is in cluster setup, networking, storage, and deployment correctness.</p>
+<hr />
+<h2 id="1-assignment-32-goals">1. Assignment 3.2 Goals</h2>
+<h3 id="11-core-requirements">1.1 Core Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-node Kubernetes cluster</td>
+<td><code>student127</code> control-plane + <code>student128/129</code> workers</td>
+</tr>
+<tr>
+<td>Service deployment on k8s</td>
+<td><code>auth</code> and <code>shortener</code> deployed via YAML manifests</td>
+</tr>
+<tr>
+<td>Shared persistent storage</td>
+<td>NFS-backed PV/PVC with RWX access</td>
+</tr>
+<tr>
+<td>External reachability</td>
+<td>NodePort services available on node IPs</td>
+</tr>
+<tr>
+<td>Authenticated shortener operations</td>
+<td>JWT minted by auth and validated by shortener</td>
+</tr>
+<tr>
+<td>Demonstrable verification</td>
+<td><code>kubectl</code> status checks + API checks + unittest</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-project-structure-for-32">2. Project Structure for 3.2</h2>
+<pre><code class="language-text">03-orchestration/
+├── commands/
+│   ├── student127-control-plane.sh
+│   ├── student128-worker.sh
+│   ├── student129-worker.sh
+│   ├── push-images.sh
+│   └── README.md
+├── k8s/
+│   ├── namespace.yaml
+│   ├── shared-pv.yaml
+│   ├── shared-pvc.yaml
+│   ├── auth-secret.yaml
+│   ├── shortener-configmap.yaml
+│   ├── auth-deployment.yaml
+│   ├── auth-service.yaml
+│   ├── shortener-deployment.yaml
+│   └── shortener-service.yaml
+├── auth_service/
+├── shortener_service/
+└── unittest_app/
+    ├── unittest_app.py
+    └── read_from.csv
+</code></pre>
+<hr />
+<h2 id="21-step-by-step-skeleton-implementation">2.1 Step-by-Step Skeleton Implementation</h2>
+<p>The <code>03-orchestration-skeleton</code> now uses intentional TODO gaps.<br />
+Use this checklist to fill files in a controlled order.</p>
+<h3 id="a-service-code-and-container-files">A. Service code and container files</h3>
+<p>Start in:</p>
+<pre><code class="language-text">skeleton/03-orchestration/03-orchestration-skeleton/
+</code></pre>
+<p>Implement these files first:</p>
+<ol>
+<li><code>auth_service/auth.py</code></li>
+<li>add absolute paths (<code>BASE_DIR</code>, <code>PRIVATE_KEY_FILE</code>, <code>PUBLIC_KEY_FILE</code>, <code>DATA_FILE</code>)</li>
+<li>implement persistence helpers:</li>
+<li><code>ensure_parent_dir(path)</code></li>
+<li><code>load_users()</code></li>
+<li><code>save_users()</code></li>
+<li>ensure write endpoints persist data (<code>POST /users</code>, <code>PUT /users</code>)</li>
+<li>startup block should run:</li>
+<li><code>load_users()</code></li>
+<li><code>ensure_keys_exist()</code></li>
+<li>
+<p><code>app.run(host="0.0.0.0", port=5001, debug=False)</code></p>
+</li>
+<li>
+<p><code>shortener_service/shortener.py</code></p>
+</li>
+<li>add absolute paths (<code>BASE_DIR</code>, <code>PUBLIC_KEY_FILE</code>, <code>DATA_FILE</code>)</li>
+<li>implement persistence helpers:</li>
+<li><code>ensure_parent_dir(path)</code></li>
+<li><code>load_urls()</code></li>
+<li><code>save_urls()</code></li>
+<li>call <code>load_urls()</code> before route logic that reads/writes shared state</li>
+<li>call <code>save_urls()</code> after mutating operations:</li>
+<li><code>POST /</code></li>
+<li><code>PUT /&lt;id&gt;</code></li>
+<li><code>DELETE /&lt;id&gt;</code></li>
+<li><code>DELETE /</code></li>
+<li>startup block should run:</li>
+<li><code>load_urls()</code></li>
+<li>
+<p><code>app.run(host="0.0.0.0", port=5000, debug=False)</code></p>
+</li>
+<li>
+<p><code>auth_service/requirements.txt</code> and <code>shortener_service/requirements.txt</code></p>
+</li>
+<li>include:</li>
+<li><code>flask</code></li>
+<li>
+<p><code>cryptography</code></p>
+</li>
+<li>
+<p><code>auth_service/Dockerfile</code> and <code>shortener_service/Dockerfile</code></p>
+</li>
+<li>base image: <code>python:3.11-slim</code></li>
+<li><code>WORKDIR /app</code></li>
+<li>install dependencies from <code>requirements.txt</code></li>
+<li>copy app file + <code>keys/</code> + <code>data/</code></li>
+<li>expose ports (<code>5001</code> for auth, <code>5000</code> for shortener)</li>
+<li>
+<p>run correct entrypoints (<code>python auth.py</code>, <code>python shortener.py</code>)</p>
+</li>
+<li>
+<p><code>docker-compose.yml</code> (local parity check before k8s)</p>
+</li>
+<li>define <code>auth</code> and <code>shortener</code> services</li>
+<li>map ports:</li>
+<li><code>5001:5001</code></li>
+<li><code>5000:5000</code></li>
+<li>keep persistent data volumes mounted to <code>/app/data</code></li>
+<li>mount keys to <code>/app/keys</code></li>
+</ol>
+<h3 id="b-kubernetes-manifest-files-k8s">B. Kubernetes manifest files (<code>k8s/</code>)</h3>
+<p>Fill these YAML files in this order:</p>
+<ol>
+<li><code>namespace.yaml</code></li>
+<li>
+<p>create namespace <code>websvc</code></p>
+</li>
+<li>
+<p><code>shared-pv.yaml</code></p>
+</li>
+<li>PV name: <code>websvc-shared-pv</code></li>
+<li>RWX + 1Gi + <code>Retain</code></li>
+<li>NFS:</li>
+<li>server <code>145.100.130.127</code></li>
+<li>
+<p>path <code>/srv/nfs/websvc</code></p>
+</li>
+<li>
+<p><code>shared-pvc.yaml</code></p>
+</li>
+<li>PVC name: <code>websvc-shared-pvc</code></li>
+<li>namespace <code>websvc</code></li>
+<li>bind to <code>websvc-shared-pv</code></li>
+<li>
+<p>request <code>1Gi</code>, access mode <code>ReadWriteMany</code></p>
+</li>
+<li>
+<p><code>auth-secret.yaml</code></p>
+</li>
+<li>either:</li>
+<li>generate secret from key files using <code>kubectl create secret ... --from-file ...</code></li>
+<li>or fill base64 fields manually</li>
+<li>
+<p>expected secret name: <code>auth-keys</code></p>
+</li>
+<li>
+<p><code>shortener-configmap.yaml</code></p>
+</li>
+<li>create ConfigMap <code>shortener-public-key</code></li>
+<li>data key must be <code>public_key.pem</code></li>
+<li>
+<p>content must match auth service public key</p>
+</li>
+<li>
+<p><code>auth-deployment.yaml</code></p>
+</li>
+<li>deployment <code>auth</code>, namespace <code>websvc</code>, replicas <code>1</code></li>
+<li>image: <code>YOUR_DOCKERHUB_USERNAME/auth-service:3.2</code></li>
+<li>mount:</li>
+<li>PVC to <code>/app/data</code></li>
+<li>secret <code>auth-keys</code> to <code>/app/keys</code> (readOnly)</li>
+<li>
+<p>container port <code>5001</code></p>
+</li>
+<li>
+<p><code>auth-service.yaml</code></p>
+</li>
+<li>NodePort service <code>auth</code></li>
+<li>selector <code>app: auth</code></li>
+<li>service port/targetPort <code>5001</code></li>
+<li>
+<p>nodePort <code>30081</code></p>
+</li>
+<li>
+<p><code>shortener-deployment.yaml</code></p>
+</li>
+<li>deployment <code>shortener</code>, namespace <code>websvc</code>, replicas <code>3</code></li>
+<li>image: <code>YOUR_DOCKERHUB_USERNAME/shortener-service:3.2</code></li>
+<li>mount:</li>
+<li>same PVC to <code>/app/data</code></li>
+<li>ConfigMap <code>shortener-public-key</code> to <code>/app/keys</code> (readOnly)</li>
+<li>
+<p>container port <code>5000</code></p>
+</li>
+<li>
+<p><code>shortener-service.yaml</code></p>
+</li>
+<li>NodePort service <code>shortener</code></li>
+<li>selector <code>app: shortener</code></li>
+<li>service port/targetPort <code>5000</code></li>
+<li>nodePort <code>30080</code></li>
+</ol>
+<h3 id="c-suggested-fill-and-verify-workflow">C. Suggested fill-and-verify workflow</h3>
+<p>Use this quick loop:</p>
+<ol>
+<li>fill one file</li>
+<li>run syntax/format check (Python/YAML)</li>
+<li>move to next file</li>
+<li>after all files are done, deploy in Section 9 order</li>
+<li>run smoke + unittest checks in Sections 12 and 13</li>
+</ol>
+<hr />
+<h2 id="3-preflight-checklist">3. Preflight Checklist</h2>
+<p>Before touching Kubernetes:</p>
+<ol>
+<li>Ensure Docker images exist on Docker Hub.</li>
+<li>Ensure images are built for <strong>linux/amd64</strong> (your VMs are amd64).</li>
+<li>Ensure keys are consistent:</li>
+<li><code>auth_service/keys/private_key.pem</code> signs JWT</li>
+<li><code>auth_service/keys/public_key.pem</code> verifies JWT</li>
+<li><code>shortener</code> must mount the same public key</li>
+</ol>
+<p>Quick architecture check (on each VM):</p>
+<pre><code class="language-bash">uname -m
+# expected: x86_64
+</code></pre>
+<hr />
+<h2 id="4-build-and-push-images">4. Build and Push Images</h2>
+<h3 id="41-use-provided-script">4.1 Use provided script</h3>
+<p>From project root on your local machine:</p>
+<pre><code class="language-bash">docker login
+./commands/push-images.sh -u YOUR_DOCKERHUB_USERNAME -t 3.2 --update-k8s
+</code></pre>
+<p>This script:</p>
+<ul>
+<li>builds <code>auth-service</code> and <code>shortener-service</code></li>
+<li>pushes both to Docker Hub</li>
+<li>optionally updates image references in deployment YAMLs</li>
+</ul>
+<h3 id="42-important-platform-warning-very-common">4.2 Important platform warning (very common)</h3>
+<p>If Pods fail with:</p>
+<pre><code class="language-text">no match for platform in manifest
+</code></pre>
+<p>your pushed image is not compatible with VM architecture.</p>
+<p>Fix by pushing amd64 images explicitly:</p>
+<pre><code class="language-bash">docker buildx create --use --name multiarch-builder 2&gt;/dev/null || docker buildx use multiarch-builder
+docker buildx build --platform linux/amd64 -t YOUR_DOCKERHUB_USERNAME/auth-service:3.2 --push auth_service
+docker buildx build --platform linux/amd64 -t YOUR_DOCKERHUB_USERNAME/shortener-service:3.2 --push shortener_service
+</code></pre>
+<hr />
+<h2 id="5-bring-up-the-cluster">5. Bring Up the Cluster</h2>
+<h3 id="51-control-plane-student127">5.1 Control-plane (<code>student127</code>)</h3>
+<p>Run:</p>
+<pre><code class="language-bash">./commands/student127-control-plane.sh
+</code></pre>
+<h3 id="52-worker-setup-student128-student129">5.2 Worker setup (<code>student128</code>, <code>student129</code>)</h3>
+<p>Run on each worker:</p>
+<pre><code class="language-bash">./commands/student128-worker.sh
+# and
+./commands/student129-worker.sh
+</code></pre>
+<p>Then on <code>student127</code> generate join command:</p>
+<pre><code class="language-bash">kubeadm token create --print-join-command
+</code></pre>
+<p>Run generated <code>kubeadm join ...</code> on both workers.</p>
+<hr />
+<h2 id="6-known-script-pitfall-you-must-fix">6. Known Script Pitfall You Must Fix</h2>
+<p>In <code>commands/student127-control-plane.sh</code>, there is an accidental injected command line after <code>sysctl --system</code>:</p>
+<pre><code class="language-bash">kubectl delete pod -n websvc shortener-766945b597-n92bz --force --grace-period=0
+</code></pre>
+<p>This line should <strong>not</strong> be part of bootstrap. Remove it before reuse.</p>
+<p>Why: it can break idempotency and introduce random errors during first-time cluster setup.</p>
+<hr />
+<h2 id="7-cni-and-containerd-configuration-critical">7. CNI and containerd Configuration (Critical)</h2>
+<p>A common failure is:</p>
+<pre><code class="language-text">failed to find plugin &quot;flannel&quot; in path [/usr/lib/cni]
+failed to find plugin &quot;loopback&quot; in path [/usr/lib/cni]
+</code></pre>
+<p>Fix on <strong>all nodes</strong> (<code>student127/128/129</code>):</p>
+<pre><code class="language-bash">sudo sed -i 's|bin_dir = &quot;/usr/lib/cni&quot;|bin_dir = &quot;/opt/cni/bin&quot;|g' /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
+</code></pre>
+<p>Then re-apply flannel on <code>student127</code>:</p>
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+kubectl -n kube-flannel get pods -o wide
+</code></pre>
+<hr />
+<h2 id="8-nfs-shared-storage-setup">8. NFS Shared Storage Setup</h2>
+<p>Your <code>PV/PVC</code> expects:</p>
+<ul>
+<li>NFS server: <code>145.100.130.127</code></li>
+<li>export path: <code>/srv/nfs/websvc</code></li>
+<li>access mode: <code>ReadWriteMany</code></li>
+</ul>
+<h3 id="81-on-student127-nfs-server">8.1 On <code>student127</code> (NFS server)</h3>
+<pre><code class="language-bash">sudo mkdir -p /srv/nfs/websvc
+sudo chown nobody:nogroup /srv/nfs/websvc
+sudo chmod 777 /srv/nfs/websvc
+
+cat &lt;&lt;'NFS' | sudo tee /etc/exports
+/srv/nfs/websvc 145.100.130.127(rw,sync,no_subtree_check,no_root_squash) 145.100.130.128(rw,sync,no_subtree_check,no_root_squash) 145.100.130.129(rw,sync,no_subtree_check,no_root_squash)
+NFS
+
+sudo exportfs -rav
+sudo systemctl enable --now nfs-kernel-server
+</code></pre>
+<h3 id="82-on-all-nodes-including-workers">8.2 On all nodes (including workers)</h3>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install -y nfs-common
+</code></pre>
+<p>If Pods show <code>FailedMount ... exit status 32</code>, check NFS first.</p>
+<hr />
+<h2 id="9-deploy-kubernetes-resources-in-correct-order">9. Deploy Kubernetes Resources in Correct Order</h2>
+<p>Do not rely on <code>kubectl apply -f k8s/</code> initially, because namespace-dependent resources can race.</p>
+<p>Use explicit order:</p>
+<pre><code class="language-bash">cd ~/03-orchestration
+
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/shared-pv.yaml
+kubectl apply -f k8s/shared-pvc.yaml
+</code></pre>
+<p>Check binding:</p>
+<pre><code class="language-bash">kubectl get pv,pvc -n websvc
+# expected: PVC Bound
+</code></pre>
+<p>Then apply auth key material and shortener public key:</p>
+<pre><code class="language-bash"># recommended: build secret from files (safer than handwritten base64)
+kubectl -n websvc delete secret auth-keys --ignore-not-found
+kubectl -n websvc create secret generic auth-keys \
+  --from-file=private_key.pem=auth_service/keys/private_key.pem \
+  --from-file=public_key.pem=auth_service/keys/public_key.pem
+
+# recommended: build configmap from actual public key file
+kubectl -n websvc create configmap shortener-public-key \
+  --from-file=public_key.pem=auth_service/keys/public_key.pem \
+  -o yaml --dry-run=client | kubectl apply -f -
+</code></pre>
+<p>Then deploy workloads/services:</p>
+<pre><code class="language-bash">kubectl apply -f k8s/auth-deployment.yaml
+kubectl apply -f k8s/auth-service.yaml
+kubectl apply -f k8s/shortener-deployment.yaml
+kubectl apply -f k8s/shortener-service.yaml
+</code></pre>
+<hr />
+<h2 id="10-two-high-risk-configuration-issues">10. Two High-Risk Configuration Issues</h2>
+<h3 id="101-auth-secretyaml-can-fail-with-illegal-base64">10.1 <code>auth-secret.yaml</code> can fail with illegal base64</h3>
+<p>If you see:</p>
+<pre><code class="language-text">Secret ... illegal base64 data at input byte ...
+</code></pre>
+<p>Do not debug long inline base64 manually. Recreate Secret from files (commands shown above).</p>
+<h3 id="102-public-key-mismatch-causes-all-protected-calls-to-return-403">10.2 Public key mismatch causes all protected calls to return 403</h3>
+<p>Symptom in unittest:</p>
+<ul>
+<li>login works</li>
+<li>but <code>POST /</code> on shortener returns <code>403</code> instead of <code>201</code></li>
+</ul>
+<p>Cause:</p>
+<ul>
+<li><code>shortener-public-key</code> content does not match auth private key pair.</li>
+</ul>
+<p>Fix:</p>
+<ul>
+<li>regenerate ConfigMap from <code>auth_service/keys/public_key.pem</code></li>
+<li>restart shortener deployment</li>
+</ul>
+<pre><code class="language-bash">kubectl rollout restart deployment/shortener -n websvc
+kubectl rollout status deployment/shortener -n websvc
+</code></pre>
+<hr />
+<h2 id="11-health-verification-commands-must-run">11. Health Verification Commands (Must Run)</h2>
+<h3 id="111-cluster-level">11.1 Cluster-level</h3>
+<pre><code class="language-bash">kubectl get nodes -o wide
+kubectl get pods -A
+</code></pre>
+<p>Expected: all 3 nodes <code>Ready</code>; core system Pods healthy.</p>
+<h3 id="112-application-level">11.2 Application-level</h3>
+<pre><code class="language-bash">kubectl get all -n websvc -o wide
+kubectl get svc -n websvc
+kubectl get endpoints -n websvc
+kubectl get pv,pvc -n websvc
+</code></pre>
+<p>Expected:</p>
+<ul>
+<li><code>auth</code> and <code>shortener</code> Pods <code>Running</code></li>
+<li><code>auth</code> service exposes <code>5001:30081</code></li>
+<li><code>shortener</code> service exposes <code>5000:30080</code></li>
+<li>endpoints are not <code>&lt;none&gt;</code></li>
+<li>PVC is <code>Bound</code></li>
+</ul>
+<h3 id="113-rollout-status">11.3 Rollout status</h3>
+<pre><code class="language-bash">kubectl rollout status deployment/auth -n websvc
+kubectl rollout status deployment/shortener -n websvc
+</code></pre>
+<hr />
+<h2 id="12-api-smoke-tests">12. API Smoke Tests</h2>
+<p>From <code>student127</code>:</p>
+<pre><code class="language-bash"># register
+curl -i -X POST http://127.0.0.1:30081/users \
+  -H 'Content-Type: application/json' \
+  -d '{&quot;username&quot;:&quot;smoke_user&quot;,&quot;password&quot;:&quot;test&quot;}'
+
+# login
+curl -i -X POST http://127.0.0.1:30081/users/login \
+  -H 'Content-Type: application/json' \
+  -d '{&quot;username&quot;:&quot;smoke_user&quot;,&quot;password&quot;:&quot;test&quot;}'
+</code></pre>
+<p>Then use the returned token against shortener:</p>
+<pre><code class="language-bash">curl -i -X POST http://127.0.0.1:30080/ \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_TOKEN' \
+  -d '{&quot;value&quot;:&quot;https://example.com&quot;}'
+</code></pre>
+<hr />
+<h2 id="13-unittest-strategy-recommended">13. Unittest Strategy (Recommended)</h2>
+<p>The most stable strategy is to run unittest on <code>student127</code> with local port-forward.</p>
+<h3 id="131-keep-test-urls-as-localhost">13.1 Keep test URLs as localhost</h3>
+<p>In <code>unittest_app/unittest_app.py</code>:</p>
+<pre><code class="language-python">base_url = &quot;http://127.0.0.1:5000&quot;
+auth_url = &quot;http://127.0.0.1:5001&quot;
+</code></pre>
+<h3 id="132-start-two-forwards-two-terminals">13.2 Start two forwards (two terminals)</h3>
+<p>Terminal A:</p>
+<pre><code class="language-bash">kubectl -n websvc port-forward svc/shortener 5000:5000 --address 127.0.0.1
+</code></pre>
+<p>Terminal B:</p>
+<pre><code class="language-bash">kubectl -n websvc port-forward svc/auth 5001:5001 --address 127.0.0.1
+</code></pre>
+<h3 id="133-run-tests-third-terminal">13.3 Run tests (third terminal)</h3>
+<pre><code class="language-bash">cd ~/03-orchestration/unittest_app
+python3 unittest_app.py
+</code></pre>
+<p>If you prefer direct NodePort testing from another machine, set:</p>
+<pre><code class="language-python">base_url = &quot;http://145.100.130.127:30080&quot;
+auth_url = &quot;http://145.100.130.127:30081&quot;
+</code></pre>
+<p>But this mode is more sensitive to external network/firewall restrictions.</p>
+<hr />
+<h2 id="14-troubleshooting-matrix">14. Troubleshooting Matrix</h2>
+<h3 id="problem-1-kubectl-tries-localhost8080-and-fails">Problem 1: <code>kubectl</code> tries <code>localhost:8080</code> and fails</h3>
+<p>Symptom:</p>
+<pre><code class="language-text">The connection to the server localhost:8080 was refused
+</code></pre>
+<p>Cause: <code>admin.conf</code> missing or not copied to <code>$HOME/.kube/config</code>.</p>
+<p>Fix:</p>
+<pre><code class="language-bash">mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre>
+<p>If <code>/etc/kubernetes/admin.conf</code> does not exist, control-plane init did not complete.</p>
+<hr />
+<h3 id="problem-2-kubeadm-init-preflight-errors-ports-in-use-manifests-exist">Problem 2: <code>kubeadm init</code> preflight errors (ports in use, manifests exist)</h3>
+<p>Cause: node was already initialized.</p>
+<p>Fix:</p>
+<pre><code class="language-bash">sudo kubeadm reset -f
+sudo rm -rf /etc/kubernetes /var/lib/etcd /etc/cni/net.d
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
+sudo kubeadm init --apiserver-advertise-address=145.100.130.127 --pod-network-cidr=10.244.0.0/16
+</code></pre>
+<hr />
+<h3 id="problem-3-pods-stuck-containercreating">Problem 3: Pods stuck <code>ContainerCreating</code></h3>
+<p>Run:</p>
+<pre><code class="language-bash">kubectl describe pod -n websvc &lt;pod-name&gt;
+kubectl get events -n websvc --sort-by=.lastTimestamp | tail -n 50
+</code></pre>
+<p>Interpret quickly:</p>
+<ul>
+<li><code>failed to find plugin flannel/loopback</code>: CNI path issue (Section 7)</li>
+<li><code>FailedMount ... nfs ... exit status 32</code>: NFS issue (Section 8)</li>
+<li><code>ErrImagePull</code>/<code>ImagePullBackOff</code>: image/tag/platform/permission issue (Section 4)</li>
+</ul>
+<hr />
+<h3 id="problem-4-errimagepull-with-no-match-for-platform-in-manifest">Problem 4: <code>ErrImagePull</code> with <code>no match for platform in manifest</code></h3>
+<p>Fix: rebuild and push with <code>--platform linux/amd64</code> (Section 4.2).</p>
+<hr />
+<h3 id="problem-5-all-unittest-cases-fail-with-403-201">Problem 5: All unittest cases fail with <code>403 != 201</code></h3>
+<p>Cause: shortener cannot verify JWT because mounted public key is wrong/mismatched.</p>
+<p>Fix:</p>
+<ul>
+<li>recreate <code>shortener-public-key</code> ConfigMap from <code>auth_service/keys/public_key.pem</code></li>
+<li>rollout restart shortener</li>
+</ul>
+<hr />
+<h3 id="problem-6-no-resources-found-in-websvc-namespace">Problem 6: <code>No resources found in websvc namespace</code></h3>
+<p>Cause: manifests not applied or namespace ordering issue.</p>
+<p>Fix:</p>
+<ul>
+<li>apply <code>namespace.yaml</code> first</li>
+<li>apply the rest in explicit order (Section 9)</li>
+</ul>
+<hr />
+<h2 id="15-commands-recap-end-to-end">15. Commands Recap (End-to-End)</h2>
+<h3 id="151-buildpush-images">15.1 Build/push images</h3>
+<pre><code class="language-bash">docker login
+./commands/push-images.sh -u YOUR_DOCKERHUB_USERNAME -t 3.2 --update-k8s
+</code></pre>
+<h3 id="152-initialize-nodes">15.2 Initialize nodes</h3>
+<pre><code class="language-bash"># student127
+./commands/student127-control-plane.sh
+
+# student128
+./commands/student128-worker.sh
+
+# student129
+./commands/student129-worker.sh
+
+# student127 -&gt; generate join
+kubeadm token create --print-join-command
+</code></pre>
+<h3 id="153-apply-manifests-safely">15.3 Apply manifests safely</h3>
+<pre><code class="language-bash">kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/shared-pv.yaml
+kubectl apply -f k8s/shared-pvc.yaml
+kubectl -n websvc create secret generic auth-keys \
+  --from-file=private_key.pem=auth_service/keys/private_key.pem \
+  --from-file=public_key.pem=auth_service/keys/public_key.pem \
+  -o yaml --dry-run=client | kubectl apply -f -
+kubectl -n websvc create configmap shortener-public-key \
+  --from-file=public_key.pem=auth_service/keys/public_key.pem \
+  -o yaml --dry-run=client | kubectl apply -f -
+kubectl apply -f k8s/auth-deployment.yaml
+kubectl apply -f k8s/auth-service.yaml
+kubectl apply -f k8s/shortener-deployment.yaml
+kubectl apply -f k8s/shortener-service.yaml
+</code></pre>
+<h3 id="154-verify">15.4 Verify</h3>
+<pre><code class="language-bash">kubectl get nodes -o wide
+kubectl get all -n websvc -o wide
+kubectl get pv,pvc -n websvc
+kubectl get endpoints -n websvc
+</code></pre>
+<h3 id="155-run-unittest">15.5 Run unittest</h3>
+<pre><code class="language-bash"># terminal A
+kubectl -n websvc port-forward svc/shortener 5000:5000 --address 127.0.0.1
+
+# terminal B
+kubectl -n websvc port-forward svc/auth 5001:5001 --address 127.0.0.1
+
+# terminal C
+cd unittest_app
+python3 unittest_app.py
+</code></pre>
+<hr />
+<h2 id="16-final-checklist">16. Final Checklist</h2>
+<p>Before submission, ensure all are true:</p>
+<ul>
+<li>[ ] all 3 nodes are <code>Ready</code></li>
+<li>[ ] <code>auth</code> (1 replica) and <code>shortener</code> (3 replicas) are <code>Running</code></li>
+<li>[ ] <code>websvc-shared-pvc</code> is <code>Bound</code></li>
+<li>[ ] NodePort services expose <code>30081</code> and <code>30080</code></li>
+<li>[ ] JWT login works and shortener accepts authenticated requests</li>
+<li>[ ] unittest runs against Kubernetes deployment</li>
+<li>[ ] image tags and architectures match cluster (<code>linux/amd64</code>)</li>
+<li>[ ] key material is consistent between auth and shortener</li>
+</ul>
+<p>If all items pass, your Assignment 3.2 environment is in good shape.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

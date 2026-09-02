@@ -1,0 +1,3442 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Module: Foundations of Machine Learning - Advanced Computing & AI Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-foundations-of-machine-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-header__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advanced Computing & AI Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module: Foundations of Machine Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Introduction to AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/" class="md-tabs__link">
+          
+  
+  
+  Distributed Systems
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../HPC/openmp-01-basics/" class="md-tabs__link">
+          
+  
+  
+  High Performance Computing (HPC)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-nav__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Advanced Computing & AI Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/module0_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/Teaching-assesment-GenAI-era.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI impact on education
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Symbolic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 - Symbolic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_1/docs/module1_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 - Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hands-on/Hands-on-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Answer-model-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Modern AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 - Modern AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/docs/module3_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/hands-on/Hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/docs/Answer-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing & SOA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing & SOA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microservices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/02-microservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/02-microservices/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/02-microservices/participants-guid-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers & K8s
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Containers & K8s
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-containerization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-containerization-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-orchestration-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenStack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenStack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/04-openstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/04-openstack/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFaaS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenFaaS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/05-openfaas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/05-openfaas/participants-guide-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federated Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Federated Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/docs/participant-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/docs/organizer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/docs/instruction-to-use-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Performance Computing (HPC)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High Performance Computing (HPC)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-01-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/02-debugging/hands_on_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/01-hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/02-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-foundations-of-machine-learning">Module: Foundations of Machine Learning</h1>
+<p><strong>Audience:</strong> 1st-year undergraduates<br />
+<strong>Time:</strong> ~120 minutes  </p>
+<ul>
+<li>From <strong>rules</strong> to <strong>learning from data</strong></li>
+<li>Core <strong>ML concepts</strong> and <strong>workflow</strong></li>
+<li>Types of models: <strong>linear / non-linear</strong>, <strong>parametric / non-parametric</strong></li>
+<li>How models <strong>learn</strong> (loss, optimization)</li>
+<li><strong>Evaluation</strong>, overfitting, and <strong>data / ethics</strong></li>
+</ul>
+<hr />
+<h1 id="plan-for-today">Plan for Today</h1>
+<ol>
+<li>Why Machine Learning? (from rules to learning)</li>
+<li>Core ML concepts &amp; workflow</li>
+<li>Models and data: linear vs non-linear, parametric vs non-parametric</li>
+<li>How models learn: loss, gradient descent</li>
+<li>Evaluating models &amp; avoiding traps</li>
+<li>Real-world issues: data quality &amp; bias</li>
+<li>Wrap-up &amp; questions</li>
+</ol>
+<hr />
+<h1 id="1-why-machine-learning">1. Why Machine Learning?</h1>
+<p><strong>Before ML (Rule-based world)</strong></p>
+<ul>
+<li>Symbolic AI: humans write <strong>If–Then</strong> rules</li>
+<li>Works well when:</li>
+<li>Rules are clear</li>
+<li>Data is clean and structured</li>
+<li>Fails when:</li>
+<li>Data is noisy, messy, ambiguous</li>
+<li>Patterns are too complex to write down</li>
+</ul>
+<hr />
+<h1 id="the-new-way-machine-learning">The New Way: Machine Learning</h1>
+<ul>
+<li><strong>Goal:</strong> Build <strong>learners</strong>, not hand-written rules</li>
+<li>We provide <strong>data</strong> (examples), not logic</li>
+<li>The computer <strong>learns patterns</strong> from data</li>
+<li>We design:</li>
+<li>The <strong>model form</strong> (architecture)</li>
+<li>The <strong>learning algorithm</strong></li>
+</ul>
+<p><strong>Key idea:</strong><br />
+Instead of programming every rule, we <strong>optimize a model</strong> to fit the data.</p>
+<hr />
+<h1 id="discussion-23-min">Discussion (2–3 min)</h1>
+<p>With a neighbor:</p>
+<ul>
+<li>Name one app or service you use (search, maps, recommendations, spam filter…).</li>
+<li>Which parts could be <strong>fixed rules</strong>?</li>
+<li>Which parts are likely <strong>learned from data</strong>?</li>
+</ul>
+<p>We’ll collect 2–3 examples.</p>
+<hr />
+<h1 id="2-core-machine-learning-concepts">2. Core Machine Learning Concepts</h1>
+<p>We’ll use these terms all </p>
+<ul>
+<li><strong>Data set</strong>: collection of examples</li>
+<li><strong>Features</strong>: input variables (x)</li>
+<li><strong>Labels / targets</strong>: what we want to predict (y)</li>
+<li><strong>Model</strong>: mathematical function mapping x → y</li>
+<li><strong>Training</strong>: fitting the model to known data</li>
+<li><strong>Testing</strong>: checking performance on unseen data</li>
+</ul>
+<hr />
+<h1 id="what-is-machine-learning">What is Machine Learning?</h1>
+<blockquote>
+<p>“ML is a scientific discipline that deals with the construction and study of algorithms that can learn from data. Such algorithms operate in two steps:
+1. Building a model based on the data<br />
+2. Using the model to make predictions and decisions rather than following explicitly programmed instructions.”</p>
+</blockquote>
+<hr />
+<h1 id="types-of-machine-learning-overview">Types of Machine Learning (Overview)</h1>
+<ul>
+<li><strong>Supervised learning</strong></li>
+<li>Inputs <strong>and</strong> labels</li>
+<li>
+<p>E.g., spam vs not-spam, disease vs no disease, house prices</p>
+</li>
+<li>
+<p><strong>Unsupervised learning</strong></p>
+</li>
+<li>Only inputs (no labels)</li>
+<li>
+<p>E.g., clustering customers, discovering groups</p>
+</li>
+<li>
+<p><strong>Reinforcement learning</strong></p>
+</li>
+<li>Agent interacts with environment, receives <strong>rewards</strong></li>
+<li>E.g., game-playing, robot control</li>
+</ul>
+<p>In this module we focus on <strong>supervised learning</strong>.</p>
+<hr />
+<h1 id="ml-workflow-big-picture">ML Workflow: Big Picture</h1>
+<p>Typical <strong>modelling lifecycle</strong>:</p>
+<ol>
+<li><strong>Define the problem</strong><br />
+   (classification / regression / other)</li>
+<li><strong>Collect &amp; explore data</strong></li>
+<li><strong>Pre-process</strong> and clean data</li>
+<li><strong>Choose a model</strong> (algorithm)</li>
+<li><strong>Train</strong> the model on training data</li>
+<li><strong>Validate / tune</strong> the model</li>
+<li><strong>Test</strong> the model on unseen data</li>
+<li><strong>Deploy</strong> and <strong>monitor</strong> in the real world</li>
+</ol>
+<hr />
+<h1 id="the-machine-learning-work-flow-simplified">The Machine Learning Work-Flow (Simplified)</h1>
+<ol>
+<li><strong>Input data</strong>  </li>
+<li><strong>Feature extraction / engineering</strong>  </li>
+<li><strong>Choose model + train</strong>  </li>
+<li><strong>Evaluate</strong>  </li>
+<li><strong>Deploy &amp; use</strong></li>
+</ol>
+<p>(We’ll walk through each part at a high level.)</p>
+<hr />
+<h1 id="is-the-data-ready">Is the Data Ready?</h1>
+<p>Often: <strong>No</strong></p>
+<ul>
+<li>Wrong format (images, voice, text, logs)</li>
+<li><strong>Missing values</strong> (e.g., unknown age)</li>
+<li><strong>Noise</strong> and errors</li>
+</ul>
+<p>We need:</p>
+<ul>
+<li><strong>Pre-processing</strong> (cleaning, normalizing, encoding)</li>
+<li><strong>Feature selection</strong> (which variables matter?)</li>
+<li><strong>Feature engineering</strong> (creating new useful features)</li>
+</ul>
+<hr />
+<h1 id="datasets-train-validation-test">Datasets: Train, Validation, Test</h1>
+<p>We don’t use all data at once:</p>
+<ul>
+<li><strong>Training set</strong></li>
+<li>Used to <strong>fit</strong> the model</li>
+<li><strong>Validation set</strong></li>
+<li>Used to tune <strong>hyperparameters</strong> (settings)</li>
+<li><strong>Test set</strong></li>
+<li>Used once, at the end, to estimate <strong>generalization</strong></li>
+</ul>
+<p>Typical simple split:</p>
+<ul>
+<li>70–80% train</li>
+<li>20–30% test<br />
+(or train / validation / test).</li>
+</ul>
+<hr />
+<h1 id="how-to-split-data-concept">How to Split Data (Concept)</h1>
+<p>Ways to split:</p>
+<ul>
+<li>Simple <strong>train/test split</strong></li>
+<li><strong>Train / validation / test</strong></li>
+<li><strong>Cross-validation</strong> (CV):</li>
+<li>Use multiple folds; each fold gets a chance to be test data</li>
+<li>More stable estimate, but slower</li>
+<li>Special strategies:</li>
+<li><strong>Stratified</strong> splits (keep class proportions)</li>
+<li><strong>TimeSeriesSplit</strong> for time-ordered data</li>
+</ul>
+<p>We won’t go into code details, but the <strong>idea</strong> is important.</p>
+<hr />
+<h1 id="3-what-is-a-model">3. What Is a Model?</h1>
+<p><strong>Formal view</strong></p>
+<ul>
+<li>A model is a function<br />
+  $$f(x) \to y$$</li>
+<li>It has <strong>parameters</strong> (weights) that we learn</li>
+</ul>
+<p><strong>Intuition</strong></p>
+<ul>
+<li>Model = <strong>recipe</strong></li>
+<li>Inputs = ingredients</li>
+<li>Weights = how much of each ingredient</li>
+<li>Output = final dish</li>
+<li>Training adjusts the recipe until dishes taste “correct” on average.</li>
+</ul>
+<hr />
+<h1 id="linear-vs-non-linear-models-idea">Linear vs Non-Linear Models (Idea)</h1>
+<ul>
+<li><strong>Linear model</strong></li>
+<li>Assumes a <strong>straight-line</strong> relationship</li>
+<li>Example form:<br />
+    $$y = w_1x_1 + w_2x_2 + \dots + b$$</li>
+<li>
+<p>Decision boundaries are lines / planes</p>
+</li>
+<li>
+<p><strong>Non-linear model</strong></p>
+</li>
+<li>Can bend and curve</li>
+<li>Captures complex patterns (circles, waves, etc.)</li>
+</ul>
+<p>Examples we’ll name (no math details):</p>
+<ul>
+<li>Linear: Linear Regression, Logistic Regression, Linear SVM</li>
+<li>Non-linear: Decision Trees, k-NN, Kernel SVM, Neural Networks</li>
+</ul>
+<hr />
+<h1 id="parametric-vs-non-parametric-models">Parametric vs Non-parametric Models</h1>
+<p><strong>Parametric models</strong>[2]</p>
+<ul>
+<li>Number of parameters is <strong>fixed</strong>, independent of dataset size</li>
+<li>Examples:</li>
+<li>Linear models</li>
+<li>Centroid-based models</li>
+<li>Pros: Simple, fast, less memory</li>
+</ul>
+<p><strong>Non-parametric models</strong></p>
+<ul>
+<li>Number of parameters can <strong>grow with the data</strong></li>
+<li>Examples:</li>
+<li>k-Nearest Neighbors</li>
+<li>Many non-linear SVMs</li>
+<li>Decision Trees</li>
+<li>Pros: Very flexible, can fit complex patterns</li>
+</ul>
+<hr />
+<h1 id="example-a-linear-model">Example: A Linear Model</h1>
+<p>Predict exam score (y) from hours studied (x):</p>
+<ul>
+<li>Plot points (hours, score)</li>
+<li>Try to draw the <strong>best straight line</strong> through them</li>
+<li>Use this line to predict scores for new students</li>
+</ul>
+<p>This is <strong>linear regression</strong>: a classic parametric, linear model.</p>
+<hr />
+<h1 id="example-a-non-linear-model">Example: A Non-Linear Model</h1>
+<p>What if the relationship is not a straight line?</p>
+<ul>
+<li>Example: Performance increases with study time up to a point, then drops (over-study).</li>
+<li>A linear model struggles with this pattern.</li>
+<li>A <strong>non-linear model</strong> (like a decision tree or neural network) can bend the boundary to fit such shapes.</li>
+</ul>
+<p><strong>Lesson:</strong> choose model complexity to match <strong>data complexity</strong>.</p>
+<hr />
+<h1 id="early-and-common-ml-problem-types">Early and Common ML Problem Types</h1>
+<p>Early ML and modern ML solved:</p>
+<ol>
+<li><strong>Game playing</strong></li>
+<li>Strategy and search (checkers, tic-tac-toe, backgammon)</li>
+<li><strong>Pattern classification</strong></li>
+<li>Handwritten digit recognition, signal classification</li>
+<li><strong>Regression</strong></li>
+<li>Predicting continuous values (trend forecasting)</li>
+<li><strong>Diagnostic support</strong></li>
+<li>Early “expert systems” using data (e.g., medical support)</li>
+</ol>
+<p>Common pattern:<br />
+<strong>input → transformation → output</strong><br />
+learning the right transformation from data.</p>
+<hr />
+<h1 id="4-models-as-transformations-matrices">4. Models as Transformations (Matrices)</h1>
+<p>We often represent:</p>
+<ul>
+<li>Input data as <strong>vectors</strong> (lists of numbers)</li>
+<li>Model parameters as <strong>matrices</strong> (tables of numbers)</li>
+</ul>
+<p><strong>Matrix transformation:</strong></p>
+<ul>
+<li>Input vector × matrix → output vector</li>
+<li>Geometric view: rotates and stretches the space</li>
+</ul>
+<p>Learning = finding matrix values that make classes <strong>separable</strong>.</p>
+<hr />
+<h1 id="visual-intuition-space-as-data">Visual Intuition: Space as Data</h1>
+<p>Imagine:</p>
+<ul>
+<li>Each example (image, email, etc.) is a point in a huge <strong>room</strong></li>
+<li>Initially, points from different classes (cats/dogs) are mixed</li>
+</ul>
+<p>A model (matrix):</p>
+<ul>
+<li><strong>Reshapes</strong> the room (rotations, stretches)</li>
+<li>Tries to move cats to one side, dogs to the other</li>
+<li>So we can draw a <strong>simple boundary</strong> between them</li>
+</ul>
+<hr />
+<h1 id="optional-insight-instructor-note">Optional Insight (Instructor Note)</h1>
+<p>For you (not necessarily for students):</p>
+<ul>
+<li>Most directions (vectors) in space are rotated and scaled by a matrix.</li>
+<li><strong>Eigenvectors</strong> are special: they keep their direction, only scale changes.</li>
+<li>In complex models, stable directions can correspond to important latent features.</li>
+</ul>
+<p>You can mention “some directions in the data are more stable and important than others” without the word “eigenvector”.</p>
+<hr />
+<h1 id="from-rigid-maps-to-dynamic-transformations">From Rigid Maps to Dynamic Transformations</h1>
+<p><strong>Symbolic AI (Rigid Map)</strong></p>
+<ul>
+<li>Knowledge = fixed rules</li>
+<li>If data doesn’t match rules → failure</li>
+<li>Hard to maintain/update</li>
+</ul>
+<p><strong>Machine Learning (Dynamic Transformation)</strong></p>
+<ul>
+<li>Knowledge = flexible parameters (weights in matrices)</li>
+<li>Model adapts to data</li>
+<li>We <strong>optimize</strong> the transformation, rather than writing rules</li>
+</ul>
+<hr />
+<h1 id="analogy-funnels-and-water">Analogy: Funnels and Water</h1>
+<ul>
+<li><strong>Symbolic AI</strong></li>
+<li>Rigid metal funnel</li>
+<li>If water (data) comes from wrong angle, it spills</li>
+<li><strong>Machine Learning</strong></li>
+<li>Flexible funnel</li>
+<li>Changes shape/angle to catch water from many directions</li>
+</ul>
+<p><strong>Takeaway:</strong> ML changes the <strong>model</strong> to fit messy data.</p>
+<hr />
+<h1 id="5-how-models-learn-training">5. How Models Learn: Training</h1>
+<p>We don’t know good weights upfront.</p>
+<p>Training loop (conceptual):</p>
+<ol>
+<li>Start with <strong>random</strong> weights (bad model)</li>
+<li>Use model to make predictions on training data</li>
+<li>Measure how <strong>wrong</strong> we are (loss function)</li>
+<li>Adjust weights to reduce loss (optimization)</li>
+<li>Repeat many times until performance stabilizes</li>
+</ol>
+<hr />
+<h1 id="the-loss-function-measuring-wrongness">The Loss Function: Measuring Wrongness</h1>
+<ul>
+<li>Loss function = <strong>error score</strong></li>
+<li>Compares model prediction vs true label</li>
+<li>Larger loss → worse performance</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><strong>Mean Squared Error</strong> (regression)</li>
+<li><strong>Cross-Entropy Loss</strong> (classification)</li>
+</ul>
+<p>We choose a loss function appropriate to the <strong>task</strong>.</p>
+<hr />
+<h1 id="gradient-descent-improving-the-model">Gradient Descent: Improving the Model</h1>
+<p>Imagine loss as a <strong>mountain landscape</strong>:</p>
+<ul>
+<li>Height = error</li>
+<li>We want to reach the <strong>lowest valley</strong></li>
+</ul>
+<p><strong>Gradient descent</strong>:</p>
+<ul>
+<li>At the current point, compute the <strong>slope</strong> (gradient)</li>
+<li>Move a small step in the direction of <strong>steepest descent</strong></li>
+<li>Repeat → gradually go downhill towards lower loss</li>
+</ul>
+<hr />
+<h1 id="learning-rate-step-size">Learning Rate: Step Size</h1>
+<p><strong>Learning rate</strong> = how big each step is:</p>
+<ul>
+<li>Too large:</li>
+<li>Jump over the valley</li>
+<li>Training becomes unstable</li>
+<li>Too small:</li>
+<li>Training is very slow</li>
+<li>Can get stuck</li>
+</ul>
+<p>Analogy: Hiking in the fog:</p>
+<ul>
+<li>You feel slope, but you don’t see the whole mountain.</li>
+<li>Step size matters.</li>
+</ul>
+<hr />
+<h1 id="weights-as-dials">Weights as Dials</h1>
+<p>Think of each weight as a <strong>dial</strong>:</p>
+<ul>
+<li>The model has <strong>many dials</strong> controlling how features affect output.</li>
+<li>Loss function = judge shouting louder when the output is wrong.</li>
+<li>Training:</li>
+<li>Turn each dial a little.</li>
+<li>If the judge shouts less → keep turning that way.</li>
+<li>Repeat until the shouts are minimized (loss is small).</li>
+</ul>
+<hr />
+<h1 id="quick-check-34-min-pair-discussion">Quick Check (3–4 min, pair discussion)</h1>
+<p>In pairs:</p>
+<ol>
+<li>What does the <strong>loss function</strong> tell us?</li>
+<li>What does <strong>gradient descent</strong> change?</li>
+<li>Why is <strong>learning rate</strong> important?</li>
+</ol>
+<p>We’ll collect a few answers.</p>
+<hr />
+<h1 id="6-choosing-algorithms-a-glimpse">6. Choosing Algorithms: A Glimpse</h1>
+<p>There are many models with different properties:</p>
+<ul>
+<li><strong>Basic models</strong></li>
+<li>Nearest Neighbours</li>
+<li>Nearest Centroid</li>
+<li>Linear Classification &amp; Regression</li>
+<li>Logistic Regression</li>
+<li><strong>Non-linear models</strong></li>
+<li>Support Vector Machines (SVMs) &amp; kernels</li>
+<li>Decision Trees</li>
+<li>Random Forests</li>
+<li>Gradient Boosting</li>
+</ul>
+<p>Choice depends on:</p>
+<ul>
+<li>Data size and type</li>
+<li>Interpretability needs</li>
+<li>Computational limits</li>
+</ul>
+<hr />
+<h1 id="underfitting-vs-overfitting">Underfitting vs Overfitting</h1>
+<p>When training models:</p>
+<ul>
+<li><strong>Underfitting</strong></li>
+<li>Model too simple</li>
+<li>Misses important patterns</li>
+<li>
+<p>Bad on both train and test data</p>
+</li>
+<li>
+<p><strong>Overfitting</strong></p>
+</li>
+<li>Model too complex</li>
+<li>Memorizes noise in training data</li>
+<li>Good on train, bad on test</li>
+</ul>
+<p>There is a <strong>“sweet spot”</strong> in model complexity[2].</p>
+<hr />
+<h1 id="visual-intuition-model-complexity">Visual Intuition: Model Complexity</h1>
+<ul>
+<li>Simple model: almost straight line → <strong>underfits</strong></li>
+<li>Very complex model: wiggles through every point → <strong>overfits</strong></li>
+<li>Good model: captures main trend without chasing every outlier → <strong>sweet spot</strong>[2]</li>
+</ul>
+<p>Goal: <strong>generalization</strong> → good performance on <strong>unseen</strong> data.</p>
+<hr />
+<h1 id="train-validation-test-cross-validation">Train / Validation / Test &amp; Cross-Validation</h1>
+<p>To find the sweet spot:</p>
+<ul>
+<li>Use <strong>validation data</strong> to tune hyperparameters (e.g., tree depth, #neighbors)[3][4]</li>
+<li>Use <strong>cross-validation</strong> for more reliable estimates:</li>
+<li>Split data into k folds</li>
+<li>Train on k−1 folds, test on remaining fold</li>
+<li>Repeat k times, average performance</li>
+<li>Then finally evaluate once on the <strong>test set</strong>.</li>
+</ul>
+<hr />
+<h1 id="model-families-names-only">Model Families (Names Only)</h1>
+<p>Just to recognize names:</p>
+<ul>
+<li><strong>Linear models</strong>:</li>
+<li>Linear Regression, Logistic Regression</li>
+<li><strong>Distance-based</strong>:</li>
+<li>k-Nearest Neighbors, Nearest Centroid</li>
+<li><strong>Tree-based</strong>:</li>
+<li>Decision Trees, Random Forests, Gradient Boosting</li>
+<li><strong>Margin-based</strong>:</li>
+<li>Support Vector Machines (linear &amp; kernel)</li>
+<li><strong>Neural Networks</strong>:</li>
+<li>From shallow networks to Deep Learning</li>
+</ul>
+<p>Details will come later in the course.</p>
+<hr />
+<h1 id="7-evaluation-metrics-beyond-accuracy">7. Evaluation Metrics: Beyond Accuracy</h1>
+<p>Example: fraud detection</p>
+<ul>
+<li>Fraud = 0.015% of transactions</li>
+<li>Model that always predicts “not fraud”:</li>
+<li>Accuracy ≈ 99.985%</li>
+<li>Catches <strong>zero</strong> fraud cases</li>
+</ul>
+<p>Accuracy alone can be <strong>misleading</strong>.</p>
+<p>Important metrics:</p>
+<ul>
+<li><strong>Precision</strong>: of predicted positives, how many are truly positive?</li>
+<li><strong>Recall</strong>: of true positives, how many did we catch?</li>
+</ul>
+<p>Metric choice must match <strong>real-world costs</strong>.</p>
+<hr />
+<h1 id="8-the-reality-of-data-garbage-in-garbage-out">8. The Reality of Data: "Garbage In, Garbage Out"</h1>
+<p>Models learn whatever is in the data:</p>
+<ul>
+<li><strong>Incomplete</strong> training data → models fail in new situations</li>
+<li><strong>Noisy</strong> data → unstable predictions</li>
+<li><strong>Biased</strong> data → biased models</li>
+</ul>
+<p>Most ML effort in practice:</p>
+<ul>
+<li>Data collection</li>
+<li>Cleaning &amp; preprocessing</li>
+<li>Careful evaluation</li>
+</ul>
+<hr />
+<h1 id="ethics-example-biased-hiring">Ethics Example: Biased Hiring</h1>
+<p>Simplified real case:</p>
+<ul>
+<li>Company trains model on 10 years of past hiring data.</li>
+<li>Historical hires are mostly from one group (e.g., men).</li>
+<li>Model learns to favor:</li>
+<li>Certain keywords</li>
+<li>Certain schools</li>
+<li>Certain CV patterns</li>
+<li>It down-ranks others (e.g., women’s colleges, “women’s club”).</li>
+</ul>
+<p><strong>Lesson:</strong><br />
+Models reflect <strong>historical bias</strong> unless we actively detect and correct it.</p>
+<hr />
+<h1 id="discussion-57-min">Discussion (5–7 min)</h1>
+<p>In groups:</p>
+<ol>
+<li>Why is biased data dangerous in ML?</li>
+<li>Can a technically “good” algorithm still be unfair?</li>
+<li>Who should be responsible for monitoring ML systems in society?</li>
+</ol>
+<p>Share 1–2 key points with the class.</p>
+<hr />
+<h1 id="9-historical-engines-optional-brief-story">9. Historical Engines (Optional Brief Story)</h1>
+<p>Post-symbolic key developments:</p>
+<ul>
+<li><strong>1980s–1990s:</strong> Neural networks + <strong>Backpropagation</strong></li>
+<li>Enabled training of multi-layer networks</li>
+<li><strong>1990s–2000s:</strong> Statistical learning</li>
+<li><strong>SVMs</strong>, <strong>Random Forests</strong>, <strong>Bayesian networks</strong></li>
+<li>Focus on probability and optimal boundaries</li>
+<li><strong>2010s–now:</strong> Deep Learning</li>
+<li>Big data + GPUs → hierarchical feature learning</li>
+<li><strong>2020s–now:</strong> Transformers / Generative AI</li>
+<li>Context-aware transformations, large language models</li>
+</ul>
+<p>Give students a sense of <strong>evolution</strong>, not only tools.</p>
+<hr />
+<h1 id="10-summary-foundations-of-ml">10. Summary: Foundations of ML</h1>
+<p>You should now be able to:</p>
+<ul>
+<li>Explain why we moved from <strong>rules</strong> to <strong>learning from data</strong></li>
+<li>Describe the <strong>ML workflow</strong> (data → model → evaluation)</li>
+<li>Distinguish <strong>linear vs non-linear</strong>, <strong>parametric vs non-parametric</strong> models</li>
+<li>Explain <strong>loss</strong>, <strong>gradient descent</strong>, and <strong>learning rate</strong></li>
+<li>Understand <strong>underfitting vs overfitting</strong> and why we split data</li>
+<li>Recognize why <strong>data quality</strong> and <strong>bias</strong> are critical</li>
+</ul>
+<hr />
+<h1 id="exit-ticket-23-min">Exit Ticket (2–3 min)</h1>
+<p>Write or discuss:</p>
+<ol>
+<li>One concept you feel you <strong>understand well</strong>  </li>
+<li>One concept you’re <strong>still unsure</strong> about  </li>
+<li>One <strong>real-world problem</strong> where ML might be useful</li>
+</ol>
+<p>We’ll use your answers to decide what to revisit next time.</p>
+<hr />
+<h1 id="thank-you">Thank You</h1>
+<p>Next modules:</p>
+<ul>
+<li>Symbolic AI vs ML (deeper comparison)</li>
+<li>Specific model families and simple hands-on demos</li>
+</ul>
+<p>Questions?</p>
+<p>--</p>
+<h1 id="section-i">SECTION I</h1>
+<h2 id="the-paradigm-shift-in-computing">The Paradigm Shift in Computing</h2>
+<hr />
+<h1 id="from-rules-to-optimization">From Rules to Optimization</h1>
+<ul>
+<li>Core question:<br />
+<strong>How do we get machines to do what we want?</strong></li>
+</ul>
+<p><img alt="40%" src="./images/picture4.png" /></p>
+<hr />
+<h1 id="from-rules-to-optimization_1">From Rules to Optimization</h1>
+<ul>
+<li>Core question:<br />
+<strong>How do we get machines to do what we want?</strong></li>
+<li>Old paradigm:<br />
+  Humans <strong>write explicit rules</strong> the machine follows.</li>
+<li>New paradigm:<br />
+  Machines <strong>learn rules</strong> via <strong>mathematical optimization</strong> on data.</li>
+<li>Enabler:<br />
+  Big Data + large‑scale compute (data centers, clusters, GPUs).</li>
+</ul>
+<hr />
+<h1 id="the-traditional-approach-explicit-programming">The Traditional Approach: Explicit Programming</h1>
+<p><strong>Workflow</strong></p>
+<ul>
+<li>Humans design and script fixed <strong>rules</strong>.</li>
+<li>Rules + input <strong>data</strong> are executed by the computer.</li>
+<li>System outputs an <strong>answer</strong>.</li>
+</ul>
+<p><strong>Design profile</strong></p>
+<blockquote>
+<p>[Rules] + [Data] → <strong>Program</strong> → [Answers]</p>
+</blockquote>
+<p><strong>Limitation</strong></p>
+<ul>
+<li>Works only when humans can <strong>precisely specify</strong> the rules<br />
+  (e.g. sorting numbers, tax calculations, chess search).</li>
+</ul>
+<p><img alt="bg right:40% 100%" src="./images/picture24.png" /></p>
+<hr />
+<h1 id="the-machine-learning-approach">The Machine Learning Approach</h1>
+<p><strong>Inversion of control</strong></p>
+<ul>
+<li>Instead of coding rules:</li>
+<li>Provide <strong>data</strong> + <strong>target answers</strong> (labels).</li>
+<li>A learning algorithm:</li>
+<li>Adjusts internal parameters via iterative <strong>training</strong>.</li>
+<li>Result:</li>
+<li>Learned <strong>rules / model</strong>.</li>
+</ul>
+<p><strong>Design profile</strong></p>
+<blockquote>
+<p>[Data] + [Answers] → <strong>ML Training</strong> → [Rules / Model]</p>
+</blockquote>
+<p><img alt="bg right:35% 80%" src="./images/picture24.png" /></p>
+<hr />
+<h1 id="the-dual-fuel-of-modern-ai">The Dual Fuel of Modern AI</h1>
+<p>To discover useful rules <strong>without explicit programming</strong>, we need:</p>
+<ul>
+<li><strong>Massive datasets (Big Data)</strong></li>
+<li>Many diverse examples → better generalization</li>
+<li><strong>Massive processing power (Data Centers)</strong></li>
+<li>Billions of matrix operations</li>
+<li>Highly parallel hardware (GPUs, TPUs, clusters)</li>
+</ul>
+<p>Without enough <strong>data</strong> or <strong>compute</strong>, many ML methods fail in practice.</p>
+<p><img alt="bg right:35% 80%" src="./images/picture24.png" /></p>
+<hr />
+<h1 id="taxonomy-of-machine-learning">Taxonomy of Machine Learning</h1>
+<p>Three broad families:</p>
+<ul>
+<li><strong>Supervised Learning</strong></li>
+<li>Learn from labeled examples (input → known output).</li>
+<li><strong>Unsupervised Learning</strong></li>
+<li>Discover structure in unlabeled data.</li>
+<li><strong>Reinforcement Learning</strong></li>
+<li>Learn to act via rewards and penalties over time.</li>
+</ul>
+<p>We’ll briefly illustrate each.</p>
+<p><img alt="bg right:40% 50%" src="./images/picture23.png" /></p>
+<hr />
+<h1 id="supervised-learning">Supervised Learning</h1>
+<p><strong>Goal</strong></p>
+<ul>
+<li>Learn a mapping from inputs to outputs<br />
+  using labeled example pairs.</li>
+</ul>
+<p><strong>Data</strong></p>
+<ul>
+<li>Requires <strong>human‑labeled</strong> or otherwise verified targets.</li>
+</ul>
+<p><strong>Common tasks</strong></p>
+<ul>
+<li><strong>Classification</strong></li>
+<li>Fraud detection, image labeling, medical diagnosis.</li>
+<li><strong>Regression</strong></li>
+<li>Predicting prices, demand, or continuous trends.</li>
+</ul>
+<p><img alt="bg right:40% 50%" src="./images/picture23.png" /></p>
+<hr />
+<h1 id="unsupervised-learning">Unsupervised Learning</h1>
+<p><strong>Goal</strong></p>
+<ul>
+<li>Find <strong>hidden structure</strong> or distributions in unlabeled data.</li>
+</ul>
+<p><strong>Data</strong></p>
+<ul>
+<li>Only raw inputs; no explicit labels.</li>
+</ul>
+<p><strong>Common tasks</strong></p>
+<ul>
+<li><strong>Clustering</strong></li>
+<li>Group customers by behavior patterns.</li>
+<li><strong>Dimensionality reduction</strong></li>
+<li>Compress high‑dimensional data into fewer, informative features.</li>
+</ul>
+<p><img alt="bg right:40% 50%" src="./images/picture23.png" /></p>
+<hr />
+<h1 id="reinforcement-learning">Reinforcement Learning</h1>
+<p><strong>Goal</strong></p>
+<ul>
+<li>Train an <strong>agent</strong> to choose actions that maximize long‑term reward.</li>
+</ul>
+<p><strong>Mechanism</strong></p>
+<ul>
+<li>Trial‑and‑error interaction with an <strong>environment</strong>.</li>
+<li>Receives <strong>rewards / penalties</strong> rather than labeled examples.</li>
+</ul>
+<p><strong>Key ideas</strong></p>
+<ul>
+<li>Agent–environment loop</li>
+<li>Value functions: estimated future reward</li>
+</ul>
+<p><img alt="bg right:40% 50%" src="./images/picture23.png" /></p>
+<hr />
+<h1 id="what-is-machine-learning_1">What Is Machine Learning?</h1>
+<blockquote>
+<p>“Machine Learning is the scientific discipline concerned with algorithms that can <strong>learn from data</strong>.”</p>
+</blockquote>
+<p>Two phases:</p>
+<ol>
+<li><strong>Model building (training)</strong></li>
+<li>Use historical data to fit an empirical model.</li>
+<li><strong>Inference (deployment)</strong></li>
+<li>Use the model to make predictions on <strong>new</strong> data<br />
+     instead of following fixed, hand‑coded logic.</li>
+</ol>
+<hr />
+<h1 id="what-is-machine-learning_2">What Is Machine Learning?</h1>
+<ul>
+<li>Before ML (Rule based world)</li>
+<li>Type of ML supervised, non supervised, reinforced </li>
+<li>ML Algorithms</li>
+<li>Breakthrough in ML</li>
+</ul>
+<iframe 
+width="951" 
+height="535" 
+src="https://youtu.be/7JhjINPwfYQ" 
+title="Machine Learning Introduction | Machine Learning Tutorial | Simplilearn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+<hr />
+<h1 id="section-ii">SECTION II</h1>
+<h2 id="data-pipelines-workflows">Data Pipelines &amp; Workflows</h2>
+<hr />
+<h1 id="the-reality-of-data">The Reality of Data</h1>
+<p>Raw data is <strong>not</strong> ready for ML:</p>
+<ul>
+<li><strong>Heterogeneous formats</strong></li>
+<li>Images, audio, text, logs, tables</li>
+<li><strong>Missing values</strong></li>
+<li>Gaps in records, broken rows</li>
+<li><strong>Noise</strong></li>
+<li>Sensor errors, outliers, typos</li>
+<li><strong>Feature transformation</strong></li>
+<li>Encoding categories, scaling, normalizing, engineering features</li>
+</ul>
+<p>Much of ML practice = <strong>data cleaning and preparation</strong>.</p>
+<p><img alt="bg right:40% 80%" src="./images/picture6.png" /></p>
+<hr />
+<h1 id="the-endtoend-ml-workflow">The End‑to‑End ML Workflow</h1>
+<p>High‑level pipeline:</p>
+<ol>
+<li><strong>Input training data</strong></li>
+<li><strong>Feature extraction / preprocessing</strong></li>
+<li><strong>Train / fit model</strong></li>
+<li><strong>Create trained model</strong></li>
+</ol>
+<p>Then:</p>
+<ol>
+<li><strong>Input test (or new) data</strong></li>
+<li>Same <strong>feature extraction</strong></li>
+<li><strong>Evaluate / score</strong> with the model</li>
+</ol>
+<blockquote>
+<p>Goal: good performance on <strong>unseen</strong> data, not only training data.</p>
+</blockquote>
+<p><img alt="bg right:40% 100%" src="./images/picture27.png" /></p>
+<hr />
+<h1 id="generalization-underfitting-vs-overfitting">Generalization: Underfitting vs Overfitting</h1>
+<p><strong>Underfitting (High Bias)</strong></p>
+<ul>
+<li>Model too simple → misses important patterns.</li>
+<li>Example: straight line fitted to a highly curved relationship.</li>
+</ul>
+<p><strong>Overfitting (High Variance)</strong></p>
+<ul>
+<li>Model too complex → memorizes noise and outliers.</li>
+<li>Example: high‑degree polynomial that hits every training point but fails on new data.</li>
+</ul>
+<p>Good models strike a <strong>balance</strong>.</p>
+<p><img alt="bg right:40% 90%" src="../images/Picture25.png" /></p>
+<hr />
+<h1 id="validation-strategies">Validation Strategies</h1>
+<p>To measure generalization properly:</p>
+<ul>
+<li><strong>Train / Test split</strong></li>
+<li>Simple: e.g. 75% train, 25% test.</li>
+<li><strong>Train / Validation / Test</strong></li>
+<li>Train: fit parameters  </li>
+<li>Validation: tune hyperparameters  </li>
+<li>Test: final unbiased evaluation</li>
+<li><strong>Cross‑validation (e.g. K‑fold)</strong></li>
+<li>Rotate which subset acts as validation.</li>
+<li>Variants:</li>
+<li>Stratified CV, nested CV, time‑series splits.</li>
+</ul>
+<p><img alt="bg right:40% 100%" src="./images/Picture29.png" /></p>
+<hr />
+<h1 id="algorithm-choice-and-complexity-overview">Algorithm Choice and Complexity (Overview)</h1>
+<p>Different models have different costs:</p>
+<ul>
+<li><strong>Linear models</strong></li>
+<li>Fast to train and predict; low memory footprint.</li>
+<li><strong>Instance‑based methods (e.g. KNN)</strong></li>
+<li>Almost no training cost; slow prediction; high memory.</li>
+<li><strong>Tree‑based models (e.g. decision trees)</strong></li>
+<li>Training cost grows with number of samples and features.</li>
+<li>Prediction cost grows with tree depth.</li>
+</ul>
+<p>Choosing an algorithm means balancing:</p>
+<ul>
+<li>Data size and dimensionality</li>
+<li>Memory and latency constraints</li>
+<li>Required accuracy and interpretability</li>
+</ul>
+<hr />
+<h1 id="beyond-superficial-ai-skills">Beyond Superficial AI Skills</h1>
+<p><strong>Superficial use</strong></p>
+<ul>
+<li>Treats AI as a black box.</li>
+<li>Knows how to call <code>.fit()</code> and <code>.predict()</code> on standard libraries.</li>
+</ul>
+<p><strong>Engineering reality</strong></p>
+<ul>
+<li>When models fail in production, we must:</li>
+<li>Diagnose data issues and pipeline bugs.</li>
+<li>Understand model behavior (e.g., bias/variance tradeoff, feature effects).</li>
+<li>For advanced systems (deep learning, Transformers), this includes:</li>
+<li>Backprop dynamics, vanishing/exploding gradients</li>
+<li>Embeddings, attention, and model architecture choices.</li>
+</ul>
+<p>Deep understanding turns AI from a <strong>gadget</strong> into a <strong>reliable tool</strong>.</p>
+<hr />
+<h1 id="section-iii">SECTION III</h1>
+<h2 id="data-infrastructure-storage-realities">Data Infrastructure &amp; Storage Realities</h2>
+<hr />
+<ul>
+<li>Data grows from <strong>kilobytes</strong> to <strong>yottabytes</strong></li>
+<li>Moving data is limited by <strong>physics</strong> (bandwidth, latency)</li>
+<li>Computing on data needs <strong>parallelism</strong> (clusters, GPUs, TPUs)</li>
+</ul>
+<hr />
+<h1 id="the-scale-of-modern-big-data">The Scale of Modern Big Data</h1>
+<ul>
+<li>Storage units grow by factors of <strong>10³</strong>:</li>
+</ul>
+<p>$$
+  \text{KB} \rightarrow \text{MB} \rightarrow \text{GB} \rightarrow 
+  \text{TB} \rightarrow \text{PB} \rightarrow \text{EB} \rightarrow 
+  \text{ZB} \rightarrow \text{YB}
+  $$</p>
+<ul>
+<li>1 <strong>Terabyte (TB)</strong> = $10^{12}$ bytes  </li>
+<li>1 <strong>Zettabyte (ZB)</strong> = $10^{21}$ bytes  </li>
+<li>Roughly the order of <strong>global internet traffic</strong> in a year</li>
+</ul>
+<p><img alt="bg right:55% 100%" src="../images/Picture7.png" /></p>
+<hr />
+<h1 id="what-does-1-tb-look-like">What Does 1 TB Look Like?</h1>
+<p>Approximate capacity of a <strong>1 TB drive</strong>:</p>
+<ul>
+<li>≈ <strong>200,000</strong> high‑quality audio files  </li>
+<li>~17,000 hours of music</li>
+<li>≈ <strong>256</strong> standard‑definition 2‑hour movies  </li>
+<li>~500 hours of video</li>
+<li>≈ <strong>310,000</strong> standard‑resolution photos</li>
+</ul>
+<p>Even a <strong>single TB</strong> is a lot of real‑world content.</p>
+<p><img alt="bg right:40% 50%" src="../images/Picture8.png" /></p>
+<hr />
+<h1 id="global-data-ingestion-examples">Global Data Ingestion (Examples)</h1>
+<p>Why scalable infrastructure matters:</p>
+<ul>
+<li><strong>Google</strong>:  </li>
+<li>
+<blockquote>
+<p>20 <strong>Petabytes/day</strong> processed in distributed systems</p>
+</blockquote>
+</li>
+<li><strong>Facebook</strong> (Meta):  </li>
+<li>
+<blockquote>
+<p>2.5 <strong>PB/day</strong> of user activity in data lakes</p>
+</blockquote>
+</li>
+<li><strong>CERN – Large Hadron Collider</strong>:  </li>
+<li>~15 <strong>PB/year</strong> of raw detector data</li>
+</ul>
+<p>Modern AI is tied to this scale of data flow.</p>
+<hr />
+<h1 id="the-sneakernet-bandwidth-paradox">The “Sneakernet” Bandwidth Paradox</h1>
+<p>Moving huge datasets over networks is hard:</p>
+<ul>
+<li>Transferring <strong>hundreds of TB</strong> over typical links hits hard bandwidth limits</li>
+<li>2013 perspective:</li>
+<li>Shipping physical <strong>hard drives by plane</strong> could be <strong>faster</strong> than the internet</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>A 1 TB SSD ≈ 78 g  </li>
+<li>A plane full of drives → effective rate ≈ <strong>150 EB/day</strong>  </li>
+<li>≈ <strong>14 Pb/s</strong>, about <strong>100×</strong> average internet throughput (2013)</li>
+</ul>
+<hr />
+<h1 id="network-transfer-latency-thought-experiments">Network Transfer Latency – Thought Experiments</h1>
+<p><strong>Case 1: 18 TB (≈ 60 human genomes)</strong></p>
+<ul>
+<li>Over a <strong>1 Gbps</strong> line:</li>
+<li>Transfer takes <strong>days</strong>, even with perfect utilization</li>
+</ul>
+<p><strong>Case 2: 1 Exabyte (EB = $10^6$ TB)</strong></p>
+<ul>
+<li>Over a dedicated <strong>10 Gbps</strong> link:</li>
+<li>≈ <strong>26 years</strong> of continuous upload</li>
+</ul>
+<p><strong>Reality:</strong><br />
+Cloud providers use <strong>physical transfer</strong> tools (e.g. AWS Snowmobile trucks) to move EB‑scale data in <strong>weeks</strong>.</p>
+<hr />
+<h1 id="processing-latency-the-terabyte-sort">Processing Latency: The Terabyte Sort</h1>
+<p>How long to sort <strong>1 TB</strong> of data?</p>
+<ul>
+<li><strong>Single machine</strong></li>
+<li>Disk read/write ≈ 100 MB/s</li>
+<li>
+<p>Idealized processing: ≈ <strong>341 minutes</strong> (~5.6 hours)</p>
+</li>
+<li>
+<p><strong>Large distributed cluster</strong></p>
+</li>
+<li>2008 benchmark (MapReduce on 910 nodes):</li>
+<li>1 TB sort in <strong>68 seconds</strong></li>
+</ul>
+<p>Parallelism can turn <strong>hours into seconds</strong>.</p>
+<hr />
+<h1 id="does-adding-cpus-always-help">Does Adding CPUs Always Help?</h1>
+<p>Computational scaling behaviors:</p>
+<ul>
+<li><strong>Linear scaling</strong></li>
+<li>2× cores → ~2× speedup</li>
+<li><strong>Super‑linear scaling</strong></li>
+<li>Better than linear (e.g. data now fits in caches across nodes)</li>
+<li><strong>Sub‑linear scaling (Amdahl’s Law)</strong></li>
+<li>Diminishing returns:<ul>
+<li>Sequential parts of the code</li>
+<li>Network communication overhead</li>
+<li>Synchronization costs</li>
+</ul>
+</li>
+</ul>
+<p>More hardware ≠ unlimited speedup.</p>
+<hr />
+<h1 id="hardware-acceleration-gpus-tpus">Hardware Acceleration: GPUs &amp; TPUs</h1>
+<p><strong>CPUs</strong></p>
+<ul>
+<li>Optimized for <strong>sequential</strong>, diverse tasks</li>
+<li>Great for control logic, but slow for massive matrix math</li>
+</ul>
+<p><strong>GPUs / TPUs</strong></p>
+<ul>
+<li>Thousands of simple arithmetic units</li>
+<li>Designed for <strong>parallel</strong> operations:</li>
+<li>Millions of multiply‑adds in parallel</li>
+<li>Essential for:</li>
+<li>Deep learning training</li>
+<li>Large‑scale simulations</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>Complex biomedical simulations that take hours on a CPU<br />
+  can be sped up dramatically using OpenCL/CUDA on GPUs.</li>
+</ul>
+<hr />
+<h1 id="what-is-machine-learning_3">What Is Machine Learning?</h1>
+<ul>
+<li>Vector Feature</li>
+<li>Sample</li>
+<li>Feature space</li>
+<li>Example of ML library: MLlib spark</li>
+</ul>
+<iframe 
+width="951" 
+height="535" 
+src="https://youtu.be/seG9J49bBYI " 
+title="Machine Learning Introduction | Machine Learning Tutorial | Simplilearn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

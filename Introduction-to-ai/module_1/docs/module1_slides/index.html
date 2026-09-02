@@ -1,0 +1,2857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Module 1: The Old Way – Symbolic AI - Advanced Computing & AI Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-1-the-old-way-symbolic-ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-header__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advanced Computing & AI Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 1: The Old Way – Symbolic AI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Introduction to AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/" class="md-tabs__link">
+          
+  
+  
+  Distributed Systems
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../HPC/openmp-01-basics/" class="md-tabs__link">
+          
+  
+  
+  High Performance Computing (HPC)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-nav__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Advanced Computing & AI Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/module0_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/Teaching-assesment-GenAI-era.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI impact on education
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Symbolic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 - Symbolic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 - Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_2/docs/module2_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_2/hands-on/Hands-on-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_2/docs/Answer-model-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Modern AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 - Modern AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/docs/module3_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/hands-on/Hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_3/docs/Answer-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing & SOA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing & SOA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/01-rest-api/participants-guide-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microservices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/02-microservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/02-microservices/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/02-microservices/participants-guid-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers & K8s
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Containers & K8s
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-containerization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-containerization-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/03-containerization-orchestration/participants-guide-orchestration-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenStack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenStack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/04-openstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/04-openstack/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFaaS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenFaaS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/05-openfaas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/cloud-computing-soa/05-openfaas/participants-guide-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federated Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Federated Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/docs/participant-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/docs/organizer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Distributed-Systems/federated-learning/docs/instruction-to-use-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Performance Computing (HPC)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High Performance Computing (HPC)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-01-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/02-debugging/hands_on_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/01-hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/02-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#from-hardcoded-rules-to-learned-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Hard‑Coded Rules to Learned Transformations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-1-the-old-way-symbolic-ai">Module 1: The Old Way – Symbolic AI</h1>
+<h2 id="from-hardcoded-rules-to-learned-transformations">From Hard‑Coded Rules to Learned Transformations</h2>
+<p><strong>Core focus today</strong></p>
+<ol>
+<li>Understand <strong>Symbolic AI / GOFAI</strong></li>
+<li>See where it <strong>works</strong> and where it <strong>breaks</strong></li>
+<li>Understand why AI moved toward <strong>Machine Learning</strong></li>
+<li>Brief preview of the <strong>new learning engines</strong> (next module)</li>
+</ol>
+<hr />
+<h1 id="part-i">Part I</h1>
+<h2 id="what-is-symbolic-ai">What Is Symbolic AI?</h2>
+<hr />
+<h1 id="symbolic-ai-in-one-sentence">Symbolic AI in One Sentence</h1>
+<blockquote>
+<p><strong>Symbolic AI</strong> views intelligence as the <strong>manipulation of symbols</strong> using <strong>explicit rules</strong>.</p>
+</blockquote>
+<ul>
+<li>Knowledge = symbols (e.g. CAT, HUMAN, DISEASE_X)</li>
+<li>Reasoning = applying rules:<br />
+<code>IF condition THEN conclusion</code></li>
+<li>Goal: mimic human reasoning by encoding our <strong>logic</strong> directly into code.</li>
+</ul>
+<hr />
+<h1 id="origin-of-symbolic-ai-and-gofai">Origin of “Symbolic AI” and “GOFAI”</h1>
+<ul>
+<li>Approach dates back to the <strong>1950s</strong>:</li>
+<li>John McCarthy, Allen Newell, Herbert A. Simon, others.</li>
+<li><strong>“Symbolic AI”</strong>:</li>
+<li>Name used to distinguish these logic‑based systems from later <strong>connectionist</strong> (neural) models.</li>
+<li><strong>GOFAI – Good Old‑Fashioned AI</strong>:</li>
+<li>Coined by <strong>John Haugeland</strong> (1985) to describe this dominant paradigm:<ul>
+<li>Intelligence = “mechanical manipulation of meaningful symbols according to syntactic rules”.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="the-physical-symbol-system-hypothesis">The Physical Symbol System Hypothesis</h1>
+<p>Newell &amp; Simon (1970s):</p>
+<blockquote>
+<p>A physical symbol system has the <strong>necessary and sufficient</strong> means for general intelligent action.</p>
+</blockquote>
+<p>Implications:</p>
+<ul>
+<li>If we can:</li>
+<li>Represent concepts as <strong>symbols</strong>, and</li>
+<li>Encode relations as <strong>rules</strong>,</li>
+<li>Then we can, in principle, build <strong>general intelligence</strong>.</li>
+</ul>
+<p>This hypothesis justified decades of focus on symbolic systems.</p>
+<hr />
+<h1 id="why-symbolic-ai-was-attractive">Why Symbolic AI Was Attractive</h1>
+<ul>
+<li><strong>Transparency</strong></li>
+<li>Rules are human‑readable.</li>
+<li>You can trace <em>why</em> a system reached a conclusion.</li>
+<li><strong>Control</strong></li>
+<li>Domain experts decide which rules exist.</li>
+<li><strong>Philosophical fit</strong></li>
+<li>Connects naturally to logic, mathematics, rational reasoning.</li>
+</ul>
+<p>Metaphor:</p>
+<blockquote>
+<p>Symbolic AI treats the computer like a <strong>very literal librarian</strong>:<br />
+it only knows exactly what is in the rule books.</p>
+</blockquote>
+<hr />
+<h1 id="part-ii">Part II</h1>
+<h2 id="symbolic-ai-in-practice">Symbolic AI in Practice</h2>
+<hr />
+<h1 id="early-landmark-systems">Early Landmark Systems</h1>
+<p>Some classic symbolic systems:</p>
+<ul>
+<li><strong>Logic Theorist (1955)</strong>  </li>
+<li>Proved mathematical theorems using formal logic.</li>
+<li><strong>General Problem Solver (GPS) (1957)</strong>  </li>
+<li>Aimed to be a universal symbolic problem‑solver.</li>
+<li><strong>ELIZA (1966)</strong>  </li>
+<li>Pattern‑matching chatbot simulating a psychotherapist.</li>
+</ul>
+<p>All built on <strong>symbols + rules</strong>, not learning from data.</p>
+<hr />
+<h1 id="expert-systems-symbolic-ai-at-scale">Expert Systems: Symbolic AI at Scale</h1>
+<p>Peak of Symbolic AI: <strong>Expert Systems</strong></p>
+<ul>
+<li><strong>Dendral (1960s)</strong>  </li>
+<li>Helped chemists identify molecules from mass spectra.</li>
+<li><strong>MYCIN (1970s)</strong>  </li>
+<li>Diagnosed bacterial infections, recommended antibiotics.</li>
+<li><strong>XCON (late 1970s–1980s)</strong>  </li>
+<li>Configured VAX computers at DEC; saved tens of millions of dollars.</li>
+<li><strong>Deep Blue (1990s)</strong>  </li>
+<li>Defeated world chess champion Garry Kasparov using search + rule‑based evaluation.</li>
+</ul>
+<p>These systems showed symbolic AI <strong>can work very well</strong> in <strong>narrow, structured domains</strong>.</p>
+<hr />
+<h1 id="strengths-of-expert-systems">Strengths of Expert Systems</h1>
+<ul>
+<li>Perform <strong>expert‑level</strong> reasoning in a narrow domain.</li>
+<li>Very <strong>predictable</strong>:</li>
+<li>Same inputs → same outputs.</li>
+<li>Easy to <strong>audit</strong>:</li>
+<li>You can print the rules and inspect them.</li>
+<li>Good fit for:</li>
+<li>Well‑defined rules</li>
+<li>Stable environments</li>
+<li>Low noise</li>
+</ul>
+<p>But cracks started to appear…</p>
+<hr />
+<p>class: lead</p>
+<h1 id="part-iii">Part III</h1>
+<h2 id="why-symbolic-ai-hit-a-wall">Why Symbolic AI Hit a Wall</h2>
+<hr />
+<h1 id="the-knowledge-acquisition-bottleneck">The Knowledge Acquisition Bottleneck</h1>
+<p>Expert Systems required <strong>humans to type every rule</strong>:</p>
+<ul>
+<li>Extracting knowledge from experts is <strong>slow</strong> and <strong>hard</strong>:</li>
+<li>Experts often use intuition or “gut feeling”.</li>
+<li>“Knowledge engineers” had to:</li>
+<li>Interview experts</li>
+<li>Translate intuition into thousands of <code>IF–THEN</code> rules</li>
+<li>As domains grew, rule bases reached <strong>tens of thousands</strong> of rules.</li>
+</ul>
+<p>Result: the <strong>Knowledge Acquisition Bottleneck</strong><br />
+→ scaling systems became economically impossible.</p>
+<hr />
+<h1 id="brittleness-no-common-sense">Brittleness: No Common Sense</h1>
+<p>Symbolic systems:</p>
+<ul>
+<li>Operate only inside their <strong>narrow, predefined world</strong>.</li>
+<li>Example:</li>
+<li>A medical expert system given data from a <strong>rusty engine</strong>:<ul>
+<li>It still tries to diagnose a human disease, because it blindly applies medical rules.</li>
+</ul>
+</li>
+<li>They cannot:</li>
+<li>Recognize “this input is outside my domain”</li>
+<li>Make <strong>educated guesses</strong> in novel situations.</li>
+</ul>
+<p>In messy real‑world environments, systems often <strong>shatter</strong> instead of degrading gracefully.</p>
+<hr />
+<h1 id="maintenance-nightmare">Maintenance Nightmare</h1>
+<p>As rule bases grew:</p>
+<ul>
+<li>Adding new rules could <strong>conflict</strong> with old ones.</li>
+<li>Unexpected interactions:</li>
+<li>Rule #10 001 contradicts Rule #452.</li>
+<li>Debugging:</li>
+<li>Extremely hard to trace errors back to specific rules.</li>
+<li>Maintenance costs exploded.</li>
+</ul>
+<p>Many large expert‑system projects became <strong>unmaintainable</strong> and were eventually scrapped.</p>
+<hr />
+<h1 id="the-ai-winter">The AI Winter</h1>
+<p>Combined effects:</p>
+<ul>
+<li>Knowledge acquisition bottleneck</li>
+<li>Brittleness in real‑world applications</li>
+<li>Maintenance and debugging complexity</li>
+<li>Over‑promising + under‑delivering</li>
+</ul>
+<p>Outcome:</p>
+<ul>
+<li>Funding and enthusiasm for symbolic AI <strong>collapsed</strong> in the late 1980s–1990s.</li>
+<li>This period is known as an <strong>AI Winter</strong>.</li>
+</ul>
+<p>The field needed <strong>new engines</strong> for intelligence.</p>
+<hr />
+<h1 id="part-iv">Part IV</h1>
+<h2 id="from-symbolic-ai-to-machine-learning">From Symbolic AI to Machine Learning</h2>
+<hr />
+<h1 id="topdown-vs-bottomup">Top‑Down vs Bottom‑Up</h1>
+<p><strong>Symbolic AI (Top‑Down)</strong></p>
+<ul>
+<li>Humans <strong>write the rules</strong>. --&gt; The system applies them to data.</li>
+</ul>
+<p><strong>Machine Learning (Bottom‑Up)</strong></p>
+<ul>
+<li>Humans provide <strong>data + labels</strong>. --&gt;  The system <strong>learns the rules</strong> automatically via optimization.</li>
+</ul>
+<p>Example: recognizing a <strong>cat</strong> in images.</p>
+<ul>
+<li>Symbolic AI: Define rules: “pointy ears”, “whiskers”, “four legs”, …</li>
+<li>Machine Learning: Show thousands of <strong>cat / not‑cat</strong> images.  </li>
+<li>The model <strong>discovers its own representation</strong> of “cat‑ness”.</li>
+</ul>
+<hr />
+<h1 id="why-machine-learning-became-necessary">Why Machine Learning Became Necessary</h1>
+<p>Three deep limitations of Symbolic AI:</p>
+<ol>
+<li><strong>Knowledge acquisition</strong>:</li>
+<li>Cannot scale to the complexity of everyday knowledge.</li>
+<li><strong>Brittleness</strong>:</li>
+<li>Fails on noisy, high‑dimensional, ambiguous data.</li>
+<li><strong>Maintenance</strong>:</li>
+<li>Huge rule bases become fragile and expensive.</li>
+</ol>
+<p>At the same time:</p>
+<ul>
+<li><strong>Data</strong> exploded (web, sensors, logs).</li>
+<li><strong>Compute</strong> improved (GPUs, clusters).</li>
+<li><strong>Statistics &amp; optimization</strong> matured.</li>
+</ul>
+<blockquote>
+<p>It became more effective to <strong>learn from data</strong> than to write rules by hand.</p>
+</blockquote>
+<hr />
+<h1 id="from-logic-to-learning-engines">From Logic to Learning Engines</h1>
+<p>Modern ML replaces “logic engines” with <strong>learning engines</strong> built on:</p>
+<ul>
+<li><strong>Matrix transformations</strong></li>
+<li><strong>Loss functions</strong></li>
+<li><strong>Gradients</strong></li>
+<li><strong>Iterative updates</strong></li>
+</ul>
+<p>We stop trying to define “cat” explicitly and instead:</p>
+<blockquote>
+<p>Let the matrix transformation <strong>discover a useful internal notion</strong> of “cat‑ness” through optimization on data.</p>
+</blockquote>
+<hr />
+<h1 id="part-v-preview">Part V (Preview)</h1>
+<h2 id="how-learning-engines-work">How Learning Engines Work</h2>
+<p><em>(This part bridges to Module 2: Machine Learning)</em></p>
+<hr />
+<h1 id="learning-as-calibration">Learning as Calibration</h1>
+<p>Think of a learning model as a <strong>calibration machine</strong>:</p>
+<ul>
+<li>The model has thousands of internal <strong>dials</strong> (weights).</li>
+<li>The <strong>Loss Function</strong> is the <strong>judge</strong>:</li>
+<li>It measures how far the model’s prediction is from the truth.</li>
+<li>The <strong>Optimizer</strong>:</li>
+<li>Tries small changes to the dials.</li>
+<li>Keeps changes that make the judge <strong>quieter</strong> (lower loss).</li>
+</ul>
+<p>Key idea:</p>
+<blockquote>
+<p>Learning = <strong>automated calibration</strong>, not hand‑written rules.</p>
+</blockquote>
+<hr />
+<h1 id="the-learning-engine-roles-at-a-glance">The Learning Engine: Roles at a Glance</h1>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Analogy</th>
+<th>Role in AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loss Function</td>
+<td>The Judge</td>
+<td>Measures performance; defines the goal</td>
+</tr>
+<tr>
+<td>Gradient</td>
+<td>The Compass</td>
+<td>Points in the direction of steepest descent</td>
+</tr>
+<tr>
+<td>Learning Rate</td>
+<td>Stride Length</td>
+<td>Controls how big each update step is</td>
+</tr>
+<tr>
+<td>Weights</td>
+<td>The Dials</td>
+<td>Internal parameters being fine‑tuned</td>
+</tr>
+</tbody>
+</table>
+<p>These components make learning <strong>bottom‑up</strong> and data‑driven.</p>
+<hr />
+<h1 id="example-losses-regression-and-classification">Example Losses: Regression and Classification</h1>
+<p><strong>Regression (house prices)</strong></p>
+<ul>
+<li>Error = Predicted Price – Actual Price</li>
+<li><strong>Mean Squared Error</strong>: (Squares the error)</li>
+<li>Penalizes large mistakes more</li>
+<li>Avoids positive/negative errors cancelling out</li>
+</ul>
+<p><strong>Classification (spam detection)</strong></p>
+<ul>
+<li>Model predicts probability of spam (e.g. 0.9).</li>
+<li><strong>Cross‑Entropy Loss</strong>: Measures the distance between predicted probability and true label (0 or 1).</li>
+</ul>
+<blockquote>
+<p>Loss gives a <strong>single number</strong> to minimize.</p>
+</blockquote>
+<hr />
+<h1 id="gradient-descent-hiking-in-the-fog">Gradient Descent: Hiking in the Fog</h1>
+<p>Analogy:</p>
+<ul>
+<li>You are on a mountain at night in thick fog.</li>
+<li>You can’t see the valley, only feel the <strong>slope</strong>.</li>
+</ul>
+<p>Concepts:</p>
+<ul>
+<li><strong>Gradient</strong> = direction of <strong>steepest uphill</strong>.</li>
+<li>To go downhill (reduce loss), step in the <strong>opposite direction</strong>.</li>
+<li><strong>Learning rate</strong> = stride length:</li>
+<li>Too big → overshoot the valley.</li>
+<li>Too small → take forever, might get stuck in a small dip.</li>
+</ul>
+<!--This is how models **improve themselves** step by step.-->
+
+<hr />
+<h1 id="update-rule-turning-the-dials">Update Rule: Turning the Dials</h1>
+<p>Backpropagation + gradient descent give the update:</p>
+<p>$$
+w_{\text{new}} = w_{\text{old}} - (\text{learning rate} \times \text{gradient})
+$$</p>
+<p>Interpretation:</p>
+<ul>
+<li>If a weight’s gradient is <strong>large</strong>, it had a big effect on the error → update it more.</li>
+<li>If its gradient is <strong>near zero</strong>, it had little effect → update it less.</li>
+</ul>
+<p>Over many iterations:</p>
+<ul>
+<li>Random weights become a <strong>useful transformation</strong>.</li>
+<li>The system <strong>learns</strong> instead of being programmed.</li>
+</ul>
+<hr />
+<h1 id="data-quality-and-metrics-why-rules-arent-enough">Data Quality and Metrics (Why Rules Aren’t Enough)</h1>
+<p>Because learning is data‑driven:</p>
+<ul>
+<li><strong>Bad data → bad models</strong> (“Garbage In, Garbage Out”).</li>
+<li>Example: Walmart floor scrubbers failed when not trained on real‑world store chaos.</li>
+<li><strong>Wrong metrics → misleading success</strong>.</li>
+<li>Fraud detection:<ul>
+<li>Predict “no fraud” for everything → 99.985% accuracy, but useless.</li>
+<li>Need metrics like <strong>precision</strong> and <strong>recall</strong>, not just accuracy.</li>
+</ul>
+</li>
+</ul>
+<p>These issues simply <strong>do not show up in the same way</strong> in small, rule‑based symbolic systems.</p>
+<hr />
+<h1 id="conclusion">Conclusion</h1>
+<hr />
+<h1 id="symbolic-ai-vs-machine-learning-big-picture">Symbolic AI vs Machine Learning – Big Picture</h1>
+<p><strong>Symbolic AI / GOFAI</strong></p>
+<ul>
+<li>Intelligence as <strong>symbol manipulation + rules</strong></li>
+<li>Transparent, logical, controllable</li>
+<li>Strong in <strong>narrow, clean, rule‑bound domains</strong></li>
+<li>Limited by <strong>brittleness</strong>, <strong>knowledge acquisition</strong>, and <strong>maintenance</strong></li>
+</ul>
+<p><strong>Machine Learning</strong></p>
+<ul>
+<li>Intelligence as <strong>learned transformations</strong> from data</li>
+<li>Less transparent, but far more <strong>scalable and adaptable</strong></li>
+<li>Enabled by loss functions, gradients, and optimization</li>
+<li>Highly dependent on <strong>data quality</strong> and <strong>metric choice</strong></li>
+</ul>
+<hr />
+<h1 id="looking-ahead">Looking Ahead</h1>
+<p>In the next modules, we will:</p>
+<ul>
+<li>Dive into the <strong>learning engines</strong> in detail:</li>
+<li>Regression, classification, loss, optimization, evaluation.</li>
+<li>See how different model families (SVMs, decision trees, neural nets)<br />
+  implement the idea of <strong>learning transformations</strong>.</li>
+<li>Connect back to:</li>
+<li>Why symbolic rules are still useful</li>
+<li>How <strong>hybrid systems</strong> can combine both worlds.</li>
+</ul>
+<hr />
+<h1 id="takeaway-for-module-1">Takeaway for Module 1:</h1>
+<p>We moved from <strong>writing rules</strong> to <strong>learning transformations</strong> because symbolic AI hit structural limits that data‑driven methods could overcome.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
