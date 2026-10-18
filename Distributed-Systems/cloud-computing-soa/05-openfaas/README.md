@@ -250,7 +250,7 @@ build, watchdog, and OpenFaaS platform have not been validated.
 | Component | Candidate | Evidence and limitations |
 |---|---|---|
 | OpenFaaS CLI | `0.18.16` | Linux/amd64 release binary checksum verified locally; `version` and `build --help` executed. Image build, push, and deployment remain unvalidated. |
-| Node.js template | `node22` from `openfaas/templates`, commit `262e6a608a3f987bcbe3322d1543b44e0e4282dc` | Template inspected; base-image tags and dependency ranges remain mutable; default tests are placeholders. |
+| Node.js template | `node22` from `openfaas/templates`, commit `262e6a608a3f987bcbe3322d1543b44e0e4282dc` | Greeting build context prepared with the verified CLI; copied handler matched source. Image build remains unvalidated; image tags and dependency resolution remain mutable. |
 | OpenFaaS chart | `15.0.13` from `openfaas/faas-netes`, commit `f97de9fc1314bad45848f7e0bfaadb69710615a6` | CE selection and monitoring templates inspected; chart not rendered or deployed. |
 
 Published SHA-256 for the CLI release asset named `faas-cli`:
@@ -273,6 +273,32 @@ institution-run workshop, registry access restrictions, VM and network isolation
 notebook/browser routes, supported Kubernetes and Docker versions, image digests,
 dependency locking, and meaningful tests. Then rehearse the complete lifecycle
 in a disposable reference lab. No installation is required on the authoring host.
+
+### Greeting build-context preparation
+
+The verified CLI `0.18.16` prepared a greeting context using `build --shrinkwrap`
+and `--disable-stack-pull` with the exact template revision recorded above.
+The generated handler matched `examples/greeting/handler.js` byte-for-byte.
+The context included the handler tests and function package configuration.
+
+The generated Dockerfile:
+- Uses `ghcr.io/openfaas/of-watchdog:0.12.5` and `node:22-alpine` as mutable
+  image tags, with Linux/amd64 as the default target platform.
+- Runs `npm i` for both wrapper and function dependencies.
+- Includes a function-level `npm test` build step, not yet executed in an image
+  build. The outer wrapper package has a placeholder test script.
+- Configures the watchdog to forward HTTP requests to the Node.js wrapper.
+
+The generated wrapper context contains no dependency lockfile. Its dependency
+resolution is therefore not established by the separately locked direct-wrapper
+tests. Image digests, dependency locking, and build-time test execution remain
+validation requirements.
+
+This check used temporary storage and a non-routable placeholder image name.
+It did not build an image, use a container daemon, authenticate, push, or deploy.
+Docker and BuildKit commands were absent from the authoring host's PATH; Podman
+was present but was not exercised. The protected participant builder remains
+an unresolved execution-contract requirement.
 
 ### CE adoption blockers — source inspection
 
