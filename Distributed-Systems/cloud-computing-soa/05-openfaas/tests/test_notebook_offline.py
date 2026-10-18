@@ -55,6 +55,11 @@ class NotebookOfflineTests(unittest.TestCase):
             opener.assert_not_called()
 
         self.assertGreater(executed, 0)
+        self.assertEqual(namespace["parsed_synthetic_error"], {"error": "invalid_name"})
+        self.assertIs(namespace["synthetic_parse_rejected"], True)
+        self.assertEqual(namespace["synthetic_html_error"].status, 400)
+        self.assertIn("SYNTHETIC RESPONSE PRACTICE — NO REQUESTS SENT", captured.getvalue())
+        self.assertNotIn("<html>", captured.getvalue())
         self.assertIs(namespace["RUN_LIVE"], False)
         self.assertEqual(captured.getvalue().count("SKIPPED:"), 4)
         self.assertIn("Expected live-configuration rejection:", captured.getvalue())
