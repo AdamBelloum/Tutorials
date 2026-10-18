@@ -265,6 +265,42 @@ notebook/browser routes, supported Kubernetes and Docker versions, image digests
 dependency locking, and meaningful tests. Then rehearse the complete lifecycle
 in a disposable reference lab. No installation is required on the authoring host.
 
+### CE adoption blockers — source inspection
+
+At faas-netes revision `f97de9fc1314bad45848f7e0bfaadb69710615a6`,
+chart `15.0.13` selects CE provider image `ghcr.io/openfaas/faas-netes:0.18.17`.
+The pinned README identifies controller mode as the only CE operating mode;
+the legacy participant guide's CE/operator instructions are not reusable as-is.
+
+Both deployment and update handlers call `isAnonymous`, which attempts an
+anonymous registry manifest HEAD request and rejects failures with a public-image
+restriction message. Function Docker-config secret handling exists separately,
+but does not bypass this check. The inspected validation code contains no
+explicit localhost exception, despite a comment mentioning local registry testing.
+Registry reachability and the distributed image's behaviour remain untested.
+
+Chart-level `imagePullSecrets` applies to chart-installed deployments, not
+automatically to participant function deployments. The previously suggested
+`faasnetes.imagePullSecrets` setting was not substantiated.
+
+The pinned repository LICENSE assigns OpenFaaS Ltd/Alex Ellis contributions to
+the CE EULA and third-party contributions to MIT; it is not an Apache-only licence.
+
+The referenced [CE EULA](https://github.com/openfaas/faas/blob/master/EULA.md)
+was retrieved from mutable master on 2026-10-18. Retrieved SHA-256:
+`1b81c9ee4a2789b6b7618469f2b92ab444f5d3a30cc20f8d121b32deed90c26a`.
+This records inspected text, not the EULA version applicable to the candidate image.
+
+The retrieved terms do not explicitly resolve the institution-run, multi-VM
+teaching model. They include organisational acceptance, commercial-installation
+limits, and prior-commercial-licensee restrictions. Before selecting CE, establish
+the applicable terms and obtain institutional approval and any necessary written
+vendor clarification. Do not assume that individual group VMs create separate
+licensees or restart an evaluation allowance.
+
+CE remains an unapproved candidate. Do not publish participant images publicly,
+bypass validation, or provision CE merely to work around these unresolved gates.
+
 ## Validation and release gate
 
 ### Local greeting-handler baseline
