@@ -63,6 +63,24 @@ class Notebook2OfflineTests(unittest.TestCase):
             command.assert_not_called()
             shell.assert_not_called()
 
+        self.assertIn("PASS: Only temporary source and test copies changed.", captured.getvalue())
+        self.assertFalse(namespace["edited_source_directory"].exists())
+        self.assertIn("Welcome ${name}", namespace["source_after"])
+        self.assertIn("Welcome ${name}", namespace["tests_after"])
+        self.assertEqual(
+            namespace["source_after"].replace(namespace["revised_message"], namespace["original_message"], 1),
+            namespace["source_before"],
+        )
+        self.assertEqual(
+            namespace["tests_after"].replace(namespace["revised_message"], namespace["original_message"], 1),
+            namespace["tests_before"],
+        )
+        for filename, content in namespace["reference_files_before"].items():
+            self.assertEqual((MODULE / "examples/greeting" / filename).read_bytes(), content)
+        self.assertEqual(
+            namespace["edited_candidate"]["functions"][namespace["edited_name"]]["handler"],
+            str(namespace["edited_source_directory"]),
+        )
         self.assertTrue(namespace["old_image"].endswith(":v1"))
         self.assertTrue(namespace["new_image"].endswith(":v2"))
         self.assertIn(
