@@ -300,6 +300,36 @@ Docker and BuildKit commands were absent from the authoring host's PATH; Podman
 was present but was not exercised. The protected participant builder remains
 an unresolved execution-contract requirement.
 
+### Build and push execution contract
+
+Source inspection at CLI commit
+`9e9b014aaf03cae10b49edf7a093e6ddfb7ea903` established that:
+- The standard local build path executes `docker build` and checks the
+  command's exit status.
+- The separate push path executes `docker push`. It requires the built image
+  to be accessible through the Docker environment used for push.
+- The push execution helper terminates the CLI on command failure.
+- A remote-builder branch exists, but its availability, permissions, and
+  compatibility with the planned separate build/push sequence are unvalidated.
+- Buildx references occur in the separate publish implementation; they do not
+  establish that the standard local build path invokes Buildx.
+
+A local failure-propagation probe used the checksum-verified CLI and a temporary
+`docker` stub. The stub was invoked for the expected image and deliberately
+returned exit status `23`; `faas-cli push` returned exit status `1`.
+This confirms that the tested CLI reports push-command failure, without
+preserving the original command exit code.
+
+The probe did not contact a registry, use credentials, access a container
+daemon, build an image, or deploy a function. Successful registry push remains
+unvalidated. Podman compatibility and protected-builder access also remain
+unvalidated.
+
+Notebook push checkpoints must check command failure and must not treat
+printed progress messages alone as evidence of registry availability.
+The disposable reference lab must validate the complete build/push path,
+registry permissions, and image retrieval by the function runtime.
+
 ### CE adoption blockers — source inspection
 
 At faas-netes revision `f97de9fc1314bad45848f7e0bfaadb69710615a6`,
