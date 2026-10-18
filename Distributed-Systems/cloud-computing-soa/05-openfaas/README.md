@@ -194,9 +194,9 @@ to the shared infrastructure.
 ## Inspected reference candidates — not yet validated
 
 The following candidates have been inspected upstream. They are not an approved
-or platform-validated version set. The standalone Node.js authoring test
-runtime described below has been executed; the OpenFaaS template and platform
-have not.
+or platform-validated version set. The standalone Node.js authoring runtime
+and direct HTTP wrapper described below have been executed. The template image
+build, watchdog, and OpenFaaS platform have not been validated.
 
 | Component | Candidate | Evidence and limitations |
 |---|---|---|
@@ -241,11 +241,47 @@ different SIF checksums.
 
 Tests cover successful greetings, trimming, the 80-unit JavaScript string-length
 boundary, invalid bodies/names, and GET rejection with an Allow header. They use a
-context stub, not the actual OpenFaaS HTTP wrapper. Malformed-JSON parsing, wrapper
-integration, container builds, live invocation, and participant isolation remain
-unvalidated. The test-image pin does not pin the template's build images or
+context stub, not the actual OpenFaaS HTTP wrapper. Separate direct-wrapper
+observations are recorded below. Container builds, watchdog/gateway invocation,
+and participant isolation remain unvalidated. The test-image pin does not pin the template's build images or
 dependency ranges. Apptainer is an authoring test method, not a selected
 participant runtime or function-image builder.
+
+### Direct HTTP-wrapper observations
+
+The unmodified `node22/index.js` from template revision
+`262e6a608a3f987bcbe3322d1543b44e0e4282dc` was executed with the greeting handler
+in an external scratch directory using the recorded Apptainer/Node.js runtime.
+Dependencies resolved to Express `5.3.0` and body-parser `2.3.0`.
+
+The scratch dependency lockfile SHA-256 was
+`86c9d89afa68de7e64c5408caf2808656d452c5ce6b5236d62925cab10feb5ee`.
+This lockfile is not committed or integrated into the function-image build.
+
+A test-only interception bound the server to loopback on an automatically
+assigned port without modifying the wrapper source. Seven HTTP observations
+matched expectations in both default mode and explicit `NODE_ENV=production`:
+
+- Valid JSON returned 200 with the expected JSON greeting.
+- An invalid name returned 400 with `invalid_name`.
+- A JSON array and plain text returned 400 with `expected_json_object`.
+- GET returned 405 with JSON and `Allow: POST`.
+- A URL-encoded form containing `name=Ada` was accepted with 200.
+- Malformed JSON returned 400 with HTML before the handler ran.
+
+In default mode, the malformed-JSON response included parser stack details.
+Production mode replaced those client-facing details with `Bad Request`, but the
+parser diagnostic and submitted malformed body still appeared in server logs.
+
+These are observations, not approval of a JSON-only request contract or uniformly
+JSON error responses. Request media-type policy and parser-error handling remain
+execution-contract decisions. Production mode alone does not resolve those gaps.
+The stale `node20` startup label does not identify the runtime, and the logged
+port was not the actual port used by this test.
+
+The scratch probe does not exercise the watchdog, gateway, image build, deployment,
+or participant isolation. Its files remain outside Git; durable automated
+integration tests are still pending.
 
 ### Delivery gate
 
