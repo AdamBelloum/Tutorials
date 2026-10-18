@@ -249,13 +249,19 @@ build, watchdog, and OpenFaaS platform have not been validated.
 
 | Component | Candidate | Evidence and limitations |
 |---|---|---|
-| OpenFaaS CLI | `0.18.16` | Release metadata and build/push/deploy command sources inspected; binary not verified or executed. |
+| OpenFaaS CLI | `0.18.16` | Linux/amd64 release binary checksum verified locally; `version` and `build --help` executed. Image build, push, and deployment remain unvalidated. |
 | Node.js template | `node22` from `openfaas/templates`, commit `262e6a608a3f987bcbe3322d1543b44e0e4282dc` | Template inspected; base-image tags and dependency ranges remain mutable; default tests are placeholders. |
 | OpenFaaS chart | `15.0.13` from `openfaas/faas-netes`, commit `f97de9fc1314bad45848f7e0bfaadb69710615a6` | CE selection and monitoring templates inspected; chart not rendered or deployed. |
 
 Published SHA-256 for the CLI release asset named `faas-cli`:
 `16f82d999d92ada11c3abb5ab4be32207fc99b83463672227a9ea57c0cf36299`.
-This is the upstream checksum, not evidence of local binary verification.
+The Linux/amd64 release binary was downloaded into the user cache and matched
+this checksum before execution. `faas-cli version` reported version `0.18.16`
+and commit `9e9b014aaf03cae10b49edf7a093e6ddfb7ea903`.
+`faas-cli build --help` executed successfully and confirmed that `--shrinkwrap`
+only writes files into `./build/`. No image build, registry authentication,
+push, deployment, or protected-builder access was performed. This verifies
+the local CLI candidate, not the complete participant lifecycle or platform.
 
 The planned beginner sequence uses separate `faas-cli build`, `faas-cli push`,
 and `faas-cli deploy` commands against the same manifest, followed by readiness
