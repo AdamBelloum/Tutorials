@@ -35,24 +35,32 @@ required exercises in this workshop.
 
 ## Participant journey
 
-Participants begin as developers in an organiser-prepared, isolated lab per
-participant or group. They run complete guided build, push, deploy, invoke, update,
-and cleanup steps themselves. Installing Kubernetes, OpenFaaS, or monitoring is
+The intended validated workshop begins with participants as developers in an
+organiser-prepared, isolated lab per participant or group. Participants will run
+complete guided build, push, deploy, invoke, update, and cleanup steps themselves.
+Installing Kubernetes, OpenFaaS, or monitoring is
 not part of the mandatory beginner path.
 
 A shared environment may be considered in a later advanced workshop for different
 learning objectives, including ownership, permissions, and collaboration.
 
-| Planned notebook | Learning sequence |
-|---|---|
-| `beginner/01-explore-and-invoke.ipynb` | Check assigned configuration, invoke a prepared greeting function from Python and curl, inspect responses, and test malformed input. |
-| `beginner/02-develop-and-deploy.ipynb` | Implement a participant-owned greeting function, build/push/deploy through the selected workflow, verify readiness, and update its code. |
-| `beginner/03-data-and-observability.ipynb` | Process sample weather data, explore optional live data, generate bounded deterministic traffic, inspect metrics, and perform scoped cleanup. |
+| Existing pre-live draft | Current executable coverage | Remaining delivery work |
+|---|---|---|
+| `beginner/01-explore-and-invoke.ipynb` | Offline source/configuration exploration; live Python invocation cells disabled by default. | Validated invocation access and response contract; curl exercise. |
+| `beginner/02-develop-and-deploy.ipynb` | Offline source inspection, candidate manifests, overwrite protection, and temporary image-tag reference changes. | Runnable source editing/testing and participant build/push/deploy/readiness/update workflow. |
+| `beginner/03-data-and-observability.ipynb` | Offline weather fixture and synthetic observation analysis; live invocation and traffic disabled by default. | Validated deployment prerequisite, monitoring exercise, optional external-service failure handling, and scoped cleanup. |
 
-**These notebooks do not exist yet.** Each practical step will provide its purpose,
-execution location, complete runnable action, expected result, verification
-checkpoint, and focused recovery guidance. Configuration will be introduced once
-and reused; secrets will never be printed.
+**All three notebooks exist as pre-live authoring drafts, not complete workshop
+deliverables.** Their default Python paths have regression coverage. Live cells
+remain unvalidated; monitoring, external weather access, and cleanup are not
+implemented. Synthetic observations are teaching examples, not measurements.
+
+Open notebooks with the Python kernel started in `beginner/`. Current offline
+cells use the Python standard library. The authoring tests executed cells directly
+in Python, not through Jupyter; rendering, kernel integration, and browser behaviour
+remain to be checked. Configuration is reused without printing credentials.
+Each completed practical step must provide its purpose, execution location,
+runnable action, expected result, verification checkpoint, and recovery guidance.
 
 Workshop duration is pending a timed reference rehearsal. No tested duration is
 currently available.
@@ -77,23 +85,49 @@ Implemented authoring assets:
 - `examples/weather/handler.test.js`: 33 handler unit tests.
 - `examples/weather/package.json`: dependency-free `npm test` entry point.
 - `fixtures/weather-sample.json`: synthetic teaching input, not a real observation.
+- `beginner/`: three pre-live notebook drafts described above.
+- `config/lab.example.json`: offline template; live execution is rejected.
+- `config/.gitignore`: excludes organiser-supplied `*.local.json` configuration in this directory.
+- `helpers/lab_config.py`: configuration validation and live-execution safeguard.
+- `helpers/invoke.py`: bounded HTTP invocation, redirect refusal, inspectable HTTP errors, and no automatic retries; authentication support remains unresolved.
+- `helpers/traffic.py`: sequential configured traffic, status counts, and client latency aggregates; transport failures stop execution.
+- `helpers/manifests.py`: offline owned-function candidate rendering and exclusive file creation; template revision is recorded, not enforced.
+- `tests/test_*.py`: 37 passing Python regression tests covering helpers, the three default offline notebook paths, and mocked invocation/traffic wiring.
 
-Remaining planned additions, not yet available as complete deliverables:
+Remaining delivery work:
 
-```text
-beginner/                   Three complete guided notebooks
-examples/                   Greeting and weather function sources and manifests
- tests/                     Response, failure-path, and safety verification
-organizers-guide.md          Reference setup, access, preparation, and readiness
- docs/slide-corrections.md   Corrections to the retained slide narrative
- docs/validation-report.md  Exact versions, evidence, resource observations, limitations
+- Complete the notebook exercises and validate the participant lifecycle, including source updates, build, push, deployment, readiness, invocation, monitoring, and scoped cleanup.
+- Adopt exact platform/template versions and compatible manifests only after the execution contract and permission boundaries are tested.
+- Add `organizers-guide.md` covering reference setup, access, preparation, and readiness.
+- Add `docs/slide-corrections.md` and `docs/validation-report.md` with corrections, exact versions, evidence, resource observations, and limitations.
+
+No organiser guide exists yet. The direct HTTP-wrapper baseline is available in
+`tests/http-wrapper/`; image-build, gateway/runtime, and participant-isolation
+validation remain pending. The legacy guide remains during drafting until its
+relevant learning outcomes are covered.
+
+### Offline Python regression tests
+
+From this module directory:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-Function-template, manifest, and helper filenames will be finalised with the
-execution contract. No organiser guide exists yet. The direct HTTP-wrapper
-baseline is available in `tests/http-wrapper/`; broader safety and platform
-verification remain pending.
-The legacy guide will remain during drafting until relevant outcomes are covered.
+The reported authoring run used Python 3.12.12 and passed 37 tests. Notebook tests
+execute default code cells with invocation/network hooks blocked; Notebook 2 and
+3 tests also block external-command hooks. Notebook files are checked for unchanged
+contents and empty saved outputs. These mocks are regression safeguards, not an
+OS-level sandbox or proof that arbitrary notebook code cannot access a network.
+The separate JavaScript handler and direct-wrapper evidence is recorded below;
+this Python command does not run those tests or validate CLI manifest acceptance.
+
+Two additional tests enable Notebook 1 and 3 live switches only in compiled
+in-memory copies, using signature-checked invocation/traffic mocks and the
+real response class. They check call arguments and response handling without
+contacting a gateway or changing notebook files. Configuration and responses
+are mocked; these checks do not establish authentication, readiness, registry
+access, isolation, or live platform behaviour.
 
 ## Starting environment and responsibilities
 
@@ -512,7 +546,8 @@ Before delivery, a fresh reference rehearsal must complete all three notebooks a
 check response semantics, invalid inputs, external-failure handling, bounded load,
 scoped cleanup, and participant capability boundaries. Record exact versions,
 commands, results, resource observations, and unresolved issues. Static notebook
-checks alone do not establish live platform compatibility.
+checks and default offline execution tests do not establish live platform
+compatibility or complete learning-outcome coverage.
 
 No live OpenFaaS execution or end-to-end workshop validation has been performed in
 this authoring sprint. No current platform deployment or activation is implied.
