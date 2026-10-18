@@ -87,7 +87,9 @@ organizers-guide.md          Reference setup, access, preparation, and readiness
 ```
 
 Function-template, manifest, and helper filenames will be finalised with the
-execution contract. There is no organiser guide or tests directory to use yet.
+execution contract. No organiser guide exists yet. The direct HTTP-wrapper
+baseline is available in `tests/http-wrapper/`; broader safety and platform
+verification remain pending.
 The legacy guide will remain during drafting until relevant outcomes are covered.
 
 ## Starting environment and responsibilities
@@ -256,7 +258,8 @@ Dependencies resolved to Express `5.3.0` and body-parser `2.3.0`.
 
 The scratch dependency lockfile SHA-256 was
 `86c9d89afa68de7e64c5408caf2808656d452c5ce6b5236d62925cab10feb5ee`.
-This lockfile is not committed or integrated into the function-image build.
+The lockfile is preserved in `tests/http-wrapper/package-lock.json` for
+the authoring test only; it is not integrated into the function-image build.
 
 A test-only interception bound the server to loopback on an automatically
 assigned port without modifying the wrapper source. Seven HTTP observations
@@ -279,9 +282,31 @@ execution-contract decisions. Production mode alone does not resolve those gaps.
 The stale `node20` startup label does not identify the runtime, and the logged
 port was not the actual port used by this test.
 
-The scratch probe does not exercise the watchdog, gateway, image build, deployment,
-or participant isolation. Its files remain outside Git; durable automated
-integration tests are still pending.
+The repeatable baseline is preserved in `tests/http-wrapper/`. Its `index.js`
+and `package.json` are unmodified upstream files from the recorded template
+revision; `LICENSE` preserves their upstream MIT notice. This does not assign a
+licence to other module assets.
+
+From this module directory, run:
+
+    bash tests/http-wrapper/run.sh /absolute/path/to/node22.sif
+
+The runner requires Bash, Apptainer, standard Linux utilities, and an existing
+Linux/x86_64 Node.js `v22.23.3` SIF. It prints the image checksum rather than
+enforcing an image-digest pin. It uses `npm ci --ignore-scripts` with the preserved
+lockfile in temporary storage, requiring access to the locked npm package URLs.
+It copies the current repository greeting handler, runs all seven observations
+in development and production modes, and removes temporary files on exit.
+Both modes passed with the recorded reference image.
+
+The probe also asserts development parser-error exposure and production
+suppression of parser stack details in HTTP responses. Server-side diagnostics
+are not automatically asserted. The wrapper source remains unchanged; a
+test-only interception forces an ephemeral loopback listener.
+
+This baseline does not exercise the watchdog, gateway, image build, deployment,
+or participant isolation. Form acceptance and HTML parser errors are regression
+observations, not approval of the final workshop request/error contract.
 
 ### Delivery gate
 
