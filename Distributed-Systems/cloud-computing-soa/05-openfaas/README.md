@@ -46,7 +46,7 @@ learning objectives, including ownership, permissions, and collaboration.
 
 | Existing pre-live draft | Current executable coverage | Remaining delivery work |
 |---|---|---|
-| `beginner/01-explore-and-invoke.ipynb` | Offline source/configuration exploration; live Python invocation cells disabled by default. | Validated invocation access and response contract; curl exercise. |
+| `beginner/01-explore-and-invoke.ipynb` | Offline source/configuration exploration and synthetic JSON/HTML response inspection; live Python invocation cells disabled by default. | Validated invocation access and response contract; curl exercise. |
 | `beginner/02-develop-and-deploy.ipynb` | Offline source/test editing in temporary copies, candidate manifests and overwrite protection; guided retained-workspace editing and Node.js test commands. | Rehearsal of the terminal exercise in the participant environment; runnable participant build/push/deploy/readiness/update workflow. |
 | `beginner/03-data-and-observability.ipynb` | Offline weather fixture and guided synthetic observation interpretation; retained weather-copy and additional unit-test instructions; live invocation and traffic disabled by default. | Rehearsal of the terminal exercise in the participant environment; validated deployment prerequisite, monitoring exercise, optional external-service failure handling, and scoped cleanup. |
 
