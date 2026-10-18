@@ -130,6 +130,40 @@ isolated lab must be documented explicitly.
 The isolation boundary, image-building capability, registry permissions, and scoped
 cleanup must be validated. Function-name prefixes alone are not authorisation.
 
+## Per-group VM reference specification — provisional
+
+The organiser provisions one disposable VM per group. JupyterLab and the
+group's OpenFaaS lab run inside that VM. Participants do not install the platform.
+
+The following is an initial engineering recommendation for reference rehearsal,
+not a measured minimum, optimal configuration, or validated capacity guarantee.
+
+| Item | Reference specification |
+|---|---|
+| Operating system | Ubuntu Server 24.04 LTS; record the exact image and updates used during rehearsal. |
+| Architecture | Linux/amd64 (x86_64); use matching CLI binaries and function images. |
+| CPU | 4 vCPUs per group VM. |
+| Memory | 8 GiB RAM per group VM. |
+| Disk | 80 GiB SSD-backed disk per group VM; monitor free space and image/build-cache growth. |
+| Notebook environment | One JupyterLab session shared by the group, with a Python kernel and Bash terminal. |
+| Initial workload | One image build at a time per VM, small exercise functions, and bounded request load. |
+| Administration | Organiser sudo/root access for provisioning; participant sudo/root and container-daemon access are not assumed. |
+| Networking | Organiser-provided access routes and enforced cross-group restrictions; required download, registry, and runtime connectivity must be tested. |
+
+This budget must accommodate the selected Kubernetes/OpenFaaS installation,
+JupyterLab, the protected builder, and exercise monitoring. Their exact versions,
+resource limits, registry placement, and privilege model remain S2 decisions.
+
+For cohort planning, multiply the per-VM allocation by the number of simultaneous
+groups, then budget shared services and infrastructure overhead separately.
+These allocations do not guarantee host capacity, especially with CPU
+overcommitment or simultaneous builds.
+
+Before delivery, rehearse a complete lab lifecycle and measure peak memory,
+CPU use, build duration, disk growth, and function responsiveness. Adjust the
+specification and record the evidence. Other operating systems or architectures
+require separate validation.
+
 ## Indicative infrastructure recommendation
 
 **The beginner workshop uses isolated labs. The shared profile below is retained
