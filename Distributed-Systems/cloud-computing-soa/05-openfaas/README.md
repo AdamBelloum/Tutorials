@@ -348,9 +348,9 @@ bodies/fields, JSON response headers, and GET/PUT/DELETE rejection.
 Temperature validation requires a finite number, not meteorological plausibility.
 Non-finite-number cases test the handler directly; they are not valid JSON inputs.
 
-This is context-stub unit validation only. Weather HTTP-wrapper behaviour,
-image builds, watchdog/gateway invocation, deployment, and isolation remain
-unvalidated. The direct-wrapper observations below apply to greeting only.
+This subsection records context-stub unit validation only. Separate weather
+HTTP-wrapper observations are recorded below. Image builds, watchdog/gateway
+invocation, deployment, and isolation remain unvalidated.
 
 ### Direct HTTP-wrapper observations
 
@@ -410,6 +410,39 @@ test-only interception forces an ephemeral loopback listener.
 This baseline does not exercise the watchdog, gateway, image build, deployment,
 or participant isolation. Form acceptance and HTML parser errors are regression
 observations, not approval of the final workshop request/error contract.
+
+### Weather HTTP-wrapper observations
+
+The weather probe passed all nine observations in both development and production
+modes using the same upstream wrapper, locked dependencies, and verified reference
+SIF as the greeting baseline. The greeting probe was rerun and passed all seven
+observations in each mode: 32 HTTP checks passed across both exercises and modes.
+
+Weather observations:
+- Valid JSON returned 200 with the expected fields and summary.
+- Invalid city, string temperature, and invalid condition returned 400 with their
+  respective JSON validation errors.
+- A JSON array and plain text returned 400 with `expected_json_object`.
+- GET returned 405 with JSON and `Allow: POST`.
+- URL-encoded form input returned 400 with `invalid_temperature`; the parsed
+  temperature was a string. This does not establish a JSON-only media-type policy.
+- Malformed JSON returned 400 with HTML before handler execution. Development
+  exposed parser details in the response; production returned `Bad Request`.
+  Parser diagnostics and the malformed body remained visible in server output
+  in both modes. Server-side diagnostic content is observed, not asserted.
+
+From this module directory, run either exercise:
+
+    bash tests/http-wrapper/run.sh /absolute/path/to/node22.sif greeting
+    bash tests/http-wrapper/run.sh /absolute/path/to/node22.sif weather
+
+Omitting the exercise retains the original greeting default. The runner copies
+the selected handler and probe into temporary storage; upstream wrapper sources
+and the greeting probe are unchanged. The weather probe uses inline synthetic
+HTTP inputs rather than loading the fixture file.
+
+These are direct loopback wrapper tests, not OpenFaaS image-build, watchdog,
+gateway, deployment, or participant-isolation validation.
 
 ### Delivery gate
 
