@@ -47,8 +47,8 @@ learning objectives, including ownership, permissions, and collaboration.
 | Existing pre-live draft | Current executable coverage | Remaining delivery work |
 |---|---|---|
 | `beginner/01-explore-and-invoke.ipynb` | Offline source/configuration exploration; live Python invocation cells disabled by default. | Validated invocation access and response contract; curl exercise. |
-| `beginner/02-develop-and-deploy.ipynb` | Offline source inspection, candidate manifests, overwrite protection, and temporary image-tag reference changes. | Runnable source editing/testing and participant build/push/deploy/readiness/update workflow. |
-| `beginner/03-data-and-observability.ipynb` | Offline weather fixture and synthetic observation analysis; live invocation and traffic disabled by default. | Validated deployment prerequisite, monitoring exercise, optional external-service failure handling, and scoped cleanup. |
+| `beginner/02-develop-and-deploy.ipynb` | Offline source/test editing in temporary copies, candidate manifests and overwrite protection; guided retained-workspace editing and Node.js test commands. | Rehearsal of the terminal exercise in the participant environment; runnable participant build/push/deploy/readiness/update workflow. |
+| `beginner/03-data-and-observability.ipynb` | Offline weather fixture and guided synthetic observation interpretation; retained weather-copy and additional unit-test instructions; live invocation and traffic disabled by default. | Rehearsal of the terminal exercise in the participant environment; validated deployment prerequisite, monitoring exercise, optional external-service failure handling, and scoped cleanup. |
 
 **All three notebooks exist as pre-live authoring drafts, not complete workshop
 deliverables.** Their default Python paths have regression coverage. Live cells
@@ -88,6 +88,7 @@ Implemented authoring assets:
 - `beginner/`: three pre-live notebook drafts described above.
 - `config/lab.example.json`: offline template; live execution is rejected.
 - `config/.gitignore`: excludes organiser-supplied `*.local.json` configuration in this directory.
+- `.gitignore`: excludes participant-generated `workspace/` source copies and build artefacts from Git.
 - `helpers/lab_config.py`: configuration validation and live-execution safeguard.
 - `helpers/invoke.py`: bounded HTTP invocation, redirect refusal, inspectable HTTP errors, and no automatic retries; authentication support remains unresolved.
 - `helpers/traffic.py`: sequential configured traffic, status counts, and client latency aggregates; transport failures stop execution.
@@ -129,6 +130,32 @@ contacting a gateway or changing notebook files. Configuration and responses
 are mocked; these checks do not establish authentication, readiness, registry
 access, isolation, or live platform behaviour.
 
+### Participant working copies and local tests
+
+Notebooks 2 and 3 now provide guided Bash-terminal instructions in addition to
+Python cells. Run their terminal commands from the module directory `05-openfaas/`
+in JupyterLab on the notebook host. These Markdown instructions are not executed
+by notebook Run All or by the Python regression suite.
+
+- Notebook 2 copies the greeting into `workspace/greeting/`, expects 15 baseline
+  tests, changes the greeting response, demonstrates three expected test failures,
+  then aligns the response expectations and expects all 15 tests to pass.
+- Notebook 3 copies weather into `workspace/weather/`, expects 33 baseline tests,
+  and supplies one additional deterministic test, for an expected total of 34.
+  Keeping this directory depth preserves the test's relative fixture path.
+- Working copies are retained and ignored by Git. Existing copies must be
+  inspected rather than overwritten. Git ignore is not backup or secret storage.
+- A later build manifest must reference the edited working copy, not the
+  renderer's default `examples/` source. Changing an image tag alone neither
+  builds nor deploys changed code.
+
+The latest authoring runs passed all 37 Python regression tests. They did not
+execute these terminal instructions, the greeting failure/recovery sequence, or
+Notebook 3's added participant test. Earlier reference-handler and direct-wrapper
+results below remain separate evidence, not a rehearsal of the new exercises.
+Participant-environment testing and VM/platform validation are deferred to a
+separate sprint; no deployment or activation is implied by these additions.
+
 ## Starting environment and responsibilities
 
 ### Participants
@@ -136,9 +163,12 @@ access, isolation, or live platform behaviour.
 Participants need basic familiarity with HTTP/JSON and JavaScript, plus the ability
 to run guided Python cells and Bash commands. The organiser will prepare JupyterLab
 with a Python kernel, `faas-cli`, `curl`, Git, CA certificates, and the required
-Python packages. Local Node.js/npm will be required only if the chosen local-test
-workflow uses them. Package versions and the supported Node.js function runtime
-must be pinned and tested before delivery; do not reuse an end-of-life runtime.
+Python packages. The retained-workspace exercises in Notebooks 2 and 3
+require organiser-supplied Node.js 22 and npm on the notebook host. Their
+dependency-free handler tests require no participant `npm install`. Exact tool
+versions and the supported Node.js function runtime must be pinned and tested
+before delivery; do not reuse an end-of-life runtime. Apptainer remains an
+authoring test method, not the selected participant runtime.
 
 The planned execution environment is Linux with Bash in JupyterLab. Linux/amd64 is
 the initial reference target, not a claim of tested compatibility. Other host or
