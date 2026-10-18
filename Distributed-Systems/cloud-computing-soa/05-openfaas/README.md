@@ -73,13 +73,16 @@ Implemented authoring assets:
 - `examples/greeting/handler.js`: POST greeting handler with input validation.
 - `examples/greeting/handler.test.js`: 15 handler unit tests.
 - `examples/greeting/package.json`: dependency-free `npm test` entry point.
+- `examples/weather/handler.js`: deterministic POST weather-summary handler.
+- `examples/weather/handler.test.js`: 33 handler unit tests.
+- `examples/weather/package.json`: dependency-free `npm test` entry point.
+- `fixtures/weather-sample.json`: synthetic teaching input, not a real observation.
 
 Remaining planned additions, not yet available as complete deliverables:
 
 ```text
 beginner/                   Three complete guided notebooks
 examples/                   Greeting and weather function sources and manifests
-fixtures/weather-sample.json Deterministic weather input
  tests/                     Response, failure-path, and safety verification
 organizers-guide.md          Reference setup, access, preparation, and readiness
  docs/slide-corrections.md   Corrections to the retained slide narrative
@@ -328,6 +331,26 @@ observations are recorded below. Container builds, watchdog/gateway invocation,
 and participant isolation remain unvalidated. The test-image pin does not pin the template's build images or
 dependency ranges. Apptainer is an authoring test method, not a selected
 participant runtime or function-image builder.
+
+### Local weather-handler baseline
+
+All 33 weather unit tests passed using the recorded Apptainer `1.4.0-1.el8`
+runtime, Node.js `v22.23.3`, and npm `10.9.9`. The recorded SIF checksum and
+Linux/x64 runtime were verified before execution with a read-only module bind.
+The greeting suite also passed all 15 tests. Both suites had zero failures,
+cancellations, skips, or TODOs.
+
+The weather handler processes supplied `city`, `temperature_c`, and `condition`
+fields without external requests. Tests cover the synthetic fixture, trimming,
+text-length boundaries, input preservation, numeric temperatures, invalid
+bodies/fields, JSON response headers, and GET/PUT/DELETE rejection.
+
+Temperature validation requires a finite number, not meteorological plausibility.
+Non-finite-number cases test the handler directly; they are not valid JSON inputs.
+
+This is context-stub unit validation only. Weather HTTP-wrapper behaviour,
+image builds, watchdog/gateway invocation, deployment, and isolation remain
+unvalidated. The direct-wrapper observations below apply to greeting only.
 
 ### Direct HTTP-wrapper observations
 
