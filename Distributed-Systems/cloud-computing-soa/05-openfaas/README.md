@@ -172,11 +172,21 @@ The deterministic core weather exercise must work without an external weather AP
 
 ## Execution contract — pending S2
 
-The selected teaching model is an isolated lab per participant or group, with
-participants executing build, push, and deploy commands themselves. The isolation
-mechanism, build implementation, and access controls have not yet been selected.
-Executable deployment cells cannot be finalised until one complete path is
-documented and validated.
+The selected reference topology is one organiser-provisioned, disposable Linux
+VM per group, with JupyterLab running inside that group's VM. Participants execute
+build, push, and deploy commands from this JupyterLab environment. The lab VM is
+the intended infrastructure isolation boundary; it is not yet a validated
+security boundary.
+
+Organisers prepare the lab infrastructure before participant access. The
+Kubernetes/OpenFaaS installation, builder implementation and privileges, registry
+permissions, network restrictions, and credential distribution remain pending.
+Participant build access must not expose shared-infrastructure Docker sockets or
+administrator credentials. Any administrative capability inside the disposable
+lab must be explicitly documented.
+
+Executable deployment cells cannot be finalised until this complete path and
+negative cross-group access tests have been documented and validated.
 
 S2 must resolve:
 
