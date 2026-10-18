@@ -68,7 +68,13 @@ Existing assets:
   conceptual corrections and alignment with greeting/weather exercises are pending.
 - `images/`: existing illustrations, with asset provenance still to be reviewed.
 
-Planned additions, not yet available:
+Implemented authoring assets:
+
+- `examples/greeting/handler.js`: POST greeting handler with input validation.
+- `examples/greeting/handler.test.js`: 15 handler unit tests.
+- `examples/greeting/package.json`: dependency-free `npm test` entry point.
+
+Remaining planned additions, not yet available as complete deliverables:
 
 ```text
 beginner/                   Three complete guided notebooks
@@ -188,7 +194,9 @@ to the shared infrastructure.
 ## Inspected reference candidates — not yet validated
 
 The following candidates have been inspected upstream. They are not an approved
-or runtime-tested version set.
+or platform-validated version set. The standalone Node.js authoring test
+runtime described below has been executed; the OpenFaaS template and platform
+have not.
 
 | Component | Candidate | Evidence and limitations |
 |---|---|---|
@@ -212,6 +220,34 @@ dependency locking, and meaningful tests. Then rehearse the complete lifecycle
 in a disposable reference lab. No installation is required on the authoring host.
 
 ## Validation and release gate
+
+### Local greeting-handler baseline
+
+Implementation checkpoint: `95bbd65a2a5c74f5e0b7acc6626fa8648b5ae22a`.
+
+On the Linux/x86_64 authoring host, `npm test` passed all 15 tests with no failures,
+skips, or TODOs using Apptainer `1.4.0-1.el8`, Node.js `v22.23.3`, and npm `10.9.9`.
+The runtime was executed with a read-only source bind and required neither a
+host Node.js installation nor Docker.
+
+Source image: `docker.io/library/node:22-alpine`, resolved to the verified
+Linux/amd64 OCI manifest digest:
+`sha256:2c752226d477b4a886378baa95b9af252be59301b725fdb0b7e15208131505a8`.
+
+Local converted SIF SHA-256:
+`aa8a5e9435fa2ae5c1c837f626a5fd2b1300029cfdb250aedd912a117871dadf`.
+This identifies the recorded local file; independent conversions may produce
+different SIF checksums.
+
+Tests cover successful greetings, trimming, the 80-unit JavaScript string-length
+boundary, invalid bodies/names, and GET rejection with an Allow header. They use a
+context stub, not the actual OpenFaaS HTTP wrapper. Malformed-JSON parsing, wrapper
+integration, container builds, live invocation, and participant isolation remain
+unvalidated. The test-image pin does not pin the template's build images or
+dependency ranges. Apptainer is an authoring test method, not a selected
+participant runtime or function-image builder.
+
+### Delivery gate
 
 Before delivery, a fresh reference rehearsal must complete all three notebooks and
 check response semantics, invalid inputs, external-failure handling, bounded load,
