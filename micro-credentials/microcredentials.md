@@ -224,7 +224,7 @@ Categorise and codify skills.
    - Learning outcomes are translated into categories `subject-specific` and `transferable skills`. 
    - This provides a common language for describing educational provision and comparing it with employment requirements
 
-![bg right:40% 100%](Ward-skills-categories.png)
+![bg right:40% 100%](images/Ward-skills-categories.png)
 
 ---
 ## Skills Profiling: Quantify skills coverage through Skills Hours.
@@ -235,7 +235,7 @@ Quantify skills coverage through Skills Hours.
 - This shows the relative emphasis given to different skills.
 
 
-![bg right:40% 100%](subject-specifc-skills-proflings.png)
+![bg right:40% 100%](images/subject-specifc-skills-proflings.png)
 
 ---
 
@@ -386,7 +386,7 @@ The project does not need to settle every future use now.
 - Participation records is not assessed microcredentials.
 - Selected activities could be developed into assessed standalone units.
 
-![bg right:18% 100%](micro-credential-pathway.png)
+![bg right:18% 100%](images/micro-credential-pathway.png)
 
 <!-- Speaker note: Confirm the event details and assessment status against project records before delivery. Type A describes the standalone positioning; it does not mean the event already awarded microcredentials. -->
 
@@ -403,7 +403,7 @@ For each selected learning unit, document:
 
 > Build a reusable specification that future partners can evaluate.
 
-![bg right:40% 100%](micro-service-architecture.png)
+![bg right:40% 100%](images/micro-service-architecture.png)
 
 <!-- Speaker note: The example is a candidate, not a claim about an existing accredited unit. Potential combinations can be documented without claiming approved credit-bearing stacks. -->
 
@@ -419,7 +419,7 @@ A delivery environment can support:
 - Credential issuance, verification, and records
 
 
-![bg right:35% 70%](openbadge.png) 
+![bg right:35% 70%](images/openbadge.png) 
 
 <!-- Speaker note: Issuance and LMS functions may require separate integrations. This slide describes capabilities to develop or connect, not a verified end-to-end credential system already deployed. -->
 
