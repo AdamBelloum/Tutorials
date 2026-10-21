@@ -13,7 +13,6 @@ footer: "DIGITAfrica"
 
 ### From standalone learning achievements towards stackable credit
 
-
 ---
 
 ## Roadmap of the Talk
@@ -25,8 +24,6 @@ footer: "DIGITAfrica"
 - Assessment, recognition, and trust
 - DIGITAfrica: a standalone starting point and a stackable ambition
 - Institutional collaboration and next steps
-
-![w:800](images/Picture0.png)
 
 ---
 
@@ -54,14 +51,6 @@ It should make clear:
 - **`Who`** issued the credential and under what **`quality arrangements`**
 - **`How`** the achievement can be verified
 
-<!---
-> **Stackability and cross-institutional recognition are possible uses—not automatic properties.**
-
-![w:650](images/Picture2.png)
---->
-
-<!-- Speaker note: This is a working explanation, not a quotation from a formal definition. Small volume is contextual: microcredentials are not necessarily advanced, university-credit-bearing, or assignment-sized. -->
-
 ---
 
 ## Separate learning coverage from signalling
@@ -71,13 +60,6 @@ It should make clear:
 | **Coverage** | The scope of assessed learning | Programme, course/module, focused component |
 | **Credential** | The attestation of achievement | Degree credential, course-level credential, microcredential |
 | **Representation** | How achievement is documented | Badge, certificate, verifiable record |
-
-
-<!---
-> **A badge is not inherently a smaller learning unit than a microcredential. It can represent one.**
---->
-
-<!-- Speaker note: Credential is the umbrella term. The coverage examples are a practical design guide, not a universal hierarchy. A microcredential may cover an entire short course. An assignment is an assessment instrument, not automatically a credential. -->
 
 ---
 
@@ -94,8 +76,6 @@ For DIGITAfrica, we can adopt the convention:
 - A `badge` and a `certificate` can represent **the same achievement**.
 - Two representations do not create two separate achievements or credits.
 - A `participation badge` does not prove assessed learning.
-
-<!-- Speaker note: If we use one badge per microcredential, that is our issuing convention—not a universal rule about badges. -->
 
 ---
 
@@ -115,10 +95,6 @@ For DIGITAfrica, we can adopt the convention:
 
 > Smaller learning units should strengthen—not fragment—the coherence of education.
 
-<!--
-![bg right:28% 100%](images/Picture3.png)
--->
-
 ---
 
 ## Five functional types of microcredential use
@@ -133,9 +109,6 @@ Reece (2022), as described in the supplied chapter, distinguishes five approache
 | **D — Embedded** | Recognises learning aligned with existing course content |
 | **E — Stackable credit-bearing** | Provides credit-bearing components of a larger qualification |
 
-<!-- Speaker note: The source calls these models. Here we use functional types because the distinction concerns use. The original Reece reference needs bibliographic verification. -->
-
-<!--
 ---
 
 ## Why call them “types” rather than “models”?
@@ -148,9 +121,6 @@ They describe **what a microcredential is used for**.
 - They are **not a compulsory development sequence**.
 
 > DIGITAfrica can start with A and work towards E without first implementing B, C, and D.
--->
-
-<!-- Speaker note: Entry recognition may support admission without being a mandatory prerequisite. Recognition depends on the receiving institution. -->
 
 ---
 
@@ -167,14 +137,6 @@ They describe **what a microcredential is used for**.
 - Agree how assessed components contribute to a qualification.
 - Define level, workload, credit, and progression requirements.
 - Preserve programme coherence and avoid double counting.
-
-<!--
-> Academic credit requires institutional approval; it does not follow from issuing a badge.
-
-
-![bg right:25% 100%](images/Picture4.png)
-
--->
 
 ---
 
@@ -193,8 +155,6 @@ External resources can support university learning when their outcomes and evide
 
 > A platform certificate or badge is not automatically a university-recognised microcredential.
 
-<!-- Speaker note: A coherent collection of external resources can support a skills profile. Its credential and recognition status must still be established. Credit-bearing incorporation would also involve Type E arrangements. -->
-
 ---
 
 ## Skills Profiling: a bridge between learning and work
@@ -208,14 +168,6 @@ External resources can support university learning when their outcomes and evide
 Ward (2021), uses 
 - `Categorise` and `codify` skills 
 - Quantify skills coverage through `Skills Hours` 
-
-<!--
-> Common categories make comparison possible; they do not by themselves establish equivalence.
-
-![w:650](images/Picture5.png)
--->
-
-<!-- Speaker note: Job advertisements express requested skills, not direct measurements of workplace competency. Intended outcomes, assessed achievement, and workplace performance must remain distinguishable. -->
 
 ---
 ## Skills Profiling: ategorise and codify skills
@@ -233,7 +185,6 @@ Quantify skills coverage through Skills Hours.
 - Learning Hours are allocated using:  assessment weights and the outcomes assessed
   - then aggregated by skills category. 
 - This shows the relative emphasis given to different skills.
-
 
 ![bg right:40% 100%](images/subject-specifc-skills-proflings.png)
 
@@ -254,8 +205,6 @@ For DIGITAfrica:
 
 > Use the competence framework to clarify learning coverage, but validate the mapping and retain evidence of assessment.
 
-<!-- Speaker note: DIGITAfrica contextualises established competence frameworks for digital research infrastructures. A shared vocabulary helps alignment, but should not erase differences in level, context, or assessment. -->
-
 ---
 
 ## Credential signals: three audiences
@@ -269,9 +218,6 @@ For DIGITAfrica:
 These audiences are **different from the five functional types**.
 
 > The same credential may signal achievement to all three audiences, while recognition decisions remain distinct.
-
-<!-- >
-![bg right:30% 100%](images/Picture6.png)
 
 ---
 
@@ -352,8 +298,6 @@ Trust is supported by:
 
 ![bg right:28% 100%](images/Picture9.png)
 
-<!-- Speaker note: Mapping to e-CF, EQF, or ACQF may support interpretation, but these frameworks have different purposes. Mapping alone does not guarantee cross-border recognition. Private providers can also issue credible credentials; issuer transparency and quality matter. -->
-
 ---
 
 ## DIGITAfrica: purpose remains open
@@ -368,8 +312,6 @@ The project does not need to settle every future use now.
 - **B, C, and D: complementary possibilities requiring partnerships**
 
 > A small project can establish the foundation for recognition without building the entire recognition system.
-
-<!-- Speaker note: This is a proposed development strategy, not a claim that formal microcredentials or transferable academic credits have already been established. -->
 
 ---
 
@@ -388,8 +330,6 @@ The project does not need to settle every future use now.
 
 ![bg right:18% 100%](images/micro-credential-pathway.png)
 
-<!-- Speaker note: Confirm the event details and assessment status against project records before delivery. Type A describes the standalone positioning; it does not mean the event already awarded microcredentials. -->
-
 ---
 
 ## What DIGITAfrica can establish now
@@ -405,8 +345,6 @@ For each selected learning unit, document:
 
 ![bg right:40% 100%](images/micro-service-architecture.png)
 
-<!-- Speaker note: The example is a candidate, not a claim about an existing accredited unit. Potential combinations can be documented without claiming approved credit-bearing stacks. -->
-
 ---
 
 ## Platforms support the process—not recognition itself
@@ -420,8 +358,6 @@ A delivery environment can support:
 
 
 ![bg right:35% 70%](images/openbadge.png) 
-
-<!-- Speaker note: Issuance and LMS functions may require separate integrations. This slide describes capabilities to develop or connect, not a verified end-to-end credential system already deployed. -->
 
 ---
 
@@ -457,8 +393,6 @@ Credit-bearing stackability requires partner **`institution(s)`** to agree on:
 
 > Project contribution: establish a foundation that institutions can sustain and extend.
 
-<!-- Speaker note: This is a proposed division of responsibilities. Do not present an unapproved funding or sustainability arrangement as settled project policy. -->
-
 ---
 
 ## Conclusions
@@ -489,7 +423,4 @@ Credit-bearing stackability requires partner **`institution(s)`** to agree on:
 ## References
 
 - DIGITAfrica D4.2: Competence Framework nd Modular Curricula*. Version 1.0, 2026. https://www.digitafrica.eu/wp-content/uploads/2026/07/DIGITAfrica_D4.2_v1.0.pdf
-
 - R. Ward and S. Grant on the Universal Microcredential Framework, Skills Profiling, and credential signalling. DOI: 10.1109/TE.2024.3486016   
-
-<!-- Before delivery: verify the D4.2 title, version, date, and URL. Add the complete chapter citation and the original Reece (2022) reference from the publication's bibliography. Those details have not been independently verified here. Do not imply that the original Reece publication was consulted. -->
