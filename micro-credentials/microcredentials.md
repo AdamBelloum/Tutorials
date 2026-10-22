@@ -1,6 +1,21 @@
 ---
 marp: true
 theme: default
+style: |
+  table {
+    font-size: 0.8em;
+  }
+  style: |
+  /* Controls the lead-in paragraph text */
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5em;
+  }
+  /* Controls the spacing and size of the bulleted list items */
+  ul li {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
 paginate: true
 header: "Microcredentials"
 footer: "DIGITAfrica"
@@ -9,7 +24,7 @@ footer: "DIGITAfrica"
 # Microcredentials as a Complement to University Curricula
 
 **Audience:** University lecturers and programme directors  
-**Context:** DIGITAfrica — digital skills and research infrastructure
+**Context:** DIGITAfrica - digital skills and research infrastructure
 
 ### From standalone learning achievements towards stackable credit
 
@@ -50,6 +65,9 @@ It should make clear:
 - The **`workload`** and **`level`**, where applicable
 - **`Who`** issued the credential and under what **`quality arrangements`**
 - **`How`** the achievement can be verified
+
+> **Stackability and cross-institutional recognition are possible uses-not automatic properties.**
+
 
 ---
 
@@ -95,6 +113,7 @@ For DIGITAfrica, we can adopt the convention:
 
 > Smaller learning units should strengthen—not fragment—the coherence of education.
 
+
 ---
 
 ## Five functional types of microcredential use
@@ -103,36 +122,23 @@ Reece (2022), as described in the supplied chapter, distinguishes five approache
 
 | Model (Type) | Function |
 |---|---|
-| **A — Standalone** | Offered independently of a larger qualification |
-| **B — Entry** | Supports or satisfies an entry requirement |
-| **C — Prior-learning recognition** | Supports recognition of learning already completed |
-| **D — Embedded** | Recognises learning aligned with existing course content |
-| **E — Stackable credit-bearing** | Provides credit-bearing components of a larger qualification |
-
----
-
-## Why call them “types” rather than “models”?
-
-They describe **what a microcredential is used for**.
-
-- They do not define subject content or learning level.
-- They are not five requirements every microcredential must satisfy.
-- They can overlap: a standalone credential may later support prior-learning recognition.
-- They are **not a compulsory development sequence**.
-
-> DIGITAfrica can start with A and work towards E without first implementing B, C, and D.
+| **A - Standalone** | Offered independently of a larger qualification |
+| **B - Entry** | Supports or satisfies an entry requirement |
+| **C - Prior-learning recognition** | Supports recognition of learning already completed |
+| **D - Embedded** | Recognises learning aligned with existing course content |
+| **E - Stackable credit-bearing** | Provides credit-bearing components of a larger qualification |
 
 ---
 
 ## Course and programme integration: D and E
 
-**Type D — Embedded recognition**
+**Type D - Embedded recognition**
 
 - Align a focused credential with existing course outcomes.
 - Example: a practical cloud-deployment component within a cloud-computing course.
 - Embedding does not automatically create additional academic credit.
 
-**Type E — Stackable credit-bearing provision**
+**Type E - Stackable credit-bearing provision**
 
 - Agree how assessed components contribute to a qualification.
 - Define level, workload, credit, and progression requirements.
@@ -144,9 +150,9 @@ They describe **what a microcredential is used for**.
 
 External resources can support university learning when their outcomes and evidence are suitable.
 
-- **B — Entry:** a receiving programme accepts an achievement for admission.
-- **C — Prior learning:** the institution evaluates previously completed learning.
-- **D — Embedded:** selected external resources support an existing course.
+- **B - Entry:** a receiving programme accepts an achievement for admission.
+- **C - Prior learning:** the institution evaluates previously completed learning.
+- **D - Embedded:** selected external resources support an existing course.
 
 **Examples from the chapter**
 
@@ -186,7 +192,8 @@ Quantify skills coverage through Skills Hours.
   - then aggregated by skills category. 
 - This shows the relative emphasis given to different skills.
 
-![bg right:40% 100%](images/subject-specifc-skills-proflings.png)
+
+![bg right:40% 100%](subject-specifc-skills-proflings.png)
 
 ---
 
@@ -218,25 +225,6 @@ For DIGITAfrica:
 These audiences are **different from the five functional types**.
 
 > The same credential may signal achievement to all three audiences, while recognition decisions remain distinct.
-
----
-
-## Trust: useful analogy, important limits
-
-The chapter compares hours, badges, microcredentials, and degrees to units of currency.
-
-**Useful insight**
-
-- Clear units and trustworthy records can make recognition more manageable.
-- A coherent assessed package may be easier to evaluate than many unrelated badges.
-
-**Limit of the analogy**
-
-- Equal hours do not mean equal learning level or achievement.
-- Badges are not inherently low-value “coins”.
-- Adding hours or badges does not automatically produce credit or a degree.
-
-> Trust requires assessment, quality assurance, and recognition agreements—not just a common measure.
 
 ---
 
@@ -275,8 +263,6 @@ Assessment design should specify:
 
 > Self-assessment supports learning, but is not normally sufficient alone to certify achievement.
 
-![w:650](images/Picture8.png)
-
 ---
 
 ## Verification, portability, and recognition
@@ -296,8 +282,6 @@ Trust is supported by:
 
 > A technically verifiable badge can still lack academic-credit recognition.
 
-![bg right:28% 100%](images/Picture9.png)
-
 ---
 
 ## DIGITAfrica: purpose remains open
@@ -306,9 +290,9 @@ The project does not need to settle every future use now.
 
 **Proposed positioning**
 
-- **Starting point: A — standalone learning provision**
+- **Starting point: A - standalone learning provision**
 - **Immediate priority: documented, assessed achievements**
-- **Longer-term ambition: E — stackable credit-bearing provision**
+- **Longer-term ambition: E - stackable credit-bearing provision**
 - **B, C, and D: complementary possibilities requiring partnerships**
 
 > A small project can establish the foundation for recognition without building the entire recognition system.
@@ -317,7 +301,7 @@ The project does not need to settle every future use now.
 
 ## Example: DIGITAfrica winter school
 
-- Strathmore University, Kenya — March 2026
+- Strathmore University, Kenya - March 2026
 - Tracks: AI & Big Data; Networking & Cloud Computing
 - Blueprint-aligned, hands-on learning and practical sessions
 - `Certificates of participation`; no formal assessment implemented
@@ -419,8 +403,165 @@ Credit-bearing stackability requires partner **`institution(s)`** to agree on:
 > We do not need to decide every future purpose today—but we can identify the next practical collaboration.
 
 ---
+## example: 
+
+Strathmore University, Kenya — March 2026
+- Tracks: Networking & Cloud Computing
+- course: Microservice archtecture and Secure authrentication
+- Certificates of participation; no formal assessment implemented
+
+![bg right:40% 100%](images/micro-service-architecture.png)  
+<!--![h:500 w:600](micro-service-architecture.png) -->
+
+---
+
+## example: Step1 - course meta-data
+
+| Course input | Specification |
+|--------------|---------------|
+| Course | Microservices Architecture & Secure Authentication (JWT) |
+| Prerequisite | RESTful API Development with Flask; Python and Linux CLI |
+| Scheduled learning | **6 hours: 2 lecture + 4 hands-on lab** |
+| Practical environment | Flask, cryptography tools, authentication and shortener services |
+| Intended recognition | **Type A - standalone assessed achievement** |
+
+> **Method:** Outcomes → skills codes → assessment weights → Skills Hours → achievement record
+
+---
+
+## example: Step2 - Code the learning outcomes
+
+| Outcome | Assessed action | Proposed subject-specific code |
+|---|---|---|
+| **LO1** | Split authentication and application services | **S4D** |
+| **LO2** | Generate RSA keys; sign and verify data | **S4D** |
+| **LO3** | Construct, sign, and verify JWTs | **S4D** |
+| **LO4** | Enforce user-specific resource ownership | **S4D** |
+
+**S4D - Process and Production:** actions or steps taken to achieve a particular result.
+
+> All four outcomes emphasise implementation. Categories follow the outcome-not the lecture topic.
+
+---
+
+## example: Step3 -  Specify the assessments
+
+| Proposed assessment | Weight | Outcomes | Evidence |
+|---|---:|---|---|
+| **A1 - Integrated service practical** | **60%** | LO1, LO2, LO4 | Two services; verified tokens; authorised CRUD; denied cross-user access |
+| **A2 - JWT protocol exercise** | **40%** | LO2, LO3 | Key use; token construction; rejection of tampered and expired tokens |
+
+> **Individual evidence:** code + test results + brief demonstration/explanation.
+  **Award rule:** satisfactory achievement of **all four outcomes**.
+
+---
+
+## example: Step4 - Calculate outcome Skills Hours
+
+**Allocate six Learning Hours by assessment weighting.**  
+**Divide each allocation equally across its assessed outcome entries.**
+
+| Assessment | Weight | Allocated hours | Outcome | Outcome hours | Code |
+|----|---:|---:|---|---:|---|
+| A1 | 60% | 3.6 | LO1 | 1.2 | S4D |
+| A1 | - | - | LO2 | 1.2 | S4D |
+| A1 | - | -| LO4 | 1.2 | S4D |
+| A2 | 40% | 2.4 | LO2 | 1.2 | S4D |
+| A2 | - | - | LO3 | 1.2 | S4D |
+| **Total** | **100%** | **6.0** | | **6.0** | |
+
+---
+
+## example: Step5 - Aggregate the Skills Profile
+
+| Learning outcome | Contributions | Skills Hours |
+|---|---|---:|
+| LO1 - Service decomposition | A1 | 1.2 |
+| LO2 - RSA signing/verification | A1 + A2 | 2.4 |
+| LO3 - JWT mechanics | A2 | 1.2 |
+| LO4 - Resource ownership | A1 | 1.2 |
+| **Total** | | **6.0** |
+
+| Subject-specific category | Skills Hours | Profile share |
+|---|---:|---:|
+| **S4D - Process and Production** | **6.0** | **100%** |
+
+> Repeated assessment of LO2 changes its allocation-not the module's total hours.
+
+---
+
+## 5. Interpret the result
+
+| The profile shows | The profile does not show |
+|---|---|
+| Implementation-focused assessed outcomes | Six measurable hours of proficiency |
+| Greater allocated emphasis on LO2 | Actual time spent on each task |
+| Broad subject-specific coverage | Production readiness or academic credit |
+
+>**Keep the technical outcomes and evidence alongside the codes.**
+**If theory is an intended achievement:** define and assess an explicit theoretical outcome → consider **S1A** → recalculate.
+
+---
+
+## 6. Identify transferable skills
+
+**One outcome may map to several transferable categories.**
+| Outcome | Candidate category | Evidence needed |
+|---|---|---|
+| LO1 | **T8D - Technical Proficiency** | Service implementation |
+| LO1 | **T5B - Analysis** | Assessed decomposition reasoning |
+| LO2, LO3 | **T8D - Technical Proficiency** | Key operations and JWT implementation |
+| LO3 | **T5B - Analysis** | Assessed interpretation of protocol behaviour |
+| LO4 | **T8D - Technical Proficiency** | Ownership enforcement |
+| LO4 | **T15E - Risk Analysis** | Explicit analysis of access-control threats |
+
+---
+
+## 7. Make the security claims accurate
+
+| Course wording/design | Required clarification |
+|---|---|
+| "RSA-256" | Use **RS256: RSA signature with SHA-256** |
+| Plain SHA-256 password hashing | Use a salted password-hashing scheme: **Argon2id, scrypt, or bcrypt** |
+| Manual JWT construction | **Educational exercise**, not recommended production implementation |
+| Token verification | Check allowed algorithm, signature, expiry, and relevant claims |
+| Multi-user security | Enforce ownership separately from authentication |
+
+> Skills coding does not establish that an implementation is secure.
+
+---
+
+## 8. Signal the standalone achievement
+
+| Credential field | Proposed record |
+|---|---|
+| Achievement | Two-service application with JWT verification and user-specific access control |
+| Conditions | Educational lab; supplied scaffold; individual assessment |
+| Skills Profile | **S4D: 6 subject-specific Skills Hours** under the proposed specification |
+| Representation | Badge, certificate, or equivalent verifiable record |
+| Recognition status | **Type A; no academic credit claimed** |
+
+**One achievement → one award record → potentially several representations.**
+
+> Type E remains a future institutional possibility. Types B, C, and D are not pilot commitments.
+
+---
+
+## 9. Takeaway: a practical DIGITAfrica workflow
+
+| Step | Pilot output |
+|---|---|
+| Define | Four assessable learning outcomes |
+| Codify | Proposed **S4D** mappings |
+| Weight | Proposed assessments: **60% / 40%** |
+| Calculate | **6 subject-specific Skills Hours** |
+| Assess | Individual evidence for all outcomes |
+| Signal | Transparent **Type A** achievement record |
+
+**Next step:** instructor review of codes, weightings, workload, and assessment evidence.
 
 ## References
 
 - DIGITAfrica D4.2: Competence Framework nd Modular Curricula*. Version 1.0, 2026. https://www.digitafrica.eu/wp-content/uploads/2026/07/DIGITAfrica_D4.2_v1.0.pdf
+
 - R. Ward and S. Grant on the Universal Microcredential Framework, Skills Profiling, and credential signalling. DOI: 10.1109/TE.2024.3486016   
