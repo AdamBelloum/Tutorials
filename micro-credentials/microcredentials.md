@@ -193,7 +193,7 @@ Quantify skills coverage through Skills Hours.
 - This shows the relative emphasis given to different skills.
 
 
-![bg right:40% 100%](subject-specifc-skills-proflings.png)
+![bg right:40% 100%](images/subject-specifc-skills-proflings.png)
 
 ---
 
@@ -241,8 +241,6 @@ A practical development pathway:
 5. **Recognition:** seek external or academic recognition where appropriate.
 
 > Recognition may develop later; transparent assessment and documentation can begin now.
-
-![bg right:30% 90%](images/Picture7.png)
 
 ---
 
