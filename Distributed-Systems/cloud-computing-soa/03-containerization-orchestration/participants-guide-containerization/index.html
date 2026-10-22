@@ -1,0 +1,5221 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../participants-guide-containerization-advanced/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Containerization - Advanced Computing & AI Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workshop-tutorial-31-containerizing-the-authentication-service-and-url-shortener-with-docker-compose" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-header__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advanced Computing & AI Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Containerization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Introduction-to-ai/" class="md-tabs__link">
+          
+  
+  
+  Introduction to AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../01-rest-api/" class="md-tabs__link">
+          
+  
+  
+  Distributed Systems
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../HPC/openmp-01-basics/" class="md-tabs__link">
+          
+  
+  
+  High Performance Computing (HPC)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Advanced Computing &amp; AI Tutorials" class="md-nav__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Advanced Computing & AI Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/docs/module0_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI impact on education
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Symbolic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 - Symbolic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_1/docs/module1_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 - Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/docs/module2_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/hands-on/Hands-on-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_2/docs/Answer-model-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Modern AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 - Modern AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/docs/module3_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/hands-on/Hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Introduction-to-ai/module_3/docs/Answer-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing & SOA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing & SOA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-rest-api/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-rest-api/participants-guide-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microservices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-microservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-microservices/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-microservices/participants-guid-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers & K8s
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Containers & K8s
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-what-changes-compared-to-assignment-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. What Changes Compared to Assignment 2?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-assignment-31-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assignment 3.1 Goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Assignment 3.1 Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-core-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Core Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Project Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Project Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this structure?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-step-1-add-file-persistence-to-both-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Step 1: Add File Persistence to Both Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-step-2-modify-authpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Step 2: Modify auth.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Step 2: Modify auth.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-add-path-handling-based-on-the-file-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Add path handling based on the file location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this change?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-add-file-persistence-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Add file persistence functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Add file persistence functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-change_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this change?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-save-data-after-user-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Save data after user changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-load-users-before-starting-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Load users before starting the service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-change-use-0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important change: use 0.0.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-change-is-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this change is required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-step-3-modify-shortenerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Step 3: Modify shortener.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Step 3: Modify shortener.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-add-path-handling-based-on-the-file-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Add path handling based on the file location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-add-file-persistence-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Add file persistence functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Add file persistence functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-behavior_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-save-mappings-after-each-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Save mappings after each change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-load-urls-before-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Load URLs before use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-run-flask-on-0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Run Flask on 0.0.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-step-4-create-the-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Step 4: Create the Data Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Step 4: Create the Data Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth_servicedatausersjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth_service/data/users.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortener_servicedataurlsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shortener_service/data/urls.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-start-with-empty-json-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why start with empty JSON objects?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-step-5-create-requirementstxt-for-each-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Step 5: Create requirements.txt for Each Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Step 5: Create requirements.txt for Each Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth_servicerequirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth_service/requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortener_servicerequirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shortener_service/requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-separate-requirements-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why separate requirements files?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-step-6-create-the-dockerfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Step 6: Create the Dockerfiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Step 6: Create the Dockerfiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-auth_servicedockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 auth_service/Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this order?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-shortener_servicedockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 shortener_service/Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important note
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-step-7-create-docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Step 7: Create docker-compose.yml
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-why-these-compose-settings-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Why These Compose Settings Matter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Why These Compose Settings Matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-key-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 key mounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-depends_on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 depends_on
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-step-8-update-the-key-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Step 8: Update the Key Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-step-9-run-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Step 9: Run the System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Step 9: Run the System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why --build?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-step-10-verify-that-the-services-are-reachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Step 10: Verify That the Services Are Reachable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Step 10: Verify That the Services Are Reachable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-authentication-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Authentication service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-shortener-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Shortener service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-step-11-test-the-full-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Step 11: Test the Full Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Step 11: Test the Full Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-register-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Register a user
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-login-and-get-a-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Login and get a token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-create-a-short-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 Create a short URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-list-your-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 List your keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-resolve-the-short-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 Resolve the short URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-step-12-demonstrate-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Step 12: Demonstrate Persistence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Step 12: Demonstrate Persistence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-test-persistence-across-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Test persistence across restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-test-persistence-across-docker-compose-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Test persistence across docker compose down
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-common-problems-and-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Common Problems and Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Common Problems and Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-the-service-starts-but-tests-cannot-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 1: The service starts, but tests cannot connect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 1: The service starts, but tests cannot connect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this happens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-port-5000-is-already-in-use-on-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 2: Port 5000 is already in use on macOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 2: Port 5000 is already in use on macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-the-shortener-cannot-validate-jwts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 3: The shortener cannot validate JWTs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 3: The shortener cannot validate JWTs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-4-data-disappears-after-containers-are-removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 4: Data disappears after containers are removed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 4: Data disappears after containers are removed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-what-you-should-mention-in-the-demo-and-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. What You Should Mention in the Demo and Report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. What You Should Mention in the Demo and Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-the-demo-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the demo, show:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-the-report-focus-on-design-decisions-such-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the report, focus on design decisions such as:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-summary-of-required-file-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Summary of Required File Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Summary of Required File Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-to-create-or-update-for-assignment-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files to create or update for Assignment 3.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-final-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Final Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-run-commands-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Run Commands Recap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. Run Commands Recap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-in-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start in background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-and-remove-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stop and remove containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restart services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-running-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show running containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participants-guide-containerization-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participants-guide-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participants-guide-orchestration-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenStack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenStack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-openstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-openstack/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFaaS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenFaaS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-openfaas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-openfaas/participants-guide-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federated Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Federated Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/docs/participant-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/docs/organizer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../federated-learning/docs/instruction-to-use-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Performance Computing (HPC)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High Performance Computing (HPC)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-01-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/openmp-02-advanced/02-debugging/hands_on_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/01-hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HPC/mpi/02-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-what-changes-compared-to-assignment-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. What Changes Compared to Assignment 2?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-assignment-31-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assignment 3.1 Goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Assignment 3.1 Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-core-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Core Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Project Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Project Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this structure?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-step-1-add-file-persistence-to-both-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Step 1: Add File Persistence to Both Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-step-2-modify-authpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Step 2: Modify auth.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Step 2: Modify auth.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-add-path-handling-based-on-the-file-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Add path handling based on the file location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this change?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-add-file-persistence-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Add file persistence functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Add file persistence functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-change_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this change?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-save-data-after-user-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Save data after user changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-load-users-before-starting-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Load users before starting the service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-change-use-0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important change: use 0.0.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-change-is-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this change is required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-step-3-modify-shortenerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Step 3: Modify shortener.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Step 3: Modify shortener.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-add-path-handling-based-on-the-file-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Add path handling based on the file location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-add-file-persistence-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Add file persistence functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Add file persistence functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-behavior_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-save-mappings-after-each-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Save mappings after each change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-load-urls-before-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Load URLs before use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-run-flask-on-0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Run Flask on 0.0.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-step-4-create-the-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Step 4: Create the Data Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Step 4: Create the Data Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth_servicedatausersjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth_service/data/users.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortener_servicedataurlsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shortener_service/data/urls.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-start-with-empty-json-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why start with empty JSON objects?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-step-5-create-requirementstxt-for-each-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Step 5: Create requirements.txt for Each Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Step 5: Create requirements.txt for Each Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth_servicerequirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth_service/requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortener_servicerequirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shortener_service/requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-separate-requirements-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why separate requirements files?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-step-6-create-the-dockerfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Step 6: Create the Dockerfiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Step 6: Create the Dockerfiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-auth_servicedockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 auth_service/Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this order?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-shortener_servicedockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 shortener_service/Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important note
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-step-7-create-docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Step 7: Create docker-compose.yml
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-why-these-compose-settings-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Why These Compose Settings Matter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Why These Compose Settings Matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-key-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 key mounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-depends_on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 depends_on
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-step-8-update-the-key-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Step 8: Update the Key Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-step-9-run-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Step 9: Run the System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Step 9: Run the System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why --build?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-step-10-verify-that-the-services-are-reachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Step 10: Verify That the Services Are Reachable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Step 10: Verify That the Services Are Reachable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-authentication-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Authentication service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-shortener-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Shortener service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-step-11-test-the-full-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Step 11: Test the Full Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Step 11: Test the Full Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-register-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Register a user
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-login-and-get-a-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Login and get a token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-create-a-short-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 Create a short URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-list-your-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 List your keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-resolve-the-short-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 Resolve the short URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-step-12-demonstrate-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Step 12: Demonstrate Persistence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Step 12: Demonstrate Persistence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-test-persistence-across-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Test persistence across restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-test-persistence-across-docker-compose-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Test persistence across docker compose down
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-common-problems-and-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Common Problems and Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Common Problems and Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-the-service-starts-but-tests-cannot-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 1: The service starts, but tests cannot connect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 1: The service starts, but tests cannot connect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this happens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-port-5000-is-already-in-use-on-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 2: Port 5000 is already in use on macOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 2: Port 5000 is already in use on macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-the-shortener-cannot-validate-jwts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 3: The shortener cannot validate JWTs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 3: The shortener cannot validate JWTs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-4-data-disappears-after-containers-are-removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 4: Data disappears after containers are removed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem 4: Data disappears after containers are removed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fix_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-what-you-should-mention-in-the-demo-and-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. What You Should Mention in the Demo and Report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. What You Should Mention in the Demo and Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-the-demo-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the demo, show:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-the-report-focus-on-design-decisions-such-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the report, focus on design decisions such as:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-summary-of-required-file-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Summary of Required File Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Summary of Required File Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-to-create-or-update-for-assignment-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files to create or update for Assignment 3.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-final-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Final Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-run-commands-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Run Commands Recap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. Run Commands Recap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-in-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start in background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-and-remove-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stop and remove containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restart services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-running-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show running containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="workshop-tutorial-31-containerizing-the-authentication-service-and-url-shortener-with-docker-compose">Workshop Tutorial 3.1: Containerizing the Authentication Service and URL Shortener with Docker Compose</h1>
+<p>Welcome! In this workshop, you will adapt your Assignment 2 microservice system to <strong>Assignment 3.1</strong> by containerizing both services and making their data persistent.</p>
+<p>By the end, you will have:</p>
+<ul>
+<li>An <strong>Authentication Service</strong> running inside Docker</li>
+<li>A <strong>URL Shortener Service</strong> running inside Docker</li>
+<li>A <strong>Docker Compose</strong> setup that starts both services together</li>
+<li><strong>Persistent storage</strong> using files plus Docker volumes</li>
+<li>Services that are reachable <strong>from outside the containers</strong></li>
+<li>A project layout that is ready to extend toward Assignment 3.2</li>
+</ul>
+<p>Assignment 3.1 explicitly asks you to containerize your services with Docker and Docker Compose, make the service persistent by writing data to files and using Docker volumes, keep containers efficient, and ensure the services are accessible from outside the machine. It also expects you to demonstrate that the services still work and that the data survives service restarts and even <code>docker compose down</code>. </p>
+<hr />
+<h2 id="0-what-changes-compared-to-assignment-2">0. What Changes Compared to Assignment 2?</h2>
+<p>In Assignment 2, your services could still store everything <strong>in memory only</strong>. </p>
+<p>In Assignment 3.1, that is no longer enough. You now need to:</p>
+<ol>
+<li>package both services inside Docker containers</li>
+<li>start them together using Docker Compose</li>
+<li>store service data in files</li>
+<li>mount those files or folders using Docker volumes so the data survives container recreation</li>
+<li>make the services reachable from outside the Docker container</li>
+</ol>
+<p>That means the biggest changes are not in the API specification itself, but in:</p>
+<ul>
+<li>file persistence</li>
+<li>network binding</li>
+<li>Dockerfiles</li>
+<li>Docker Compose</li>
+<li>project structure</li>
+</ul>
+<hr />
+<h2 id="1-assignment-31-goals">1. Assignment 3.1 Goals</h2>
+<h3 id="11-core-requirements">1.1 Core Requirements</h3>
+<p>For Assignment 3.1, your implementation should satisfy the following:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Containerize both services</td>
+<td>Each service should run inside its own Docker container</td>
+</tr>
+<tr>
+<td>Use Docker Compose</td>
+<td>Both services should be managed together</td>
+</tr>
+<tr>
+<td>Persist service data</td>
+<td>Data should be written to files and survive restarts</td>
+</tr>
+<tr>
+<td>Use Docker volumes</td>
+<td>Data should remain even after <code>docker compose down</code></td>
+</tr>
+<tr>
+<td>Keep containers efficient</td>
+<td>Keep images compact and avoid unnecessary files/dependencies</td>
+</tr>
+<tr>
+<td>Make services externally reachable</td>
+<td>They must be accessible from outside the container</td>
+</tr>
+</tbody>
+</table>
+<p>These points are directly aligned with the 3.1 assignment description and grading criteria. </p>
+<hr />
+<h2 id="2-project-structure">2. Project Structure</h2>
+<p>A clean structure for 3.1 is:</p>
+<pre><code class="language-text">project/
+├── auth_service/
+│   ├── auth.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   ├── data/
+│   │   └── users.json
+│   └── keys/
+│       ├── private_key.pem
+│       └── public_key.pem
+├── shortener_service/
+│   ├── shortener.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   ├── data/
+│   │   └── urls.json
+│   └── keys/
+│       └── public_key.pem
+├── docker-compose.yml
+└── README.md
+</code></pre>
+<h3 id="why-this-structure">Why this structure?</h3>
+<ul>
+<li><code>auth.py</code> and <code>shortener.py</code> remain your main service files</li>
+<li><code>data/</code> stores persistent JSON files</li>
+<li><code>keys/</code> stores the key materials already used in Assignment 2</li>
+<li>each service gets its own <code>Dockerfile</code></li>
+<li><code>docker-compose.yml</code> starts everything together</li>
+</ul>
+<p>This structure also helps you later explain in your README which files belong to 3.1 and which will belong to 3.2, as required in the submission instructions. </p>
+<hr />
+<h2 id="3-step-1-add-file-persistence-to-both-services">3. Step 1: Add File Persistence to Both Services</h2>
+<p>Assignment 3.1 requires that the service storing data writes its contents to a file, and that Docker volumes are then used to make that data persistent. </p>
+<p>Because your system has two services with state, a practical solution is:</p>
+<ul>
+<li><code>auth_service/data/users.json</code> for user data</li>
+<li><code>shortener_service/data/urls.json</code> for URL mappings</li>
+</ul>
+<p>This is fully reasonable for the assignment, especially because the assignment explicitly says you may assume your chosen storage implementation does not create race conflicts. </p>
+<hr />
+<h2 id="4-step-2-modify-authpy">4. Step 2: Modify <code>auth.py</code></h2>
+<h3 id="41-add-path-handling-based-on-the-file-location">4.1 Add path handling based on the file location</h3>
+<p>You should not rely on paths like:</p>
+<pre><code class="language-python">PRIVATE_KEY_FILE = &quot;keys/private_key.pem&quot;
+</code></pre>
+<p>because Docker may run your program from a different working directory.</p>
+<p>Instead, compute paths relative to the script itself:</p>
+<pre><code class="language-python">BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, &quot;data&quot;, &quot;users.json&quot;)
+PRIVATE_KEY_FILE = os.path.join(BASE_DIR, &quot;keys&quot;, &quot;private_key.pem&quot;)
+PUBLIC_KEY_FILE = os.path.join(BASE_DIR, &quot;keys&quot;, &quot;public_key.pem&quot;)
+</code></pre>
+<h3 id="why-this-change">Why this change?</h3>
+<p>This makes the code reliable both:</p>
+<ul>
+<li>when run locally</li>
+<li>when run inside Docker</li>
+</ul>
+<hr />
+<h3 id="42-add-file-persistence-functions">4.2 Add file persistence functions</h3>
+<p>You should add helper functions like:</p>
+<pre><code class="language-python">def ensure_parent_dir(path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+def load_users():
+    ...
+
+def save_users():
+    ...
+</code></pre>
+<h4 id="expected-behavior">Expected behavior</h4>
+<ul>
+<li><code>load_users()</code> should:</li>
+<li>create the data directory if needed</li>
+<li>create <code>users.json</code> if missing</li>
+<li>
+<p>load user data from the file into <code>users_dict</code></p>
+</li>
+<li>
+<p><code>save_users()</code> should:</p>
+</li>
+<li>write <code>users_dict</code> back to <code>users.json</code></li>
+</ul>
+<h3 id="why-this-change_1">Why this change?</h3>
+<p>In Assignment 2, the user table could remain in memory. In Assignment 3.1, this would be lost when the container restarts. Writing users to <code>users.json</code> solves that. </p>
+<hr />
+<h3 id="43-save-data-after-user-changes">4.3 Save data after user changes</h3>
+<p>You should call <code>save_users()</code> after every successful write operation:</p>
+<ul>
+<li>after <code>POST /users</code></li>
+<li>after <code>PUT /users</code></li>
+</ul>
+<p>This ensures the file is always updated when the user database changes.</p>
+<hr />
+<h3 id="44-load-users-before-starting-the-service">4.4 Load users before starting the service</h3>
+<p>In the main block, make sure the users are loaded before running Flask:</p>
+<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
+    load_users()
+    ensure_keys_exist()
+    app.run(host=&quot;0.0.0.0&quot;, port=5001, debug=False)
+</code></pre>
+<h3 id="important-change-use-0000">Important change: use <code>0.0.0.0</code></h3>
+<p>Do <strong>not</strong> use:</p>
+<pre><code class="language-python">app.run(host=&quot;127.0.0.1&quot;, port=5001, debug=True)
+</code></pre>
+<p>Inside Docker, <code>127.0.0.1</code> means “listen only inside the container itself”.<br />
+If you do that, Docker can expose the port, but the service will still not be reachable from your host machine.</p>
+<p>Instead, use:</p>
+<pre><code class="language-python">app.run(host=&quot;0.0.0.0&quot;, port=5001, debug=False)
+</code></pre>
+<h3 id="why-this-change-is-required">Why this change is required</h3>
+<p>Assignment 3.1 explicitly says the services must be accessible from outside the machine/container, not just from within Docker. Binding to <code>0.0.0.0</code> allows Docker port mappings to work correctly. :contentReference[oaicite:7]{index=7}</p>
+<hr />
+<h2 id="5-step-3-modify-shortenerpy">5. Step 3: Modify <code>shortener.py</code></h2>
+<h3 id="51-add-path-handling-based-on-the-file-location">5.1 Add path handling based on the file location</h3>
+<p>Just like in <code>auth.py</code>, you should replace simple relative strings with paths based on <code>__file__</code>:</p>
+<pre><code class="language-python">BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, &quot;data&quot;, &quot;urls.json&quot;)
+PUBLIC_KEY_FILE = os.path.join(BASE_DIR, &quot;keys&quot;, &quot;public_key.pem&quot;)
+</code></pre>
+<hr />
+<h3 id="52-add-file-persistence-functions">5.2 Add file persistence functions</h3>
+<p>You should add:</p>
+<pre><code class="language-python">def ensure_parent_dir(path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+def load_urls():
+    ...
+
+def save_urls():
+    ...
+</code></pre>
+<h4 id="expected-behavior_1">Expected behavior</h4>
+<ul>
+<li><code>load_urls()</code> loads <code>urls.json</code> into <code>shared_dict</code></li>
+<li><code>save_urls()</code> writes <code>shared_dict</code> back to <code>urls.json</code></li>
+</ul>
+<hr />
+<h3 id="53-save-mappings-after-each-change">5.3 Save mappings after each change</h3>
+<p>You should call <code>save_urls()</code> after every operation that modifies the shortener data:</p>
+<ul>
+<li>after <code>POST /</code></li>
+<li>after <code>PUT /&lt;id&gt;</code></li>
+<li>after <code>DELETE /&lt;id&gt;</code></li>
+<li>after <code>DELETE /</code></li>
+</ul>
+<p>That way, the URL mappings survive container recreation.</p>
+<hr />
+<h3 id="54-load-urls-before-use">5.4 Load URLs before use</h3>
+<p>A simple and robust pattern is:</p>
+<ul>
+<li>call <code>load_urls()</code> once at startup</li>
+<li>also call <code>load_urls()</code> at the start of each route that reads or modifies the data</li>
+</ul>
+<p>This is especially useful because it keeps the in-memory dictionary synchronized with the file contents.</p>
+<hr />
+<h3 id="55-run-flask-on-0000">5.5 Run Flask on <code>0.0.0.0</code></h3>
+<p>The final block should look like:</p>
+<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
+    load_urls()
+    app.run(host=&quot;0.0.0.0&quot;, port=5000, debug=False)
+</code></pre>
+<h3 id="why-this-matters">Why this matters</h3>
+<p>Exactly like for the authentication service, this makes the shortener reachable from outside the container. Without this, your local test scripts will fail even though the container appears to be running.</p>
+<hr />
+<h2 id="6-step-4-create-the-data-files">6. Step 4: Create the Data Files</h2>
+<p>Create these two files manually before building:</p>
+<h3 id="auth_servicedatausersjson"><code>auth_service/data/users.json</code></h3>
+<pre><code class="language-json">{}
+</code></pre>
+<h3 id="shortener_servicedataurlsjson"><code>shortener_service/data/urls.json</code></h3>
+<pre><code class="language-json">{}
+</code></pre>
+<h3 id="why-start-with-empty-json-objects">Why start with empty JSON objects?</h3>
+<p>Because your Python code expects a dictionary-like structure:</p>
+<ul>
+<li><code>users_dict</code> for user records</li>
+<li><code>shared_dict</code> for URL mappings</li>
+</ul>
+<p>This is the cleanest initial state.</p>
+<hr />
+<h2 id="7-step-5-create-requirementstxt-for-each-service">7. Step 5: Create <code>requirements.txt</code> for Each Service</h2>
+<h3 id="auth_servicerequirementstxt"><code>auth_service/requirements.txt</code></h3>
+<pre><code class="language-text">flask
+cryptography
+</code></pre>
+<h3 id="shortener_servicerequirementstxt"><code>shortener_service/requirements.txt</code></h3>
+<pre><code class="language-text">flask
+cryptography
+</code></pre>
+<h3 id="why-separate-requirements-files">Why separate requirements files?</h3>
+<p>Each Docker image is built independently from its own service directory.<br />
+So each service should carry the dependencies it needs to install itself.</p>
+<hr />
+<h2 id="8-step-6-create-the-dockerfiles">8. Step 6: Create the Dockerfiles</h2>
+<p>Assignment 3.1 asks you to pay attention to efficiency and compactness of containers. In practice, that means:</p>
+<ul>
+<li>use a small base image</li>
+<li>copy only what is needed</li>
+<li>install dependencies before copying the full source tree where possible</li>
+<li>avoid large unnecessary build contexts</li>
+</ul>
+<p>This is also something you should mention in the demo/report. </p>
+<hr />
+<h3 id="81-auth_servicedockerfile">8.1 <code>auth_service/Dockerfile</code></h3>
+<pre><code class="language-dockerfile">FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY auth.py .
+COPY keys ./keys
+COPY data ./data
+
+EXPOSE 5001
+
+CMD [&quot;python&quot;, &quot;auth.py&quot;]
+</code></pre>
+<h3 id="why-this-order">Why this order?</h3>
+<ul>
+<li><code>COPY requirements.txt .</code> and <code>RUN pip install ...</code> come before copying the app files</li>
+<li>that allows Docker to reuse cached dependency layers if only your Python code changes</li>
+<li><code>python:3.11-slim</code> keeps the image smaller than a full Python image</li>
+</ul>
+<hr />
+<h3 id="82-shortener_servicedockerfile">8.2 <code>shortener_service/Dockerfile</code></h3>
+<pre><code class="language-dockerfile">FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY shortener.py .
+COPY keys ./keys
+COPY data ./data
+
+EXPOSE 5000
+
+CMD [&quot;python&quot;, &quot;shortener.py&quot;]
+</code></pre>
+<h3 id="important-note">Important note</h3>
+<p>Make sure the shortener Dockerfile copies <code>shortener.py</code>, not <code>auth.py</code>.</p>
+<hr />
+<h2 id="9-step-7-create-docker-composeyml">9. Step 7: Create <code>docker-compose.yml</code></h2>
+<p>A simple 3.1 Compose file is:</p>
+<pre><code class="language-yaml">services:
+  auth:
+    build:
+      context: ./auth_service
+    container_name: auth_service
+    ports:
+      - &quot;5001:5001&quot;
+    volumes:
+      - auth_data:/app/data
+      - ./auth_service/keys:/app/keys
+    restart: unless-stopped
+
+  shortener:
+    build:
+      context: ./shortener_service
+    container_name: shortener_service
+    ports:
+      - &quot;5000:5000&quot;
+    volumes:
+      - shortener_data:/app/data
+      - ./shortener_service/keys:/app/keys
+    depends_on:
+      - auth
+    restart: unless-stopped
+
+volumes:
+  auth_data:
+  shortener_data:
+</code></pre>
+<hr />
+<h2 id="10-why-these-compose-settings-matter">10. Why These Compose Settings Matter</h2>
+<h3 id="101-ports">10.1 <code>ports</code></h3>
+<p>The lines:</p>
+<pre><code class="language-yaml">ports:
+  - &quot;5001:5001&quot;
+</code></pre>
+<p>and</p>
+<pre><code class="language-yaml">ports:
+  - &quot;5000:5000&quot;
+</code></pre>
+<p>map the container ports to your local machine.</p>
+<p>This is required so you can access:</p>
+<ul>
+<li><code>http://127.0.0.1:5001</code></li>
+<li><code>http://127.0.0.1:5000</code></li>
+</ul>
+<p>from outside Docker, including through your test scripts.</p>
+<hr />
+<h3 id="102-volumes">10.2 <code>volumes</code></h3>
+<p>The lines:</p>
+<pre><code class="language-yaml">- auth_data:/app/data
+- shortener_data:/app/data
+</code></pre>
+<p>make the data directories persistent even if the containers are removed.</p>
+<p>This is exactly what Assignment 3.1 asks you to demonstrate: the data should survive restarts and even survive <code>docker compose down</code>. </p>
+<hr />
+<h3 id="103-key-mounts">10.3 key mounts</h3>
+<p>The lines:</p>
+<pre><code class="language-yaml">- ./auth_service/keys:/app/keys
+- ./shortener_service/keys:/app/keys
+</code></pre>
+<p>make sure the services see the expected key files.</p>
+<p>For the shortener, this means it can still load <code>public_key.pem</code> and validate JWTs locally, just as in Assignment 2.</p>
+<hr />
+<h3 id="104-depends_on">10.4 <code>depends_on</code></h3>
+<p>This ensures Docker Compose starts the auth container before the shortener container.</p>
+<p>It does not guarantee the auth service is fully ready, but for this simple setup it is a sensible dependency declaration.</p>
+<hr />
+<h2 id="11-step-8-update-the-key-setup">11. Step 8: Update the Key Setup</h2>
+<p>Make sure:</p>
+<ul>
+<li><code>auth_service/keys/private_key.pem</code> exists</li>
+<li><code>auth_service/keys/public_key.pem</code> exists</li>
+<li><code>shortener_service/keys/public_key.pem</code> exists</li>
+</ul>
+<p>The shortener should only need the <strong>public key</strong>, not the private key, consistent with the Assignment 2 design.</p>
+<hr />
+<h2 id="12-step-9-run-the-system">12. Step 9: Run the System</h2>
+<p>In the project root, run:</p>
+<pre><code class="language-bash">docker compose up --build
+</code></pre>
+<p>If you want it in the background:</p>
+<pre><code class="language-bash">docker compose up --build -d
+</code></pre>
+<h3 id="why-build">Why <code>--build</code>?</h3>
+<p>Because this forces Docker Compose to build the images based on your latest changes before starting the containers.</p>
+<hr />
+<h2 id="13-step-10-verify-that-the-services-are-reachable">13. Step 10: Verify That the Services Are Reachable</h2>
+<p>Once the containers are up, open a new terminal and test the services.</p>
+<h3 id="131-authentication-service">13.1 Authentication service</h3>
+<p>This endpoint only supports <code>POST</code> and <code>PUT</code>, so a plain GET should at least show that the service is reachable:</p>
+<pre><code class="language-bash">curl -i http://127.0.0.1:5001/users
+</code></pre>
+<p>You should get something like <code>405 Method Not Allowed</code>, which is good enough to show the service is running.</p>
+<hr />
+<h3 id="132-shortener-service">13.2 Shortener service</h3>
+<p>Without a token, <code>GET /</code> should return <code>403</code>, which also proves the service is reachable:</p>
+<pre><code class="language-bash">curl -i http://127.0.0.1:5000/
+</code></pre>
+<p>If you get a valid HTTP response, your container is reachable from outside Docker, which is a key 3.1 requirement. :contentReference[oaicite:10]{index=10}</p>
+<hr />
+<h2 id="14-step-11-test-the-full-workflow">14. Step 11: Test the Full Workflow</h2>
+<h3 id="141-register-a-user">14.1 Register a user</h3>
+<pre><code class="language-bash">curl -X POST http://127.0.0.1:5001/users \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;username&quot;:&quot;alice&quot;,&quot;password&quot;:&quot;test123&quot;}'
+</code></pre>
+<h3 id="142-login-and-get-a-token">14.2 Login and get a token</h3>
+<pre><code class="language-bash">curl -X POST http://127.0.0.1:5001/users/login \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;username&quot;:&quot;alice&quot;,&quot;password&quot;:&quot;test123&quot;}'
+</code></pre>
+<p>Suppose the response contains:</p>
+<pre><code class="language-json">{
+  &quot;token&quot;: &quot;YOUR_JWT_TOKEN&quot;
+}
+</code></pre>
+<h3 id="143-create-a-short-url">14.3 Create a short URL</h3>
+<pre><code class="language-bash">curl -X POST http://127.0.0.1:5000/ \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer YOUR_JWT_TOKEN&quot; \
+  -d '{&quot;value&quot;:&quot;https://example.com&quot;}'
+</code></pre>
+<h3 id="144-list-your-keys">14.4 List your keys</h3>
+<pre><code class="language-bash">curl http://127.0.0.1:5000/ \
+  -H &quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;
+</code></pre>
+<h3 id="145-resolve-the-short-url">14.5 Resolve the short URL</h3>
+<pre><code class="language-bash">curl -i http://127.0.0.1:5000/&lt;id&gt;
+</code></pre>
+<p>This confirms that the application behavior from Assignment 2 still works after containerization.</p>
+<hr />
+<h2 id="15-step-12-demonstrate-persistence">15. Step 12: Demonstrate Persistence</h2>
+<p>This is a required demo point for Assignment 3.1. </p>
+<h3 id="151-test-persistence-across-restart">15.1 Test persistence across restart</h3>
+<ol>
+<li>Create a user and a short URL</li>
+<li>Run:</li>
+</ol>
+<pre><code class="language-bash">docker compose restart
+</code></pre>
+<ol>
+<li>Query the services again</li>
+</ol>
+<p>If the user and URLs are still there, persistence across restart works.</p>
+<hr />
+<h3 id="152-test-persistence-across-docker-compose-down">15.2 Test persistence across <code>docker compose down</code></h3>
+<ol>
+<li>Create a user and a short URL</li>
+<li>Run:</li>
+</ol>
+<pre><code class="language-bash">docker compose down
+</code></pre>
+<ol>
+<li>Start everything again:</li>
+</ol>
+<pre><code class="language-bash">docker compose up -d
+</code></pre>
+<ol>
+<li>Query the data again</li>
+</ol>
+<p>If the data is still present, then the named Docker volumes are correctly preserving the files, which is exactly what 3.1 asks you to show. </p>
+<hr />
+<h2 id="16-common-problems-and-fixes">16. Common Problems and Fixes</h2>
+<h3 id="problem-1-the-service-starts-but-tests-cannot-connect">Problem 1: The service starts, but tests cannot connect</h3>
+<p>If Docker logs show:</p>
+<pre><code class="language-text">Running on http://127.0.0.1:5000
+</code></pre>
+<p>or</p>
+<pre><code class="language-text">Running on http://127.0.0.1:5001
+</code></pre>
+<p>inside the container, then the app is probably still bound to <code>127.0.0.1</code>.</p>
+<h4 id="fix">Fix</h4>
+<p>Change:</p>
+<pre><code class="language-python">app.run(host=&quot;127.0.0.1&quot;, ...)
+</code></pre>
+<p>to:</p>
+<pre><code class="language-python">app.run(host=&quot;0.0.0.0&quot;, ...)
+</code></pre>
+<h3 id="why-this-happens">Why this happens</h3>
+<p>Inside a container, <code>127.0.0.1</code> means “inside this container only”.<br />
+To expose the service properly through Docker, Flask must bind to all interfaces using <code>0.0.0.0</code>.</p>
+<hr />
+<h3 id="problem-2-port-5000-is-already-in-use-on-macos">Problem 2: Port 5000 is already in use on macOS</h3>
+<p>On macOS, port <code>5000</code> may be occupied by Control Center / AirPlay Receiver.</p>
+<h4 id="fix_1">Fix</h4>
+<p>Disable AirPlay Receiver in system settings and retry.</p>
+<hr />
+<h3 id="problem-3-the-shortener-cannot-validate-jwts">Problem 3: The shortener cannot validate JWTs</h3>
+<p>Usually this means the public key is missing in:</p>
+<pre><code class="language-text">shortener_service/keys/public_key.pem
+</code></pre>
+<h4 id="fix_2">Fix</h4>
+<p>Make sure the file exists and matches the auth service’s public key.</p>
+<hr />
+<h3 id="problem-4-data-disappears-after-containers-are-removed">Problem 4: Data disappears after containers are removed</h3>
+<p>This usually means:</p>
+<ul>
+<li>you forgot to write the in-memory data to JSON</li>
+<li>or you forgot to mount a Docker volume for <code>/app/data</code></li>
+</ul>
+<h4 id="fix_3">Fix</h4>
+<p>Make sure:
+- your code calls <code>save_users()</code> / <code>save_urls()</code>
+- your Compose file mounts named volumes to <code>/app/data</code></p>
+<hr />
+<h2 id="17-what-you-should-mention-in-the-demo-and-report">17. What You Should Mention in the Demo and Report</h2>
+<p>Assignment 3.1 grading explicitly asks you to highlight several things. </p>
+<h3 id="in-the-demo-show">In the demo, show:</h3>
+<ol>
+<li>that both services are deployed using Docker</li>
+<li>that both services still work</li>
+<li>that data survives service restarts</li>
+<li>that data survives <code>docker compose down</code></li>
+<li>what you did to keep the containers compact and efficient</li>
+</ol>
+<h3 id="in-the-report-focus-on-design-decisions-such-as">In the report, focus on design decisions such as:</h3>
+<ul>
+<li>why you chose JSON files for persistence</li>
+<li>how Docker volumes provide persistence</li>
+<li>why <code>0.0.0.0</code> was necessary</li>
+<li>how you kept the images small and efficient</li>
+<li>any bonus design decisions you want to highlight</li>
+</ul>
+<p>The assignment explicitly says the report should emphasize important design decisions rather than explaining the Dockerfile line by line. </p>
+<hr />
+<h2 id="18-summary-of-required-file-changes">18. Summary of Required File Changes</h2>
+<h3 id="files-to-create-or-update-for-assignment-31">Files to create or update for Assignment 3.1</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auth_service/auth.py</code></td>
+<td>add JSON persistence and Docker-safe path handling</td>
+</tr>
+<tr>
+<td><code>shortener_service/shortener.py</code></td>
+<td>add JSON persistence and Docker-safe path handling</td>
+</tr>
+<tr>
+<td><code>auth_service/requirements.txt</code></td>
+<td>Python dependencies</td>
+</tr>
+<tr>
+<td><code>shortener_service/requirements.txt</code></td>
+<td>Python dependencies</td>
+</tr>
+<tr>
+<td><code>auth_service/Dockerfile</code></td>
+<td>build auth image</td>
+</tr>
+<tr>
+<td><code>shortener_service/Dockerfile</code></td>
+<td>build shortener image</td>
+</tr>
+<tr>
+<td><code>auth_service/data/users.json</code></td>
+<td>persistent user storage</td>
+</tr>
+<tr>
+<td><code>shortener_service/data/urls.json</code></td>
+<td>persistent URL storage</td>
+</tr>
+<tr>
+<td><code>docker-compose.yml</code></td>
+<td>run both services together with volumes and ports</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="19-final-checklist">19. Final Checklist</h2>
+<p>Before you continue to Assignment 3.2, make sure all of these work:</p>
+<ul>
+<li>[ ] both services build with Docker</li>
+<li>[ ] both services start with Docker Compose</li>
+<li>[ ] both services are reachable from <code>127.0.0.1</code></li>
+<li>[ ] users are saved in <code>users.json</code></li>
+<li>[ ] mappings are saved in <code>urls.json</code></li>
+<li>[ ] data survives <code>docker compose restart</code></li>
+<li>[ ] data survives <code>docker compose down</code> and re-creation</li>
+<li>[ ] both images are built from compact Dockerfiles</li>
+<li>[ ] your README can explain how to run 3.1</li>
+</ul>
+<p>If all of these are working, your Assignment 3.1 implementation is in good shape and your project is ready to move toward Kubernetes for Assignment 3.2.</p>
+<hr />
+<h2 id="20-run-commands-recap">20. Run Commands Recap</h2>
+<h3 id="start-everything">Start everything</h3>
+<pre><code class="language-bash">docker compose up --build
+</code></pre>
+<h3 id="start-in-background">Start in background</h3>
+<pre><code class="language-bash">docker compose up --build -d
+</code></pre>
+<h3 id="stop-and-remove-containers">Stop and remove containers</h3>
+<pre><code class="language-bash">docker compose down
+</code></pre>
+<h3 id="restart-services">Restart services</h3>
+<pre><code class="language-bash">docker compose restart
+</code></pre>
+<h3 id="show-running-containers">Show running containers</h3>
+<pre><code class="language-bash">docker compose ps
+</code></pre>
+<h3 id="view-logs">View logs</h3>
+<pre><code class="language-bash">docker compose logs -f
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
