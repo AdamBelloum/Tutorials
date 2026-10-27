@@ -40,13 +40,20 @@ If you are working on a cluster using a workload manager, sample Slurm scripts (
 
 ### 4. Introduction to AI
 - trace the evolution of AI: from the early logic-based paradigms of the 1950s to modern data-driven learning engines
-- High eduction in the Age of GenAI
 - This repository contains the lecture slides, thematic breakdowns, and hands-on programming materials
 
 #### License & Usage
-- This content is developed for educational purposes.
-- Code: Licensed under the MIT License.
-- Documentation: Licensed under CC BY 4.0.
+
+The licensing differs by type of content:
+
+| Content | License |
+|---|---|
+| Source code, scripts, configuration (`*.c`, `*.py`, `*.sh`, `Dockerfile`, `docker-compose.yml`, `k8s/*.yaml`, `Makefile`, Slurm `*.job`) | Apache License 2.0 - see [LICENSE](https://github.com/AdamBelloum/Tutorials/blob/main/LICENSE) |
+| Documentation, tutorial text and slides (`*.md`, slide decks, original diagrams) | CC BY 4.0 - see [LICENSES/CC-BY-4.0.txt](https://github.com/AdamBelloum/Tutorials/blob/main/LICENSES/CC-BY-4.0.txt) |
+| Third-party material (LLNL HPC exercises, mpitutorial.com examples, datasets, figures) | Original terms - see [THIRD_PARTY_NOTICES.md](https://github.com/AdamBelloum/Tutorials/blob/main/THIRD_PARTY_NOTICES.md) |
+
+Attribution: please cite this repository (https://github.com/AdamBelloum/Tutorials).
+Content is developed for educational purposes.
 
 #### Acknowledgments
 These tutorials were originally developed and refined through various international workshops and educational projects in the fields of Cloud Computing and HPC.
