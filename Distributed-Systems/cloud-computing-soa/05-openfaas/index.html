@@ -1,0 +1,3698 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../04-openstack/participants-guide/">
+      
+      
+        <link rel="next" href="participants-guide-new/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Overview - Advanced Computing & AI Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-5-serverless-functions-with-openfaas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Advanced Computing &amp; AI Tutorials" class="md-header__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advanced Computing & AI Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Introduction-to-ai/" class="md-tabs__link">
+          
+  
+  
+  Introduction to AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-rest-api/" class="md-tabs__link">
+          
+  
+  
+  Distributed Systems
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../HPC/openmp-01-basics/" class="md-tabs__link">
+          
+  
+  
+  High Performance Computing (HPC)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Advanced Computing &amp; AI Tutorials" class="md-nav__button md-logo" aria-label="Advanced Computing & AI Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Advanced Computing & AI Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/docs/module0_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/docs/Teaching-assesment-GenAI-era.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI impact on education
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Symbolic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1 - Symbolic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_1/docs/module1_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2 - Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_2/docs/module2_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_2/hands-on/Hands-on-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_2/docs/Answer-model-v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Modern AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 3 - Modern AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_3/docs/module3_slides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_3/hands-on/Hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction-to-ai/module_3/docs/Answer-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Answers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing & SOA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing & SOA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-rest-api/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-rest-api/participants-guide-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microservices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microservices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microservices/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microservices/participants-guid-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers & K8s
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Containers & K8s
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-containerization-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-containerization-orchestration/participants-guide-containerization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-containerization-orchestration/participants-guide-containerization-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-containerization-orchestration/participants-guide-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-containerization-orchestration/participants-guide-orchestration-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenStack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenStack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-openstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-openstack/participants-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFaaS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenFaaS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#participant-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participant journey
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-material-and-planned-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing material and planned deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Existing material and planned deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offline-python-regression-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline Python regression tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#participant-working-copies-and-local-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participant working copies and local tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-environment-and-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting environment and responsibilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting environment and responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#participants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organisers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organisers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-group-vm-reference-specification-provisional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-group VM reference specification — provisional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indicative-infrastructure-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indicative infrastructure recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-contract-pending-s2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution contract — pending S2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspected-reference-candidates-not-yet-validated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspected reference candidates — not yet validated
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspected reference candidates — not yet validated">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greeting-build-context-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Greeting build-context preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-and-push-execution-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build and push execution contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-adoption-blockers-source-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CE adoption blockers — source inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-and-release-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and release gate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation and release gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-greeting-handler-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local greeting-handler baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-weather-handler-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local weather-handler baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-http-wrapper-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct HTTP-wrapper observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-http-wrapper-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather HTTP-wrapper observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-and-provenance-unresolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licensing and provenance — unresolved
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="participants-guide-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federated Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Federated Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../federated-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../federated-learning/docs/participant-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Participant Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../federated-learning/docs/organizer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../federated-learning/docs/instruction-to-use-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Performance Computing (HPC)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High Performance Computing (HPC)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/openmp-01-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMP Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenMP Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/openmp-02-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/openmp-02-advanced/01-hello-worlds/hands_on_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/openmp-02-advanced/02-debugging/hands_on_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MPI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/mpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/mpi/01-hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HPC/mpi/02-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#participant-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participant journey
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-material-and-planned-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing material and planned deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Existing material and planned deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offline-python-regression-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline Python regression tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#participant-working-copies-and-local-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participant working copies and local tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-environment-and-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting environment and responsibilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting environment and responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#participants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organisers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organisers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-group-vm-reference-specification-provisional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-group VM reference specification — provisional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indicative-infrastructure-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indicative infrastructure recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-contract-pending-s2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution contract — pending S2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspected-reference-candidates-not-yet-validated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspected reference candidates — not yet validated
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspected reference candidates — not yet validated">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greeting-build-context-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Greeting build-context preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-and-push-execution-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build and push execution contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-adoption-blockers-source-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CE adoption blockers — source inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-and-release-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and release gate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation and release gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-greeting-handler-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local greeting-handler baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-weather-handler-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local weather-handler baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-http-wrapper-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct HTTP-wrapper observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-http-wrapper-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather HTTP-wrapper observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-and-provenance-unresolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licensing and provenance — unresolved
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-5-serverless-functions-with-openfaas">Module 5 — Serverless Functions with OpenFaaS</h1>
+<h2 id="status">Status</h2>
+<p><strong>Beginner workshop under development; not yet validated or ready for delivery.</strong></p>
+<p>This module is being authored in the Tutorials repository. Integration into
+<code>edge-ai-blueprint</code>, publication, and activation are separate later phases.
+Authoring does not change the current infrastructure or active workshop.</p>
+<p>The beginner material will be the complete reference implementation. An aligned
+advanced TODO version will be derived later.</p>
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>After completing the validated workshop, participants should be able to:</p>
+<ul>
+<li>Explain HTTP request → OpenFaaS gateway → function → response, and distinguish
+  the function developer's responsibilities from the platform provider's.</li>
+<li>Invoke a prepared function and inspect HTTP status, headers, and JSON data.</li>
+<li>Implement input validation and predictable successful and error responses.</li>
+<li>Follow a controlled source → build → registry push → deployment workflow.</li>
+<li>Distinguish changing request data from changing deployed function code.</li>
+<li>Process deterministic weather data and handle external-service failures in an
+  optional live-data extension.</li>
+<li>Generate bounded local traffic, interpret verified metrics, and clean up only
+  their assigned exercise resources.</li>
+</ul>
+<p>Serverless does not mean that servers disappear: the provider manages the runtime
+infrastructure. Cold starts may occur when an instance starts; they do not occur
+before every invocation. Scaling, scale-to-zero, queues, billing, and operator
+behaviour depend on the platform, edition, and configuration. JavaScript
+<code>async/await</code> is not queued asynchronous FaaS invocation. These features are not
+required exercises in this workshop.</p>
+<h2 id="participant-journey">Participant journey</h2>
+<p>The intended validated workshop begins with participants as developers in an
+organiser-prepared, isolated lab per participant or group. Participants will run
+complete guided build, push, deploy, invoke, update, and cleanup steps themselves.
+Installing Kubernetes, OpenFaaS, or monitoring is
+not part of the mandatory beginner path.</p>
+<p>A shared environment may be considered in a later advanced workshop for different
+learning objectives, including ownership, permissions, and collaboration.</p>
+<table>
+<thead>
+<tr>
+<th>Existing pre-live draft</th>
+<th>Current executable coverage</th>
+<th>Remaining delivery work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beginner/01-explore-and-invoke.ipynb</code></td>
+<td>Offline source/configuration exploration and synthetic JSON/HTML response inspection; live Python invocation cells disabled by default.</td>
+<td>Validated invocation access and response contract; curl exercise.</td>
+</tr>
+<tr>
+<td><code>beginner/02-develop-and-deploy.ipynb</code></td>
+<td>Offline source/test editing in temporary copies, candidate manifests and overwrite protection; guided retained-workspace editing and Node.js test commands.</td>
+<td>Rehearsal of the terminal exercise in the participant environment; runnable participant build/push/deploy/readiness/update workflow.</td>
+</tr>
+<tr>
+<td><code>beginner/03-data-and-observability.ipynb</code></td>
+<td>Offline weather fixture and guided synthetic observation interpretation; retained weather-copy and additional unit-test instructions; live invocation and traffic disabled by default.</td>
+<td>Rehearsal of the terminal exercise in the participant environment; validated deployment prerequisite, monitoring exercise, optional external-service failure handling, and scoped cleanup.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>All three notebooks exist as pre-live authoring drafts, not complete workshop
+deliverables.</strong> Their default Python paths have regression coverage. Live cells
+remain unvalidated; monitoring, external weather access, and cleanup are not
+implemented. Synthetic observations are teaching examples, not measurements.</p>
+<p>Open notebooks with the Python kernel started in <code>beginner/</code>. Current offline
+cells use the Python standard library. The authoring tests executed cells directly
+in Python, not through Jupyter; rendering, kernel integration, and browser behaviour
+remain to be checked. Configuration is reused without printing credentials.
+Each completed practical step must provide its purpose, execution location,
+runnable action, expected result, verification checkpoint, and recovery guidance.</p>
+<p>Workshop duration is pending a timed reference rehearsal. No tested duration is
+currently available.</p>
+<h2 id="existing-material-and-planned-deliverables">Existing material and planned deliverables</h2>
+<p>Existing assets:</p>
+<ul>
+<li><a href="participants-guide-new/">Legacy participant guide</a>: retained for learning-outcome
+  comparison, not an approved runnable path. It includes installation, build,
+  runtime, permissions, and monitoring assumptions that require correction.</li>
+<li><a href="docs/05-serverless-DA.pdf">Existing lecture slides</a>: retained source material;
+  conceptual corrections and alignment with greeting/weather exercises are pending.</li>
+<li><code>images/</code>: existing illustrations, with asset provenance still to be reviewed.</li>
+</ul>
+<p>Implemented authoring assets:</p>
+<ul>
+<li><code>examples/greeting/handler.js</code>: POST greeting handler with input validation.</li>
+<li><code>examples/greeting/handler.test.js</code>: 15 handler unit tests.</li>
+<li><code>examples/greeting/package.json</code>: dependency-free <code>npm test</code> entry point.</li>
+<li><code>examples/weather/handler.js</code>: deterministic POST weather-summary handler.</li>
+<li><code>examples/weather/handler.test.js</code>: 33 handler unit tests.</li>
+<li><code>examples/weather/package.json</code>: dependency-free <code>npm test</code> entry point.</li>
+<li><code>fixtures/weather-sample.json</code>: synthetic teaching input, not a real observation.</li>
+<li><code>beginner/</code>: three pre-live notebook drafts described above.</li>
+<li><code>config/lab.example.json</code>: offline template; live execution is rejected.</li>
+<li><code>config/.gitignore</code>: excludes organiser-supplied <code>*.local.json</code> configuration in this directory.</li>
+<li><code>.gitignore</code>: excludes participant-generated <code>workspace/</code> source copies and build artefacts from Git.</li>
+<li><code>helpers/lab_config.py</code>: configuration validation and live-execution safeguard.</li>
+<li><code>helpers/invoke.py</code>: bounded HTTP invocation, redirect refusal, inspectable HTTP errors, and no automatic retries; authentication support remains unresolved.</li>
+<li><code>helpers/traffic.py</code>: sequential configured traffic, status counts, and client latency aggregates; transport failures stop execution.</li>
+<li><code>helpers/manifests.py</code>: offline owned-function candidate rendering and exclusive file creation; template revision is recorded, not enforced.</li>
+<li><code>tests/test_*.py</code>: 37 passing Python regression tests covering helpers, the three default offline notebook paths, and mocked invocation/traffic wiring.</li>
+</ul>
+<p>Remaining delivery work:</p>
+<ul>
+<li>Complete the notebook exercises and validate the participant lifecycle, including source updates, build, push, deployment, readiness, invocation, monitoring, and scoped cleanup.</li>
+<li>Adopt exact platform/template versions and compatible manifests only after the execution contract and permission boundaries are tested.</li>
+<li>Add <code>organizers-guide.md</code> covering reference setup, access, preparation, and readiness.</li>
+<li>Add <code>docs/slide-corrections.md</code> and <code>docs/validation-report.md</code> with corrections, exact versions, evidence, resource observations, and limitations.</li>
+</ul>
+<p>No organiser guide exists yet. The direct HTTP-wrapper baseline is available in
+<code>tests/http-wrapper/</code>; image-build, gateway/runtime, and participant-isolation
+validation remain pending. The legacy guide remains during drafting until its
+relevant learning outcomes are covered.</p>
+<h3 id="offline-python-regression-tests">Offline Python regression tests</h3>
+<p>From this module directory:</p>
+<pre><code class="language-bash">PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py' -v
+</code></pre>
+<p>The reported authoring run used Python 3.12.12 and passed 37 tests. Notebook tests
+execute default code cells with invocation/network hooks blocked; Notebook 2 and
+3 tests also block external-command hooks. Notebook files are checked for unchanged
+contents and empty saved outputs. These mocks are regression safeguards, not an
+OS-level sandbox or proof that arbitrary notebook code cannot access a network.
+The separate JavaScript handler and direct-wrapper evidence is recorded below;
+this Python command does not run those tests or validate CLI manifest acceptance.</p>
+<p>Two additional tests enable Notebook 1 and 3 live switches only in compiled
+in-memory copies, using signature-checked invocation/traffic mocks and the
+real response class. They check call arguments and response handling without
+contacting a gateway or changing notebook files. Configuration and responses
+are mocked; these checks do not establish authentication, readiness, registry
+access, isolation, or live platform behaviour.</p>
+<h3 id="participant-working-copies-and-local-tests">Participant working copies and local tests</h3>
+<p>Notebooks 2 and 3 now provide guided Bash-terminal instructions in addition to
+Python cells. Run their terminal commands from the module directory <code>05-openfaas/</code>
+in JupyterLab on the notebook host. These Markdown instructions are not executed
+by notebook Run All or by the Python regression suite.</p>
+<ul>
+<li>Notebook 2 copies the greeting into <code>workspace/greeting/</code>, expects 15 baseline
+  tests, changes the greeting response, demonstrates three expected test failures,
+  then aligns the response expectations and expects all 15 tests to pass.</li>
+<li>Notebook 3 copies weather into <code>workspace/weather/</code>, expects 33 baseline tests,
+  and supplies one additional deterministic test, for an expected total of 34.
+  Keeping this directory depth preserves the test's relative fixture path.</li>
+<li>Working copies are retained and ignored by Git. Existing copies must be
+  inspected rather than overwritten. Git ignore is not backup or secret storage.</li>
+<li>A later build manifest must reference the edited working copy, not the
+  renderer's default <code>examples/</code> source. Changing an image tag alone neither
+  builds nor deploys changed code.</li>
+</ul>
+<p>The latest authoring runs passed all 37 Python regression tests. They did not
+execute these terminal instructions, the greeting failure/recovery sequence, or
+Notebook 3's added participant test. Earlier reference-handler and direct-wrapper
+results below remain separate evidence, not a rehearsal of the new exercises.
+Participant-environment testing and VM/platform validation are deferred to a
+separate sprint; no deployment or activation is implied by these additions.</p>
+<h2 id="starting-environment-and-responsibilities">Starting environment and responsibilities</h2>
+<h3 id="participants">Participants</h3>
+<p>Participants need basic familiarity with HTTP/JSON and JavaScript, plus the ability
+to run guided Python cells and Bash commands. The organiser will prepare JupyterLab
+with a Python kernel, <code>faas-cli</code>, <code>curl</code>, Git, CA certificates, and the required
+Python packages. The retained-workspace exercises in Notebooks 2 and 3
+require organiser-supplied Node.js 22 and npm on the notebook host. Their
+dependency-free handler tests require no participant <code>npm install</code>. Exact tool
+versions and the supported Node.js function runtime must be pinned and tested
+before delivery; do not reuse an end-of-life runtime. Apptainer remains an
+authoring test method, not the selected participant runtime.</p>
+<p>The planned execution environment is Linux with Bash in JupyterLab. Linux/amd64 is
+the initial reference target, not a claim of tested compatibility. Other host or
+image architectures require separate validation. The participant's laptop only
+needs a browser compatible with the prepared JupyterLab service; native macOS or
+Windows installation is not required. Exact browser versions remain to be tested.</p>
+<p>Notebook cells and notebook terminals run on the notebook host, not on the
+participant's laptop. In a notebook command, <code>localhost</code> means the notebook host;
+in a laptop browser, it means the laptop. The organiser must supply reachable
+notebook and browser routes instead of assuming they are interchangeable.</p>
+<h3 id="organisers">Organisers</h3>
+<p>Organisers prepare the reference platform, registry and protected builder, deploy
+initial functions, distribute configuration through an appropriate protected
+channel, verify readiness, and provide monitoring access. They retain platform
+administration and infrastructure-cleanup responsibilities.</p>
+<p>Participant access must be confined to the assigned disposable lab and registry
+repositories. Participants must not receive shared-platform administrator
+credentials, infrastructure-host Docker socket access, platform-admin kubeconfigs,
+or unrestricted registry credentials. Any administrative capability within the
+isolated lab must be documented explicitly.</p>
+<p>The isolation boundary, image-building capability, registry permissions, and scoped
+cleanup must be validated. Function-name prefixes alone are not authorisation.</p>
+<h2 id="per-group-vm-reference-specification-provisional">Per-group VM reference specification — provisional</h2>
+<p>The organiser provisions one disposable VM per group. JupyterLab and the
+group's OpenFaaS lab run inside that VM. Participants do not install the platform.</p>
+<p>The following is an initial engineering recommendation for reference rehearsal,
+not a measured minimum, optimal configuration, or validated capacity guarantee.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Reference specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating system</td>
+<td>Ubuntu Server 24.04 LTS; record the exact image and updates used during rehearsal.</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>Linux/amd64 (x86_64); use matching CLI binaries and function images.</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>4 vCPUs per group VM.</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>8 GiB RAM per group VM.</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td>80 GiB SSD-backed disk per group VM; monitor free space and image/build-cache growth.</td>
+</tr>
+<tr>
+<td>Notebook environment</td>
+<td>One JupyterLab session shared by the group, with a Python kernel and Bash terminal.</td>
+</tr>
+<tr>
+<td>Initial workload</td>
+<td>One image build at a time per VM, small exercise functions, and bounded request load.</td>
+</tr>
+<tr>
+<td>Administration</td>
+<td>Organiser sudo/root access for provisioning; participant sudo/root and container-daemon access are not assumed.</td>
+</tr>
+<tr>
+<td>Networking</td>
+<td>Organiser-provided access routes and enforced cross-group restrictions; required download, registry, and runtime connectivity must be tested.</td>
+</tr>
+</tbody>
+</table>
+<p>This budget must accommodate the selected Kubernetes/OpenFaaS installation,
+JupyterLab, the protected builder, and exercise monitoring. Their exact versions,
+resource limits, registry placement, and privilege model remain S2 decisions.</p>
+<p>For cohort planning, multiply the per-VM allocation by the number of simultaneous
+groups, then budget shared services and infrastructure overhead separately.
+These allocations do not guarantee host capacity, especially with CPU
+overcommitment or simultaneous builds.</p>
+<p>Before delivery, rehearse a complete lab lifecycle and measure peak memory,
+CPU use, build duration, disk growth, and function responsiveness. Adjust the
+specification and record the evidence. Other operating systems or architectures
+require separate validation.</p>
+<h2 id="indicative-infrastructure-recommendation">Indicative infrastructure recommendation</h2>
+<p><strong>The beginner workshop uses isolated labs. The shared profile below is retained
+only as an indicative alternative; it is not a sizing recommendation for the
+selected beginner model.</strong> Per-lab resources, concurrency, and total cohort capacity
+must be estimated separately and validated through rehearsal.</p>
+<p>The following is an <strong>unmeasured planning profile</strong> for a dedicated small shared
+pilot with <strong>two simultaneous participant/group sessions</strong>, small functions,
+lightweight monitoring, and serial image builds. It is not a vendor minimum,
+benchmark result, or guarantee of cohort capacity.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Initial planning recommendation</th>
+<th>Assumptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shared lab budget</td>
+<td>8 vCPUs, 16 GiB RAM, 80 GiB available disk</td>
+<td>Kubernetes/OpenFaaS, small functions, monitoring, and one build at a time; budget unrelated workloads separately.</td>
+</tr>
+<tr>
+<td>Notebook session</td>
+<td>1 vCPU and 2 GiB RAM per session</td>
+<td>Included in the shared total if colocated; not a dedicated image-building budget.</td>
+</tr>
+<tr>
+<td>Image builder</td>
+<td>One concurrent build initially</td>
+<td>Protected build submission; explicit CPU, memory, and ephemeral-storage limits; measure peaks before increasing concurrency.</td>
+</tr>
+<tr>
+<td>Function execution</td>
+<td>One replica per exercise function initially</td>
+<td>Use tested requests/limits and supported configuration; do not assume scale-to-zero or unrestricted scaling.</td>
+</tr>
+<tr>
+<td>Registry</td>
+<td>Reachable compatible image registry</td>
+<td>Verify edition-specific access support; account for retained images and build-cache growth.</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>Prometheus; Grafana optional initially</td>
+<td>Expose only the access needed for the exercises; verify metric names and dashboard compatibility.</td>
+</tr>
+</tbody>
+</table>
+<p>A multi-node topology is optional. Physical placement does not determine the
+learning sequence. Isolated labs per participant and larger cohorts require their
+own provisioning, security model, and sizing. Pilot observations will refine this
+profile after the reference rehearsal.</p>
+<p>The reference setup must document and verify:</p>
+<ul>
+<li>Kubernetes distribution/version, OpenFaaS edition/release/chart settings,
+  CLI version, template revision, Node.js runtime, and image architecture.</li>
+<li>A protected build mechanism and registry reachable by both builder and runtime.</li>
+<li>Notebook/browser access to gateway and monitoring, DNS resolution, trusted TLS
+  where applicable, and appropriate network restrictions.</li>
+<li>Image/template download routes during preparation; optional outbound access to
+  the selected weather provider only for the live-data extension.</li>
+<li>Safe credential storage outside Git, notebooks, function images, and fixtures.
+  Build/deployment credentials must not be disclosed in outputs or diagnostics.</li>
+</ul>
+<p>The deterministic core weather exercise must work without an external weather API.</p>
+<h2 id="execution-contract-pending-s2">Execution contract — pending S2</h2>
+<p>The selected reference topology is one organiser-provisioned, disposable Linux
+VM per group, with JupyterLab running inside that group's VM. Participants execute
+build, push, and deploy commands from this JupyterLab environment. The lab VM is
+the intended infrastructure isolation boundary; it is not yet a validated
+security boundary.</p>
+<p>Organisers prepare the lab infrastructure before participant access. The
+Kubernetes/OpenFaaS installation, builder implementation and privileges, registry
+permissions, network restrictions, and credential distribution remain pending.
+Participant build access must not expose shared-infrastructure Docker sockets or
+administrator credentials. Any administrative capability inside the disposable
+lab must be explicitly documented.</p>
+<p>Executable deployment cells cannot be finalised until this complete path and
+negative cross-group access tests have been documented and validated.</p>
+<p>S2 must resolve:</p>
+<ol>
+<li>Exact platform edition, versions, CLI, template, runtime, and handler contract.</li>
+<li>Participant identity, assigned function names, allowed operations, and enforced
+   ownership boundaries, including negative cross-participant tests.</li>
+<li>Protected source submission, build, push, deploy, readiness, update, and cleanup.</li>
+<li>Matching manifests, registry repository names, and versioned image tags.</li>
+<li>Configuration distribution, invocation access, monitoring routes, and verified
+   invocation/error/duration metrics.</li>
+</ol>
+<p>Organiser-mediated build/deployment is not the selected beginner workflow.
+Organisers prepare the isolated labs; participants perform the function lifecycle.
+The selected implementation must support this distinction without granting access
+to the shared infrastructure.</p>
+<h2 id="inspected-reference-candidates-not-yet-validated">Inspected reference candidates — not yet validated</h2>
+<p>The following candidates have been inspected upstream. They are not an approved
+or platform-validated version set. The standalone Node.js authoring runtime
+and direct HTTP wrapper described below have been executed. The template image
+build, watchdog, and OpenFaaS platform have not been validated.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Candidate</th>
+<th>Evidence and limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenFaaS CLI</td>
+<td><code>0.18.16</code></td>
+<td>Linux/amd64 release binary checksum verified locally; <code>version</code> and <code>build --help</code> executed. Image build, push, and deployment remain unvalidated.</td>
+</tr>
+<tr>
+<td>Node.js template</td>
+<td><code>node22</code> from <code>openfaas/templates</code>, commit <code>262e6a608a3f987bcbe3322d1543b44e0e4282dc</code></td>
+<td>Greeting build context prepared with the verified CLI; copied handler matched source. Image build remains unvalidated; image tags and dependency resolution remain mutable.</td>
+</tr>
+<tr>
+<td>OpenFaaS chart</td>
+<td><code>15.0.13</code> from <code>openfaas/faas-netes</code>, commit <code>f97de9fc1314bad45848f7e0bfaadb69710615a6</code></td>
+<td>CE selection and monitoring templates inspected; chart not rendered or deployed.</td>
+</tr>
+</tbody>
+</table>
+<p>Published SHA-256 for the CLI release asset named <code>faas-cli</code>:
+<code>16f82d999d92ada11c3abb5ab4be32207fc99b83463672227a9ea57c0cf36299</code>.
+The Linux/amd64 release binary was downloaded into the user cache and matched
+this checksum before execution. <code>faas-cli version</code> reported version <code>0.18.16</code>
+and commit <code>9e9b014aaf03cae10b49edf7a093e6ddfb7ea903</code>.
+<code>faas-cli build --help</code> executed successfully and confirmed that <code>--shrinkwrap</code>
+only writes files into <code>./build/</code>. No image build, registry authentication,
+push, deployment, or protected-builder access was performed. This verifies
+the local CLI candidate, not the complete participant lifecycle or platform.</p>
+<p>The planned beginner sequence uses separate <code>faas-cli build</code>, <code>faas-cli push</code>,
+and <code>faas-cli deploy</code> commands against the same manifest, followed by readiness
+checks and invocation. Explicit image versions will distinguish code updates.
+<code>--shrinkwrap</code> prepares a build context; it does not build an image.</p>
+<p>Before adopting these candidates, resolve CE distribution terms for the intended
+institution-run workshop, registry access restrictions, VM and network isolation,
+notebook/browser routes, supported Kubernetes and Docker versions, image digests,
+dependency locking, and meaningful tests. Then rehearse the complete lifecycle
+in a disposable reference lab. No installation is required on the authoring host.</p>
+<h3 id="greeting-build-context-preparation">Greeting build-context preparation</h3>
+<p>The verified CLI <code>0.18.16</code> prepared a greeting context using <code>build --shrinkwrap</code>
+and <code>--disable-stack-pull</code> with the exact template revision recorded above.
+The generated handler matched <code>examples/greeting/handler.js</code> byte-for-byte.
+The context included the handler tests and function package configuration.</p>
+<p>The generated Dockerfile:
+- Uses <code>ghcr.io/openfaas/of-watchdog:0.12.5</code> and <code>node:22-alpine</code> as mutable
+  image tags, with Linux/amd64 as the default target platform.
+- Runs <code>npm i</code> for both wrapper and function dependencies.
+- Includes a function-level <code>npm test</code> build step, not yet executed in an image
+  build. The outer wrapper package has a placeholder test script.
+- Configures the watchdog to forward HTTP requests to the Node.js wrapper.</p>
+<p>The generated wrapper context contains no dependency lockfile. Its dependency
+resolution is therefore not established by the separately locked direct-wrapper
+tests. Image digests, dependency locking, and build-time test execution remain
+validation requirements.</p>
+<p>This check used temporary storage and a non-routable placeholder image name.
+It did not build an image, use a container daemon, authenticate, push, or deploy.
+Docker and BuildKit commands were absent from the authoring host's PATH; Podman
+was present but was not exercised. The protected participant builder remains
+an unresolved execution-contract requirement.</p>
+<h3 id="build-and-push-execution-contract">Build and push execution contract</h3>
+<p>Source inspection at CLI commit
+<code>9e9b014aaf03cae10b49edf7a093e6ddfb7ea903</code> established that:
+- The standard local build path executes <code>docker build</code> and checks the
+  command's exit status.
+- The separate push path executes <code>docker push</code>. It requires the built image
+  to be accessible through the Docker environment used for push.
+- The push execution helper terminates the CLI on command failure.
+- A remote-builder branch exists, but its availability, permissions, and
+  compatibility with the planned separate build/push sequence are unvalidated.
+- Buildx references occur in the separate publish implementation; they do not
+  establish that the standard local build path invokes Buildx.</p>
+<p>A local failure-propagation probe used the checksum-verified CLI and a temporary
+<code>docker</code> stub. The stub was invoked for the expected image and deliberately
+returned exit status <code>23</code>; <code>faas-cli push</code> returned exit status <code>1</code>.
+This confirms that the tested CLI reports push-command failure, without
+preserving the original command exit code.</p>
+<p>The probe did not contact a registry, use credentials, access a container
+daemon, build an image, or deploy a function. Successful registry push remains
+unvalidated. Podman compatibility and protected-builder access also remain
+unvalidated.</p>
+<p>Notebook push checkpoints must check command failure and must not treat
+printed progress messages alone as evidence of registry availability.
+The disposable reference lab must validate the complete build/push path,
+registry permissions, and image retrieval by the function runtime.</p>
+<h3 id="ce-adoption-blockers-source-inspection">CE adoption blockers — source inspection</h3>
+<p>At faas-netes revision <code>f97de9fc1314bad45848f7e0bfaadb69710615a6</code>,
+chart <code>15.0.13</code> selects CE provider image <code>ghcr.io/openfaas/faas-netes:0.18.17</code>.
+The pinned README identifies controller mode as the only CE operating mode;
+the legacy participant guide's CE/operator instructions are not reusable as-is.</p>
+<p>Both deployment and update handlers call <code>isAnonymous</code>, which attempts an
+anonymous registry manifest HEAD request and rejects failures with a public-image
+restriction message. Function Docker-config secret handling exists separately,
+but does not bypass this check. The inspected validation code contains no
+explicit localhost exception, despite a comment mentioning local registry testing.
+Registry reachability and the distributed image's behaviour remain untested.</p>
+<p>Chart-level <code>imagePullSecrets</code> applies to chart-installed deployments, not
+automatically to participant function deployments. The previously suggested
+<code>faasnetes.imagePullSecrets</code> setting was not substantiated.</p>
+<p>The pinned repository LICENSE assigns OpenFaaS Ltd/Alex Ellis contributions to
+the CE EULA and third-party contributions to MIT; it is not an Apache-only licence.</p>
+<p>The referenced <a href="https://github.com/openfaas/faas/blob/master/EULA.md">CE EULA</a>
+was retrieved from mutable master on 2026-10-18. Retrieved SHA-256:
+<code>1b81c9ee4a2789b6b7618469f2b92ab444f5d3a30cc20f8d121b32deed90c26a</code>.
+This records inspected text, not the EULA version applicable to the candidate image.</p>
+<p>The retrieved terms do not explicitly resolve the institution-run, multi-VM
+teaching model. They include organisational acceptance, commercial-installation
+limits, and prior-commercial-licensee restrictions. Before selecting CE, establish
+the applicable terms and obtain institutional approval and any necessary written
+vendor clarification. Do not assume that individual group VMs create separate
+licensees or restart an evaluation allowance.</p>
+<p>CE remains an unapproved candidate. Do not publish participant images publicly,
+bypass validation, or provision CE merely to work around these unresolved gates.</p>
+<h2 id="validation-and-release-gate">Validation and release gate</h2>
+<h3 id="local-greeting-handler-baseline">Local greeting-handler baseline</h3>
+<p>Implementation checkpoint: <code>95bbd65a2a5c74f5e0b7acc6626fa8648b5ae22a</code>.</p>
+<p>On the Linux/x86_64 authoring host, <code>npm test</code> passed all 15 tests with no failures,
+skips, or TODOs using Apptainer <code>1.4.0-1.el8</code>, Node.js <code>v22.23.3</code>, and npm <code>10.9.9</code>.
+The runtime was executed with a read-only source bind and required neither a
+host Node.js installation nor Docker.</p>
+<p>Source image: <code>docker.io/library/node:22-alpine</code>, resolved to the verified
+Linux/amd64 OCI manifest digest:
+<code>sha256:2c752226d477b4a886378baa95b9af252be59301b725fdb0b7e15208131505a8</code>.</p>
+<p>Local converted SIF SHA-256:
+<code>aa8a5e9435fa2ae5c1c837f626a5fd2b1300029cfdb250aedd912a117871dadf</code>.
+This identifies the recorded local file; independent conversions may produce
+different SIF checksums.</p>
+<p>Tests cover successful greetings, trimming, the 80-unit JavaScript string-length
+boundary, invalid bodies/names, and GET rejection with an Allow header. They use a
+context stub, not the actual OpenFaaS HTTP wrapper. Separate direct-wrapper
+observations are recorded below. Container builds, watchdog/gateway invocation,
+and participant isolation remain unvalidated. The test-image pin does not pin the template's build images or
+dependency ranges. Apptainer is an authoring test method, not a selected
+participant runtime or function-image builder.</p>
+<h3 id="local-weather-handler-baseline">Local weather-handler baseline</h3>
+<p>All 33 weather unit tests passed using the recorded Apptainer <code>1.4.0-1.el8</code>
+runtime, Node.js <code>v22.23.3</code>, and npm <code>10.9.9</code>. The recorded SIF checksum and
+Linux/x64 runtime were verified before execution with a read-only module bind.
+The greeting suite also passed all 15 tests. Both suites had zero failures,
+cancellations, skips, or TODOs.</p>
+<p>The weather handler processes supplied <code>city</code>, <code>temperature_c</code>, and <code>condition</code>
+fields without external requests. Tests cover the synthetic fixture, trimming,
+text-length boundaries, input preservation, numeric temperatures, invalid
+bodies/fields, JSON response headers, and GET/PUT/DELETE rejection.</p>
+<p>Temperature validation requires a finite number, not meteorological plausibility.
+Non-finite-number cases test the handler directly; they are not valid JSON inputs.</p>
+<p>This subsection records context-stub unit validation only. Separate weather
+HTTP-wrapper observations are recorded below. Image builds, watchdog/gateway
+invocation, deployment, and isolation remain unvalidated.</p>
+<h3 id="direct-http-wrapper-observations">Direct HTTP-wrapper observations</h3>
+<p>The unmodified <code>node22/index.js</code> from template revision
+<code>262e6a608a3f987bcbe3322d1543b44e0e4282dc</code> was executed with the greeting handler
+in an external scratch directory using the recorded Apptainer/Node.js runtime.
+Dependencies resolved to Express <code>5.3.0</code> and body-parser <code>2.3.0</code>.</p>
+<p>The scratch dependency lockfile SHA-256 was
+<code>86c9d89afa68de7e64c5408caf2808656d452c5ce6b5236d62925cab10feb5ee</code>.
+The lockfile is preserved in <code>tests/http-wrapper/package-lock.json</code> for
+the authoring test only; it is not integrated into the function-image build.</p>
+<p>A test-only interception bound the server to loopback on an automatically
+assigned port without modifying the wrapper source. Seven HTTP observations
+matched expectations in both default mode and explicit <code>NODE_ENV=production</code>:</p>
+<ul>
+<li>Valid JSON returned 200 with the expected JSON greeting.</li>
+<li>An invalid name returned 400 with <code>invalid_name</code>.</li>
+<li>A JSON array and plain text returned 400 with <code>expected_json_object</code>.</li>
+<li>GET returned 405 with JSON and <code>Allow: POST</code>.</li>
+<li>A URL-encoded form containing <code>name=Ada</code> was accepted with 200.</li>
+<li>Malformed JSON returned 400 with HTML before the handler ran.</li>
+</ul>
+<p>In default mode, the malformed-JSON response included parser stack details.
+Production mode replaced those client-facing details with <code>Bad Request</code>, but the
+parser diagnostic and submitted malformed body still appeared in server logs.</p>
+<p>These are observations, not approval of a JSON-only request contract or uniformly
+JSON error responses. Request media-type policy and parser-error handling remain
+execution-contract decisions. Production mode alone does not resolve those gaps.
+The stale <code>node20</code> startup label does not identify the runtime, and the logged
+port was not the actual port used by this test.</p>
+<p>The repeatable baseline is preserved in <code>tests/http-wrapper/</code>. Its <code>index.js</code>
+and <code>package.json</code> are unmodified upstream files from the recorded template
+revision; <code>LICENSE</code> preserves their upstream MIT notice. This does not assign a
+licence to other module assets.</p>
+<p>From this module directory, run:</p>
+<pre><code>bash tests/http-wrapper/run.sh /absolute/path/to/node22.sif
+</code></pre>
+<p>The runner requires Bash, Apptainer, standard Linux utilities, and an existing
+Linux/x86_64 Node.js <code>v22.23.3</code> SIF. It prints the image checksum rather than
+enforcing an image-digest pin. It uses <code>npm ci --ignore-scripts</code> with the preserved
+lockfile in temporary storage, requiring access to the locked npm package URLs.
+It copies the current repository greeting handler, runs all seven observations
+in development and production modes, and removes temporary files on exit.
+Both modes passed with the recorded reference image.</p>
+<p>The probe also asserts development parser-error exposure and production
+suppression of parser stack details in HTTP responses. Server-side diagnostics
+are not automatically asserted. The wrapper source remains unchanged; a
+test-only interception forces an ephemeral loopback listener.</p>
+<p>This baseline does not exercise the watchdog, gateway, image build, deployment,
+or participant isolation. Form acceptance and HTML parser errors are regression
+observations, not approval of the final workshop request/error contract.</p>
+<h3 id="weather-http-wrapper-observations">Weather HTTP-wrapper observations</h3>
+<p>The weather probe passed all nine observations in both development and production
+modes using the same upstream wrapper, locked dependencies, and verified reference
+SIF as the greeting baseline. The greeting probe was rerun and passed all seven
+observations in each mode: 32 HTTP checks passed across both exercises and modes.</p>
+<p>Weather observations:
+- Valid JSON returned 200 with the expected fields and summary.
+- Invalid city, string temperature, and invalid condition returned 400 with their
+  respective JSON validation errors.
+- A JSON array and plain text returned 400 with <code>expected_json_object</code>.
+- GET returned 405 with JSON and <code>Allow: POST</code>.
+- URL-encoded form input returned 400 with <code>invalid_temperature</code>; the parsed
+  temperature was a string. This does not establish a JSON-only media-type policy.
+- Malformed JSON returned 400 with HTML before handler execution. Development
+  exposed parser details in the response; production returned <code>Bad Request</code>.
+  Parser diagnostics and the malformed body remained visible in server output
+  in both modes. Server-side diagnostic content is observed, not asserted.</p>
+<p>From this module directory, run either exercise:</p>
+<pre><code>bash tests/http-wrapper/run.sh /absolute/path/to/node22.sif greeting
+bash tests/http-wrapper/run.sh /absolute/path/to/node22.sif weather
+</code></pre>
+<p>Omitting the exercise retains the original greeting default. The runner copies
+the selected handler and probe into temporary storage; upstream wrapper sources
+and the greeting probe are unchanged. The weather probe uses inline synthetic
+HTTP inputs rather than loading the fixture file.</p>
+<p>These are direct loopback wrapper tests, not OpenFaaS image-build, watchdog,
+gateway, deployment, or participant-isolation validation.</p>
+<h3 id="delivery-gate">Delivery gate</h3>
+<p>Before delivery, a fresh reference rehearsal must complete all three notebooks and
+check response semantics, invalid inputs, external-failure handling, bounded load,
+scoped cleanup, and participant capability boundaries. Record exact versions,
+commands, results, resource observations, and unresolved issues. Static notebook
+checks and default offline execution tests do not establish live platform
+compatibility or complete learning-outcome coverage.</p>
+<p>No live OpenFaaS execution or end-to-end workshop validation has been performed in
+this authoring sprint. No current platform deployment or activation is implied.
+Advanced notebooks, production integration, required autoscaling/scale-to-zero,
+queued invocation, and URL-shortener exercises are outside this sprint.</p>
+<h2 id="licensing-and-provenance-unresolved">Licensing and provenance — unresolved</h2>
+<p>The repository <a href="../../../LICENSE">LICENSE</a> contains Apache License 2.0, while the
+<a href="../../../README.md">root README</a> states MIT for code and CC BY 4.0 for documentation.
+This discrepancy must be resolved with the repository maintainer before publication;
+this module does not infer or introduce a licence assignment for individual assets.
+Review slide/image provenance and retain applicable attribution and licence notices.</p>
+<p>Modification notice: this README has been revised for the beginner-first OpenFaaS
+workshop authoring sprint, replacing the previous incomplete navigation and
+prerequisites. The legacy guide, slides, and images are unchanged.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

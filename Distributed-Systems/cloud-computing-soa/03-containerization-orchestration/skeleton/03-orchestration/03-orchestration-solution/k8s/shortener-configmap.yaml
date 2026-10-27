@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shortener-public-key
+  namespace: websvc
+data:
+  public_key.pem: |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAseJ+J5UK3hYh4rV8muv1
+    oHUpidtYltihZvkaYCdpZPB0hBuIuEp8Sl27XvZT6dpzii5ai7OiDzpw29HhE7ho
+    aGrycXmtfAXB9IGD2i68v9GCvvdBKxolSkiu7FRwLN4TDlTWWrmYJiBMFupRdXPc
+    yhzTIBSyHHEPa4/F5Wxr5PpAsy8B/NlqQL5cfnAMJ4Jd8JD5Pb4CZxtqxAKlqDtj
+    WVmAoftQH33hCM7mScT4ZkWfp3HSeZYeWLsfq3v7InRHDmJlM5DtAO+wTJMp+yYu
+    wfqAvJrnhfVcjZcffEq3gAAoz15DYiGjqNg/ilH9SR/thcRtJkQWShDTNhyf5n2A
+    CQIDAQAB
+    -----END PUBLIC KEY-----
