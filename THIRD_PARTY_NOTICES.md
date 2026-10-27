@@ -8,8 +8,9 @@ The components below keep their own authorship and terms.
 - Used in (adapted/modified):
   - HPC/mpi/02-debugging/mpi_bug*.c        (from mpi/examples/)
   - HPC/openmp-02-advanced/**              (from openmp/code_examples/C/)
-- Modifications: reformatted/renamed; some author headers redacted for
-  teaching purposes. Original authorship: LLNL tutorial authors.
+- Modifications: reformatted and renamed; some fix files (fix/omp_bugs*_fix.c) are
+  corrected versions written for this repository. Original headers and
+  authorship (Blaise Barney, LLNL) are retained.
 
 MIT License
 

@@ -1,3 +1,10 @@
+/******************************************************************************
+* FILE: omp_bugs4_fix.c
+* DESCRIPTION:
+*   Corrected version of omp_bug4.c (see the FIX comments below).
+* BASED ON: omp_bug4.c, Blaise Barney, 01/09/04
+*   LLNL HPC Tutorials, MIT License (see THIRD_PARTY_NOTICES.md)
+******************************************************************************/
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
