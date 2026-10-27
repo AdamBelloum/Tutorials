@@ -50,7 +50,7 @@ of LLNL/LLNS may not be used for advertising or product endorsement.
 - Upstream license: TO VERIFY
 
 ## Datasets (TO DOCUMENT)
-- Big-Data/.../Bank_Personal_Loan_Modelling.csv: Kaggle; license TO VERIFY
+- Bank_Personal_Loan_Modelling.csv (Kaggle, krantiswalke): NOT redistributed; Kaggle lists the license as unknown (checked 2026-10-27). Participants download it themselves.
 - Distributed-Systems/federated-learning/data/**: source and license TO DOCUMENT
 
 ## Figures and screenshots (TO DOCUMENT)
