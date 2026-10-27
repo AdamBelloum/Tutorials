@@ -241,7 +241,7 @@ Without sharing a single raw image.
 That is Federated Learning.
  
 Dataset Setup Instructions
-We will use a lightweight Cassava Leaf subset prepared for this workshop.
+This tutorial runs on **synthetic demo data** (nothing to download). From the `federated-learning/` folder run `python data/make_demo_data.py`. It writes `data/Group_A/`, `data/Group_B/`, `data/Group_C/` (one `train.csv` each) and a combined `data/train.csv`. The instructor-provided archive (Option A) or the Kaggle download (Option B) are alternatives if you want real images.
 Option A (Recommended for Workshop)
 Instructor provides:
 data.zip
@@ -292,6 +292,8 @@ workspace/
 If you prefer to download the full dataset yourself (not recommended for workshop attendees because of size and partitioning work), use the Kaggle competition page:
 
 [Cassava Leaf Disease Dataset](https://www.kaggle.com/competitions/cassava-leaf-disease-classification/data)
+
+**Note:** Kaggle competition data is governed by the competition rules (accept them on Kaggle first). It is not redistributed in this repository.
 
 Download example (participant machine):
 

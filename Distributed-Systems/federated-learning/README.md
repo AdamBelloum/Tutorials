@@ -1,4 +1,4 @@
-# Cassava Federated Learning Workshop
+# Federated Learning Workshop (Flower)
 A hands-on workshop to learn Federated Learning (FL) with Flower.
 
 ## Overview
