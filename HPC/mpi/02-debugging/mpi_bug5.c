@@ -3,7 +3,7 @@
 * DESCRIPTION: 
 *   This is an "unsafe" program. It's behavior varies depending upon the
 *   platform and MPI library
-* AUTHOR: XXXXXX XXXXXX 
+* AUTHOR: Blaise Barney 
 * LAST REVISED: 01/24/09
 ******************************************************************************/
 #include "mpi.h"

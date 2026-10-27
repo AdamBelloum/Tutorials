@@ -27,3 +27,6 @@ env/
 # --- OS Specific ---
 .DS_Store
 Thumbs.db
+Big-Data/bigdata-ai/spark/spark_cluster/data/Bank_Personal_Loan_Modelling.csv
+Distributed-Systems/federated-learning/data/train.csv
+Distributed-Systems/federated-learning/data/Group_*/train.csv

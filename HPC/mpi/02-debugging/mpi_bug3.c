@@ -2,7 +2,7 @@
 * FILE: mpi_bug3.c
 * DESCRIPTION: 
 *   This program has a bug. 
-* SOURCE: xxxxxx XXXXXX 
+* SOURCE: Blaise Barney 
 * LAST REVISED: 04/13/05
 ******************************************************************************/
 #include "mpi.h"

@@ -2,7 +2,7 @@
 * FILE: omp_bug4.c
 * DESCRIPTION:
 *   This very simple program causes a segmentation fault.
-* AUTHOR: XXXXXX XXXXXX  01/09/04
+* AUTHOR: Blaise Barney  01/09/04
 * LAST REVISED: 04/06/05
 ******************************************************************************/
 #include <omp.h>

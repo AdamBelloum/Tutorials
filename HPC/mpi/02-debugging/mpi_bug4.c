@@ -1,8 +1,8 @@
-/*******************************************************************************
+/******************************************************************************
 * FILE: mpi_bug4.c
 * DESCRIPTION:
 *   This program gives the wrong result for Final sum - compare to mpi_array.
-* AUTHOR: XXXXXX XXXXXX
+* AUTHOR: Blaise Barney
 * LAST REVISED: 07/03/19
 ****************************************************************************/
 #include "mpi.h"
