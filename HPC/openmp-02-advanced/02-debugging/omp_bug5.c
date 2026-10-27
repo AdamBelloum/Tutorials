@@ -3,7 +3,7 @@
 * DESCRIPTION:
 *   Using SECTIONS, two threads initialize their own array and then add
 *   it to the other's array, however a deadlock occurs.
-* AUTHOR: XXXXXX XXXXXX  01/29/04
+* AUTHOR: Blaise Barney  01/29/04
 * LAST REVISED: 04/06/05
 ******************************************************************************/
 #include <omp.h>

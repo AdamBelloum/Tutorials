@@ -2,7 +2,7 @@
 * FILE: omp_bug2.c
 * DESCRIPTION:
 *   Another OpenMP program with a bug. 
-* AUTHOR: RXXXXXXXXXXXX 
+* AUTHOR: Blaise Barney 
 * LAST REVISED: 04/06/05 
 ******************************************************************************/
 #include <omp.h>

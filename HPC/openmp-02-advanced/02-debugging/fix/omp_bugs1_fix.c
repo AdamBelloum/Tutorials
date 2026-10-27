@@ -1,10 +1,11 @@
 /******************************************************************************
-* FILE: omp_bug1.c
+* FILE: omp_bug1fix.c
 * DESCRIPTION:
-*   This example attempts to show use of the parallel for construct.  However
-*   it will generate errors at compile time.  Try to determine what is causing
-*   the error.  See omp_bug1fix.c for a corrected version.
-* AUTHOR: XXXXXe XXXXXX  5/99
+*   This is a corrected version of the omp_bug1.c example. Corrections
+*   include removing all statements between the parallel for construct and
+*   the actual for loop, and introducing logic to preserve the ability to 
+*   query a thread's id and print it from inside the for loop.
+* AUTHOR: Blaise Barney  5/99
 * LAST REVISED: 04/06/05
 ******************************************************************************/
 #include <omp.h>

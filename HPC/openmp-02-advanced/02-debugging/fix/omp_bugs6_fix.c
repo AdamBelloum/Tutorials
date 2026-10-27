@@ -3,7 +3,7 @@
 * DESCRIPTION:
 *   This program compiles and runs fine, but produces the wrong result.
 *   Compare to omp_orphan.c.
-* AUTHOR: XXXXXX XXXXXX  6/05
+* AUTHOR: Blaise Barney  6/05
 * LAST REVISED: 06/30/05
 ******************************************************************************/
 #include <omp.h>

@@ -3,7 +3,7 @@
 * DESCRIPTION: 
 *   This program has a bug that causes wrong answers and/or termination - depends
 *   upon the MPI library and platform.
-* SOURCE: xxxxxx xxxxxx 
+* SOURCE: Blaise Barney 
 * LAST REVISED: 01/24/09
 ******************************************************************************/
 #include "mpi.h"

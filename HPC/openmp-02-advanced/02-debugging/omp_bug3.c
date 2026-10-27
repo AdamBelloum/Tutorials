@@ -2,7 +2,7 @@
 * FILE: omp_bug3.c
 * DESCRIPTION:
 *   Run time error
-* AUTHOR: XXXXXX XXXXXX  01/09/04
+* AUTHOR: Blaise Barney  01/09/04
 * LAST REVISED: 06/28/05
 ******************************************************************************/
 #include <omp.h>
